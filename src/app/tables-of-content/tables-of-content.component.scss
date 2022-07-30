@@ -1,0 +1,14 @@
+ul {
+  display: inline-flex !important;
+}
+li {
+  display: flex !important;
+}
+
+span.tf-nc {
+  background-color: lightblue;
+
+  &.active {
+    background-color: lightcoral;
+  }
+}

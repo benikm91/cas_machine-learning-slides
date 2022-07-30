@@ -1,0 +1,7 @@
+div
+    h2 Questions
+    div
+        div.fragment.fade-in(*ngFor="let question of questions") {{question.question}}
+
+    aside.notes
+        div.fragment.fade-in(*ngFor="let question of questions") {{question.answer}}
