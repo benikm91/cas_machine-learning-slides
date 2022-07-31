@@ -1,7 +1,8 @@
-div
-    h2 Questions
-    div
-        div.fragment.fade-in(*ngFor="let question of questions") {{question.question}}
-
-    aside.notes
-        div.fragment.fade-in(*ngFor="let question of questions") {{question.answer}}
+ng-template('#slides')
+    section(data-auto-animate)
+        h1 Questions?
+    section(data-auto-animate)
+        h1(style="font-size: 24px") Questions?
+        .fragment.fade-in(*ngFor="let question of questions") {{question.question}}
+        aside.notes
+            .fragment.fade-in(*ngFor="let question of questions") {{question.answer}}

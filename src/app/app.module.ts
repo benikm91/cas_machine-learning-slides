@@ -8,12 +8,13 @@ import {KnowledgeViewComponent} from "./knowledge-view/knowledge-view.component"
 import {TablesOfContentComponent} from "./tables-of-content/tables-of-content.component";
 import {TableOfContentNode} from "./tables-of-content/tables-of-content-node.component";
 import {QuestionSlideComponent} from "./question-slide/question-slide.component";
+import {RemoveWrapperDirective} from "./remove-wrapper.directive";
 
 @NgModule({
   declarations: [
     WimlComponent, RevealPresentationComponent, MlPresentationComponent, KnowledgeViewComponent,
     TablesOfContentComponent, TableOfContentNode,
-    QuestionSlideComponent
+    QuestionSlideComponent, RemoveWrapperDirective
   ],
   imports: [
     BrowserModule

@@ -22,7 +22,7 @@ module.exports = {
           method: 'render',
           doctype: 'html',
           plugins: [require('pug-plugin-ng')],
-        },
+        }
       },
 
       /*{
