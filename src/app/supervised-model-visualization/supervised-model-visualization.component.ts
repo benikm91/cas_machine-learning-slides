@@ -37,12 +37,10 @@ export class SupervisedModelVisualizationComponent implements AfterViewInit {
 
     const boxWidth = 150;
 
-    const params = {
+    const two = new Two({
       height: 200,
       width: boxWidth * 3 + 50 + 50
-    }
-    const elem = this.supervisedLearningAnimationContainer;
-    const two = new Two(params).appendTo(elem?.nativeElement);
+    }).appendTo(this.supervisedLearningAnimationContainer?.nativeElement);
 
     const model = createTextRect(this.modelLabel, boxWidth, 150)
     model.position.x = boxWidth + 75 + 50;
@@ -63,8 +61,6 @@ export class SupervisedModelVisualizationComponent implements AfterViewInit {
     }
 
     resetScene();
-
-    two.add(input, output, model);
 
     const animation = new TwoAnimation([
         new TwoAnimationStep(60),
@@ -89,12 +85,11 @@ export class SupervisedModelVisualizationComponent implements AfterViewInit {
       resetScene
     )
 
-    two.bind('update', update);
-    two.play();
+    two
+        .add(input, output, model)
+        .bind('update', animation.animate.bind(animation))
+        .play();
 
-    function update(frameCount: number) {
-      animation.animate(frameCount);
-    }
   }
 
 }
