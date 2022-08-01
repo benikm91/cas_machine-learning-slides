@@ -9,12 +9,24 @@ import {TablesOfContentComponent} from "./tables-of-content/tables-of-content.co
 import {TableOfContentNode} from "./tables-of-content/tables-of-content-node.component";
 import {QuestionSlideComponent} from "./question-slide/question-slide.component";
 import {RemoveWrapperDirective} from "./remove-wrapper.directive";
+import {StairSlideComponent} from "./stair-slide/stair-slide.component";
+import {WhatIsRegressionComponent} from "./what-is-regression/what-is-regression.component";
+import {LinearRegressionComponent} from "./linear-regression/linear-regression.component";
+import {SlideHeaderComponent} from "./slide-header/slide-header.component";
+import {WhatIsSupervisedLearningComponent} from "./what-is-supervised-learning/what-is-supervised-learning.component";
+import {
+  SupervisedModelVisualizationComponent
+} from "./supervised-model-visualization/supervised-model-visualization.component";
+import {WhatIsClassificationComponent} from "./what-is-classification/what-is-classification.component";
 
 @NgModule({
   declarations: [
     WimlComponent, RevealPresentationComponent, MlPresentationComponent, KnowledgeViewComponent,
     TablesOfContentComponent, TableOfContentNode,
-    QuestionSlideComponent, RemoveWrapperDirective
+    QuestionSlideComponent, RemoveWrapperDirective,
+    StairSlideComponent, WhatIsRegressionComponent, LinearRegressionComponent,
+    SlideHeaderComponent,
+    WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent
   ],
   imports: [
     BrowserModule

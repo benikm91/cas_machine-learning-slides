@@ -1,7 +1,30 @@
+doctype html
 reveal-presentation
-    question-slide
     section
-        tables-of-content([activeProblem]="problemLabels.SUPERVISED_PROBLEM", [activeMethod]="methodLabels.MODEL")
+        tables-of-content
+    section
+        tables-of-content([activeProblem]="problemLabels.SUPERVISED_PROBLEM")
+    what-is-supervised-learning
+    section
+        tables-of-content([activeProblem]="problemLabels.REGRESSION")
+    what-is-regression
+    section
+        tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.LINEAR_REGRESSION")
+    linear-regression
+    section
+        tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
+    what-is-classification
+    stair-slide
+        div(first)
+            h3 Intuition
+            img(src="/assets/images/intuition.png").img-fluid
+        div(second)
+            h3 Code
+            img(src="/assets/images/code.png").img-fluid
+        div(third)
+            h3 Theory
+            img(src="/assets/images/theory.png").img-fluid
+    question-slide
     section
         tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.OPTIMIERUNG")
     what-is-machine-learning

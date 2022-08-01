@@ -1,6 +1,7 @@
 import {AfterContentInit, Component} from '@angular/core';
 import Reveal from "./reveal";
 import RevealNotes from "./reveal-notes";
+import RevealMath from "./reveal-math";
 
 @Component({
   selector: 'reveal-presentation',
@@ -12,7 +13,10 @@ export class RevealPresentationComponent implements AfterContentInit {
     Reveal.initialize({
       // showNotes: 'separate-page',
       pdfSeparateFragments: false,
-      plugins: [ RevealNotes ]
+      katex: {
+        trust: true
+      },
+      plugins: [ RevealNotes, RevealMath.KaTeX ]
     });
   }
 }

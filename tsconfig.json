@@ -24,7 +24,8 @@
     ],
     "paths": {
       "./reveal": ["node_modules/reveal.js/dist/reveal.js"],
-      "./reveal-notes": ["node_modules/reveal.js/plugin/notes/notes.js"]
+      "./reveal-notes": ["node_modules/reveal.js/plugin/notes/notes.js"],
+      "./reveal-math": ["node_modules/reveal.js/plugin/math/math.js"]
     }
   },
   "angularCompilerOptions": {

@@ -1,29 +1,14 @@
 import {
-  AfterContentInit, AfterViewChecked,
-  AfterViewInit,
   Component,
-  OnInit,
-  TemplateRef,
-  ViewChild,
-  ViewContainerRef
 } from '@angular/core';
+import {Slide} from "../slide/slide";
 
 @Component({
   selector: 'question-slide',
   styleUrls: ['./question-slide.component.scss'],
   templateUrl: './question-slide.component.pug',
 })
-export class QuestionSlideComponent implements OnInit {
-
-  @ViewChild('slides', { static: true }) template: any;
-
-  constructor(
-      private viewContainerRef: ViewContainerRef
-  ) { }
-
-  ngOnInit() {
-    this.viewContainerRef.createEmbeddedView(this.template);
-  }
+export class QuestionSlideComponent extends Slide {
 
   questions = [{
     question: 'What is 5+5?',

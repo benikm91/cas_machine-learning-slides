@@ -1,0 +1,11 @@
+ng-template('#slides'='')
+    section(id="{{problemTableOfContentLabel.SUPERVISED_PROBLEM}}")
+        slide-header(header="{{problemTableOfContentLabel.SUPERVISED_PROBLEM}}")
+        div
+            div
+                span
+                    | Daten unterteilt in #[span.fragment.highlight-red Input und dazugehörende Output] (unabhängige und abhängige Variablen)
+        div.fragment.fade-up('#parent'='')
+            ng-container(*ngIf="parent.className.includes('visible')")
+                supervised-model-visualization
+

@@ -1,0 +1,19 @@
+ng-template('#slides'='')
+    section(id="{{methodTableOfContentLabel.LINEAR_REGRESSION}}")
+        slide-header(header="{{methodTableOfContentLabel.LINEAR_REGRESSION}} - Intuition")
+        div.r-stack
+            img(src="/assets/images/data.png", data-fragment-index="0").fragment.fade-out
+            img(src="/assets/images/data-with-linear-regression-model.png", data-fragment-index="0").fragment.fade-in
+        div.fragment.fade-in
+            span.fragment {{linearEquationModelWithNames}}
+        div.fragment.fade-in
+            span.fragment {{linearEquationModel}}
+    section
+        slide-header(header="Linear Regression - Code")
+        div.notebook-name linear_regression.ipynb
+        img(src="/assets/images/code.png")
+    section
+        slide-header(header="Linear Regression - Theory")
+        div.d-flex.flex-row
+            span.fragment {{linearEquation}}
+            img(src="/assets/images/linear-regression.png").fragment

@@ -1,8 +1,12 @@
 ng-template('#slides')
-    section(data-auto-animate)
-        h1 Questions?
-    section(data-auto-animate)
-        h1(style="font-size: 24px") Questions?
-        .fragment.fade-in(*ngFor="let question of questions") {{question.question}}
+    section
+        slide-header(header="Questions")
+        img(src="/assets/images/questions.png").r-stretch
+    section.h-100
+        slide-header(header="Questions")
+        div(style={height: "50px", position: "absolute", left: "50px", top: "50px"})
+            img(src="/assets/images/questions.png").img-fluid
+        ol.questions
+            li.fragment.fade-in(*ngFor="let question of questions") {{question.question}}
         aside.notes
-            .fragment.fade-in(*ngFor="let question of questions") {{question.answer}}
+            div(*ngFor="let question of questions") {{question.answer}}

@@ -1,0 +1,9 @@
+.tf-nc > a {
+    color: inherit;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:focus, &:active {
+        text-decoration: none;
+    }
+}

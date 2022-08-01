@@ -10,7 +10,8 @@ module.exports = {
   resolve: {
     alias: {
       './reveal': 'reveal.js/dist/reveal.js',
-      './reveal-notes': 'reveal.js/plugin/notes/notes.js'
+      './reveal-notes': 'reveal.js/plugin/notes/notes.js',
+      './reveal-math': 'reveal.js/plugin/math/math.js'
     }
   },
   module: {
@@ -24,7 +25,17 @@ module.exports = {
           plugins: [require('pug-plugin-ng')],
         }
       },
-
+      {
+        test: /\.tex$/i,
+        use: [
+          {
+            loader: 'raw-loader',
+            options: {
+              esModule: false,
+            },
+          },
+        ],
+      },
       /*{
         test: /\.pug$/,
         use: [

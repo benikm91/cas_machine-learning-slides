@@ -21,6 +21,11 @@ function c<L>(label: L, active: L | null, children: TableOfContentEntry<L>[] = [
     return new TableOfContentEntry(label, isActive, children)
 }
 
+export class TableOfContentLabel {
+    private constructor(public readonly label: string, public readonly href: string) {
+    }
+}
+
 export enum ProblemTableOfContentLabel {
     PROBLEM="Problem",
     SUPERVISED_PROBLEM="Supervised Learning",
@@ -44,16 +49,49 @@ export function createProblemTableOfContent(active: ProblemTableOfContentLabel |
 export enum MethodTableOfContentLabel {
     ALGORITHMUS="Algorithmus",
     DATA_SPECIFICATION="Data Specification",
+    PREPROCESSING="Preprocessing",
+    STANDARDIZE="Standardize",
+    ENCODING="Encoding",
     MODEL="Model",
+    LINEAR_MODEL="Linear Model",
+    LINEAR_REGRESSION="Linear Regression",
+    LDA="LDA",
+    NON_LINEAR_MODEL="Non-Lineares Model",
+    FEATURE_ENGINEERING="Feature Engineering",
+    KERNEL_TRICK="Kernel Trick",
     OPTIMIERUNG="Optimierung",
+    ANALYTIC="Analytisch",
+    GRADIENT_DESCENT="Gradient Descent",
+    COORDINATE_DESCENT="Coordinate Descent",
     COST_FUNCTION="Cost function",
+    METRICS="Metrik",
 }
 
 export function createMethodTableOfContent(active: MethodTableOfContentLabel | null): TableOfContentEntry<MethodTableOfContentLabel> {
     return c(MethodTableOfContentLabel.ALGORITHMUS, active, [
-        c(MethodTableOfContentLabel.DATA_SPECIFICATION, active),
-        c(MethodTableOfContentLabel.MODEL, active),
-        c(MethodTableOfContentLabel.OPTIMIERUNG, active),
-        c(MethodTableOfContentLabel.COST_FUNCTION, active),
+        c(MethodTableOfContentLabel.DATA_SPECIFICATION, active, [
+            c(MethodTableOfContentLabel.PREPROCESSING, active, [
+                c(MethodTableOfContentLabel.STANDARDIZE, active),
+                c(MethodTableOfContentLabel.ENCODING, active)
+            ])
+        ]),
+        c(MethodTableOfContentLabel.MODEL, active, [
+            c(MethodTableOfContentLabel.LINEAR_MODEL, active, [
+                c(MethodTableOfContentLabel.LINEAR_REGRESSION, active),
+                c(MethodTableOfContentLabel.LDA, active)
+            ]),
+            c(MethodTableOfContentLabel.NON_LINEAR_MODEL, active, [
+                c(MethodTableOfContentLabel.FEATURE_ENGINEERING, active),
+                c(MethodTableOfContentLabel.KERNEL_TRICK, active),
+            ])
+        ]),
+        c(MethodTableOfContentLabel.OPTIMIERUNG, active, [
+            c(MethodTableOfContentLabel.ANALYTIC, active),
+            c(MethodTableOfContentLabel.GRADIENT_DESCENT, active),
+            c(MethodTableOfContentLabel.COORDINATE_DESCENT, active),
+        ]),
+        c(MethodTableOfContentLabel.COST_FUNCTION, active, [
+            c(MethodTableOfContentLabel.METRICS, active),
+        ]),
     ])
 }

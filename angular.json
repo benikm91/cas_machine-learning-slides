@@ -31,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "reveal.js/dist/reveal.css",
               "reveal.js/dist/theme/white.css",
               "treeflex/dist/css/treeflex.css",
@@ -105,7 +105,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

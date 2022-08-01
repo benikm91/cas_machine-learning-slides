@@ -1,0 +1,22 @@
+.stair {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+
+  .first {
+    width: 300px;
+    height: 300px;
+  }
+  .second {
+    width: 300px;
+    margin-top: 150px;
+    height: 300px;
+  }
+  .third {
+    width: 300px;
+    margin-top: 300px;
+    height: 300px;
+  }
+}
