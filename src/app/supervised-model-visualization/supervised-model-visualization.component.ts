@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
 import Two from "two.js";
-import {Path} from "two.js/src/path";
-import {group} from "@angular/animations";
+import {TwoAnimationStep} from "../two-animation/two-animation.step";
+import {TwoAnimation} from "../two-animation/two.animation";
 
 @Component({
   selector: 'supervised-model-visualization',
@@ -35,13 +35,14 @@ export class SupervisedModelVisualizationComponent implements AfterViewInit {
       return group;
     }
 
+    const boxWidth = 150;
+
     const params = {
-      height: 200
+      height: 200,
+      width: boxWidth * 3 + 50 + 50
     }
     const elem = this.supervisedLearningAnimationContainer;
     const two = new Two(params).appendTo(elem?.nativeElement);
-
-    const boxWidth = 150;
 
     const model = createTextRect(this.modelLabel, boxWidth, 150)
     model.position.x = boxWidth + 75 + 50;
@@ -56,49 +57,45 @@ export class SupervisedModelVisualizationComponent implements AfterViewInit {
     const inputStartX = boxWidth / 2;
     const outputStartX = model.position.x;
 
-    input.position.x = inputStartX;
-    output.position.x = outputStartX;
+    const resetScene = () => {
+      input.position.x = inputStartX;
+      output.position.x = outputStartX;
+    }
 
-    const animateInputTime = 60;
-    const animateOutputTime = 60;
+    resetScene();
 
-    two.add(input);
-    two.add(output);
-    two.add(model);
+    two.add(input, output, model);
+
+    const animation = new TwoAnimation([
+        new TwoAnimationStep(60),
+        new TwoAnimationStep(
+            60,
+            deltaT => input.position.x = inputStartX + (inputGoal - inputStartX) * deltaT,
+            () => input.position.x = -300,
+        ),
+        new TwoAnimationStep(
+            60,
+            deltaT => {
+              deltaT = 1 - Math.abs(deltaT - 0.5) * 2
+              model.scale = 1 + 0.125 * Math.pow(deltaT, 2);
+            }
+        ),
+        new TwoAnimationStep(
+            60,
+            deltaT => output.position.x = outputStartX + (outputGoal - outputStartX) * deltaT,
+        ),
+        new TwoAnimationStep(60),
+      ],
+      resetScene
+    )
 
     two.bind('update', update);
     two.play();
 
     function update(frameCount: number) {
-      function animateInput(deltaT: number) {
-        input.position.x = inputStartX + (inputGoal - inputStartX) * deltaT;
-      }
-      function animateModel(deltaT: number) {
-        deltaT = 1 - Math.abs(deltaT - 0.5) * 2
-        model.scale = 1 + 0.125 * Math.pow(deltaT, 2);
-      }
-      function animateOutput(deltaT: number) {
-        output.position.x = outputStartX + (outputGoal - outputStartX) * deltaT;
-      }
-      switch(Math.floor(frameCount / 60) % 5) {
-        case 0:
-          output.position.x = -300;
-          input.position.x = inputStartX
-          break
-        case 1:
-          animateInput((frameCount % animateInputTime) / animateInputTime);
-          break;
-        case 2:
-          input.position.x = -300;
-          animateModel((frameCount % animateInputTime) / animateInputTime);
-          break;
-        case 3:
-          animateOutput((frameCount % animateOutputTime) / animateOutputTime);
-          break;
-        case 4:
-          break;
-      }
+      animation.animate(frameCount);
     }
   }
 
 }
+

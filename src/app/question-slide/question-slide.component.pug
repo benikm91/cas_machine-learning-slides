@@ -1,12 +1,12 @@
 ng-template('#slides')
     section
-        slide-header(header="Questions")
-        img(src="/assets/images/questions.png").r-stretch
-    section.h-100
-        slide-header(header="Questions")
-        div(style={height: "50px", position: "absolute", left: "50px", top: "50px"})
+        slide-with-header(header="Questions")
             img(src="/assets/images/questions.png").img-fluid
-        ol.questions
-            li.fragment.fade-in(*ngFor="let question of questions") {{question.question}}
-        aside.notes
-            div(*ngFor="let question of questions") {{question.answer}}
+    section.h-100
+        slide-with-header(header="Questions")
+            div(style={height: "50px", position: "absolute", left: "50px", top: "50px"})
+                img(src="/assets/images/questions.png").img-fluid
+            ol.questions
+                li.fragment.fade-in(*ngFor="let question of questions") {{question.question}}
+            aside.notes
+                div(*ngFor="let question of questions") {{question.answer}}

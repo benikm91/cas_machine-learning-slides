@@ -17,7 +17,9 @@ export abstract class Slide implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.template) {
     this.viewContainerRef.createEmbeddedView(this.template);
+    }
   }
 
 }

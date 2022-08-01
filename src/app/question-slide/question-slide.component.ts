@@ -1,5 +1,5 @@
 import {
-  Component,
+  Component, Input,
 } from '@angular/core';
 import {Slide} from "../slide/slide";
 
@@ -10,11 +10,13 @@ import {Slide} from "../slide/slide";
 })
 export class QuestionSlideComponent extends Slide {
 
-  questions = [{
-    question: 'What is 5+5?',
-    answer: '5+5 is 10.',
-  }, {
-    question: 'What is 5-5?',
-    answer: '5-5 is 0.',
-  }]
+  @Input('questions') questions: Question[] = [];
+
+}
+
+export class Question {
+
+  constructor(readonly question: string, readonly answer: string) { }
+
+
 }

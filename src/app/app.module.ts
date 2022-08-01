@@ -12,12 +12,13 @@ import {RemoveWrapperDirective} from "./remove-wrapper.directive";
 import {StairSlideComponent} from "./stair-slide/stair-slide.component";
 import {WhatIsRegressionComponent} from "./what-is-regression/what-is-regression.component";
 import {LinearRegressionComponent} from "./linear-regression/linear-regression.component";
-import {SlideHeaderComponent} from "./slide-header/slide-header.component";
 import {WhatIsSupervisedLearningComponent} from "./what-is-supervised-learning/what-is-supervised-learning.component";
 import {
   SupervisedModelVisualizationComponent
 } from "./supervised-model-visualization/supervised-model-visualization.component";
 import {WhatIsClassificationComponent} from "./what-is-classification/what-is-classification.component";
+import {SlideWithHeaderComponent} from "./slide-with-header/slide-with-header.component";
+import {SpaceTermExplanationComponents} from "./space-term-explanation/space-term-explanation.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {WhatIsClassificationComponent} from "./what-is-classification/what-is-cl
     TablesOfContentComponent, TableOfContentNode,
     QuestionSlideComponent, RemoveWrapperDirective,
     StairSlideComponent, WhatIsRegressionComponent, LinearRegressionComponent,
-    SlideHeaderComponent,
+    SpaceTermExplanationComponents, SlideWithHeaderComponent,
     WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent
   ],
   imports: [

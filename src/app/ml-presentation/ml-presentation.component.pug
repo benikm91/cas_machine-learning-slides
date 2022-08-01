@@ -1,6 +1,19 @@
 doctype html
 reveal-presentation
     section
+        slide-with-header(header="Presentation Style")
+            stair-slide
+                div(first)
+                    h3 Intuition
+                    img(src="/assets/images/intuition.png").img-fluid
+                div(second)
+                    h3 Code
+                    img(src="/assets/images/code.png").img-fluid
+                div(third)
+                    h3 Theory
+                    img(src="/assets/images/theory.png").img-fluid
+    what-is-machine-learning
+    section
         tables-of-content
     section
         tables-of-content([activeProblem]="problemLabels.SUPERVISED_PROBLEM")
@@ -9,25 +22,16 @@ reveal-presentation
         tables-of-content([activeProblem]="problemLabels.REGRESSION")
     what-is-regression
     section
+        space-term-explanation
+    section
         tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.LINEAR_REGRESSION")
     linear-regression
+    question-slide([questions]="linearRegressionQuestions")
     section
         tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
     what-is-classification
-    stair-slide
-        div(first)
-            h3 Intuition
-            img(src="/assets/images/intuition.png").img-fluid
-        div(second)
-            h3 Code
-            img(src="/assets/images/code.png").img-fluid
-        div(third)
-            h3 Theory
-            img(src="/assets/images/theory.png").img-fluid
-    question-slide
     section
         tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.OPTIMIERUNG")
-    what-is-machine-learning
     section
         tables-of-content([activeProblem]="problemLabels.CLASSIFICATION", [activeMethod]="methodLabels.MODEL")
     section

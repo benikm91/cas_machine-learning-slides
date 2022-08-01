@@ -1,18 +1,26 @@
 ng-template('#slides'='')
     section
-        section Vertical Slide
-        section Vertical Slide
-            knowledge-view
-        section Vertical Slide
-            p.fragment.grow grow
-            p.fragment.shrink shrink
-            p.fragment.fade-out fade-out
-            p.fragment.fade-up fade-up (also down, left and right!)
-            p.fragment.fade-in-then-out fades in, then out when we move to the next step
-            p.fragment.fade-in-then-semi-out fades in, then obfuscate when we move to the next step
-            p.fragment.highlight-current-blue blue only once
-            p.fragment.highlight-red highlight-red
-            p.fragment.highlight-green highlight-green
-            p.fragment.highlight-blue highlight-blue
-        question-slide
+        slide-with-header(header="Was ist Machine Learning")
+    section
+        slide-with-header(header="Wo ist Machine Learning")
+            img(src="/assets/images/machine-learning/where.png").img-fluid
+    section
+        slide-with-header(header="Was ist \"Learning\"")
+            ul
+                li.fragment #[span.highlight Wann] wird gelernt
+                    ul
+                        li Offline Learning
+                        li (Online Learning)
+                li.fragment #[span.highlight Wie] wird gelernt
+                    ul
+                        li Supervised Learning (Tag 1 und Tag 2)
+                        li Unsupervised Learning (Tag 3)
+                        li (Reinforcement Learning)
+    section
+        slide-with-header(header="Wann wird gelernt")
+            p Offline Learning
+    section
+        slide-with-header(header="Machine Learning im CAS")
+            p TODO
+
 

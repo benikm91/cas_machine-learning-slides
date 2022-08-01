@@ -1,10 +1,7 @@
-ng-template('#slides')
-    section
-        slide-header(header="Presentation Style")
-        div.stair
-            div.first
-                ng-content(select="[first]")
-            div.second
-                ng-content(select="[second]")
-            div.third
-                ng-content(select="[third]")
+div.stair
+    div.first
+        ng-content(select="[first]")
+    div.second
+        ng-content(select="[second]")
+    div.third
+        ng-content(select="[third]")
