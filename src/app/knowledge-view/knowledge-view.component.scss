@@ -1,3 +1,59 @@
-.important {
-  color: red;
+$knowledge-width: 300;
+$human-knowledge-offset: 150;
+$data-knowledge-offset: 350;
+$rect-offset: 100;
+$rect-width: 100;
+$rect-height: 100;
+
+.animation-container {
+  position: relative;
+  height: ($human-knowledge-offset + $knowledge-width) * 1px;
+  width: ($data-knowledge-offset + $knowledge-width) * 1px;
+}
+
+.rect {
+  font-size: 16pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $rect-width * 1px;
+  height: $rect-height * 1px;
+}
+
+.rect-knowledge {
+  font-size: 24pt;
+  width: $knowledge-width * 1px;;
+  height: 80px;
+
+  &.rect-data-knowledge {
+    left: $data-knowledge-offset * 1px;
+  }
+
+  &.rect-human-knowledge {
+    transform-origin: top left;
+    transform: rotate(-90deg);
+    top: ($human-knowledge-offset + $knowledge-width) * 1px;
+  }
+
+}
+
+.rect-data {
+  left: ($data-knowledge-offset + ($knowledge-width - $rect-width) / 2) * 1px;
+  top: ($rect-offset) * 1px;
+}
+
+.rect-human {
+  top: ($human-knowledge-offset + ($knowledge-width - $rect-height) / 2) * 1px;
+  left: ($rect-offset) * 1px;
+}
+
+.rect-model {
+  border-radius: ($rect-width / 2) * 1px;
+  left: ($data-knowledge-offset + ($knowledge-width - $rect-width) / 2) * 1px;
+  top: ($human-knowledge-offset + ($knowledge-width - $rect-height) / 2) * 1px;
+}
+
+.model-start-styling {
+  background: #FFFFFF;
+  border: 1px solid black;
 }

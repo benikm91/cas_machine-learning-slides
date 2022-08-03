@@ -19,6 +19,11 @@ import {
 import {WhatIsClassificationComponent} from "./what-is-classification/what-is-classification.component";
 import {SlideWithHeaderComponent} from "./slide-with-header/slide-with-header.component";
 import {SpaceTermExplanationComponents} from "./space-term-explanation/space-term-explanation.component";
+import {RouterModule} from "@angular/router";
+import {FragmentTriggerComponent} from "./fragment-trigger/fragment-trigger.component";
+import {
+  OfflineLearningVisualizationComponent
+} from "./offline-learning-visualization/offline-learning-visualization.component";
 
 @NgModule({
   declarations: [
@@ -27,10 +32,12 @@ import {SpaceTermExplanationComponents} from "./space-term-explanation/space-ter
     QuestionSlideComponent, RemoveWrapperDirective,
     StairSlideComponent, WhatIsRegressionComponent, LinearRegressionComponent,
     SpaceTermExplanationComponents, SlideWithHeaderComponent,
-    WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent
+    WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent,
+    FragmentTriggerComponent, OfflineLearningVisualizationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [ MlPresentationComponent ]

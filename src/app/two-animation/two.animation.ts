@@ -2,6 +2,9 @@ import {TwoAnimationStep} from "./two-animation.step";
 
 export class TwoAnimation {
 
+    public static bigPause = new TwoAnimationStep(60);
+    public static smallPause = new TwoAnimationStep(15);
+
     public readonly numberOfFrames: number;
     private lastRelativeFrameCount: number = Number.MAX_VALUE;
     private currentStep: TwoAnimationStep;
@@ -12,7 +15,13 @@ export class TwoAnimation {
         }
     ) {
         this.numberOfFrames = steps.map(x => x.numberOfFrames).reduce((x, y) => x + y, 0)
-        this.currentStep = steps[0];
+        this.currentStep = this.steps[0];
+        this.lastRelativeFrameCount = Number.MAX_VALUE;
+    }
+
+    public resetAnimation() {
+        this.currentStep = this.steps[0];
+        this.lastRelativeFrameCount = Number.MAX_VALUE;
     }
 
     private findCurrentStep(relativeFrameCount: number): [TwoAnimationStep, number] {

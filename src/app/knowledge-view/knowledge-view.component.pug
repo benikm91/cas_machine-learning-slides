@@ -1,5 +1,11 @@
-div
-    h2 Knowledge View
-    div
-        div The knowledge view is one view along many...
-        div.fragment.fade-up But the knowledge view is important!
+.animation-container
+    div(*ngIf="showHeader").rect-knowledge.rect-data-knowledge.data-general-styling.position-absolute
+        p Daten Wissen
+    div(*ngIf="showHeader").rect-knowledge.rect-human-knowledge.human-general-styling.position-absolute
+        p Experten Wissen
+    div.rect.rect-data('#data'='').data-styling.position-absolute
+        p Daten
+    div.rect.rect-human('#human'='').human-styling.position-absolute
+        p Assumptions
+    div.rect.rect-model('#model'='').model-start-styling.position-absolute
+        p Model

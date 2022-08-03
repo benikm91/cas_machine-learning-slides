@@ -6,7 +6,5 @@ ng-template('#slides'='')
                 ul
                     li.fragment.fade-up Identifikation von Spam-Emails
                     li.fragment.fade-up Objekterkennung in Bilder
-                div.r-stack
-                    div.fragment.fade-in-then-out('#parent'='')
-                        ng-container(*ngIf="parent.className.includes('visible')")
-                            supervised-model-visualization(input-label="Email", output-label="Spam")
+                .fragment
+                    supervised-model-visualization(input-label="Email", output-label="Spam")
