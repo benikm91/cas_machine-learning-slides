@@ -1,4 +1,4 @@
-.notebook-name {
+.notebook-name, .code {
   font-family: "Lucida Console", "Courier New", monospace;
 }
 
@@ -27,6 +27,33 @@
 }
 
 .model-styling {
+  padding: 15px 15px;
+  color: white;
+  vertical-align: 50%;
   background: #ffc046;
+  font-size: 10pt;
   border: 1px solid #ff8f00;
+}
+
+.model-box {
+  @extend .model-styling;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16pt;
+}
+
+.transparent-border-1 {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, .0);;
+  border-style: solid;
+}
+
+.img-fluid-both {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }

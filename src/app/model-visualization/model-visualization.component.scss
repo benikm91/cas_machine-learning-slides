@@ -1,0 +1,48 @@
+$io-width: 200;
+$io-height: 100;
+
+$offset: 50;
+
+$model-width: 200;
+$model-height: 150;
+
+.animation-container {
+  position: relative;
+  height: $model-height * 1px;
+  width: ($io-width * 2 + $offset * 2 + $model-width) * 1px;
+}
+
+.rect-styling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rect-input {
+  @extend .rect-styling;
+  position: absolute;
+  width: $io-width * 1px;
+  height: $io-height * 1px;
+  top: ($model-height - $io-height) / 2 * 1px;
+  left: 0;
+}
+
+.rect-output {
+  @extend .rect-styling;
+  position: absolute;
+  width: $io-width * 1px;
+  height: $io-height * 1px;
+  top: ($model-height - $io-height) / 2 * 1px;
+  left: ($io-width + $offset + $model-width + $offset) * 1px
+}
+
+.rect-model{
+  @extend .rect-styling;
+  position: absolute;
+  width: $model-width * 1px;
+  height: $model-height * 1px;
+  top: 0;
+  left: ($io-width + $offset) * 1px
+}
+
+

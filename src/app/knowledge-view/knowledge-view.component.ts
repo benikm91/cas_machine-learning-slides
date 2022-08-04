@@ -43,16 +43,22 @@ export class KnowledgeViewComponent implements AfterViewInit {
         },
         delay: 1000,
         duration: 1000,
-        scale: 0.25,
+        // scale: 0.25,
         opacity: 0.0,
       }
     }
+
+    const humanScale = this.tradeoff / Math.max(this.tradeoff, 1 - this.tradeoff);
+    const dataScale = (1 - this.tradeoff) / Math.max(this.tradeoff, 1 - this.tradeoff);
+
+    this.human!!.nativeElement.style.transform = `scale(${humanScale})`;
+    this.data!!.nativeElement.style.transform = `scale(${dataScale})`;
 
     const animationFields = {
       // background: "linear-gradient(rgba(88,82,187,1) 0%, rgba(0,212,255,1) 100%)",
       background: '#ffc046',
       borderRadius: "0px",
-      scale: 1.75,
+      // scale: humanScale + dataScale,
       borderColor: '#ff8f00',
     }
 
@@ -60,7 +66,7 @@ export class KnowledgeViewComponent implements AfterViewInit {
       loop: true,
       autoplay: false,
       easing: 'linear',
-      duration: 3000,
+      duration: 750,
     })
       .add(moveToModel(this.human!!.nativeElement))
       .add({

@@ -1,0 +1,8 @@
+model-visualization("#model"="")
+    div(input, class="input").transparent-border-1
+        img(src="/assets/images/machine-learning/chessStartboard.png").img-fluid
+    div(model, class="model").model-box {{ modelLabel }}
+    div(output, class="output").transparent-border-1
+        img(src="/assets/images/machine-learning/chessEndboard.png").img-fluid
+span.fragment(fragment-trigger, "(trigger)"="model.end()")
+span.fragment(fragment-trigger, "(trigger)"="highlightStart()", "(untrigger)"="highlightEnd()")

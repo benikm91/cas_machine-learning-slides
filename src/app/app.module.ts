@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { WimlComponent } from './what-is-machine-learning/wiml.component';
+import { WhatIsMachineLearningComponent } from './what-is-machine-learning/what-is-machine-learning.component';
 import {RevealPresentationComponent} from "./reveal-presentation/reveal-presentation.component";
 import {MlPresentationComponent} from "./ml-presentation/ml-presentation.component";
 import {KnowledgeViewComponent} from "./knowledge-view/knowledge-view.component";
@@ -24,16 +24,25 @@ import {FragmentTriggerComponent} from "./fragment-trigger/fragment-trigger.comp
 import {
   OfflineLearningVisualizationComponent
 } from "./offline-learning-visualization/offline-learning-visualization.component";
+import {ModelVisualizationComponent} from "./model-visualization/model-visualization.component";
+import {
+  ExampleModelVisualizationTicTacToeComponent
+} from "./example-model-visualization-tic-tac-toe/example-model-visualization-tic-tac-toe.component";
+import {
+  ExampleModelVisualizationChessComponent
+} from "./example-model-visualization-chess/example-model-visualization-chess.component";
+import {ExampleModelVisualizationComponent} from "./example-model-visualization/example-model-visualization.component";
 
 @NgModule({
   declarations: [
-    WimlComponent, RevealPresentationComponent, MlPresentationComponent, KnowledgeViewComponent,
+    WhatIsMachineLearningComponent, RevealPresentationComponent, MlPresentationComponent, KnowledgeViewComponent,
     TablesOfContentComponent, TableOfContentNode,
     QuestionSlideComponent, RemoveWrapperDirective,
     StairSlideComponent, WhatIsRegressionComponent, LinearRegressionComponent,
     SpaceTermExplanationComponents, SlideWithHeaderComponent,
     WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent,
-    FragmentTriggerComponent, OfflineLearningVisualizationComponent
+    FragmentTriggerComponent, OfflineLearningVisualizationComponent, ModelVisualizationComponent,
+    ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent
   ],
   imports: [
     BrowserModule,

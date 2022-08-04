@@ -35,7 +35,8 @@
               "reveal.js/dist/reveal.css",
               "reveal.js/dist/theme/white.css",
               "treeflex/dist/css/treeflex.css",
-              "bootstrap/dist/css/bootstrap.css"
+              "bootstrap/dist/css/bootstrap.css",
+              "src/reveal-theme.scss"
             ],
             "scripts": []
           },

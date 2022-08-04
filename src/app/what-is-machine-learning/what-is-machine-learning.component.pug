@@ -1,0 +1,119 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Problemfälle")
+            div.d-flex.justify-content-center
+                example-model-visualization("#ticTacToeExample"="", [positives]="['input', 'model', 'output']")
+                    div(input, class="input").transparent-border-1
+                        img(src="/assets/images/machine-learning/ticTacToeStart.png").img-fluid
+                    div(model, class="model").model-box f
+                    div(output, class="output").transparent-border-1
+                        img(src="/assets/images/machine-learning/ticTacToeEnd.png").img-fluid
+            ul.mt-5.fragment
+                li #[span.model-styling f] is a TicTacToe-AI that plays #[span.highlight perfectly!]
+            p.fragment.text-center.alert.alert-primary Is this possible?
+            span.fragment(fragment-trigger, "(trigger)"="ticTacToeExample.highlightStart()", "(untrigger)"="ticTacToeExample.highlightEnd()")
+    section
+        slide-with-header(header="Problemfälle")
+            div.d-flex.justify-content-center
+                example-model-visualization("#chessExample"="", [positives]="['input', 'output']")
+                    div(input, class="input").fix-height.transparent-border-1
+                        img(src="/assets/images/machine-learning/chessStartboard.png").img-fluid-both
+                    div(model, class="model").model-box f
+                    div(output, class="output").fix-height.transparent-border-1
+                        img(src="/assets/images/machine-learning/chessEndboardOptimal.png").img-fluid-both
+            ul.mt-5.fragment
+                li #[span.model-styling f] is a Chess-AI that plays #[span.highlight perfectly!]
+            span.fragment(fragment-trigger, "(trigger)"="chessExample.highlightStart()", "(untrigger)"="chessExample.highlightEnd()")
+            div.mt-5.d-flex.justify-content-center.fragment
+                example-model-visualization("#chessApproxExample"="", [positives]="['input', 'model', 'output']")
+                    div(input, class="input").fix-height.transparent-border-1
+                        img(src="/assets/images/machine-learning/chessStartboard.png").img-fluid-both
+                    div(model, class="model").model-box approx f
+                    div(output, class="output").fix-height.transparent-border-1
+                        img(src="/assets/images/machine-learning/chessEndboardSuboptimal.png").img-fluid-both
+            ul.mt-5.fragment
+                li #[span.model-styling approx f] is a Chess-AI that plays #[span.highlight very good!]
+            span.fragment(fragment-trigger, "(trigger)"="chessApproxExample.highlightStart()", "(untrigger)"="chessApproxExample.highlightEnd()")
+    section
+        slide-with-header(header="Problemfälle")
+            div.d-flex.justify-content-center
+                example-model-visualization("#houseExample"="", [positives]="['output']")
+                    div(input, class="input").fix-height.transparent-border-1
+                        img(src="/assets/images/machine-learning/house.png").img-fluid-both
+                    div(model, class="model").model-box f
+                    div(output, class="output").fix-height.transparent-border-1
+                        img(src="/assets/images/machine-learning/dollar.png").img-fluid-both
+            ul.mt-5.fragment
+                li #[span.model-styling f] is a AI that predicts house prices #[span.highlight perfectly!]
+            span.fragment(fragment-trigger, "(trigger)"="houseExample.highlightStart()", "(untrigger)"="houseExample.highlightEnd()")
+            div.mt-5.d-flex.justify-content-center.fragment
+                example-model-visualization("#houseApproxExample"="", [positives]="['input', 'model', 'output']")
+                    div(input, class="input").transparent-border-1.code
+                        p Fläche: 500m&#178;
+                        p Baujahr: 1998
+                    div(model, class="model").model-box approx f
+                    div(output, class="output").fix-height.transparent-border-1
+                        img(src="/assets/images/machine-learning/dollar.png").img-fluid-both
+            ul.mt-5.fragment
+                li #[span.model-styling approx f] is a AI that predicts house prices #[span.highlight good!]
+            span.fragment(fragment-trigger, "(trigger)"="houseApproxExample.highlightStart()", "(untrigger)"="houseApproxExample.highlightEnd()")
+    section
+        slide-with-header(header="Was ist Machine Learning")
+            p.fragment #[span.model-styling approx f] nennen wir ein #[span.highlight Modell]
+            p.fragment Wenn ein #[span.highlight Modell] für uns Menschen intelligent erscheint, dann sprechen wir von #[span.highlight Künstlicher Intelligenz].
+            p.fragment Ein Modell kann #[span.highlight programmiert] sein (von Experten) oder #[span.highlight gelernt] (aus Daten).
+            p.fragment Ist ein Modell teilweise gelernt sprechen wir von #[span.highlight Machine Learning!]
+    section
+        slide-with-header(header="Was ist Machine Learning")
+            img(src="/assets/images/machine-learning/machine-learning-as-subfield-of-ai.png", style={height: "400px"}).mt-5.img-fluid
+    section(id="current")
+        slide-with-header(header="Wissens Ansicht")
+            div
+                p.fragment Wissen kann von #[span.highlight Experten] oder von #[span.highlight Daten] kommen
+            knowledge-view("#knowledgeView"="").fragment
+            span.fragment(fragment-trigger, "(trigger)"="knowledgeView.start()", "(untrigger)"="knowledgeView.end()")
+    section
+        slide-with-header(header="Wissens Ansicht - Trade-off")
+            div(style={transform:"scale(0.65)"})
+                div.d-flex.justify-center
+                    knowledge-view("#tradeOff1"="", [showHeader]="false", [tradeoff]="0.9")
+                    knowledge-view("#tradeOff2"="", [showHeader]="false", [tradeoff]="0.5")
+                    knowledge-view("#tradeOff3"="", [showHeader]="false", [tradeoff]="0.1")
+                    span.fragment(
+                        fragment-trigger,
+                        "(trigger)"="tradeOff1.start(); tradeOff2.start(); tradeOff3.start()",
+                        "(untrigger)"="tradeOff1.end(); tradeOff2.end(); tradeOff3.end()"
+                    )
+    section
+        slide-with-header(header="Wo ist Machine Learning")
+            img(src="/assets/images/machine-learning/where.png").img-fluid
+    section
+        slide-with-header(header="Was ist \"Learning\"")
+            ul
+                li.fragment #[span.highlight Wann] wird gelernt
+                    ul
+                        li Offline Learning
+                        li (Online Learning)
+                li.fragment #[span.highlight Wie] wird gelernt
+                    ul
+                        li Supervised Learning (Tag 1 und Tag 2)
+                        li Unsupervised Learning (Tag 3)
+                        li (Reinforcement Learning)
+    section
+        slide-with-header(header="Wann wird gelernt")
+            div.text-start
+                ul.fragment
+                    li #[span.highlight Offline Learning]
+                        ul
+                            li Es gibt eine #[span.highlight Lernphase], während dieser wird von Daten gelernt.
+                            li Und es gibt eine #[span.highlight Anwendungsphase], während dieser wird #[span.highlight nichts mehr] gelernt.
+                ul.pt-5.fragment.not-in-course
+                    li #[span.highlight Online Learning]
+                        ul
+                            li Während der #[span.highlight Anwendung] wird gelernt
+                p.fragment.text-center.alert.alert-primary Im Kurs nutzen wir nur #[span.highlight Offline Learning]!
+    section
+        slide-with-header(header="Machine Learning im CAS")
+            p TODO
+
+
