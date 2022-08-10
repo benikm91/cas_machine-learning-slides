@@ -57,3 +57,38 @@
   height: auto;
   width: auto;
 }
+
+.d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.equation-colored {
+  .residual {
+    color: #d62728;
+  }
+  .label {
+    color: #1f77b4;
+  }
+  .noise {
+    color: orangered;
+  }
+  .output {
+    color: #ff7f0e;
+  }
+  .weight {
+    color: blue;
+  }
+  .feature {
+    color: green;
+  }
+}
+
+.limit-possible {
+  border: 5px solid green;
+}
+
+.limit-impossible {
+  border: 5px solid red;
+}

@@ -1,5 +1,5 @@
 .slide-header {
-  height: 100px;
+  height: 75px;
 
   h1 {
     font-size: 36px;
@@ -10,6 +10,12 @@
     position: relative;
     top: -100px;
     right: 500px;
+
+    img {
+      width: auto;
+      padding-top: 10px;
+      height: 75px;
+    }
   }
 }
 

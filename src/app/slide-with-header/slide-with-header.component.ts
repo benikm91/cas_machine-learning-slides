@@ -12,4 +12,6 @@ export class SlideWithHeaderComponent extends Slide {
 
   @Input() extra: boolean = false;
 
+  @Input() repetition: boolean = false;
+
 }

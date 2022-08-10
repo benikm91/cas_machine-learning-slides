@@ -1,11 +1,15 @@
 .animation-container
-    div(*ngIf="showHeader").rect-knowledge.rect-data-knowledge.data-general-styling.position-absolute
-        p Daten Wissen
-    div(*ngIf="showHeader").rect-knowledge.rect-human-knowledge.human-general-styling.position-absolute
-        p Experten Wissen
-    div.rect.rect-data('#data'='').data-styling.position-absolute
-        p Daten
-    div.rect.rect-human('#human'='').human-styling.position-absolute
-        p Assumptions
+    div(*ngIf="showHeader").rect-knowledge.rect-data-knowledge.data-general-styling.position-absolute.d-center
+        | Daten Wissen
+    div(*ngIf="showHeader").rect-knowledge.rect-human-knowledge.human-general-styling.position-absolute.d-center
+        | Experten Wissen
+    div.rect.rect-data('#data'='', '#datas'='').data-styling.position-absolute
+        | Daten
+    div.rect.rect-data('#datas'='').data-styling.position-absolute.opacity-50
+        | Daten
+    div.rect.rect-human('#human'='', '#humans'='').human-styling.position-absolute
+        | {{humanLabel}}
+    div.rect.rect-human('#humans'='').human-styling.position-absolute.opacity-50
+        | {{humanLabel}}
     div.rect.rect-model('#model'='').model-start-styling.position-absolute
-        p Model
+        | Model

@@ -1,0 +1,15 @@
+<math display="block" class="equation equation-colored">
+    <mrow>
+        <mi class="noise">ϵ</mi>
+        <mo>∼</mo>
+        <mi class="mathcal">𝒩</mi>
+        <mo form="prefix" stretchy="false">(</mo>
+        <mn>0</mn>
+        <mo separator="true">,</mo>
+        <msup>
+            <mi>σ</mi>
+            <mn>2</mn>
+        </msup>
+        <mo form="postfix" stretchy="false">)</mo>
+    </mrow>
+</math>

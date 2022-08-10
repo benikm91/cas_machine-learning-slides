@@ -7,5 +7,11 @@ ng-template('#slides'='')
                 ul
                     li.fragment.fade-up Immobilien Verkaufspreis abschätzen
                     li.fragment.fade-up Immobilien Verkaufspreis
-                .fragment
-                    supervised-model-visualization(input-label="Wohnfläche", output-label="Preis")
+                div.fragment.fade-up.pt-5.d-flex.justify-content-center
+                    model-visualization
+                        div(input, class="input").transparent-border-1.code
+                            | Fläche: 500m&#178;
+                            | Baujahr: 1998
+                        div(model, class="model").model-box Modell
+                        div(output, class="output").fix-height.code
+                            | 100'000$

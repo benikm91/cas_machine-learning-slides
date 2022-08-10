@@ -1,0 +1,115 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="equation equation-colored tml-array tml-gather">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="weight">
+                        <mi>β</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo>=</mo>
+                    <mi>M</mi>
+                    <mi>S</mi>
+                    <mi>E</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="label">
+                        <mi>y</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo separator="true">,</mo>
+                    <mover class="output">
+                        <mover>
+                            <mi>y</mi>
+                            <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                        </mover>
+                        <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+                    </mover>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr class="fragment">
+            <mtd style="text-align:-webkit-right;">
+                <mrow></mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo>=</mo>
+                    <mi>M</mi>
+                    <mi>S</mi>
+                    <mi>E</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="label">
+                        <mi>y</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo separator="true">,</mo>
+                    <mi class="feature">𝐗</mi>
+                    <mover class="weight">
+                        <mi>β</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr class="fragment">
+            <mtd style="text-align:-webkit-right;">
+                <mrow></mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mi>N</mi>
+                    </mfrac>
+                    <mrow>
+                        <munderover>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <mi>i</mi>
+                                <mo>=</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            <mi>N</mi>
+                        </munderover>
+                    </mrow>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <msup class="label">
+                        <mi>y</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mo>−</mo>
+                    <msup class="feature">
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mover class="weight">
+                        <mi>β</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <msup>
+                        <mo form="postfix" stretchy="false">)</mo>
+                        <mn>2</mn>
+                    </msup>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

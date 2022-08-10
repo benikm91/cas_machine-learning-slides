@@ -1,0 +1,74 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>0</mn>
+                    </msub>
+                    <mo separator="true">,</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mi>N</mi>
+                    </mfrac>
+                    <mrow>
+                        <munderover>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <mi>i</mi>
+                                <mo>=</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            <mi>N</mi>
+                        </munderover>
+                    </mrow>
+                    <msup>
+                        <mrow>
+                            <mo fence="true" form="prefix">(</mo>
+                            <msup class="label">
+                                <mi>y</mi>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mi>i</mi>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msup>
+                            <mo>−</mo>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <msub class="weight">
+                                <mi>β</mi>
+                                <mn>0</mn>
+                            </msub>
+                            <mo>+</mo>
+                            <msub class="weight">
+                                <mi>β</mi>
+                                <mn>1</mn>
+                            </msub>
+                            <msubsup class="feature">
+                                <mi>x</mi>
+                                <mn>1</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mi>i</mi>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                            <mo form="postfix" stretchy="false">)</mo>
+                            <mo fence="true" form="postfix">)</mo>
+                        </mrow>
+                        <mn>2</mn>
+                    </msup>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

@@ -1,14 +1,15 @@
 $knowledge-width: 300;
 $knowledge-height: 80;
-$human-knowledge-offset: 100;
-$data-knowledge-offset: 400;
+$human-knowledge-offset: 0;
+$data-knowledge-offset: 300;
 $rect-offset: 100;
 $rect-width: 200;
 $rect-height: 100;
+$model-offset-y: 250;
 
 .animation-container {
   position: relative;
-  height: ($human-knowledge-offset + $knowledge-width) * 1px;
+  height: ($model-offset-y + $rect-height) * 1px;
   width: ($data-knowledge-offset + $knowledge-width) * 1px;
 }
 
@@ -52,7 +53,7 @@ $rect-height: 100;
 .rect-model {
   border-radius: ($rect-width / 2) * 1px;
   left: ($human-knowledge-offset + $data-knowledge-offset) / 2 + $rect-width / 4 * 1px;
-  top: 250 * 1px;
+  top: $model-offset-y * 1px;
 }
 
 .model-start-styling {

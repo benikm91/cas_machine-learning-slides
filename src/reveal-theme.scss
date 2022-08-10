@@ -7,3 +7,7 @@
   max-width: 100%;
   max-height: 100%;
 }
+
+.katex-display {
+  display: inherit !important; // FIXME why is important needed here? import should be later...
+}

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { WhatIsMachineLearningComponent } from './what-is-machine-learning/what-is-machine-learning.component';
@@ -32,6 +32,10 @@ import {
   ExampleModelVisualizationChessComponent
 } from "./example-model-visualization-chess/example-model-visualization-chess.component";
 import {ExampleModelVisualizationComponent} from "./example-model-visualization/example-model-visualization.component";
+import { MathjaxModule } from 'mathjax-angular';
+import {SideBySide3Component} from "./side-by-side-3/side-by-side-3.component";
+import {TitlePageComponent} from "./title-page/title-page.component";
+import {Grid2x2Component} from "./grid-2-2/grid-2-2.component";
 
 @NgModule({
   declarations: [
@@ -42,13 +46,16 @@ import {ExampleModelVisualizationComponent} from "./example-model-visualization/
     SpaceTermExplanationComponents, SlideWithHeaderComponent,
     WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent,
     FragmentTriggerComponent, OfflineLearningVisualizationComponent, ModelVisualizationComponent,
-    ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent
+    ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent,
+    SideBySide3Component, TitlePageComponent, Grid2x2Component
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
+    MathjaxModule.forRoot()
   ],
   providers: [],
-  bootstrap: [ MlPresentationComponent ]
+  bootstrap: [ MlPresentationComponent ],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

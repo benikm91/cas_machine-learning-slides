@@ -1,0 +1,15 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+    <mtable columnalign="right left right left right left right left right left right left" class="equation equation-colored">
+        <mtr>
+            <mtd>
+                <mtext class="residual">Residual</mtext>
+            </mtd>
+            <mtd>
+                <mo>=</mo>
+                <mtext class="label">real weight</mtext>
+                <mo>-</mo>
+                <mtext class="output">predicted weight</mtext>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

@@ -5,4 +5,4 @@
         ng-content(select="[model]")
     .div('#output'='').rect-output
         ng-content(select="[output]")
-span.fragment(fragment-trigger, "(trigger)"="start()", "(untrigger)"="end()")
+span(*ngIf="withTrigger").fragment(fragment-trigger, "(trigger)"="start()", "(untrigger)"="end()")

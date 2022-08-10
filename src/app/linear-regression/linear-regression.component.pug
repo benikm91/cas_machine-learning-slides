@@ -1,19 +1,211 @@
 ng-template('#slides'='')
-    section(id="{{methodTableOfContentLabel.LINEAR_REGRESSION}}")
-        slide-with-header(header="{{methodTableOfContentLabel.LINEAR_REGRESSION}} - Intuition")
-            div.r-stack
-                img(src="/assets/images/data.png", data-fragment-index="0").fragment.fade-out
-                img(src="/assets/images/data-with-linear-regression-model.png", data-fragment-index="0").fragment.fade-in
-            div.fragment.fade-in
-                span.fragment {{linearEquationModelWithNames}}
-            div.fragment.fade-in
-                span.fragment {{linearEquationModel}}
     section
-        slide-with-header(header="{{methodTableOfContentLabel.LINEAR_REGRESSION}} - Code")
-            div.notebook-name linear_regression.ipynb
+        slide-with-header(header="Presentation Style")
+            stair-slide
+                div(first)
+                    h3 Intuition
+                    img(src="/assets/images/intuition.png").img-fluid
+                div(second)
+                    h3 Code
+                    img(src="/assets/images/code.png").img-fluid
+                div(third)
+                    h3 Theory
+                    img(src="/assets/images/theory.png").img-fluid
+    section
+        title-page
+            h1 Linear Regression
+    section(id="{{methodLabels.LINEAR_REGRESSION}}")
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Intuition")
+            p Wir möchten das #[span.highlight Gewicht] (weight) anhand eines einzigen Features, der #[span.highlight Breite] (width) vorhersagen.
+            .row
+                .col-6
+                    div.r-stack
+                        img(src="/assets/images/data.png", data-fragment-index="0").fragment
+                        img(src="/assets/images/data-with-linear-regression-model.png", data-fragment-index="2").fragment
+                .col-6
+                    .fragment(data-fragment-index="1") Dazu verwenden wir das folgende #[span.highlight Lineare Modell]
+                        div([mathjax]="linearRegression1DExample")
+            div.d-flex.justify-content-center.fragment
+                model-visualization
+                    div(input, class="input").transparent-border-1.code
+                        | width: 5cm
+                    div(model, class="model").model-box.code
+                        div([mathjax]="linearRegression1DExample")
+                    div(output, class="output").fix-height.code
+                        | weight: 1000g
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Code")
+            div.notebook-name Teil 1 in linear_regression.ipynb
             img(src="/assets/images/code.png")
     section
-        slide-with-header(header="{{methodTableOfContentLabel.LINEAR_REGRESSION}} - Theory", [extra]="true")
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Theory - Verallgemeinern")
+            ul
+                li Wir möchten das lineare Modell verallgemeinern
+                    ol
+                        li.fragment.highlight-red Unabhängig  vom Problem
+                        li Mehrere Features
+                        li Bezug zu echten Beobachtungen
+            div.mt-5.d-flex.justify-start.flex-column
+                div([mathjax]="linearRegressionGeneralize1DExample")
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Theory - Verallgemeinern")
+            ul
+                li Wir möchten das lineare Modell verallgemeinern
+                    ol
+                        li Unabhängig  vom Problem
+                        li.fragment.highlight-red  Mehrere Features
+                        li Bezug zu echten Beobachtungen
+            div.mt-5.d-flex.justify-start.flex-column
+                div([mathjax]="linearRegression1DToNDExample")
+            div.fragment.text-center.alert.alert-primary Output ist eine #[span.highlight Gewichtete Summe] der Features
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Theory - Verallgemeinern")
+            ul
+                li Wir möchten das lineare Modell verallgemeinern
+                    ol
+                        li Unabhängig  vom Problem
+                        li Mehrere Features
+                        li.fragment.highlight-red Bezug zu echten Beobachtungen
+            div.mt-5.d-flex.justify-start.flex-column
+                div([mathjax]="linearRegressionFull")
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Theory", [extra]="true")
             div.d-flex.flex-row
-                span.fragment {{linearEquation}}
-                img(src="/assets/images/linear-regression.png").fragment
+                div([mathjax]="noiseNormalDistributed").fragment
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Mehrere Features", [extra]="true")
+            side-by-side-3
+                div(first).d-flex.flex-column
+                    h3 1 Feature
+                    img(src="/assets/images/data-with-linear-regression-model-1d.png").fragment
+                div(second).d-flex.flex-column
+                    h3 2 Feature
+                    img(src="/assets/images/data-with-linear-regression-model-2d.png").fragment
+                div(third).d-flex.flex-column
+                    h3 3 Feature
+                    div.fragment
+                        div(style={marginTop: "100px"}).w-100
+                            div.m-auto ???
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Limits", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
+                div.col-5.p-2
+                    img(src="/assets/images/data-with-linear-regression-model-1d.png").limit-possible
+                div.col-5.p-2
+                    img(src="/assets/images/polynomial-regression.png").limit-impossible
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
+                div.col-5.p-2
+                    img(src="/assets/images/data-with-linear-regression-model-2d.png").limit-possible
+                div.col-5.p-2
+                    img(src="/assets/images/polynomial-regression-2d.png").limit-impossible
+                div.col-1
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Wissens Ansicht")
+            div
+                p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
+            div.d-flex.justify-center
+                knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
+            span.fragment(fragment-trigger, "(trigger)"="knowledgeView.start()", "(untrigger)"="knowledgeView.end()")
+    question-slide([questions]="linearRegressionQuestions")
+    section
+        tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="null")
+    section
+        title-page
+            h1 Fehler, Metrik, Kostenfunktion
+    section
+        slide-with-header(header="{{problemLabels.REGRESSION}} - Fehler eines Modells messen?")
+            ul
+                li.fragment
+                    div #[span.highlight Residuals] messen Fehler pro Datenpunkt
+                    div.d-flex.justify-center
+                        img(style={width: "350px"}, src="/assets/images/linear-regression-model-residuals.png").img-fluid
+                    div([mathjax]='metricResiduals')
+                li.fragment Residuals zu einer Zahl zusammenfassen => #[span.highlight Metrik]
+    section
+        slide-with-header(header="{{problemLabels.REGRESSION}} - Metrik")
+            ul
+                li Wie gewichten wir die Fehler?
+                    ul.fragment
+                        li Sind alle Fehler gleich zu bewerten?
+                        li Sind gröbere Fehler mehr zu bestrafen?
+                        li Sind Fehler Absolut oder Prozentual zu bestrafen?
+                li.fragment Die Wahl der #[span.highlight Metrik] gibt vor wie Fehler zu gewichten sind.
+            p.fragment.text-center.alert.alert-primary Welche Metrik ist #[span.highlight Problemabhängig]!
+    section
+        slide-with-header(header="{{problemLabels.REGRESSION}} - Metrik - Beispiele")
+            ul
+                li.fragment #[span.highlight MAE]: #[span.highlight M]ean #[span.highlight A]bsolute #[span.highlight E]rror
+                    div.r-stack
+                        div.fragment([mathjax]="metricMeanAbsoluteError")
+                        div.fragment([mathjax]="metricMeanAbsoluteErrorE")
+                        div.fragment([mathjax]="metricMeanAbsoluteErrorA")
+                        div.fragment([mathjax]="metricMeanAbsoluteErrorM")
+                        div.fragment([mathjax]="metricMeanAbsoluteError")
+                li.fragment
+                    div #[span.highlight MSE]: #[span.highlight M]ean #[span.highlight S]quared #[span.highlight E]rror
+                    div.r-stack
+                        div.fragment([mathjax]="metricMeanSquaredError")
+                        div.fragment([mathjax]="metricMeanSquaredErrorE")
+                        div.fragment([mathjax]="metricMeanSquaredErrorS")
+                        div.fragment([mathjax]="metricMeanSquaredErrorM")
+                        div.fragment([mathjax]="metricMeanSquaredError")
+    section
+        slide-with-header([header]="'Kostenfunktion'")
+            div(style={marginBottom: "-10px"}).fragment
+                div([mathjax]="metricCostFunctionMSE")
+            div.fragment Beispiel (Lineare Regression mit 2 Parameter):
+                div([mathjax]="metricCostFunctionMSE1D")
+            p.fragment.text-center.alert.alert-warning Synonym: #[span.highlight Cost function] = Loss f. = Objective f.
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Code")
+            div.notebook-name Teil 2 in in linear_regression.ipynb
+            img(src="/assets/images/code.png")
+    section
+        slide-with-header([header]="methodLabels.OPTIMIERUNG")
+            ul
+                li
+                    | Optimierung ist der Mechanismus wie wir die #[span.highlight lernbaren Parameter] eines Models
+                    | für eine #[span.highlight Kostenfunktion] aus #[span.highlight Daten] lernen.
+                li.fragment Unterschiedliche Optimierungs-Algorithmen existieren
+                li.fragment Unterschiedliche Garantien
+                    ul
+                        li #[span.highlight Performanz]: Wie schnell
+                        li #[span.highlight Generalisierung]: Qualität
+    section
+        tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.ANALYTIC")
+    section
+        slide-with-header(header="Linear Regression - Optimierung - Analytisch", [repetition]="true")
+            p #[span.highlight Repetition]: Habt ihr bereits in Regression behandelt.
+            p.fragment Idee: Wir lösen folgende Gleichung:
+            div.mt-5.d-flex.justify-start.flex-column
+                div([mathjax]="linearRegressionAnalytic").fragment
+    section(id="current")
+        slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
+            p Alternative Methode zur Analytischen Methode zum setzen der Parameter (betas)
+            div.r-stack
+                img(src="/assets/images/gradient-descent/gradient_descent_solution.png").fragment
+                img(src="/assets/images/gradient-descent/gradient_descent_step_0.png").fragment
+                img(src="/assets/images/gradient-descent/gradient_descent_step_1.png").fragment
+                img(src="/assets/images/gradient-descent/gradient_descent_step_2.png").fragment
+                img(src="/assets/images/gradient-descent/gradient_descent_step_3.png").fragment
+                img(src="/assets/images/gradient-descent/gradient_descent_step_4.png").fragment
+                img(src="/assets/images/gradient-descent/gradient_descent_step_5.png").fragment
+    section
+        slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
+            p Wie finden wir die #[span.highlight Richtung] hinunter?
+            p.fragment Wie finden wir die #[span.highlight Steigung] einer Funktion?
+            p.fragment Analysis => Die #[span.highlight Ableitung] der Kostenfunktion gibt uns die Steigung(en).
+            div([mathjax]="metricCostFunctionDerivative").fragment
+
+

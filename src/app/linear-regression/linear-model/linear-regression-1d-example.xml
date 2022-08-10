@@ -1,0 +1,33 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mtext class="output">weight</mtext>
+                </mrow>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>0</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>*</mo>
+                    <mrow class="feature">
+                        <mtext>width</mtext>
+                    </mrow>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

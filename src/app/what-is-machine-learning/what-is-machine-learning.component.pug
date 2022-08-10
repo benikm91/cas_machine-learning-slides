@@ -1,5 +1,8 @@
 ng-template('#slides'='')
     section
+        title-page
+            h1 Was ist Machine Learning
+    section
         slide-with-header(header="Problemfälle")
             div.d-flex.justify-content-center
                 example-model-visualization("#ticTacToeExample"="", [positives]="['input', 'model', 'output']")
@@ -52,8 +55,8 @@ ng-template('#slides'='')
                         p Fläche: 500m&#178;
                         p Baujahr: 1998
                     div(model, class="model").model-box approx f
-                    div(output, class="output").fix-height.transparent-border-1
-                        img(src="/assets/images/machine-learning/dollar.png").img-fluid-both
+                    div(output, class="output").fix-height.transparent-border-1.code
+                        p 100'000$
             ul.mt-5.fragment
                 li #[span.model-styling approx f] is a AI that predicts house prices #[span.highlight good!]
             span.fragment(fragment-trigger, "(trigger)"="houseApproxExample.highlightStart()", "(untrigger)"="houseApproxExample.highlightEnd()")
@@ -66,27 +69,37 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Was ist Machine Learning")
             img(src="/assets/images/machine-learning/machine-learning-as-subfield-of-ai.png", style={height: "400px"}).mt-5.img-fluid
-    section(id="current")
-        slide-with-header(header="Wissens Ansicht")
-            div
-                p.fragment Wissen kann von #[span.highlight Experten] oder von #[span.highlight Daten] kommen
-            knowledge-view("#knowledgeView"="").fragment
-            span.fragment(fragment-trigger, "(trigger)"="knowledgeView.start()", "(untrigger)"="knowledgeView.end()")
-    section
-        slide-with-header(header="Wissens Ansicht - Trade-off")
-            div(style={transform:"scale(0.65)"})
-                div.d-flex.justify-center
-                    knowledge-view("#tradeOff1"="", [showHeader]="false", [tradeoff]="0.9")
-                    knowledge-view("#tradeOff2"="", [showHeader]="false", [tradeoff]="0.5")
-                    knowledge-view("#tradeOff3"="", [showHeader]="false", [tradeoff]="0.1")
-                    span.fragment(
-                        fragment-trigger,
-                        "(trigger)"="tradeOff1.start(); tradeOff2.start(); tradeOff3.start()",
-                        "(untrigger)"="tradeOff1.end(); tradeOff2.end(); tradeOff3.end()"
-                    )
     section
         slide-with-header(header="Wo ist Machine Learning")
             img(src="/assets/images/machine-learning/where.png").img-fluid
+    section
+        slide-with-header(header="Was ist \"Learning\" - Wissens Ansicht")
+            div
+                p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
+            div.d-flex.justify-center
+                knowledge-view("#knowledgeView"="").fragment
+            span.fragment(fragment-trigger, "(trigger)"="knowledgeView.start()", "(untrigger)"="knowledgeView.end()")
+    section
+        slide-with-header(header="Was ist \"Learning\" - Trade-off")
+            p.fragment Woher das Wissen kommt ist ein #[span.highlight Trade-Off].
+            stair-slide.fragment
+                div(second)
+                    div(style={fontSize: "14pt"}) Moderate assumptions, Some data
+                    div(style={scale: 0.5, transformOrigin: "top left"})
+                        knowledge-view("#tradeOff2"="", [showHeader]="false", [tradeoff]="0.5")
+                div(first)
+                    div(style={fontSize: "14pt"}) Strong assumptions, Few data
+                    div(style={scale: 0.5, transformOrigin: "top left"})
+                        knowledge-view("#tradeOff1"="", [showHeader]="false", [tradeoff]="0.9")
+                div(third)
+                    div(style={fontSize: "14pt"}) Weak assumptions, A lot data
+                    div(style={scale: 0.5, transformOrigin: "top left"})
+                        knowledge-view("#tradeOff3"="", [showHeader]="false", [tradeoff]="0.1")
+            span.fragment(
+                fragment-trigger,
+            "(trigger)"="tradeOff1.start(); tradeOff2.start(); tradeOff3.start()",
+            "(untrigger)"="tradeOff1.end(); tradeOff2.end(); tradeOff3.end()"
+            )
     section
         slide-with-header(header="Was ist \"Learning\"")
             ul
@@ -114,6 +127,6 @@ ng-template('#slides'='')
                 p.fragment.text-center.alert.alert-primary Im Kurs nutzen wir nur #[span.highlight Offline Learning]!
     section
         slide-with-header(header="Machine Learning im CAS")
-            p TODO
+            img(src="/assets/images/machine-learning/in-cas/data_science_lifecycle_machine_learning_lense.png").img-fluid
 
 

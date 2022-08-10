@@ -2,9 +2,24 @@ ng-template('#slides'='')
     section(id="{{problemTableOfContentLabel.CLASSIFICATION}}")
         slide-with-header(header="{{problemTableOfContentLabel.CLASSIFICATION}}")
             div
-                p.fragment.fade-up Der Output besteht aus einer Menge von Klassen (Labels).
+                p.fragment.fade-up Der Output besteht aus einer Menge von #[span.highlight Klassen].
                 ul
                     li.fragment.fade-up Identifikation von Spam-Emails
                     li.fragment.fade-up Objekterkennung in Bilder
                 .fragment
-                    supervised-model-visualization(input-label="Email", output-label="Spam")
+                    .mt-5.d-flex.justify-content-center
+                        model-visualization("#spamModel"='', [with-trigger]="false")
+                            div(input, class="input").transparent-border-1.code
+                                p Guten Tag Herr Meyer...
+                            div(model, class="model").model-box Modell
+                            div(output, class="output").fix-height.transparent-border-1.code
+                                p Not Spam
+                    .mt-5.d-flex.justify-content-center
+                        model-visualization("#nonSpamModel"='', [with-trigger]="false")
+                            div(input, class="input").transparent-border-1.code
+                                p GLÜCKWUNSCH HERR INFO...
+                            div(model, class="model").model-box Modell
+                            div(output, class="output").fix-height.transparent-border-1.code
+                                p Spam
+                span.fragment(fragment-trigger, "(trigger)"="spamModel.start(); nonSpamModel.start()", "(untrigger)"="spamModel.end(); nonSpamModel.end()")
+

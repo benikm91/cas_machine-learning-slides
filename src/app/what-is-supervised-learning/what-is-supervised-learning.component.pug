@@ -5,7 +5,7 @@ ng-template('#slides'='')
                 div
                     span
                         | Daten unterteilt in #[span.fragment.highlight-red Input und dazugehörende Output] (unabhängige und abhängige Variablen)
-            div.fragment.fade-up('#parent'='').pt-5.d-flex.justify-content-center
-                ng-container(*ngIf="parent.className.includes('visible')")
-                    supervised-model-visualization
+            div.fragment.fade-up.pt-5.d-flex.justify-content-center
+                supervised-model-visualization
+            p.fragment.text-center.alert.alert-primary Vorhergehende Problemfälle waren alle #[span.highlight Supervised Learning]!
 

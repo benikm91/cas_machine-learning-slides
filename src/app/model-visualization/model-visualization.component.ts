@@ -13,6 +13,8 @@ export class ModelVisualizationComponent implements AfterViewInit {
   @ViewChild("model") public model: ElementRef | null = null;
   @ViewChild("output") public output: ElementRef | null = null;
 
+  @Input("with-trigger") public withTrigger: boolean = true;
+
   inputContent: string = "";
   animation: anime.AnimeInstance[] = [];
 

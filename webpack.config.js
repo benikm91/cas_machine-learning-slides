@@ -36,6 +36,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.xml$/i,
+        type: 'asset/source',
+      },
       /*{
         test: /\.pug$/,
         use: [

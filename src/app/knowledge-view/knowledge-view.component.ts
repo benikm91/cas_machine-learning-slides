@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import anime from 'animejs'
 
 @Component({
@@ -9,8 +9,12 @@ import anime from 'animejs'
 export class KnowledgeViewComponent implements AfterViewInit {
 
   @ViewChild("data") data: ElementRef | null = null;
+  @ViewChildren("datas") datas: QueryList<ElementRef> = new QueryList<ElementRef>();
   @ViewChild("human") human: ElementRef | null = null;
+  @ViewChildren("humans") humans: QueryList<ElementRef> = new QueryList<ElementRef>();
   @ViewChild("model") model: ElementRef | null = null;
+
+  @Input("human-label") humanLabel: string = "Annahmen";
 
   @Input("showHeader") showHeader: boolean = true;
 
@@ -43,7 +47,6 @@ export class KnowledgeViewComponent implements AfterViewInit {
         },
         delay: 1000,
         duration: 1000,
-        // scale: 0.25,
         opacity: 0.0,
       }
     }
@@ -51,8 +54,8 @@ export class KnowledgeViewComponent implements AfterViewInit {
     const humanScale = this.tradeoff / Math.max(this.tradeoff, 1 - this.tradeoff);
     const dataScale = (1 - this.tradeoff) / Math.max(this.tradeoff, 1 - this.tradeoff);
 
-    this.human!!.nativeElement.style.transform = `scale(${humanScale})`;
-    this.data!!.nativeElement.style.transform = `scale(${dataScale})`;
+    this.humans.forEach(h => h.nativeElement.style.transform = `scale(${humanScale})`);
+    this.datas.forEach(d => d.nativeElement.style.transform = `scale(${dataScale})`);
 
     const animationFields = {
       // background: "linear-gradient(rgba(88,82,187,1) 0%, rgba(0,212,255,1) 100%)",

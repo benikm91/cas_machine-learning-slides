@@ -30,6 +30,8 @@
     "headjs": "~1.0.3",
     "highlight.js": "~11.6.0",
     "marked": "~4.0.18",
+    "mathjax": "^3.2.2",
+    "mathjax-angular": "^1.4.2",
     "reveal.js": "~4.3.1",
     "treeflex": "^2.0.1",
     "tslib": "^2.3.0",
