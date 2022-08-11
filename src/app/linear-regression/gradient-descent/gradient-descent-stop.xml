@@ -1,0 +1,26 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mi>|</mi>
+                    <mi>∇</mi>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <msup>
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>k</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mi>|</mi>
+                    <mo>&lt;</mo>
+                    <mi>ϵ</mi>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

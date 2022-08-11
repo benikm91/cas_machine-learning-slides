@@ -12,6 +12,6 @@ export class SlideWithHeaderComponent extends Slide {
 
   @Input() extra: boolean = false;
 
-  @Input() repetition: boolean = false;
+  @Input() repetition: string | null = null;
 
 }

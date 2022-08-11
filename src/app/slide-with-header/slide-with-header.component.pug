@@ -1,10 +1,10 @@
 .slide-header
     h1 {{header}}
     ng-container(*ngIf="extra")
-        .extra-stamp
+        .stamp
             img(src="/assets/images/layout/extra-stamp.png").img-fluid
     ng-container(*ngIf="repetition")
-        .extra-stamp
-            img(src="/assets/images/layout/repeat-stamp.jpg", style={width: "200px"}).img-fluid
+        .stamp
+            img(src="/assets/images/layout/repeat-stamp.jpg", title="Behandelt im Fach \"{{ repetition }}\"").img-fluid
 .slide-body
     ng-content

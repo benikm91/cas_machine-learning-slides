@@ -14,7 +14,7 @@ export class TableOfContentEntry<L>{
     }
 }
 
-function c<L>(label: L, active: L | null, children: TableOfContentEntry<L>[] = []): TableOfContentEntry<L> {
+export function c<L>(label: L, active: L | null, children: TableOfContentEntry<L>[] = []): TableOfContentEntry<L> {
     const isActive: boolean = active == label || children
             .map(function(x) { return x.isOrHasActive() })
             .reduce(function(x, y) { return x || y }, false);

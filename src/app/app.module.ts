@@ -35,7 +35,9 @@ import {ExampleModelVisualizationComponent} from "./example-model-visualization/
 import { MathjaxModule } from 'mathjax-angular';
 import {SideBySide3Component} from "./side-by-side-3/side-by-side-3.component";
 import {TitlePageComponent} from "./title-page/title-page.component";
-import {Grid2x2Component} from "./grid-2-2/grid-2-2.component";
+import {
+  TablesOfContentMachineLearningAlgorithmComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-machine-learning-algorithm.component";
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import {Grid2x2Component} from "./grid-2-2/grid-2-2.component";
     WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent,
     FragmentTriggerComponent, OfflineLearningVisualizationComponent, ModelVisualizationComponent,
     ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent,
-    SideBySide3Component, TitlePageComponent, Grid2x2Component
+    SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent
   ],
   imports: [
     BrowserModule,

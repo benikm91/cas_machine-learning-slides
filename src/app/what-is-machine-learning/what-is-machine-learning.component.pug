@@ -12,8 +12,8 @@ ng-template('#slides'='')
                     div(output, class="output").transparent-border-1
                         img(src="/assets/images/machine-learning/ticTacToeEnd.png").img-fluid
             ul.mt-5.fragment
-                li #[span.model-styling f] is a TicTacToe-AI that plays #[span.highlight perfectly!]
-            p.fragment.text-center.alert.alert-primary Is this possible?
+                li #[span.model-styling f] ist eine TicTacToe-AI die #[span.highlight perfekt] spielt
+            p.fragment.text-center.alert.alert-primary Ist das möglich?
             span.fragment(fragment-trigger, "(trigger)"="ticTacToeExample.highlightStart()", "(untrigger)"="ticTacToeExample.highlightEnd()")
     section
         slide-with-header(header="Problemfälle")
@@ -25,7 +25,7 @@ ng-template('#slides'='')
                     div(output, class="output").fix-height.transparent-border-1
                         img(src="/assets/images/machine-learning/chessEndboardOptimal.png").img-fluid-both
             ul.mt-5.fragment
-                li #[span.model-styling f] is a Chess-AI that plays #[span.highlight perfectly!]
+                li #[span.model-styling f] ist eine Chess-AI die #[span.highlight perfekt] spielt
             span.fragment(fragment-trigger, "(trigger)"="chessExample.highlightStart()", "(untrigger)"="chessExample.highlightEnd()")
             div.mt-5.d-flex.justify-content-center.fragment
                 example-model-visualization("#chessApproxExample"="", [positives]="['input', 'model', 'output']")
@@ -35,7 +35,7 @@ ng-template('#slides'='')
                     div(output, class="output").fix-height.transparent-border-1
                         img(src="/assets/images/machine-learning/chessEndboardSuboptimal.png").img-fluid-both
             ul.mt-5.fragment
-                li #[span.model-styling approx f] is a Chess-AI that plays #[span.highlight very good!]
+                li #[span.model-styling approx f] ist eine Chess-AI die #[span.highlight sehr gut] spielt
             span.fragment(fragment-trigger, "(trigger)"="chessApproxExample.highlightStart()", "(untrigger)"="chessApproxExample.highlightEnd()")
     section
         slide-with-header(header="Problemfälle")
@@ -47,7 +47,7 @@ ng-template('#slides'='')
                     div(output, class="output").fix-height.transparent-border-1
                         img(src="/assets/images/machine-learning/dollar.png").img-fluid-both
             ul.mt-5.fragment
-                li #[span.model-styling f] is a AI that predicts house prices #[span.highlight perfectly!]
+                li #[span.model-styling f] ist eine AI die Häuserpreise #[span.highlight perfekt] vorhersagt
             span.fragment(fragment-trigger, "(trigger)"="houseExample.highlightStart()", "(untrigger)"="houseExample.highlightEnd()")
             div.mt-5.d-flex.justify-content-center.fragment
                 example-model-visualization("#houseApproxExample"="", [positives]="['input', 'model', 'output']")
@@ -58,7 +58,7 @@ ng-template('#slides'='')
                     div(output, class="output").fix-height.transparent-border-1.code
                         p 100'000$
             ul.mt-5.fragment
-                li #[span.model-styling approx f] is a AI that predicts house prices #[span.highlight good!]
+                li #[span.model-styling approx f] ist eine AI die Häuserpreise #[span.highlight gut] vorhersagt
             span.fragment(fragment-trigger, "(trigger)"="houseApproxExample.highlightStart()", "(untrigger)"="houseApproxExample.highlightEnd()")
     section
         slide-with-header(header="Was ist Machine Learning")
@@ -82,7 +82,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Was ist \"Learning\" - Trade-off")
             p.fragment Woher das Wissen kommt ist ein #[span.highlight Trade-Off].
-            stair-slide.fragment
+            side-by-side-3.fragment
                 div(second)
                     div(style={fontSize: "14pt"}) Moderate assumptions, Some data
                     div(style={scale: 0.5, transformOrigin: "top left"})

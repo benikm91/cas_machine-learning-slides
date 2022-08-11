@@ -14,6 +14,8 @@ ng-template('#slides'='')
     section
         title-page
             h1 Linear Regression
+    section
+        tables-of-content-machine-learning-algorithm(algorithmName="Linear Regression", active="Model")
     section(id="{{methodLabels.LINEAR_REGRESSION}}")
         slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Intuition")
             p Wir möchten das #[span.highlight Gewicht] (weight) anhand eines einzigen Features, der #[span.highlight Breite] (width) vorhersagen.
@@ -168,9 +170,18 @@ ng-template('#slides'='')
                 div([mathjax]="metricCostFunctionMSE1D")
             p.fragment.text-center.alert.alert-warning Synonym: #[span.highlight Cost function] = Loss f. = Objective f.
     section
+        tables-of-content-machine-learning-algorithm(algorithmName="Linear Regression", active="Cost function")
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} -'Kostenfunktion - Visuell")
+            div.mt-5.d-flex.justify-center
+                img(src="/assets/images/gradient-descent/gradient_descent_cost_function.png").fragment
+            p.fragment.text-center.alert.alert-primary Schüssel nennt man #[span.highlight Convex Cost function]
+    section
         slide-with-header(header="{{methodLabels.LINEAR_REGRESSION}} - Code")
             div.notebook-name Teil 2 in in linear_regression.ipynb
             img(src="/assets/images/code.png")
+    section
+        tables-of-content-machine-learning-algorithm(algorithmName="Linear Regression", active="Optimierung")
     section
         slide-with-header([header]="methodLabels.OPTIMIERUNG")
             ul
@@ -185,12 +196,14 @@ ng-template('#slides'='')
     section
         tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.ANALYTIC")
     section
-        slide-with-header(header="Linear Regression - Optimierung - Analytisch", [repetition]="true")
-            p #[span.highlight Repetition]: Habt ihr bereits in Regression behandelt.
-            p.fragment Idee: Wir lösen folgende Gleichung:
-            div.mt-5.d-flex.justify-start.flex-column
+        slide-with-header(header="Linear Regression - Optimierung - Analytisch", [repetition]="'Regression'")
+            p(style={marginTop: "-20px"}).fragment Idee: Wir lösen folgende Gleichung:
+            div.d-flex.justify-center(style={marginTop: "-10px"})
                 div([mathjax]="linearRegressionAnalytic").fragment
-    section(id="current")
+            div.fragment.d-flex.justify-center
+                img(src="/assets/images/gradient-descent/gradient_descent_solution.png").fragment
+            p.fragment.text-center.alert.alert-warning Nur bei #[span.highlight Convex Cost function] möglich
+    section
         slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
             p Alternative Methode zur Analytischen Methode zum setzen der Parameter (betas)
             div.r-stack
@@ -203,9 +216,33 @@ ng-template('#slides'='')
                 img(src="/assets/images/gradient-descent/gradient_descent_step_5.png").fragment
     section
         slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
-            p Wie finden wir die #[span.highlight Richtung] hinunter?
+            p Wie finden wir die #[span.highlight Richtung] herunter?
+            p.fragment.highlight Richtung entspricht der Steigung der Funktion!
             p.fragment Wie finden wir die #[span.highlight Steigung] einer Funktion?
-            p.fragment Analysis => Die #[span.highlight Ableitung] der Kostenfunktion gibt uns die Steigung(en).
+            p.fragment Analysis => Die #[span.highlight Ableitung] der Kostenfunktion gibt uns die Steigung/Richtung.
             div([mathjax]="metricCostFunctionDerivative").fragment
-
-
+            p.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Cost function] möglich
+    section(id="current")
+        slide-with-header(header="Optimierung - Gradient Descent")
+            div #[span.highlight Gradient Descent]-Algorithmus funktioniert wie folgt:
+            ol
+                li.fragment.mt-5
+                    div.d-flex.align-end(style={alignItems: "stretch"})
+                        div.align-self-end Initialisiere:&nbsp;
+                        div.align-self-end([mathjax]="gradientDescentInit")
+                        div.align-self-end mit zufälligen Werten.
+                li.fragment.mt-5
+                    div.d-flex.align-end(style={alignItems: "stretch"})
+                        div.align-self-end Aktualisiere:&nbsp;
+                        div.align-self-end([mathjax]="gradientDescentUpdate")
+            // div.fragment
+            //     div.mt-5.d-flex.justify-center.align-end(style={alignItems: "stretch"})
+            //         div.align-self-end Wiederhole Schritt 2. bis&nbsp;
+            //         div([mathjax]="gradientDescentStop")
+    section
+        tables-of-content-machine-learning-algorithm(algorithmName="Linear Regression", active="Data Specification")
+    section
+        slide-with-header(header="Linear Regression - Data Specification")
+            ul
+                li #[span.highlight Anzahl Features] gibt #[span.highlight Anzahl Parameter] vor
+                li Features müssen #[span.highlight nicht skaliert] werden

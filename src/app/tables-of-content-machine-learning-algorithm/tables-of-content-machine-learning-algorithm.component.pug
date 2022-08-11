@@ -1,0 +1,5 @@
+ng-container(*ngIf='root')
+    slide-with-header([header]="root.label")
+        div.tf-tree
+            ul
+                li(tables-of-content-node, [entry]="root")

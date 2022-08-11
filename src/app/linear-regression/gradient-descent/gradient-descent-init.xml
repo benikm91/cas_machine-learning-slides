@@ -1,0 +1,19 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+            <mtr>
+                <mtd>
+                    <msup class="weight">
+                        <mover>
+                            <mi>β</mi>
+                            <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                        </mover>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mn>0</mn>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                </mtd>
+            </mtr>
+        </mtable>
+</math>

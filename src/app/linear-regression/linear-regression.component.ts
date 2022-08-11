@@ -17,6 +17,9 @@ import metricMeanAbsoluteError from './metric/mean-absolute-error.xml';
 import metricCostFunctionMSE from './metric/cost-function-mse.xml';
 import metricCostFunctionMSE1D from './metric/cost-function-mse-1d.xml';
 import metricCostFunctionDerivative from './metric/cost-function-derivative.xml';
+import gradientDescentInit from './gradient-descent/gradient-descent-init.xml';
+import gradientDescentUpdate from './gradient-descent/gradient-descent-update.xml';
+import gradientDescentStop from './gradient-descent/gradient-descent-stop.xml';
 import {Slide} from "../slide/slide";
 import {MethodTableOfContentLabel, ProblemTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 import {Question} from "../question-slide/question-slide.component";
@@ -50,7 +53,9 @@ export class LinearRegressionComponent extends Slide {
   metricCostFunctionMSE1D = metricCostFunctionMSE1D
   metricCostFunctionDerivative = metricCostFunctionDerivative
 
-  content = "$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$"
+  gradientDescentInit = gradientDescentInit
+  gradientDescentUpdate = gradientDescentUpdate
+  gradientDescentStop = gradientDescentStop
 
   linearRegressionQuestions = [
     new Question('Was ist das lineare Modell?', 'Eine Gewichtete Summe der Features (plus beta_0).'),
