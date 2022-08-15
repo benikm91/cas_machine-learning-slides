@@ -1,9 +1,13 @@
 import {Component} from '@angular/core';
+import linearRegression1D from './linear-model/linear-regression-1d.xml';
+import linearRegression2D from './linear-model/linear-regression-2d.xml';
+import linearRegression3D from './linear-model/linear-regression-3d.xml';
 import linearRegression1DExample from './linear-model/linear-regression-1d-example.xml';
 import linearRegressionGeneralize1DExample from './linear-model/linear-regression-generalize-1d-example.xml';
 import linearRegression1DToNDExample from './linear-model/linear-regression-1d-to-nd.xml';
 import linearRegressionAnalytic from './linear-model/linear-regression-analytic.xml';
 import linearRegressionFull from './linear-model/linear-regression-full.xml';
+import linearRegressionFinal from './linear-model/linear-regression-final.xml';
 import noiseNormalDistributed from './linear-model/noise-normal-distributed.xml';
 import metricResiduals from './metric/residuals.xml';
 import metricMeanSquaredError from './metric/mean-squared-error.xml';
@@ -23,6 +27,9 @@ import gradientDescentStop from './gradient-descent/gradient-descent-stop.xml';
 import {Slide} from "../slide/slide";
 import {MethodTableOfContentLabel, ProblemTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 import {Question} from "../question-slide/question-slide.component";
+import {
+  LinearRegressionTableOfContentLabel
+} from "../tables-of-content-machine-learning-algorithm/table-of-content-linear-regression-data";
 
 @Component({
   selector: 'linear-regression',
@@ -33,11 +40,16 @@ export class LinearRegressionComponent extends Slide {
 
   problemLabels = ProblemTableOfContentLabel
   methodLabels = MethodTableOfContentLabel
+  linearRegressionLabels = LinearRegressionTableOfContentLabel
 
   linearRegression1DExample = linearRegression1DExample
+  linearRegression1D = linearRegression1D
+  linearRegression2D = linearRegression2D
+  linearRegression3D = linearRegression3D
   linearRegressionGeneralize1DExample = linearRegressionGeneralize1DExample
   linearRegression1DToNDExample = linearRegression1DToNDExample
   linearRegressionFull = linearRegressionFull
+  linearRegressionFinal = linearRegressionFinal
   linearRegressionAnalytic = linearRegressionAnalytic
   noiseNormalDistributed = noiseNormalDistributed
   metricResiduals = metricResiduals

@@ -1,5 +1,5 @@
 import {Component, Input} from "@angular/core";
-import {TableOfContentEntry} from "./table-of-content-data";
+import {TableOfContentEntry, TableOfContentLabel} from "./table-of-content-data";
 
 @Component({
   selector: '[tables-of-content-node]',
@@ -16,5 +16,5 @@ import {TableOfContentEntry} from "./table-of-content-data";
   // `
 })
 export class TableOfContentNode {
-  @Input('entry') entry: TableOfContentEntry<string> | null = null;
+  @Input('entry') entry: TableOfContentEntry<TableOfContentLabel> | null = null;
 }

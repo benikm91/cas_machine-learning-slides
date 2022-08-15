@@ -1,8 +1,10 @@
 .animation-container
-    .div('#input'='').rect-input
+    h5(*ngIf="inputHeader").pos-x-input.pos-y-header.header {{inputHeader}}
+    div('#input'='').pos-x-input.pos-y-box.box
         ng-content(select="[input]")
-    .div('#model'='').rect-model
+    div('#model'='').rect-model
         ng-content(select="[model]")
-    .div('#output'='').rect-output
+    h5(*ngIf="outputHeader").pos-x-output.pos-y-header.header {{outputHeader}}
+    div('#output'='').pos-x-output.pos-y-box.box
         ng-content(select="[output]")
 span(*ngIf="withTrigger").fragment(fragment-trigger, "(trigger)"="start()", "(untrigger)"="end()")

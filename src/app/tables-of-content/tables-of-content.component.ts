@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { Slide } from '../slide/slide';
 import {
   createProblemTableOfContent,
   TableOfContentEntry,
@@ -10,14 +11,17 @@ import {
   styleUrls: ['./tables-of-content.component.scss'],
   templateUrl: './tables-of-content.component.pug',
 })
-export class TablesOfContentComponent implements OnInit {
+export class TablesOfContentComponent extends Slide implements OnInit {
   problemRootNode: TableOfContentEntry<ProblemTableOfContentLabel> | null = null;
   methodRootNode: TableOfContentEntry<MethodTableOfContentLabel> | null = null;
 
   @Input() activeProblem: ProblemTableOfContentLabel | null = null;
   @Input() activeMethod: MethodTableOfContentLabel | null = null;
 
-  ngOnInit(): void {
+  problemLabels = ProblemTableOfContentLabel;
+
+  override ngOnInit(): void {
+    super.ngOnInit()
     this.problemRootNode = createProblemTableOfContent(this.activeProblem);
     this.methodRootNode = createMethodTableOfContent(this.activeMethod);
   }

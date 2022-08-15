@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import anime from "animejs";
 import {ModelVisualizationComponent} from "../model-visualization/model-visualization.component";
 

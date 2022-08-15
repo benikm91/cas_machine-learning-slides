@@ -1,4 +1,4 @@
 span.tf-nc([ngClass]="{'active' : entry?.isActive}")
-    a(href='#/{{entry?.label}}') {{entry?.label}}
+    a(href='#/{{entry?.label?.href}}') {{entry?.label?.label}}
 ul(*ngIf='entry?.children?.length ?? 0 > 0')
     li(*ngFor='let childEntry of entry?.children' tables-of-content-node='' [entry]='childEntry')

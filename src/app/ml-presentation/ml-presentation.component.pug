@@ -1,28 +1,167 @@
 doctype html
 reveal-presentation
     what-is-machine-learning
-    section
-        tables-of-content
-    section
-        tables-of-content([activeProblem]="problemLabels.SUPERVISED_PROBLEM")
+    tables-of-content
+    tables-of-content([activeProblem]="problemLabels.SUPERVISED_PROBLEM")
     what-is-supervised-learning
-    section
-        tables-of-content([activeProblem]="problemLabels.REGRESSION")
+    tables-of-content([activeProblem]="problemLabels.REGRESSION")
     what-is-regression
-    section
-        tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
+    tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
     what-is-classification
-    section
-        slide-with-header(header="Begriffe")
-            space-term-explanation
-    section
-        tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.LINEAR_REGRESSION")
+    // I think this slide adds only confusion. Start explaining "Begriffe" when talking about Feature Engineering
+    // section
+    //     slide-with-header(header="Begriffe")
+    //         space-term-explanation-fs-os
+    tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.LINEAR_REGRESSION")
     linear-regression
     question-slide([questions]="linearRegressionQuestions")
+    what-is-encoding
+        section
+            slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Code")
+                div.notebook-name linear_regression_categorical_feature.ipynb
+                img(src="/assets/images/code.png")
     section
-        tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Code")
+            div.notebook-name linear_regression_categorical_feature.ipynb
+            img(src="/assets/images/code.png")
+    what-is-feature-engineering
+    section
+        slide-with-header(header="Polynomielle Regression - Code")
+            div.notebook-name poly_regression.ipynb
+            img(src="/assets/images/code.png")
+    section
+        slide-with-header(header="Polynomielle Regression", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Possible (in Input Space)
+                div.col-1
+            div.row
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
+                div.col-5.p-2
+                    img(src="/assets/images/data-with-linear-regression-model-1d.png").limit-possible
+                div.col-5.p-2
+                    img(src="/assets/images/polynomial-regression.png").limit-possible
+                div.col-1
+            div.row
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
+                div.col-5.p-2
+                    img(src="/assets/images/data-with-linear-regression-model-2d.png").limit-possible
+                div.col-5.p-2
+                    img(src="/assets/images/polynomial-regression-2d.png").limit-possible
+                div.col-1
+    section
+        div.fragment.strike Lineare Regression < Polynomielle Regression
+        div.fragment Auf dem Train Set, aber nicht zwingend auf neuen Daten!
+        div.fragment.highlight Und Neue Daten ist das Entscheidende!
+    section
+        title-page
+            h1 Komplexität von Modellen
+            h1 Overfitting vs. Underfitting
+    section
+        slide-with-header(header="Test")
+            side-by-side-3
+                div(first).d-flex.flex-column
+                    img(src="/assets/images/overfitting/overfitting-linear-regression.png")
+                    div.code-font
+
+                div(second).d-flex.flex-column
+                    img(src="/assets/images/overfitting/overfitting-polynomial-regression.png")
+                div(third).d-flex.flex-column
+                    img(src="/assets/images/overfitting/overfitting-random-forest.png")
+            div.row
+                div.col-6.col-md-offset-2.text-end MSE Linear Regression
+                div.col-4.code-font = 33174
+                div.col-6.col-md-offset-2.text-end MSE Poly. Regression
+                div.col-4.code-font = 27875
+                div.col-6.col-md-offset-2.text-end MSE RandomForest
+                div.col-4.code-font = &nbsp;4336
+            div.mt-3.fragment.text-center.alert.alert-danger Was fällt auf? Was ist falsch?
+    section
+        slide-with-header(header="Test")
+            side-by-side-3
+                div(first).d-flex.flex-column
+                    img(src="/assets/images/overfitting/overfitting-linear-regression-with-val.png")
+                div(second).d-flex.flex-column
+                    img(src="/assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
+                div(third).d-flex.flex-column
+                    img(src="/assets/images/overfitting/overfitting-random-forest-with-val.png")
+            div.row
+                div.col-6.col-md-offset-2.text-end MSE Linear Regression
+                div.col-4.code-font = 14667
+                div.col-6.col-md-offset-2.text-end MSE Poly. Regression
+                div.col-4.code-font = &nbsp;9127
+                div.col-6.col-md-offset-2.text-end MSE RandomForest
+                div.col-4.code-font = 14824
+            div.mt-3.fragment.text-center.alert.alert-success Auf anderen Daten evaluieren!
+    section
+        slide-with-header(header="Underfitting vs. Overfitting")
+            div #[span.highlight Overfitting]: Wir sind #[span.highlight gut auf den trainings] Daten, aber #[span.highlight schlecht auf neuen] Daten!
+            div #[span.highlight Underfitting]: Wir sind #[span.highlight okay auf den trainings] Daten und #[span.highlight okay auf neuen] Daten!
+            div #[span.highlight Genau richtig]: Wir sind #[span.highlight gut auf den trainings]  Daten und #[span.highlight gut auf neuen] Daten!
+            div(style={transformOrigin: "top"}).scale-05.mt-5.fragment
+                side-by-side-3
+                    div(first).d-flex.flex-column
+                        h4.align-center Underfitting
+                        img(src="/assets/images/overfitting/overfitting-linear-regression-with-val.png")
+                    div(second).d-flex.flex-column
+                        h4.align-center Richtig
+                        img(src="/assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
+                    div(third).d-flex.flex-column
+                        h4.align-center Overfitting
+                        img(src="/assets/images/overfitting/overfitting-random-forest-with-val.png")
+    section
+        div
+            h3 Train-Set / Validation-Set
+                div.d-flex.justify-center
+                    img(src="/assets/images/overfitting/train_set_test_set.png").img-
+        div.mt-5.fragment
+            h3 Train-Set / Validation-Set / Test-Set
+                div.d-flex.justify-center
+                    img(src="/assets/images/overfitting/train_set_val_set_test_set.png").img-fluid
+    section
+        slide-with-header(header="k-Fold Cross Validation")
+            div.d-flex.justify-center
+                img(src="/assets/images/overfitting/k-fold-cross-validation.png").img-fluid
+            div.mt-3.text-center.alert.alert-primary Hier 5-Fold Cross Validation
+    section
+        slide-with-header(header="Model-Komplexität und Performanz")
+            model-complexity
+    section
+        slide-with-header(header="Regularization")
+            ul
+                li Wir treffe zusätzliche #[span.highlight Annahme] über Parameter #[span(mathjax="<math><mi>β</mi></math>")]
+                li.fragment Übliche Annahme:
+                    ul
+                        li Grosse Betas sind #[span.highlight unwahrscheinlicher]
+                        li Betas sind #[span.highlight nahe 0]
+                li.fragment Beispiel:
+                    ul
+                        li #[span.highlight L1-Regularization] (Absolut Wert - "Hoch 1")
+                        li #[span.highlight L2-Regularization] (Quadrieren - Hoch 2)
+                div.fragment.mt-3.text-center.alert.alert-warning Daten müssen Standard Skaliert werden!
+    section
+        slide-with-header(header="L1-Regularization")
+            ul
+                li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
+                    div.d-flex.justify-center
+                        img(src="/assets/images/regularization/laplace.svg", style={height: "150px"}).img-fluid
+                li Mit genug Daten kann diese Annahme #[span.highlight überschrieben] werden
+                li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
+                    div([mathjax]="l1Regularization")
+    section
+        slide-with-header(header="L2-Regularization")
+            ul
+                li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
+                    div.d-flex.justify-center
+                        img(src="/assets/images/regularization/laplace.svg", style={height: "150px"}).img-fluid
+                li Mit genug Daten kann diese Annahme #[span.highlight überschrieben] werden
+                li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
+                    div([mathjax]="l2Regularization")
+    tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
     what-is-classification
-    section
-        tables-of-content([activeProblem]="problemLabels.CLASSIFICATION", [activeMethod]="methodLabels.MODEL")
-    section
-        tables-of-content([activeProblem]="problemLabels.UNSUPERVISED_LEARNING", [activeMethod]="methodLabels.MODEL")
+    tables-of-content([activeProblem]="problemLabels.CLASSIFICATION", [activeMethod]="methodLabels.MODEL")
+    tables-of-content([activeProblem]="problemLabels.UNSUPERVISED_LEARNING", [activeMethod]="methodLabels.MODEL")

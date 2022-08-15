@@ -2,7 +2,6 @@ import {AfterViewInit, Component, ElementRef, Input, ViewChild, ViewContainerRef
 import anime from "animejs";
 import {ModelVisualizationComponent} from "../model-visualization/model-visualization.component";
 import _ from "underscore";
-import {moveTargetsTo} from "../anime/util";
 
 @Component({
   selector: 'example-model-visualization-chess',

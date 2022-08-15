@@ -1,0 +1,73 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr class="">
+            <mtd>
+                <msup class="label">
+                    <mi>y</mi>
+                    <mn>(i)</mn>
+                </msup>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd>
+                <msup class="output">
+                    <mover>
+                        <mi>y</mi>
+                        <mo>^</mo>
+                    </mover>
+                    <mn>(i)</mn>
+                </msup>
+                <mo>+</mo>
+                <msup class="noise">
+                    <mi>ϵ</mi>
+                    <mn>(i)</mn>
+                </msup>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>0</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>*</mo>
+                    <msubsup class="feature">
+                        <mi>x</mi>
+                        <mn>1</mn>
+                        <mn>(i)</mn>
+                    </msubsup>
+                    <mo>+</mo>
+                    <mo>…</mo>
+                    <mo>+</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>n</mn>
+                    </msub>
+                    <mo>*</mo>
+                    <msubsup class="feature">
+                        <mi>x</mi>
+                        <mn>n</mn>
+                        <mn>(i)</mn>
+                    </msubsup>
+                    <mo>+</mo>
+                    <msup class="noise">
+                        <mi>ϵ</mi>
+                        <mn>(i)</mn>
+                    </msup>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

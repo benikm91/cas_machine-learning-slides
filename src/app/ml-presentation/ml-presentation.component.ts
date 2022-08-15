@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {MethodTableOfContentLabel, ProblemTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 import {Question} from "../question-slide/question-slide.component";
+import l1Regularization from './regularization/l1-regularization.xml';
+import l2Regularization from './regularization/l2-regularization.xml';
 
 @Component({
   selector: 'ml-presentation',
@@ -12,9 +14,13 @@ export class MlPresentationComponent {
   problemLabels = ProblemTableOfContentLabel
   methodLabels = MethodTableOfContentLabel
 
+  l1Regularization = l1Regularization
+  l2Regularization = l2Regularization
+
   linearRegressionQuestions = [
-    new Question('What is 5+5?', '5+5 is 10'),
-    new Question('What is 5-5?', '5-5 is 0'),
+    new Question('Was für Annahmen trifft die Lineare Regression?', '1. Output ist Gewichtete Summe von Features; 2. Mean Squared Error als Cost Function'),
+    new Question('Was sind lernbare Parameter?', 'Die Parameter lernt das Modell (mittels Optimierung) aus den Daten, z.B. die Betas in der Linearen Regression.'),
+    new Question('Wie kann ich die Lineare Regression optimieren?', 'Analytisch oder mit Gradient Descent'),
   ]
 
 }

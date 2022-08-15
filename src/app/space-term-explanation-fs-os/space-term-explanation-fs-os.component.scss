@@ -1,0 +1,64 @@
+$io-width: 200;
+$io-height: 100;
+
+$offset: 50;
+$model-offset-y: 0;
+
+$model-width: 200;
+$model-height: 150;
+$header-height: 50;
+
+.animation-container {
+  position: relative;
+  height: ($model-height + $header-height + $model-offset-y) * 1px;
+  width: ($io-width * 2 + $offset * 2 + $model-width) * 1px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $io-width * 1px;
+  height: $io-height * 1px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $io-width * 1px;
+  height: $header-height * 1px;
+}
+
+.pos-x-input {
+  position: absolute;
+  left: 0;
+}
+
+.pos-x-output {
+  position: absolute;
+  left: ($io-width + $offset + $model-width + $offset) * 1px;
+}
+
+.pos-y-header {
+  position: absolute;
+  top: 0;
+}
+
+.pos-y-box {
+  position: absolute;
+  top: ($model-offset-y + (($model-height - $io-height)) / 2) * 1px;
+}
+
+.rect-model{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: $model-width * 1px;
+  height: $model-height * 1px;
+  top: $model-offset-y * 1px;
+  left: ($io-width + $offset) * 1px
+}
+
+

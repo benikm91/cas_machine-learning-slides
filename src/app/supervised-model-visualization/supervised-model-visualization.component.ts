@@ -1,11 +1,5 @@
-import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
-import Two from "two.js";
-import {LinearInterpolator, TwoAnimationStep} from "../two-animation/two-animation.step";
-import {TwoAnimation} from "../two-animation/two.animation";
-import {createTextRect} from "../two-animation/util";
-import {TwoAnimationComponent} from "../two-animation/two-animation.component";
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import anime from "animejs";
-import {moveTargetsTo} from "../anime/util";
 
 @Component({
   selector: 'supervised-model-visualization',

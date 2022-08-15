@@ -1,4 +1,4 @@
-.notebook-name, .code {
+.notebook-name, .code, .code-font {
   font-family: "Lucida Console", "Courier New", monospace;
 }
 
@@ -83,6 +83,9 @@
   .feature {
     color: green;
   }
+  .hyper-parameter {
+    color: purple;
+  }
 }
 
 .limit-possible {
@@ -91,4 +94,8 @@
 
 .limit-impossible {
   border: 5px solid red;
+}
+
+.scale-05 {
+  transform: scale(0.5);
 }

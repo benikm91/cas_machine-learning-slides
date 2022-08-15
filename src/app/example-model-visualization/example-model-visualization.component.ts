@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, ElementRef, Input, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild, ViewContainerRef} from '@angular/core';
 import anime from "animejs";
-import {ModelVisualizationComponent} from "../model-visualization/model-visualization.component";
 import _ from "underscore";
+import {ModelVisualizationComponent} from "../model-visualization/model-visualization.component";
 
 @Component({
   selector: 'example-model-visualization',

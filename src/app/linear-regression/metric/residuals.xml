@@ -6,9 +6,12 @@
             </mtd>
             <mtd>
                 <mo>=</mo>
-                <mtext class="label">real weight</mtext>
+                <mtext class="label">y</mtext>
                 <mo>-</mo>
-                <mtext class="output">predicted weight</mtext>
+                <mover class="output">
+                    <mi>y</mi>
+                    <mo>^</mo>
+                </mover>
             </mtd>
         </mtr>
     </mtable>

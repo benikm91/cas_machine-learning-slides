@@ -38,6 +38,13 @@ import {TitlePageComponent} from "./title-page/title-page.component";
 import {
   TablesOfContentMachineLearningAlgorithmComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-machine-learning-algorithm.component";
+import {WhatIsEncodingComponent} from "./what-is-encoding/what-is-encoding.component";
+import {
+  SpaceTermExplanationFsOsComponents
+} from "./space-term-explanation-fs-os/space-term-explanation-fs-os.component";
+import {Model3VisualizationComponent} from "./model-3-visualization/model-3-visualization.component";
+import {WhatIsFeatureEngineeringComponent} from "./what-is-feature-engineering/what-is-feature-engineering.component";
+import {ModelComplexityComponent} from "./model-complexity/model-complexity.component";
 
 @NgModule({
   declarations: [
@@ -45,11 +52,12 @@ import {
     TablesOfContentComponent, TableOfContentNode,
     QuestionSlideComponent, RemoveWrapperDirective,
     StairSlideComponent, WhatIsRegressionComponent, LinearRegressionComponent,
-    SpaceTermExplanationComponents, SlideWithHeaderComponent,
+    SpaceTermExplanationComponents, SpaceTermExplanationFsOsComponents, SlideWithHeaderComponent,
     WhatIsSupervisedLearningComponent, SupervisedModelVisualizationComponent, WhatIsClassificationComponent,
-    FragmentTriggerComponent, OfflineLearningVisualizationComponent, ModelVisualizationComponent,
+    FragmentTriggerComponent, OfflineLearningVisualizationComponent, ModelVisualizationComponent, Model3VisualizationComponent,
     ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent,
-    SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent
+    SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent, WhatIsEncodingComponent,
+    WhatIsFeatureEngineeringComponent, ModelComplexityComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class TableOfContentEntry<L>{
     }
 }
 
-export function c<L>(label: L, active: L | null, children: TableOfContentEntry<L>[] = []): TableOfContentEntry<L> {
+export function c<L extends TableOfContentLabel>(label: L, active: L | null, children: TableOfContentEntry<L>[] = []): TableOfContentEntry<L> {
     const isActive: boolean = active == label || children
             .map(function(x) { return x.isOrHasActive() })
             .reduce(function(x, y) { return x || y }, false);
@@ -22,17 +22,17 @@ export function c<L>(label: L, active: L | null, children: TableOfContentEntry<L
 }
 
 export class TableOfContentLabel {
-    private constructor(public readonly label: string, public readonly href: string) {
+    protected constructor(public readonly label: string, public readonly href: string) {
     }
 }
 
-export enum ProblemTableOfContentLabel {
-    PROBLEM="Problem",
-    SUPERVISED_PROBLEM="Supervised Learning",
-    REGRESSION="Regression",
-    CLASSIFICATION="Classification",
-    UNSUPERVISED_LEARNING="Unsupervised Learning",
-    REINFORCEMENT_LEARNING="Reinforcement Learning",
+export class ProblemTableOfContentLabel extends TableOfContentLabel {
+    public static readonly PROBLEM = new ProblemTableOfContentLabel("Problem", "Problem");
+    public static readonly SUPERVISED_PROBLEM = new ProblemTableOfContentLabel("Supervised Learning", "Supervised Learning");
+    public static readonly REGRESSION = new ProblemTableOfContentLabel("Regression", "Regression");
+    public static readonly CLASSIFICATION = new ProblemTableOfContentLabel("Classification", "Classification");
+    public static readonly UNSUPERVISED_LEARNING = new ProblemTableOfContentLabel("Unsupervised Learning", "Unsupervised Learning");
+    public static readonly REINFORCEMENT_LEARNING = new ProblemTableOfContentLabel("Reinforcement Learning", "Reinforcement Learning");
 }
 
 export function createProblemTableOfContent(active: ProblemTableOfContentLabel | null): TableOfContentEntry<ProblemTableOfContentLabel> {
@@ -46,25 +46,25 @@ export function createProblemTableOfContent(active: ProblemTableOfContentLabel |
     ])
 }
 
-export enum MethodTableOfContentLabel {
-    ALGORITHMUS="Algorithmus",
-    DATA_SPECIFICATION="Data Specification",
-    PREPROCESSING="Preprocessing",
-    STANDARDIZE="Standardize",
-    ENCODING="Encoding",
-    MODEL="Model",
-    LINEAR_MODEL="Linear Model",
-    LINEAR_REGRESSION="Linear Regression",
-    LDA="LDA",
-    NON_LINEAR_MODEL="Non-Lineares Model",
-    FEATURE_ENGINEERING="Feature Engineering",
-    KERNEL_TRICK="Kernel Trick",
-    OPTIMIERUNG="Optimierung",
-    ANALYTIC="Analytisch",
-    GRADIENT_DESCENT="Gradient Descent",
-    COORDINATE_DESCENT="Coordinate Descent",
-    COST_FUNCTION="Cost function",
-    METRICS="Metrik",
+export class MethodTableOfContentLabel extends TableOfContentLabel {
+    public static readonly ALGORITHMUS = new ProblemTableOfContentLabel("Algorithmus", "Algorithmus");
+    public static readonly DATA_SPECIFICATION = new ProblemTableOfContentLabel("Data Specification", "Data Specification");
+    public static readonly PREPROCESSING = new ProblemTableOfContentLabel("Preprocessing", "Preprocessing");
+    public static readonly STANDARDIZE = new ProblemTableOfContentLabel("Standardize", "Standardize");
+    public static readonly ENCODING = new ProblemTableOfContentLabel("Encoding", "Encoding");
+    public static readonly MODEL = new ProblemTableOfContentLabel("Model", "Model");
+    public static readonly LINEAR_MODEL = new ProblemTableOfContentLabel("Linear Model", "Linear Model");
+    public static readonly LINEAR_REGRESSION = new ProblemTableOfContentLabel("Linear Regression", "Linear Regression");
+    public static readonly LDA = new ProblemTableOfContentLabel("LDA", "LDA");
+    public static readonly NON_LINEAR_MODEL = new ProblemTableOfContentLabel("Non-Lineares Model", "Non-Lineares Model");
+    public static readonly FEATURE_ENGINEERING = new ProblemTableOfContentLabel("Feature Engineering", "Feature Engineering");
+    public static readonly KERNEL_TRICK = new ProblemTableOfContentLabel("Kernel Trick", "Kernel Trick");
+    public static readonly OPTIMIERUNG = new ProblemTableOfContentLabel("Optimierung", "Optimierung");
+    public static readonly ANALYTIC = new ProblemTableOfContentLabel("Analytisch", "Analytisch");
+    public static readonly GRADIENT_DESCENT = new ProblemTableOfContentLabel("Gradient Descent", "Gradient Descent");
+    public static readonly COORDINATE_DESCENT = new ProblemTableOfContentLabel("Coordinate Descent", "Coordinate Descent");
+    public static readonly COST_FUNCTION = new ProblemTableOfContentLabel("Cost function", "Cost function");
+    public static readonly METRICS = new ProblemTableOfContentLabel("Metrik", "Metrik");
 }
 
 export function createMethodTableOfContent(active: MethodTableOfContentLabel | null): TableOfContentEntry<MethodTableOfContentLabel> {

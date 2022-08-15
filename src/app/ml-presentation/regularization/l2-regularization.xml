@@ -1,0 +1,66 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" width="100%" columnalign="left right right" columnspacing="0em" class="tml-gather equation equation-colored">
+        <mtr>
+            <mtd style="padding:0;width:50%;"></mtd>
+            <mtd>
+                <mrow>
+                    <msub>
+                        <mi>J</mi>
+                        <mrow>
+                            <mi>R</mi>
+                            <mi>e</mi>
+                            <mi>g</mi>
+                            <mi>u</mi>
+                            <mi>l</mi>
+                            <mi>a</mi>
+                            <mi>s</mi>
+                            <mi>i</mi>
+                            <mi>e</mi>
+                            <mi>r</mi>
+                            <mi>u</mi>
+                            <mi>n</mi>
+                            <mi>g</mi>
+                        </mrow>
+                    </msub>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="weight">
+                        <mi>β</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="weight">
+                        <mi>β</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>+</mo>
+                    <mrow style="border-bottom: 3px solid red">
+                        <mi class="hyper-parameter">λ</mi>
+                        <mrow>
+                            <munderover>
+                                <mo movablelimits="false">∑</mo>
+                                <mrow>
+                                    <mi>j</mi>
+                                    <mo>=</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                                <mi>p</mi>
+                            </munderover>
+                        </mrow>
+                        <msubsup>
+                            <mi class="weight">β</mi>
+                            <mi class="weight">j</mi>
+                            <mn>2</mn>
+                        </msubsup>
+                    </mrow>
+                </mrow>
+            </mtd>
+            <mtd style="padding:0;width:50%;text-align:-webkit-right;">
+                <mtext class="tml-eqn"></mtext>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

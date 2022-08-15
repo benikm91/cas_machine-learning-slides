@@ -1,0 +1,55 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr class="fragment">
+            <mtd>
+                <mover class="output">
+                    <mi>y</mi>
+                    <mo>^</mo>
+                </mover>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>0</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>*</mo>
+                    <msub class="feature">
+                        <mi>x</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>2</mn>
+                    </msub>
+                    <mo>*</mo>
+                    <msub class="feature">
+                        <mi>x</mi>
+                        <mn>2</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>3</mn>
+                    </msub>
+                    <mo>*</mo>
+                    <msub class="feature">
+                        <mi>x</mi>
+                        <mn>3</mn>
+                    </msub>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

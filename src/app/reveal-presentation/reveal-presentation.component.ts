@@ -9,6 +9,8 @@ import Reveal from "./reveal";
 export class RevealPresentationComponent implements AfterContentInit {
   ngAfterContentInit() {
     Reveal.initialize({
+      slideNumber: 'c/t',
+      hash: true,
       // showNotes: 'separate-page',
       pdfSeparateFragments: false,
     });

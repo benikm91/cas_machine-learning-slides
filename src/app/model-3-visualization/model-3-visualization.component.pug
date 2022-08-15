@@ -1,0 +1,15 @@
+.animation-container
+    h5(*ngIf="inputHeader").pos-x-input.pos-y-header.header {{inputHeader}}
+    div('#input'='').pos-x-input.pos-y-box.box
+        ng-content(select="[input]")
+    div('#pre'='').pos-x-pre.pos-y-box.rect-model
+        ng-content(select="[pre]")
+    h5(*ngIf="featureHeader").pos-x-feature.pos-y-header.header {{featureHeader}}
+    div('#feature'='').pos-x-feature.pos-y-box.box
+        ng-content(select="[feature]")
+    div('#model'='').pos-x-model.rect-model
+        ng-content(select="[model]")
+    h5(*ngIf="outputHeader").pos-x-output.pos-y-header.header {{outputHeader}}
+    div('#output'='').pos-x-output.pos-y-box.box
+        ng-content(select="[output]")
+span(*ngIf="withTrigger").fragment(fragment-trigger, "(trigger)"="start()", "(untrigger)"="end()")

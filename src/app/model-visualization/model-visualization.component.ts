@@ -15,6 +15,9 @@ export class ModelVisualizationComponent implements AfterViewInit {
 
   @Input("with-trigger") public withTrigger: boolean = true;
 
+  @Input("input-header") public inputHeader: string | null = null;
+  @Input("output-header") public outputHeader: string | null = null;
+
   inputContent: string = "";
   animation: anime.AnimeInstance[] = [];
 
