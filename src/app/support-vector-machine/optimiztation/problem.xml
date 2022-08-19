@@ -1,0 +1,91 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather">
+        <mtr>
+            <mtd>
+                <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left right left right" columnspacing="0em 1em 0em 1em" class="tml-array tml-gather">
+                    <mtr>
+                        <mtd style="text-align:-webkit-right;">
+                            <mrow></mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-left;">
+                            <mrow></mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-right;">
+                            <mrow>
+                                <munder>
+                                    <mtext>maximize</mtext>
+                                    <mrow>
+                                        <mi>β</mi>
+                                        <mo separator="true">,</mo>
+                                        <msub>
+                                            <mi>β</mi>
+                                            <mn>0</mn>
+                                        </msub>
+                                        <mo separator="true">,</mo>
+                                        <mi>|</mi>
+                                        <mi>|</mi>
+                                        <mi>β</mi>
+                                        <mi>|</mi>
+                                        <mi>|</mi>
+                                        <mo>=</mo>
+                                        <mn>1</mn>
+                                    </mrow>
+                                </munder>
+                            </mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-left;">
+                            <mrow></mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-right;">
+                            <mi>M</mi>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd style="text-align:-webkit-right;">
+                            <mrow></mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-left;">
+                            <mrow></mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-right;">
+                            <mtext>subject to</mtext>
+                        </mtd>
+                        <mtd style="text-align:-webkit-left;">
+                            <mrow></mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-right;">
+                            <mrow>
+                                <msup>
+                                    <mi>y</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mo form="prefix" stretchy="false">(</mo>
+                                <mi>β</mi>
+                                <msup>
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mo>+</mo>
+                                <msub>
+                                    <mi>β</mi>
+                                    <mn>0</mn>
+                                </msub>
+                                <mo form="postfix" stretchy="false">)</mo>
+                                <mo>≥</mo>
+                                <mi>M</mi>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

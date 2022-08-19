@@ -1,0 +1,21 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="PCA - Intuition")
+            div.d-flex.justify-center
+                img(src="/assets/images/pca/pca_2d.gif")
+    section(id="current")
+        slide-with-header(header="PCA - Limits", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap', marginBottom: "-300px"}) 2 Features zu 1
+                div.col-5.p-2
+                    img(src="/assets/images/pca/example-data-with-model-2d-possible.png").limit-possible
+                div.col-5.p-2
+                    img(src="/assets/images/pca/example-data-with-model-2d-limit.png").limit-impossible
+                div.col-1

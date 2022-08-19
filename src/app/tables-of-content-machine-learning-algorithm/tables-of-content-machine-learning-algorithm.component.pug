@@ -1,5 +1,5 @@
 ng-template('#slides')
-    section([id]="active?.href")
+    section([attr.id]="active?.href")
         ng-container(*ngIf='root')
             slide-with-header([header]="root.label.label")
                 div.tf-tree

@@ -1,0 +1,30 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mi>ϕ</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi>z</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <msup>
+                                <mi>exp</mi>
+                                <mrow>
+                                    <mo>−</mo>
+                                    <mi>z</mi>
+                                </mrow>
+                            </msup>
+                            <mo>⁡</mo>
+                        </mrow>
+                    </mfrac>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

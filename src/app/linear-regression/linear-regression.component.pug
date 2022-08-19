@@ -14,6 +14,7 @@ ng-template('#slides'='')
     section
         title-page
             h1 Linear Regression
+    tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.LINEAR_REGRESSION")
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.DATA_SPECIFICATION")
     section
         slide-with-header(header="Linear Regression - Data Specification")
@@ -21,14 +22,14 @@ ng-template('#slides'='')
             ul
                 li.fragment Was ist die #[span.highlight Ziel-Variable], z.B. #[span.code-font weight (g)]
                 li.fragment Welche #[span.highlight Features] wählen wir, z.B. um einen Fisch zu repräsentieren (#[span.code-font width (cm), ...])
-                li.fragment Nur numerische Features sind erlaubt. Kategorische Features (z.B. Fisch-Art) müssen für das Modell #[span.highlight encoded] werden.
+                li.fragment Kategorische Features (z.B. Fisch-Art) müssen für das Modell #[span.highlight encoded] werden.
                 // li.fragment
                 //     div #[span.highlight Anzahl Features] gibt die #[span.highlight Anzahl Parameter] vor.
                 //     div Also #[span.highlight mehr Features machen das Modell komplexer].
                 // li Features müssen für das Modell #[span.highlight nicht skaliert] werden
                 // li Label muss je nach Problemfall #[span.highlight transformiert] werden (Tusky-Anscombe Plot)
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.MODEL")
-    section(id="{{methodLabels.LINEAR_REGRESSION.href}}")
+    section
         slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Intuition")
             p Wir möchten das #[span.highlight Gewicht] (weight) anhand eines einzigen Features, der #[span.highlight Breite] (width) vorhersagen.
             .row
@@ -56,9 +57,17 @@ ng-template('#slides'='')
             ul
                 li Wir möchten das lineare Modell verallgemeinern
                     ol
-                        li.fragment.highlight-red Unabhängig  vom Problem
+                        li Unabhängig  vom Problem
                         li Mehrere Features
                         li Bezug zu echten Beobachtungen
+    section
+        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Theory - Verallgemeinern")
+            ul
+                li Wir möchten das lineare Modell verallgemeinern
+                    ol
+                        li.highlight-step Unabhängig  vom Problem
+                        li.unhighlight-step Mehrere Features
+                        li.unhighlight-step Bezug zu echten Beobachtungen
             div.mt-5.d-flex.justify-start.flex-column
                 div([mathjax]="linearRegressionGeneralize1DExample")
     section
@@ -66,9 +75,9 @@ ng-template('#slides'='')
             ul
                 li Wir möchten das lineare Modell verallgemeinern
                     ol
-                        li Unabhängig  vom Problem
-                        li.fragment.highlight-red  Mehrere Features
-                        li Bezug zu echten Beobachtungen
+                        li.unhighlight-step Unabhängig  vom Problem
+                        li.highlight-step  Mehrere Features
+                        li.unhighlight-step Bezug zu echten Beobachtungen
             div.mt-5.d-flex.justify-start.flex-column
                 div([mathjax]="linearRegression1DToNDExample")
             div.fragment.text-center.alert.alert-primary Output ist eine #[span.highlight Gewichtete Summe] der Features
@@ -77,9 +86,9 @@ ng-template('#slides'='')
             ul
                 li Wir möchten das lineare Modell verallgemeinern
                     ol
-                        li Unabhängig  vom Problem
-                        li Mehrere Features
-                        li.fragment.highlight-red Bezug zu echten Beobachtungen
+                        li.unhighlight-step Unabhängig  vom Problem
+                        li.unhighlight-step Mehrere Features
+                        li.highlight-step Bezug zu echten Beobachtungen
             div.mt-5.d-flex.justify-start.flex-column
                 div([mathjax]="linearRegressionFull")
     section

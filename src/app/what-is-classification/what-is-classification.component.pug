@@ -22,4 +22,8 @@ ng-template('#slides'='')
                             div(output, class="output").fix-height.transparent-border-1.code
                                 p Spam
                 span.fragment(fragment-trigger, "(trigger)"="spamModel.start(); nonSpamModel.start()", "(untrigger)"="spamModel.end(); nonSpamModel.end()")
+    section
+        slide-with-header(header="Für alle Inputs einen Output vorhersage")
+            div.d-flex.justify-center
+                img(src="/assets/images/classification/classification-example.png").img-fluid
 

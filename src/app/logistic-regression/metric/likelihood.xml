@@ -1,0 +1,84 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mi>p</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="label">
+                        <mi>y</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mi>|</mi>
+                    <mi class="feature">X</mi>
+                    <mo separator="true">;</mo>
+                    <mi class="weight">β</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo>=</mo>
+                    <mrow>
+                        <munder>
+                            <mo movablelimits="false">∏</mo>
+                            <mrow>
+                                <msup class="feature">
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mtext style="font-size: 12px">aller positive Samples</mtext>
+                            </mrow>
+                        </munder>
+                    </mrow>
+                    <mi>ϕ</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <msup class="feature">
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mi class="weight">β</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mrow>
+                        <munder>
+                            <mo movablelimits="false">∏</mo>
+                            <mrow>
+                                <msup class="feature">
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mtext style="font-size: 12px">aller negativen Samples</mtext>
+                            </mrow>
+                        </munder>
+                    </mrow>
+                    <mn>1</mn>
+                    <mo>−</mo>
+                    <mi>ϕ</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <msup class="feature">
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mi class="weight">β</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

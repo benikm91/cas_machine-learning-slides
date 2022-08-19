@@ -1,0 +1,31 @@
+<math display="block" class="equation equation-colored">
+    <mrow>
+        <mi>H</mi>
+        <mo form="prefix" stretchy="false">(</mo>
+        <msub class="weight">
+            <mi>β</mi>
+            <mn>0</mn>
+        </msub>
+        <mo>+</mo>
+        <msub class="feature">
+            <mi>x</mi>
+            <mn>1</mn>
+        </msub>
+        <msub class="weight">
+            <mi>β</mi>
+            <mn>1</mn>
+        </msub>
+        <mo>+</mo>
+        <mo>…</mo>
+        <mo>+</mo>
+        <msub class="feature">
+            <mi>x</mi>
+            <mn>n</mn>
+        </msub>
+        <msub class="weight">
+            <mi>β</mi>
+            <mn>n</mn>
+        </msub>
+        <mo form="postfix" stretchy="false">)</mo>
+    </mrow>
+</math>

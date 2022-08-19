@@ -23,4 +23,10 @@ export class MlPresentationComponent {
     new Question('Wie kann ich die Lineare Regression optimieren?', 'Analytisch oder mit Gradient Descent'),
   ]
 
+  logisticRegressionQuestions = [
+    new Question('Was ist Ziel einer Klassifikation?', 'Klassen-Zugehörigkeit anhand von Features vorherzusagen.'),
+    new Question('Was für Annahmen trifft die Logistic Regression?', 'Klassen sind mit einer linearen Decision Boundary gut trennbar.'),
+    new Question('Was ist der Zusammenhang mit der Linearen Regression', 'Das Modell der Logistic Regression ist die Sigmoid Funktion mit den Modell der Linearen Regression darin.'),
+  ]
+
 }

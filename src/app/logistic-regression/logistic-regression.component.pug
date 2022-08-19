@@ -1,0 +1,316 @@
+ng-template('#slides'='')
+    section
+        title-page
+            h1 Logistic Regression
+        div.mt-5.fragment.text-center.alert.alert-warning Logistic Regression macht #[span.highlight keine Regression], sondern eine #[span.highlight Klassifikation]!
+    tables-of-content-logistic-regression([active]="logisticRegressionLabel.LOGISTIC_REGRESSION")
+    tables-of-content-logistic-regression([active]="logisticRegressionLabel.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="Logistic Regression - Data Specification")
+            ol
+                li.fragment Was ist die #[span.highlight kategorische Ziel-Variable], z.B. #[span.code-font name]
+                li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
+                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
+                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden (wenn Regularisiert).
+    tables-of-content-logistic-regression([active]="logisticRegressionLabel.MODEL")
+    section
+        slide-with-header(header="Logistic Regression - Intuition")
+            ol
+                li.fragment #[span.highlight Modifikation]: lineares Modell ändern, dass Output #[span.highlight zwischen 0 und 1] liegt.
+                li.fragment #[span.highlight Interpretation]: Output als #[span.highlight Wahrscheinlichkeit] für eine von zwei Klassen interpretieren.
+    section
+        slide-with-header(header="Logistic Regression - Intuition")
+            ol
+                li.highlight-step #[span.highlight Modifikation]: lineares Modell ändern, dass Output #[span.highlight zwischen 0 und 1] liegt.
+                li.unhighlight-step #[span.highlight Interpretation]: Output als #[span.highlight Wahrscheinlichkeit] für eine von zwei Klassen interpretieren.
+                div.mt-5.row
+                    div.col-6.fragment
+                        div([mathjax]="sigmoid")
+                    div.col-6.fragment
+                        img(src="/assets/images/classification/sigmoid.png").img-fluid
+                div.row
+                    div.col-12.fragment
+                        div([mathjax]="logisticRegression1D")
+    section
+        slide-with-header(header="Logistic Regression - Intuition")
+            ol
+                li.unhighlight-step #[span.highlight Modifikation]: lineares Modell ändern, dass Output #[span.highlight zwischen 0 und 1] liegt.
+                li.highlight-step #[span.highlight Interpretation]: Output als #[span.highlight Wahrscheinlichkeit] für eine von zwei Klassen interpretieren.
+                div.mt-5.fragment([mathjax]="logisticRegressionLikelihood")
+    section
+        slide-with-header(header="Logistische Regression - Intuition")
+            p Beispiel: Ob #[span.highlight Setosa] Blumenart anhand 2 Features (#[span.code-font petal-length, petal-width]).
+            .row
+                .col-6
+                    div.r-stack
+                        img(src="/assets/images/classification/example-data-only.png", data-fragment-index="0").fragment
+                        img(src="/assets/images/classification/example-data-with-model.png", data-fragment-index="2").fragment
+                .col-6
+                    .fragment(data-fragment-index="1") Dazu verwenden wir das folgende #[span.highlight Modell]
+                        div([mathjax]="logisticRegression2D")
+            div.d-flex.justify-content-center.fragment
+                model-visualization
+                    div(input, class="input").transparent-border-1.code
+                        div petal-length: 1.5cm
+                        div petal-width: 0.25cm
+                    div(model, class="model").model-box.code
+                        div([mathjax]="logisticRegression2D")
+                    div(output, class="output").fix-height.code
+                        | #[span.highlight-seaborn-1 Setosa]: 99%
+    section
+        slide-with-header(header="Logistic Regression - Theory - Verallgemeinern")
+            ul
+                li Wir möchten das Modell verallgemeinern
+                    ol
+                        li.fragment.strike(data-fragment-index="0") Unabhängig  vom Problem
+                        li.fragment.strike(data-fragment-index="0") Mehrere Features
+                        li.fragment.strike(data-fragment-index="0") Bezug zu echten Beobachtungen
+                        li (Mehrere Klassen)
+    section
+        slide-with-header(header="Logistic Regression - Code")
+            div.notebook-name logistic_regression.ipynb
+            img(src="/assets/images/code.png")
+    section
+        slide-with-header(header="Logistic Regression - Mehrere Features", [extra]="true")
+            side-by-side-3
+                div(first).d-flex.flex-column
+                    h3 1 Feature
+                    div([mathjax]="logisticRegression1D", style={fontSize: "14pt"})
+                    img(src="/assets/images/classification/example-data-with-model-1d.png").fragment
+                div(second).d-flex.flex-column
+                    h3 2 Feature
+                    div([mathjax]="logisticRegression2D", style={fontSize: "14pt"})
+                    img(src="/assets/images/classification/example-data-with-model.png")
+                div(third).d-flex.flex-column
+                    h3 3 Feature
+                    div([mathjax]="logisticRegression3D", style={fontSize: "14pt"})
+                    img(src="/assets/images/classification/example-data-with-model-3d.gif").fragment
+    section
+        slide-with-header(header="Logistic Regression - Limits", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
+                div.col-5.p-2
+                    img(src="/assets/images/classification/example-data-with-model-2d-possible.png").limit-possible
+                div.col-5.p-2
+                    img(src="/assets/images/classification/example-data-with-model-2d-limit.png").limit-impossible
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
+                div.col-5.p-2
+                    img(src="/assets/images/classification/example-data-with-model-1d-possible.png").limit-possible
+                div.col-5.p-2
+                    img(src="/assets/images/classification/example-data-with-model-1d-limit.png").limit-impossible
+                div.col-1
+    tables-of-content-logistic-regression([active]="logisticRegressionLabel.COST_FUNCTION")
+    section
+        title-page
+            h1 Fehler, Metrik, Kostenfunktion
+    section
+        slide-with-header(header="Classification - Fehler eines Modells messen?")
+            ul
+                li Was für Fälle sind möglich pro Datenpunkt? Bei z.B. Spam / Nicht Spam?
+                    ul.mt-5(style={fontSize: "18pt"}).fragment
+                        li.row
+                            div.col-4 Modell: #[span.text-success Spam]
+                            div.col-4 Wahrheit: #[span.text-success Spam]
+                            div.col-4.fragment #[span.code-font True Positive]
+                        li.row
+                            div.col-4 Modell: #[span.text-danger Not Spam]
+                            div.col-4 Wahrheit: #[span.text-danger Not Spam]
+                            div.col-4.fragment #[span.code-font True Negative]
+                        li.row
+                            div.col-4 Modell: #[span.text-success Spam]
+                            div.col-4 Wahrheit: #[span.text-danger Not Spam]
+                            div.col-4.fragment #[span.code-font False Positive]
+                        li.row
+                            div.col-4 Modell: #[span.text-danger Not Spam]
+                            div.col-4 Wahrheit: #[span.text-success Spam]
+                            div.col-4.fragment #[span.code-font False Negative]
+            div.mt-5.row.fragment.text-center.alert.alert-primary
+                div #[span.highlight Unterscheidung wichtig], Beispiel Corona-Test:
+                div #[span.code-font False Positive] => unnötige Quarantäne
+                div #[span.code-font False Negative] => Virus verbreitet sich
+    section
+        slide-with-header(header="Classification - Fehler eines Modells messen?")
+            ul
+                li Was für Fälle sind möglich pro Datenpunkt? Bei Setosa / Versicolor / Virginica
+                    ul.mt-5(style={fontSize: "18pt"})
+                        li.row
+                            div.col-4 Modell: #[span.text-setosa Setosa]
+                            div.col-4 Wahrheit: #[span.text-setosa Setosa]
+                        li.row
+                            div.col-4 Modell: #[span.text-versicolor Versicolor]
+                            div.col-4 Wahrheit: #[span.text-versicolor Versicolor]
+                        li.row
+                            div.col-4 Modell: #[span.text-virginica Virginica]
+                            div.col-4 Wahrheit: #[span.text-virginica Virginica]
+                        li.row
+                            div.col-4 Modell: #[span.text-setosa Setosa]
+                            div.col-4 Wahrheit: #[span.text-versicolor Versicolor]
+                        li.row
+                            div.col-4 Modell: #[span.text-setosa Setosa]
+                            div.col-4 Wahrheit: #[span.text-virginica Virginica]
+                        li.row
+                            div.col-4 Modell: #[span.text-virginica Virginica]
+                            div.col-4 Wahrheit: #[span.text-setosa Setosa]
+                        li.row
+                            div.col-4 Modell: #[span.text-virginica Virginica]
+                            div.col-4 Wahrheit: #[span.text-versicolor Versicolor]
+                        li.row
+                            div.col-4 Modell: #[span.text-versicolor Versicolor]
+                            div.col-4 Wahrheit: #[span.text-setosa Setosa]
+                        li.row
+                            div.col-4 Modell: #[span.text-versicolor Versicolor]
+                            div.col-4 Wahrheit: #[span.text-virginica Virginica]
+    section
+        slide-with-header(header="Classification - Confusion Matrix")
+            div.fragment.d-flex.justify-center
+                img(src="/assets/images/classification/confusion_matrix.png")
+            p.fragment.text-center.alert.alert-primary #[span.highlight Confusion Matrix] zeigt die Fehler #[span.highlight pro Datenpunkt]!
+    section
+        slide-with-header(header="Classification - Metrik - Beispiele")
+            .mt-2.row.fragment
+                .col-3.highlight Accuracy
+                .col-3 Binär:
+                .col-5([mathjax]="metricAccuracyBinary")
+            .mt-2.row.fragment
+                .col-3
+                .col-3 Generell:
+                .col-5([mathjax]="metricAccuracy")
+            p.fragment.text-center.alert.alert-primary Accuracy wird oft verwendet.
+            .fragment.text-center.alert.alert-warning
+                div Accuracy ist #[span.highlight ungeeignet] bei #[span.highlight inbalanced] Klassen
+    section
+        slide-with-header(header="Classification - Metrik - Beispiele")
+            .mt-2.row.fragment
+                .col-3.highlight Recall
+                .col-3 Binär:
+                .col-5([mathjax]="metricRecallBinary")
+            .mt-2.row.fragment
+                .col-3.highlight Precision
+                .col-3 Binär:
+                .col-5([mathjax]="metricPrecisionBinary")
+            .mt-2.row.fragment
+                .col-3.highlight F1-Score
+                .col-3 Binär:
+                .col-5([mathjax]="metricF1Binary")
+            .fragment.text-center.alert.alert-primary
+                div F1 ist #[span.highlight geeignet] bei #[span.highlight inbalanced] Klassen, wenn Anzahl neagative Beispiele >> Anzahl positive Beispiele
+    section
+        slide-with-header(header="Classification - Metrik - Beispiele")
+            table(style={fontSize: "22pt"})
+                tr
+                    td
+                    th(colspan=2) Predicted
+                tr
+                    td
+                    th Spam
+                    th Not Spam
+                tr
+                    th Spam
+                    td
+                        input("#TP"="", type="number", value="5", width="100px").true-positive
+                    td
+                        input("#FP"="", type="number", value="5").false-positive
+                tr
+                    th Not Spam
+                    td
+                        input("#FN"="", type="number", value="5").false-negative
+                    td
+                        input("#TN"="", type="number", value="5").true-negative
+            div(style={fontSize: "15pt"}, *ngFor="let precision of [round(((toInt(TP.value))/(toInt(TP.value)+toInt(FN.value)))*100)]")
+                ng-container(*ngFor="let recall of [round(((toInt(TP.value))/(toInt(TP.value)+toInt(FP.value)))*100)]")
+                    .mt-5.d-flex.justify-center.align-items-center
+                        div Accuracy
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"true-negative\">'+TN.value+'</mi></mrow><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"true-negative\">'+TN.value+'</mi><mo>+</mo><mi class=\"false-positive\">'+FP.value+'</mi><mo>+</mo><mi class=\"false-negative\">'+FN.value+'</mi></mrow></mfrac></math>'")
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+(toInt(TP.value)+toInt(TN.value))+'</mi></mrow><mrow><mi class=\"true-positive\">'+(toInt(TP.value)+toInt(TN.value)+toInt(FP.value)+toInt(FN.value))+'</mi></mrow></mfrac></math>'")
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((toInt(TP.value)+toInt(TN.value))/(toInt(TP.value)+toInt(TN.value)+toInt(FP.value)+toInt(FN.value)))*100)+'%</mi></mrow></math>'")
+                    .mt-2.d-flex.justify-center.align-items-center
+                        div Recall
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+TP.value+'</mi></mrow><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"false-positive\">'+FP.value+'</mi></mrow></mfrac></math>'")
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+toInt(TP.value)+'</mi></mrow><mrow><mi class=\"true-positive\">'+(toInt(TP.value)+toInt(FP.value))+'</mi></mrow></mfrac></math>'")
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((toInt(TP.value))/(toInt(TP.value)+toInt(FP.value)))*100)+'%</mi></mrow></math>'")
+                    .mt-2.d-flex.justify-center.align-items-center
+                        div Precision
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+TP.value+'</mi></mrow><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"false-positive\">'+FN.value+'</mi></mrow></mfrac></math>'")
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+toInt(TP.value)+'</mi></mrow><mrow><mi class=\"true-positive\">'+(toInt(TP.value)+toInt(FN.value))+'</mi></mrow></mfrac></math>'")
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((toInt(TP.value))/(toInt(TP.value)+toInt(FN.value)))*100)+'%</mi></mrow></math>'")
+                    .mt-2.d-flex.justify-center.align-items-center
+                        div F1-Score
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mi>2</mi><mo>*</mo><mfrac><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>*</mo><mi class=\"true-negative\">'+recall+'</mi></mrow><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>+</mo><mi class=\"true-negative\">'+recall+'</mi></mrow></mfrac></math>'")
+                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(2 * precision*recall / (precision+recall))+'%</mi></mrow></math>'")
+    section
+        slide-with-header(header="Cost function - Maximum Likelihood")
+            div Bei der #[Logistic Regression] gibt das Modell eine Wahrscheinlichkeit für eine Klasse (Likelihood).
+            div Mit dieser können wir eine #[span.highlight spezielle Kostenfunktion] erstellen, die #[span.highlight Maximum Likelihood]:
+            div.mt-5([mathjax]="metricLikelihood")
+    tables-of-content-logistic-regression([active]="logisticRegressionLabel.OPTIMIERUNG")
+    section
+        slide-with-header(header="Logistic Regression Optimierung - Gradient Descent")
+            div Idee: #[span.highlight Gradient Descent] anwenden auf der Maximum Likelihood Kostenfunktion
+            div.d-flex.justify-center
+                img(src="/assets/images/classification/gradient_descent.gif")
+            div.mt-5.fragment.text-center.alert.alert-primary #[span.highlight Andere] Verfahren (z.B. Coordinate Descent) möglich
+    section
+        slide-with-header(header="Logistic Regression Optimierung - Gradient Descent", [extra]="true")
+            div.fragment
+                div In der Praxis muss man noch folgendes machen:
+                ol
+                    li #[span.highlight Konvention] Minimize statt Maximize: Negieren
+                    li #[span.highlight Numerische Stabilität]: Logarithmus nehmen
+                div.fragment.mt-5([mathjax]="metricLikelihood", style={fontSize: "22pt"})
+    section
+        slide-with-header(header="Logistic Regression Optimierung", [extra]="true")
+            div
+                div In der Praxis muss man noch folgendes machen:
+                ol
+                    li.highlight-step #[span.highlight Konvention] Minimize statt Maximize: Negieren
+                    li.unhighlight-step #[span.highlight Numerische Stabilität]: Logarithmus nehmen
+                div
+                div.mt-5([mathjax]="metricLikelihood", style={fontSize: "22pt"})
+                div.fragment.mt-5([mathjax]="metricNegativeLogLikelihoodNegate", style={fontSize: "22pt"})
+                div.fragment.mt-5.text-center.alert.alert-warning Nur Konvention!
+    section
+        slide-with-header(header="Logistic Regression Optimierung", [extra]="true")
+            div
+                div In der Praxis muss man noch folgendes machen:
+                ol
+                    li.unhighlight-step #[span.highlight Konvention] Minimize statt Maximize: Negieren
+                    li.highlight-step #[span.highlight Numerische Stabilität]: Logarithmus nehmen
+                div.mt-5([mathjax]="metricNegativeLogLikelihoodNegate", style={fontSize: "22pt"})
+                div.fragment.mt-5([mathjax]="metricNegativeLogLikelihoodLog", style={fontSize: "22pt"})
+            div.fragment.mt-5.text-center.alert.alert-primary "Nur" notwendig wegen #[span.highlight Floating Point Precision]!
+    tables-of-content-logistic-regression
+        div.mt-5.row
+            div.col-6
+                div.d-flex.justify-center
+                    img(src="/assets/images/classification/sigmoid.png", style={height: "150px"}).img-fluid
+            div.col-6.mt-5
+                div.d-flex.justify-center.scale-05
+                    div([mathjax]="logisticRegressionND")
+            div.col-6.mt-5
+                div.d-flex.justify-center.scale-05
+                    div([mathjax]="metricLikelihood")
+            div.col-6
+                div.d-flex.justify-center
+                    img(src="/assets/images/classification/gradient_descent.gif", style={height: "150px"}).img-fluid

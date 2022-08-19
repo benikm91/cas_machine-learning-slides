@@ -1,0 +1,24 @@
+<math display="block">
+    <mfrac>
+        <mrow>
+            <mi>𝖳</mi>
+            <mi>𝖯</mi>
+            <mo>+</mo>
+            <mi>𝖳</mi>
+            <mi>𝖭</mi>
+        </mrow>
+        <mrow>
+            <mi>𝖳</mi>
+            <mi>𝖯</mi>
+            <mo>+</mo>
+            <mi>𝖳</mi>
+            <mi>𝖭</mi>
+            <mo>+</mo>
+            <mi>𝖥</mi>
+            <mi>𝖯</mi>
+            <mo>+</mo>
+            <mi>𝖥</mi>
+            <mi>𝖭</mi>
+        </mrow>
+    </mfrac>
+</math>

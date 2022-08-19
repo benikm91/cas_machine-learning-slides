@@ -6,6 +6,33 @@
   color: #dc3545 !important;
 }
 
+.highlight-seaborn-0 {
+  color: #4c72b0 !important;
+}
+
+.highlight-seaborn-1 {
+  color: #dd8452 !important;
+}
+
+.highlight-seaborn-2 {
+  color: #55a868 !important;
+}
+
+.highlight-seaborn-3 {
+  color: #c44e52 !important;
+}
+
+.text-setosa {
+  @extend .highlight-seaborn-0
+}
+
+.text-virginica {
+  @extend .highlight-seaborn-1
+}
+
+.text-versicolor {
+  @extend .highlight-seaborn-2
+}
 .data-concept-styling {
   background: white;
   border: 1px solid #26418f;
@@ -98,4 +125,24 @@
 
 .scale-05 {
   transform: scale(0.5);
+}
+
+.true-positive {
+  color: darkblue !important;
+}
+
+.true-negative {
+  color: blue !important;
+}
+
+.false-positive {
+  color: darkorange !important;
+}
+
+.false-negative {
+  color: orange !important;
+}
+
+.unhighlight-step {
+  opacity: 0.1;
 }

@@ -1,0 +1,73 @@
+ng-template('#slides'='')
+    section
+        title-page
+            h1 Support Vector Machine
+    tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.SUPPORT_VECTOR_MACHINE")
+    tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="Support Vector Machine - Data Specification")
+            ol
+                li.fragment Was ist die #[span.highlight kategorische Ziel-Variable], z.B. #[span.code-font name]
+                li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
+                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
+                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
+    tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.MODEL")
+    section
+        slide-with-header(header="Support Vector Machine - Intuition")
+            div Angenommen Modell sagt nur Klasse voraus (keine Wahrscheinlichkeit)
+            div.d-flex.justify-content-center.mt-3.mb-3
+                model-visualization("#model"="")
+                    div(input, class="input").code
+                        div petal-length: 1.5cm
+                        div petal-width: 0.25cm
+                    div(model, class="model").model-box.code
+                        div Modell
+                    div(output, class="output").fix-height.code
+                        | #[span.highlight-seaborn-1 Setosa]
+                span.fragment(fragment-trigger, "(trigger)"="model.end()")
+            div Was wäre hier die beste Decision Boundary?
+                .mt-5.d-flex.justify-center
+                    img.fragment(src="/assets/images/classification/example-data-only.png", style={height: "200px"})
+                    div.fragment
+                        img(src="/assets/images/classification/classification-model-0.png", style={height: "100px"})
+                        img(src="/assets/images/classification/classification-model-1.png", style={height: "100px"})
+                        img(src="/assets/images/classification/classification-model-2.png", style={height: "100px"})
+                        img(src="/assets/images/classification/classification-model-3.png", style={height: "100px"})
+                        img(src="/assets/images/classification/classification-model-4.png", style={height: "100px"})
+                        img(src="/assets/images/classification/classification-model-5.png", style={height: "100px"})
+                        img(src="/assets/images/classification/classification-model-6.png", style={height: "100px"})
+                        img(src="/assets/images/classification/classification-model-7.png", style={height: "100px"})
+    section
+        slide-with-header(header="Support Vector Machine - Intuition")
+            div Annahme: Decision Boundary mit #[span.highlight maximalem Abstand] zum nächsten Punkt ist die Beste!
+            .row.mt-5
+                .col-12.fragment
+                    h5 (Lineare) Support Vector Machine
+                    img(src="/assets/images/classification/support-vector-machine-2d.png")
+            div.fragment.text-center.alert.alert-primary Idee: Verallgemeinert auf #[span.highlight neue] Punkte am Besten
+    section
+        slide-with-header(header="Heaviside step function")
+            div.mt-5(mathjax="<math display=\"block\"><mrow>  <mi>H</mi>  <mo form=\"prefix\" stretchy=\"false\">(</mo>  <mi>x</mi>  <mo form=\"postfix\" stretchy=\"false\">)</mo></mrow></math>")
+            div.mt-5.d-flex.justify-center
+                img(src="/assets/images/classification/heaviside.png").img-fluid
+    section
+        slide-with-header(header="Support Vector Machine - Model")
+            .row
+                .col-6
+                    div.r-stack
+                        img(src="/assets/images/classification/support-vector-machine-2d.png")
+                .col-6
+                    div Wir verwenden das folgende #[span.highlight Modell]
+                        div([mathjax]="svmModel2D")
+            div.d-flex.justify-content-center.mt-3.mb-3
+                model-visualization("#model"="")
+                    div(input, class="input").code
+                        div petal-length: 1.5cm
+                        div petal-width: 0.25cm
+                    div(model, class="model").model-box.code
+                        div([mathjax]="svmModel2D")
+                    div(output, class="output").fix-height.code
+                        | #[span.highlight-seaborn-1 1 (Setosa)]
+    section
+        slide-with-header(header="Support Vector Machine - Optimization")
+            div.mt-5.fragment([mathjax]="svmProblem")

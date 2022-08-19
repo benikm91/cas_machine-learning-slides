@@ -6,8 +6,11 @@ reveal-presentation
     what-is-supervised-learning
     tables-of-content([activeProblem]="problemLabels.REGRESSION")
     what-is-regression
-    tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
-    what-is-classification
+
+    // Is this good here?
+    // tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
+    // what-is-classification
+
     // I think this slide adds only confusion. Start explaining "Begriffe" when talking about Feature Engineering
     // section
     //     slide-with-header(header="Begriffe")
@@ -148,20 +151,28 @@ reveal-presentation
             ul
                 li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
                     div.d-flex.justify-center
-                        img(src="/assets/images/regularization/laplace.svg", style={height: "150px"}).img-fluid
-                li Mit genug Daten kann diese Annahme #[span.highlight überschrieben] werden
+                        img(src="/assets/images/regularization/l1-prior.png", style={height: "150px"}).img-fluid
                 li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
                     div([mathjax]="l1Regularization")
+            div.fragment.mt-4.text-center.alert.alert-primary Gut für Feature-Selection!
     section
         slide-with-header(header="L2-Regularization")
             ul
                 li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
                     div.d-flex.justify-center
-                        img(src="/assets/images/regularization/laplace.svg", style={height: "150px"}).img-fluid
-                li Mit genug Daten kann diese Annahme #[span.highlight überschrieben] werden
+                        img(src="/assets/images/regularization/l2-prior.png", style={height: "150px"}).img-fluid
                 li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
                     div([mathjax]="l2Regularization")
+                // https://ekamperi.github.io/mathematics/2020/08/02/bayesian-connection-to-lasso-and-ridge-regression.html
+    section
+        slide-with-header(header="Übungszeit")
+            div.notebook-name exercise/linear_regression.ipynb
+            img(src="/assets/images/code.png")
     tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
     what-is-classification
     tables-of-content([activeProblem]="problemLabels.CLASSIFICATION", [activeMethod]="methodLabels.MODEL")
+    logistic-regression
+    support-vector-machine
+    question-slide([questions]="logisticRegressionQuestions")
     tables-of-content([activeProblem]="problemLabels.UNSUPERVISED_LEARNING", [activeMethod]="methodLabels.MODEL")
+    pca

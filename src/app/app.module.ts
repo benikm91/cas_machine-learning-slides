@@ -45,6 +45,15 @@ import {
 import {Model3VisualizationComponent} from "./model-3-visualization/model-3-visualization.component";
 import {WhatIsFeatureEngineeringComponent} from "./what-is-feature-engineering/what-is-feature-engineering.component";
 import {ModelComplexityComponent} from "./model-complexity/model-complexity.component";
+import {LogisticRegressionComponent} from "./logistic-regression/logistic-regression.component";
+import {
+  TablesOfContentLogisticRegressionComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-logistic-regression.component";
+import {PcaComponent} from "./pca/pca.component";
+import {SupportVectorMachineComponent} from "./support-vector-machine/support-vector-machine.component";
+import {
+  TablesOfContentSupportVectorMachineComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-support-vector-machine.component";
 
 @NgModule({
   declarations: [
@@ -57,7 +66,8 @@ import {ModelComplexityComponent} from "./model-complexity/model-complexity.comp
     FragmentTriggerComponent, OfflineLearningVisualizationComponent, ModelVisualizationComponent, Model3VisualizationComponent,
     ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent,
     SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent, WhatIsEncodingComponent,
-    WhatIsFeatureEngineeringComponent, ModelComplexityComponent
+    WhatIsFeatureEngineeringComponent, ModelComplexityComponent, LogisticRegressionComponent, TablesOfContentLogisticRegressionComponent,
+    PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent
   ],
   imports: [
     BrowserModule,
