@@ -54,6 +54,10 @@ import {SupportVectorMachineComponent} from "./support-vector-machine/support-ve
 import {
   TablesOfContentSupportVectorMachineComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-support-vector-machine.component";
+import {KNearestNeighboursComponent} from "./k-nearest-neighbours/k-nearest-neighbours.component";
+import {
+  TablesOfContentPCAComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-pca.component";
 
 @NgModule({
   declarations: [
@@ -67,7 +71,7 @@ import {
     ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent,
     SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent, WhatIsEncodingComponent,
     WhatIsFeatureEngineeringComponent, ModelComplexityComponent, LogisticRegressionComponent, TablesOfContentLogisticRegressionComponent,
-    PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent
+    PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent, KNearestNeighboursComponent, TablesOfContentPCAComponent
   ],
   imports: [
     BrowserModule,

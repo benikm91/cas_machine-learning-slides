@@ -1,0 +1,42 @@
+ng-template('#slides'='')
+    section
+        title-page
+            h1 K-Nearest-Neighbors
+    section
+        slide-with-header(header="K-Nearest-Neighbors - Data Specification")
+            ul
+                li.fragment Was ist die #[span.highlight Ziel-Variable], z.B. #[span.code-font weight (g)]
+                li.fragment Welche #[span.highlight Features] wählen wir, z.B. um einen Fisch zu repräsentieren (#[span.code-font width (cm), ...])
+                li.fragment
+                    | Kategorische Features (z.B. Fisch-Art) müssen für das Modell #[span.highlight encoded] werden.
+                    | One-Hot-Encoding funktioniert nicht gut, bräuchte Latent-Encoding.
+                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
+                // li.fragment
+                //     div #[span.highlight Anzahl Features] gibt die #[span.highlight Anzahl Parameter] vor.
+                //     div Also #[span.highlight mehr Features machen das Modell komplexer].
+                // li Features müssen für das Modell #[span.highlight nicht skaliert] werden
+                // li Label muss je nach Problemfall #[span.highlight transformiert] werden (Tusky-Anscombe Plot)
+    section
+        slide-with-header(header="K-Nearest-Neighbors - Intuition")
+            ol
+                li.fragment Wir lernen #[span.highlight keine Parameter (#[span(mathjax="<math><mi>β</mi></math>")])].
+                li.fragment Wir suchen die nächsten #[span.highlight(mathjax="<math><mi>k</mi></math>")] Punkte im Train Set für Vorhersage.
+    section
+        slide-with-header(header="K-Nearest-Neighbors - Intuition")
+            p Beispiel: #[span.highlight Blumenart] anhand 2 Features (#[span.code-font petal-length, petal-width]).
+            .row
+                .col-6
+                    div.r-stack
+                        img(src="/assets/images/classification/k_nearest_neighbours/knn-example-data-only.png", data-fragment-index="0").fragment
+                        img(src="/assets/images/classification/k_nearest_neighbours/knn-example.png", data-fragment-index="2").fragment
+                .col-6
+                    .fragment(data-fragment-index="1") Als #[span.highlight Modell] suchen wir die nächsten #[span(mathjax="<math><mi>k</mi></math>")] Punkte im Train Set.
+            div.d-flex.justify-content-center.fragment
+                model-visualization
+                    div(input, class="input").transparent-border-1.code
+                        div petal-length: 1.5cm
+                        div petal-width: 0.25cm
+                    div(model, class="model").model-box.code
+                        div([mathjax]="knn2D")
+                    div(output, class="output").fix-height.code
+                        | #[span.highlight-seaborn-1 Setosa]: 100%

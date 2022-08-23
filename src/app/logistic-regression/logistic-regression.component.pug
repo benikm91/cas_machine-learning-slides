@@ -259,11 +259,12 @@ ng-template('#slides'='')
                         div([mathjax]="'<math display=\"block\"><mi>2</mi><mo>*</mo><mfrac><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>*</mo><mi class=\"true-negative\">'+recall+'</mi></mrow><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>+</mo><mi class=\"true-negative\">'+recall+'</mi></mrow></mfrac></math>'")
                         div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
                         div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(2 * precision*recall / (precision+recall))+'%</mi></mrow></math>'")
+    tables-of-content-logistic-regression([active]="logisticRegressionLabel.COST_FUNCTION")
     section
         slide-with-header(header="Cost function - Maximum Likelihood")
-            div Bei der #[Logistic Regression] gibt das Modell eine Wahrscheinlichkeit für eine Klasse (Likelihood).
+            div Bei der #[span.highlight Logistic Regression] gibt das Modell eine Wahrscheinlichkeit für eine Klasse (Likelihood).
             div Mit dieser können wir eine #[span.highlight spezielle Kostenfunktion] erstellen, die #[span.highlight Maximum Likelihood]:
-            div.mt-5([mathjax]="metricLikelihood")
+            div.fragment.mt-5([mathjax]="metricLikelihood")
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.OPTIMIERUNG")
     section
         slide-with-header(header="Logistic Regression Optimierung - Gradient Descent")

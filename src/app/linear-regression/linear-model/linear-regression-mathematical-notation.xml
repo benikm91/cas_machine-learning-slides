@@ -1,0 +1,82 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mo>−</mo>
+                    <mo fence="false" symmetric="true" minsize="1.2em">(</mo>
+                    <mrow>
+                        <munder>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <msup>
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mtext style="font-size: 12px">aller positive Samples</mtext>
+                            </mrow>
+                        </munder>
+                    </mrow>
+                    <mrow>
+                        <mtext>max</mtext>
+                    </mrow>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi>0</mi>
+                    <mo separator="true">,</mo>
+                    <mi>M</mi>
+                    <mo>-</mo>
+                    <msup>
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mi>β</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>+</mo>
+                    <mrow>
+                        <munder>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <msup>
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mtext style="font-size: 12px">aller negativen Samples</mtext>
+                            </mrow>
+                        </munder>
+                    </mrow>
+                    <mrow>
+                        <mtext>max</mtext>
+                    </mrow>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi>0</mi>
+                    <mo separator="true">,</mo>
+                    <mi>M</mi>
+                    <mo>+</mo>
+                    <msup>
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mi>β</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo fence="false" symmetric="true" minsize="1.2em">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

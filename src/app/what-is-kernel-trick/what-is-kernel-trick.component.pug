@@ -1,0 +1,21 @@
+ng-template('#slides'='')
+    section
+        title-page
+            h1 Feature Engineering
+    section
+        slide-with-header(header="Feature Engineering")
+            ul
+                li Idee: Mache #[span.highlight aus bestehende Features neue Features], um dem Modell zu helfen
+                li #[span.highlight Standard]: Polynomielle Features
+                li #[span.highlight Kreatives]: Durchschnittlicher Quadratmeter-Preis im Umkreis
+            div.mt-5.d-flex.justify-center.fragment
+                model-3-visualization(input-header="Input Space", feature-header="Feature Space", output-header="Output Space" )
+                    div(input).rect-styling
+                        div([mathjax]="inputs")
+                    div(pre).model-box Feature Engineering
+                    div(feature).rect-styling
+                        div([mathjax]="features")
+                    div(model).model-box Modell
+                    div(output).rect-styling
+                        div([mathjax]="outputs")
+            div.mt-5.fragment.text-center.alert.alert-primary Riesen Potenzial für Verbesserung!

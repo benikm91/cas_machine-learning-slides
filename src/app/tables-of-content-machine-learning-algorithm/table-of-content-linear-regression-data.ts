@@ -54,3 +54,20 @@ export function createSupportVectorMachineTableOfContent(active: SupportVectorMa
         c(SupportVectorMachineTableOfContentLabel.OPTIMIERUNG, active, []),
     ])
 }
+
+export class PCATableOfContentLabel extends TableOfContentLabel {
+    public static readonly PCA = new PCATableOfContentLabel("PCA", "PCA");
+    public static readonly DATA_SPECIFICATION = new PCATableOfContentLabel("Data Specification", "PCA/Data Specification");
+    public static readonly MODEL = new PCATableOfContentLabel("Model" , "PCA/Model" );
+    public static readonly OPTIMIERUNG = new PCATableOfContentLabel("Optimierung" , "PCA/Optimierung" );
+    public static readonly COST_FUNCTION = new PCATableOfContentLabel("Cost function", "PCA/Cost function");
+}
+
+export function createPCATableOfContent(active: PCATableOfContentLabel | null): TableOfContentEntry<PCATableOfContentLabel> {
+    return c(PCATableOfContentLabel.PCA, active, [
+        c(PCATableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(PCATableOfContentLabel.MODEL, active, []),
+        c(PCATableOfContentLabel.COST_FUNCTION, active, []),
+        c(PCATableOfContentLabel.OPTIMIERUNG, active, []),
+    ])
+}
