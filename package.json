@@ -7,6 +7,7 @@
     "start": "npx -p @angular/cli ng serve",
     "serve": "npx -p @angular/cli ng serve --open",
     "build": "npx -p @angular/cli ng build",
+    "build-github-pages": "npx -p @angular/cli ng build --base-href=/cas_machine-learning-slides/",
     "watch": "npx -p @angular/cli ng build --watch --configuration development",
     "test": "npx -p @angular/cli ng test"
   },
