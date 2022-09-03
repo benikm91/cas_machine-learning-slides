@@ -7,10 +7,10 @@ ng-template('#slides'='')
             div.d-flex.justify-content-center
                 example-model-visualization("#ticTacToeExample"="", [positives]="['input', 'model', 'output']")
                     div(input, class="input").transparent-border-1
-                        img(src="/assets/images/machine-learning/ticTacToeStart.png").img-fluid
+                        img(src="assets/images/machine-learning/ticTacToeStart.png").img-fluid
                     div(model, class="model").model-box f
                     div(output, class="output").transparent-border-1
-                        img(src="/assets/images/machine-learning/ticTacToeEnd.png").img-fluid
+                        img(src="assets/images/machine-learning/ticTacToeEnd.png").img-fluid
             ul.mt-5.fragment
                 li #[span.model-styling f] ist eine TicTacToe-AI die #[span.highlight perfekt] spielt
             p.fragment.text-center.alert.alert-primary Ist das möglich?
@@ -20,20 +20,20 @@ ng-template('#slides'='')
             div.d-flex.justify-content-center
                 example-model-visualization("#chessExample"="", [positives]="['input', 'output']")
                     div(input, class="input").fix-height.transparent-border-1
-                        img(src="/assets/images/machine-learning/chessStartboard.png").img-fluid-both
+                        img(src="assets/images/machine-learning/chessStartboard.png").img-fluid-both
                     div(model, class="model").model-box f
                     div(output, class="output").fix-height.transparent-border-1
-                        img(src="/assets/images/machine-learning/chessEndboardOptimal.png").img-fluid-both
+                        img(src="assets/images/machine-learning/chessEndboardOptimal.png").img-fluid-both
             ul.mt-5.fragment
                 li #[span.model-styling f] ist eine Chess-AI die #[span.highlight perfekt] spielt
             span.fragment(fragment-trigger, "(trigger)"="chessExample.highlightStart()", "(untrigger)"="chessExample.highlightEnd()")
             div.mt-5.d-flex.justify-content-center.fragment
                 example-model-visualization("#chessApproxExample"="", [positives]="['input', 'model', 'output']")
                     div(input, class="input").fix-height.transparent-border-1
-                        img(src="/assets/images/machine-learning/chessStartboard.png").img-fluid-both
+                        img(src="assets/images/machine-learning/chessStartboard.png").img-fluid-both
                     div(model, class="model").model-box approx f
                     div(output, class="output").fix-height.transparent-border-1
-                        img(src="/assets/images/machine-learning/chessEndboardSuboptimal.png").img-fluid-both
+                        img(src="assets/images/machine-learning/chessEndboardSuboptimal.png").img-fluid-both
             ul.mt-5.fragment
                 li #[span.model-styling approx f] ist eine Chess-AI die #[span.highlight sehr gut] spielt
             span.fragment(fragment-trigger, "(trigger)"="chessApproxExample.highlightStart()", "(untrigger)"="chessApproxExample.highlightEnd()")
@@ -42,10 +42,10 @@ ng-template('#slides'='')
             div.d-flex.justify-content-center
                 example-model-visualization("#houseExample"="", [positives]="['output']")
                     div(input, class="input").fix-height.transparent-border-1
-                        img(src="/assets/images/machine-learning/house.png").img-fluid-both
+                        img(src="assets/images/machine-learning/house.png").img-fluid-both
                     div(model, class="model").model-box f
                     div(output, class="output").fix-height.transparent-border-1
-                        img(src="/assets/images/machine-learning/dollar.png").img-fluid-both
+                        img(src="assets/images/machine-learning/dollar.png").img-fluid-both
             ul.mt-5.fragment
                 li #[span.model-styling f] ist eine AI die Häuserpreise #[span.highlight perfekt] vorhersagt
             span.fragment(fragment-trigger, "(trigger)"="houseExample.highlightStart()", "(untrigger)"="houseExample.highlightEnd()")
@@ -68,10 +68,10 @@ ng-template('#slides'='')
             p.fragment Ist ein Modell teilweise gelernt sprechen wir von #[span.highlight Machine Learning!]
     section
         slide-with-header(header="Was ist Machine Learning")
-            img(src="/assets/images/machine-learning/machine-learning-as-subfield-of-ai.png", style={height: "400px"}).mt-5.img-fluid
+            img(src="assets/images/machine-learning/machine-learning-as-subfield-of-ai.png", style={height: "400px"}).mt-5.img-fluid
     section
         slide-with-header(header="Wo ist Machine Learning")
-            img(src="/assets/images/machine-learning/where.png").img-fluid
+            img(src="assets/images/machine-learning/where.png").img-fluid
     section
         slide-with-header(header="Was ist \"Learning\" - Wissens Ansicht")
             div
@@ -127,6 +127,6 @@ ng-template('#slides'='')
                 p.fragment.text-center.alert.alert-primary Im Kurs nutzen wir nur #[span.highlight Offline Learning]!
     section
         slide-with-header(header="Machine Learning im CAS")
-            img(src="/assets/images/machine-learning/in-cas/data_science_lifecycle_machine_learning_lense.png").img-fluid
+            img(src="assets/images/machine-learning/in-cas/data_science_lifecycle_machine_learning_lense.png").img-fluid
 
 
