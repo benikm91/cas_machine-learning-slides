@@ -1,0 +1,23 @@
+<math display="block">
+    <mrow>
+        <mrow>
+            <mi>exp</mi>
+            <mo>⁡</mo>
+        </mrow>
+        <mo form="prefix" stretchy="false">(</mo>
+        <mo>−</mo>
+        <mi>γ</mi>
+        <mi>‖</mi>
+        <mi>x</mi>
+        <mo>−</mo>
+        <msub>
+            <mi>x</mi>
+            <mo>j</mo>
+        </msub>
+        <msup>
+            <mi>‖</mi>
+            <mn>2</mn>
+        </msup>
+        <mo form="postfix" stretchy="false">)</mo>
+    </mrow>
+</math>

@@ -13,39 +13,6 @@ ng-template('#slides'='')
                 li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
     tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.MODEL")
     section
-        slide-with-header(header="Support Vector Machine - Intuition")
-            div Angenommen Modell sagt nur Klasse voraus (keine Wahrscheinlichkeit)
-            div.d-flex.justify-content-center.mt-3.mb-3
-                model-visualization("#model"="")
-                    div(input, class="input").code
-                        div petal-length: 1.5cm
-                        div petal-width: 0.25cm
-                    div(model, class="model").model-box.code
-                        div Modell
-                    div(output, class="output").fix-height.code
-                        | #[span.highlight-seaborn-1 Setosa]
-                span.fragment(fragment-trigger, "(trigger)"="model.end()")
-            div Was wäre hier die beste Decision Boundary?
-                .mt-5.d-flex.justify-center
-                    img.fragment(src="/assets/images/classification/example-data-only.png", style={height: "200px"})
-                    div.fragment
-                        img(src="/assets/images/classification/classification-model-0.png", style={height: "100px"})
-                        img(src="/assets/images/classification/classification-model-1.png", style={height: "100px"})
-                        img(src="/assets/images/classification/classification-model-2.png", style={height: "100px"})
-                        img(src="/assets/images/classification/classification-model-3.png", style={height: "100px"})
-                        img(src="/assets/images/classification/classification-model-4.png", style={height: "100px"})
-                        img(src="/assets/images/classification/classification-model-5.png", style={height: "100px"})
-                        img(src="/assets/images/classification/classification-model-6.png", style={height: "100px"})
-                        img(src="/assets/images/classification/classification-model-7.png", style={height: "100px"})
-    section
-        slide-with-header(header="Support Vector Machine - Intuition")
-            div Annahme: Decision Boundary mit #[span.highlight maximalem Abstand] zum nächsten Punkt ist die Beste!
-            .row.mt-5
-                .col-12.fragment
-                    h5 (Lineare) Support Vector Machine
-                    img(src="/assets/images/classification/support-vector-machine-2d.png")
-            div.fragment.mt-5.text-center.alert.alert-primary Idee: Verallgemeinert auf #[span.highlight neue] Punkte am Besten
-    section
         slide-with-header(header="Heaviside step function")
             div.mt-5(mathjax="<math display=\"block\"><mrow>  <mi>H</mi>  <mo form=\"prefix\" stretchy=\"false\">(</mo>  <mi>x</mi>  <mo form=\"postfix\" stretchy=\"false\">)</mo></mrow></math>")
             div.mt-5.d-flex.justify-center
@@ -55,19 +22,156 @@ ng-template('#slides'='')
             .row
                 .col-6
                     div.r-stack
-                        img(src="/assets/images/classification/support-vector-machine-2d.png")
+                    img(src="/assets/images/classification/svm/support-vector-machine-linear-2d.png")
                 .col-6
                     div Wir verwenden das folgende #[span.highlight Modell]
                         div([mathjax]="svmModel2D")
             div.d-flex.justify-content-center.mt-3.mb-3
                 model-visualization("#model"="")
                     div(input, class="input").code
-                        div petal-length: 1.5cm
-                        div petal-width: 0.25cm
+                        div petal-length (std): -1.25
+                        div petal-width (std): -1.00
                     div(model, class="model").model-box.code
                         div([mathjax]="svmModel2D")
                     div(output, class="output").fix-height.code
                         | #[span.highlight-seaborn-1 1 (Setosa)]
+    tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.COST_FUNCTION")
     section
-        slide-with-header(header="Support Vector Machine - Optimization")
-            div.mt-5.fragment([mathjax]="svmProblem")
+        slide-with-header(header="Support Vector Machine - Intuition")
+            div Was wäre hier die beste lineare Decision Boundary?
+                .mt-5.d-flex.justify-center
+                    img(src="/assets/images/classification/svm/example-data-only.png", style={height: "200px"})
+                    div.fragment
+                        img(src="/assets/images/classification/svm/classification-model-0.png", style={height: "100px"})
+                        img(src="/assets/images/classification/svm/classification-model-1.png", style={height: "100px"})
+                        img(src="/assets/images/classification/svm/classification-model-2.png", style={height: "100px"})
+                        img(src="/assets/images/classification/svm/classification-model-3.png", style={height: "100px"})
+                        img(src="/assets/images/classification/svm/classification-model-4.png", style={height: "100px"})
+                        img(src="/assets/images/classification/svm/classification-model-5.png", style={height: "100px"})
+                        img(src="/assets/images/classification/svm/classification-model-6.png", style={height: "100px"})
+                        img(src="/assets/images/classification/svm/classification-model-7.png", style={height: "100px"})
+    section
+        slide-with-header(header="Support Vector Machine - Intuition")
+            div Annahme: Decision Boundary mit #[span.highlight maximalem Abstand] zum nächsten Punkt ist die Beste!
+            .row.mt-5
+                .col-12.fragment
+                    h5 (Lineare) Support Vector Machine
+                    div.r-stack
+                        img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-without-margin.png")
+                        img.fragment(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-with-margin-2d.png")
+            div.fragment.mt-5.text-center.alert.alert-primary Idee: Verallgemeinert auf #[span.highlight neue] Punkte am Besten
+    section
+        slide-with-header(header="Support Vector Machine - Cost Function", [extra]="true")
+            div.mt-5([mathjax]="svmCostFunction")
+            div.mt-5 Bedingung: #[span(mathjax="<math><mo>||</mo><mi>β</mi><mo>||</mo><mo>=</mo><mi>1</mi></math>")]
+    tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.OPTIMIERUNG")
+    section
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Intuitive Form", [extra]="true")
+            div.mt-3.fragment([mathjax]="svmProblem")
+            div.fragment.mt-5.text-center.alert.alert-primary #[span.highlight Solver] löst Problemstellung für uns und gibt optimale #[span(mathjax='<math><mi>β</mi></math>')] zurück.
+    section
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Zwischenschritt", [extra]="true")
+            p Normiere anstatt Bedingung
+            .row
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Vorher
+                    div([mathjax]="svmProblem")
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Nacher
+                    div([mathjax]="svmProblem1")
+    section
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Zwischenschritt", [extra]="true")
+            p
+                | Rechne mal
+                | &nbsp;
+                span(mathjax="<math><mi>|</mi><mi>|</mi><mi>β</mi><mi>|</mi><mi>|</mi></math>")
+            .row
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Vorher
+                    div.disable-highlight([mathjax]="svmProblem1")
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Nacher
+                    div([mathjax]="svmProblem2")
+    section
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Zwischenschritt", [extra]="true")
+            p
+                | Ersetze
+                | &nbsp;
+                span(mathjax="<math><mi>M</mi></math>")
+                | &nbsp;
+                | mit
+                | &nbsp;
+                span(mathjax="<math><mfrac><mi>1</mi><mrow><mi>|</mi><mi>|</mi><mi>β</mi><mi>|</mi><mi>|</mi></mrow></mfrac></math>")
+            .row
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Vorher
+                    div.disable-highlight([mathjax]="svmProblem2")
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Nacher
+                    div([mathjax]="svmProblem3")
+    section
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Übliche Form", [extra]="true")
+            p Maximiere statt minimere
+            .row
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Vorher
+                    div.disable-highlight([mathjax]="svmProblem3")
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Nacher
+                    div([mathjax]="svmProblem4")
+    section
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Übliche Form", [extra]="true")
+            .row
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Anfang
+                    div([mathjax]="svmProblem")
+                .col-6(style={fontSize: "28px"})
+                    h5.mt-5 Schluss
+                    div.equation-colored.disable-highlight([mathjax]="svmProblem4")
+            div.fragment.mt-5.text-center.alert.alert-primary Problem ist äquivalent: Nur umformuliert. Warum das Ganze? Wir sind #[span.highlight M losgeworden]!
+    section
+        slide-with-header(header="SVM - Hard-Margin vs. Soft-Margin", [extra]="true")
+            .row
+                .col-6
+                    img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable.png")
+                .col-6
+                    img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable-class-errors.png")
+    section
+        slide-with-header(header="SVM - Optimization - Soft-Margin", [extra]="true")
+            div.mt-5([mathjax]="svmProblemSlack")
+    section
+        slide-with-header(header="SVM - Hard-Margin vs. Soft-Margin", [extra]="true")
+            .d-flex.justify-center
+                img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable-margin-errors.png")
+    section
+        slide-with-header(header="SVM - Hyperparameter - C", [extra]="true")
+            div([mathjax]="svmProblemSlack", style={fontSize: "16px"})
+            div.mt-5
+                ul(style={fontSize: "26px"})
+                    li Bestrafe mehr Margin-"Cheating" #[br] => Regularization-Strength
+                div.w-100
+                    .d-flex.flex-wrap.justify-center
+                        div
+                            div.code C=10
+                            img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-C10.png", style={width: "200px"})
+                        div
+                            div.code C=1
+                            img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-C1.png", style={width: "200px"})
+                        div
+                            div.code C=0.1
+                            img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-C0.1.png", style={width: "200px"})
+    tables-of-content-support-vector-machine
+        div.mt-5.row
+            div.col-6
+                div.d-flex.justify-center
+                    img(src="/assets/images/classification/heaviside.png", style={height: "150px"}).img-fluid
+            div.col-6.mt-5
+                div.d-flex.justify-center.scale-05
+                    div([mathjax]="svmModelND")
+        div.mt-5.row
+            div.col-6
+                div.d-flex.justify-center.scale-05
+                    div([mathjax]="svmCostFunction")
+            div.col-6
+                div.d-flex.justify-center.scale-025
+                    div([mathjax]="svmProblem")

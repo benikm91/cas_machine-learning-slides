@@ -34,8 +34,8 @@ ng-template('#slides'='')
             div.d-flex.justify-content-center.fragment
                 model-visualization
                     div(input, class="input").transparent-border-1.code
-                        div petal-length: 1.5cm
-                        div petal-width: 0.25cm
+                        div petal-length (std): -1.25
+                        div petal-width (std): -1.00
                     div(model, class="model").model-box.code
                         div([mathjax]="knn2D")
                     div(output, class="output").fix-height.code

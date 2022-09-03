@@ -7,7 +7,7 @@
                         <mtd style="text-align:-webkit-right;">
                             <mrow>
                                 <munder>
-                                    <mtext>maximize</mtext>
+                                    <mtext class="highlight">minimize</mtext>
                                     <mrow>
                                         <mi class="weight">β</mi>
                                         <mo separator="true">,</mo>
@@ -22,17 +22,14 @@
                         <mtd style="text-align:-webkit-left;">
                             <mrow></mrow>
                         </mtd>
-                        <mtd style="text-align:-webkit-right;">
-                            <mfrac class="highlight">
-                                <mi>1</mi>
-                                <mrow>
-                                    <mi>|</mi>
-                                    <mi>|</mi>
-                                    <mi>β</mi>
-                                    <mi>|</mi>
-                                    <mi>|</mi>
-                                </mrow>
-                            </mfrac>
+                        <mtd class="weight" style="text-align:-webkit-right;">
+                            <mrow class="highlight">
+                                <mi>|</mi>
+                                <mi>|</mi>
+                                <mi>β</mi>
+                                <mi>|</mi>
+                                <mi>|</mi>
+                            </mrow>
                         </mtd>
                     </mtr>
                     <mtr>
@@ -77,7 +74,7 @@
                                     </msub>
                                 </mrow>
                                 <mo>≥</mo>
-                                <mi class="highlight">1</mi>
+                                <mi>1</mi>
                             </mrow>
                         </mtd>
                     </mtr>
@@ -125,7 +122,7 @@
                                 </mrow>
                             <mo form="postfix" stretchy="false">)</mo>
                             <mo>≥</mo>
-                            <mi class="highlight">1</mi>
+                            <mi>1</mi>
                         </mtd>
                     </mtr>
                 </mtable>

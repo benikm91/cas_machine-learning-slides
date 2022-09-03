@@ -51,33 +51,31 @@
                         </mtd>
                         <mtd style="text-align:-webkit-right;">
                             <mrow>
-                                <mfrac>
-                                    <mrow>
-                                        <mi class="weight">β</mi>
-                                        <msup class="feature">
-                                            <mi>x</mi>
-                                            <mrow>
-                                                <mo form="prefix" stretchy="false">(</mo>
-                                                <mi>i</mi>
-                                                <mo form="postfix" stretchy="false">)</mo>
-                                            </mrow>
-                                        </msup>
-                                        <mo>+</mo>
-                                        <msub class="weight">
-                                            <mi>β</mi>
-                                            <mn>0</mn>
-                                        </msub>
-                                    </mrow>
-                                    <mrow class="highlight">
-                                        <mi>|</mi>
-                                        <mi>|</mi>
+                                <mrow>
+                                    <mi class="weight">β</mi>
+                                    <msup class="feature">
+                                        <mi>x</mi>
+                                        <mrow>
+                                            <mo form="prefix" stretchy="false">(</mo>
+                                            <mi>i</mi>
+                                            <mo form="postfix" stretchy="false">)</mo>
+                                        </mrow>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <msub class="weight">
                                         <mi>β</mi>
-                                        <mi>|</mi>
-                                        <mi>|</mi>
-                                    </mrow>
-                                </mfrac>
+                                        <mn>0</mn>
+                                    </msub>
+                                </mrow>
                                 <mo>≥</mo>
                                 <mi>M</mi>
+                                <mrow class="highlight">
+                                    <mi>|</mi>
+                                    <mi>|</mi>
+                                    <mi>β</mi>
+                                    <mi>|</mi>
+                                    <mi>|</mi>
+                                </mrow>
                             </mrow>
                         </mtd>
                     </mtr>
@@ -106,7 +104,7 @@
                         </mtd>
                         <mtd style="text-align:-webkit-right;">
                             <mo>-</mo>
-                            <mfrac>
+                            <mo form="prefix" stretchy="false">(</mo>
                                 <mrow>
                                     <mi class="weight">β</mi>
                                     <msup class="feature">
@@ -123,18 +121,16 @@
                                         <mn>0</mn>
                                     </msub>
                                 </mrow>
-                                <mrow class="highlight">
-                                    <mrow class="weight">
-                                        <mi>|</mi>
-                                        <mi>|</mi>
-                                        <mi>β</mi>
-                                        <mi>|</mi>
-                                        <mi>|</mi>
-                                    </mrow>
-                                </mrow>
-                            </mfrac>
+                            <mo form="postfix" stretchy="false">)</mo>
                             <mo>≥</mo>
                             <mi>M</mi>
+                            <mrow class="highlight">
+                                <mi>|</mi>
+                                <mi>|</mi>
+                                <mi>β</mi>
+                                <mi>|</mi>
+                                <mi>|</mi>
+                            </mrow>
                         </mtd>
                     </mtr>
                 </mtable>

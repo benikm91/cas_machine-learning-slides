@@ -8,6 +8,7 @@ import linearRegression1DToNDExample from './linear-model/linear-regression-1d-t
 import linearRegressionAnalytic from './linear-model/linear-regression-analytic.xml';
 import linearRegressionFull from './linear-model/linear-regression-full.xml';
 import linearRegressionFinal from './linear-model/linear-regression-final.xml';
+import linearRegressionMathematicalNotation from './linear-model/linear-regression-mathematical-notation.xml';
 import noiseNormalDistributed from './linear-model/noise-normal-distributed.xml';
 import metricResiduals from './metric/residuals.xml';
 import metricMeanSquaredError from './metric/mean-squared-error.xml';
@@ -25,7 +26,7 @@ import gradientDescentInit from './gradient-descent/gradient-descent-init.xml';
 import gradientDescentUpdate from './gradient-descent/gradient-descent-update.xml';
 import gradientDescentStop from './gradient-descent/gradient-descent-stop.xml';
 import {Slide} from "../slide/slide";
-import {MethodTableOfContentLabel, ProblemTableOfContentLabel} from "../tables-of-content/table-of-content-data";
+import {ConceptTableOfContentLabel, ProblemTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 import {Question} from "../question-slide/question-slide.component";
 import {
   LinearRegressionTableOfContentLabel
@@ -39,7 +40,7 @@ import {
 export class LinearRegressionComponent extends Slide {
 
   problemLabels = ProblemTableOfContentLabel
-  methodLabels = MethodTableOfContentLabel
+  conceptLabels = ConceptTableOfContentLabel
   linearRegressionLabels = LinearRegressionTableOfContentLabel
 
   linearRegression1DExample = linearRegression1DExample
@@ -51,6 +52,7 @@ export class LinearRegressionComponent extends Slide {
   linearRegressionFull = linearRegressionFull
   linearRegressionFinal = linearRegressionFinal
   linearRegressionAnalytic = linearRegressionAnalytic
+  linearRegressionMathematicalNotation = linearRegressionMathematicalNotation
   noiseNormalDistributed = noiseNormalDistributed
   metricResiduals = metricResiduals
   metricMeanSquaredError = metricMeanSquaredError
@@ -68,6 +70,7 @@ export class LinearRegressionComponent extends Slide {
   gradientDescentInit = gradientDescentInit
   gradientDescentUpdate = gradientDescentUpdate
   gradientDescentStop = gradientDescentStop
+
 
   linearRegressionQuestions = [
     new Question('Was ist das lineare Modell?', 'Eine Gewichtete Summe der Features (plus beta_0).'),

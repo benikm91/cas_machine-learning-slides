@@ -23,7 +23,16 @@
                             <mrow></mrow>
                         </mtd>
                         <mtd style="text-align:-webkit-right;">
-                            <mi>M</mi>
+                            <mfrac class="highlight">
+                                <mi>1</mi>
+                                <mrow>
+                                    <mi>|</mi>
+                                    <mi>|</mi>
+                                    <mi>β</mi>
+                                    <mi>|</mi>
+                                    <mi>|</mi>
+                                </mrow>
+                            </mfrac>
                         </mtd>
                     </mtr>
                     <mtr>
@@ -68,14 +77,7 @@
                                     </msub>
                                 </mrow>
                                 <mo>≥</mo>
-                                <mi>M</mi>
-                                <mrow class="highlight">
-                                    <mi>|</mi>
-                                    <mi>|</mi>
-                                    <mi>β</mi>
-                                    <mi>|</mi>
-                                    <mi>|</mi>
-                                </mrow>
+                                <mi class="highlight">1</mi>
                             </mrow>
                         </mtd>
                     </mtr>
@@ -123,14 +125,7 @@
                                 </mrow>
                             <mo form="postfix" stretchy="false">)</mo>
                             <mo>≥</mo>
-                            <mi>M</mi>
-                            <mrow class="highlight">
-                                <mi>|</mi>
-                                <mi>|</mi>
-                                <mi>β</mi>
-                                <mi>|</mi>
-                                <mi>|</mi>
-                            </mrow>
+                            <mi class="highlight">1</mi>
                         </mtd>
                     </mtr>
                 </mtable>

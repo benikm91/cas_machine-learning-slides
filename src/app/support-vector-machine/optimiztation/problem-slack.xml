@@ -2,12 +2,12 @@
     <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather">
         <mtr>
             <mtd>
-                <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left right left right" columnspacing="0em 1em 0em 1em" class="equation equation-colored tml-array tml-gather">
+                <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left right left right" columnspacing="0em 1em 0em 1em" class="equation tml-array tml-gather">
                     <mtr>
                         <mtd style="text-align:-webkit-right;">
                             <mrow>
                                 <munder>
-                                    <mtext>maximize</mtext>
+                                    <mtext>minimize</mtext>
                                     <mrow>
                                         <mi class="weight">β</mi>
                                         <mo separator="true">,</mo>
@@ -22,28 +22,28 @@
                         <mtd style="text-align:-webkit-left;">
                             <mrow></mrow>
                         </mtd>
-                        <mtd style="text-align:-webkit-right;">
-                            <mi>M</mi>
-                        </mtd>
-                    </mtr>
-                    <mtr>
-                        <mtd style="text-align:-webkit-right;">
+                        <mtd class="weight" style="text-align:-webkit-right;">
                             <mrow>
-                                <mtext>subject to</mtext>
-                            </mrow>
-                        </mtd>
-                        <mtd style="text-align:-webkit-left;">
-                            <mrow></mrow>
-                        </mtd>
-                        <mtd style="text-align:-webkit-right;">
-                            <mrow class="weight">
                                 <mi>|</mi>
                                 <mi>|</mi>
                                 <mi>β</mi>
                                 <mi>|</mi>
                                 <mi>|</mi>
-                                <mo>=</mo>
-                                <mn>1</mn>
+                            </mrow>
+                            <mo class="highlight">+</mo>
+                            <mrow class="highlight">
+                                <mi class="hyperparameter">C</mi>
+                                <mrow>
+                                    <munderover>
+                                        <mo movablelimits="false">∑</mo>
+                                        <mi>i</mi>
+                                        <mi>N</mi>
+                                    </munderover>
+                                </mrow>
+                                <msub>
+                                    <mi>ξ</mi>
+                                    <mi>i</mi>
+                                </msub>
                             </mrow>
                         </mtd>
                     </mtr>
@@ -72,22 +72,33 @@
                         </mtd>
                         <mtd style="text-align:-webkit-right;">
                             <mrow>
-                                <mi class="weight">β</mi>
-                                <msup class="feature">
-                                    <mi>x</mi>
+                                <mrow>
+                                    <mi class="weight">β</mi>
+                                    <msup class="feature">
+                                        <mi>x</mi>
+                                        <mrow>
+                                            <mo form="prefix" stretchy="false">(</mo>
+                                            <mi>i</mi>
+                                            <mo form="postfix" stretchy="false">)</mo>
+                                        </mrow>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <msub class="weight">
+                                        <mi>β</mi>
+                                        <mn>0</mn>
+                                    </msub>
+                                </mrow>
+                                <mo>≥</mo>
+                                <mi>1</mi>
+                                <mo class="highlight">-</mo>
+                                <msup class="highlight">
+                                    <mi>ξ</mi>
                                     <mrow>
                                         <mo form="prefix" stretchy="false">(</mo>
                                         <mi>i</mi>
                                         <mo form="postfix" stretchy="false">)</mo>
                                     </mrow>
                                 </msup>
-                                <mo>+</mo>
-                                <msub class="weight">
-                                    <mi>β</mi>
-                                    <mn>0</mn>
-                                </msub>
-                                <mo>≥</mo>
-                                <mi>M</mi>
                             </mrow>
                         </mtd>
                     </mtr>
@@ -115,9 +126,9 @@
                             <mrow></mrow>
                         </mtd>
                         <mtd style="text-align:-webkit-right;">
+                            <mo>-</mo>
+                            <mo form="prefix" stretchy="false">(</mo>
                             <mrow>
-                                <mo>-</mo>
-                                <mo form="prefix" stretchy="false">(</mo>
                                 <mi class="weight">β</mi>
                                 <msup class="feature">
                                     <mi>x</mi>
@@ -132,9 +143,45 @@
                                     <mi>β</mi>
                                     <mn>0</mn>
                                 </msub>
-                                <mo form="postfix" stretchy="false">)</mo>
+                            </mrow>
+                            <mo form="postfix" stretchy="false">)</mo>
+                            <mo>≥</mo>
+                            <mi>1</mi>
+                            <mo class="highlight">-</mo>
+                            <msup class="highlight">
+                                <mi>ξ</mi>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mi>i</mi>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msup>
+                        </mtd>
+                    </mtr>
+                    <mtr class="highlight">
+                        <mtd style="text-align:-webkit-right;">
+                            <mrow>
+                                <munder>
+                                    <mtext>subject to</mtext>
+                                    <mrow></mrow>
+                                </munder>
+                            </mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-left;">
+                            <mrow></mrow>
+                        </mtd>
+                        <mtd style="text-align:-webkit-right;">
+                            <mrow>
+                                <msup>
+                                    <mi>ξ</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
                                 <mo>≥</mo>
-                                <mi>M</mi>
+                                <mi>0</mi>
                             </mrow>
                         </mtd>
                     </mtr>

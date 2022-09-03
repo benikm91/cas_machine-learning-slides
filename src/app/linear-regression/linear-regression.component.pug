@@ -1,17 +1,5 @@
 ng-template('#slides'='')
     section
-        slide-with-header(header="Presentation Style")
-            stair-slide
-                div(first)
-                    h3 Intuition
-                    img(src="/assets/images/intuition.png").img-fluid
-                div(second)
-                    h3 Code
-                    img(src="/assets/images/code.png").img-fluid
-                div(third)
-                    h3 Theory
-                    img(src="/assets/images/theory.png").img-fluid
-    section
         title-page
             h1 Linear Regression
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.LINEAR_REGRESSION")
@@ -30,7 +18,7 @@ ng-template('#slides'='')
                 // li Label muss je nach Problemfall #[span.highlight transformiert] werden (Tusky-Anscombe Plot)
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.MODEL")
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Intuition")
+        slide-with-header(header="Linear Regression - Intuition")
             p Wir möchten das #[span.highlight Gewicht] (weight) anhand eines einzigen Features, der #[span.highlight Breite] (width) vorhersagen.
             .row
                 .col-6
@@ -49,11 +37,11 @@ ng-template('#slides'='')
                     div(output, class="output").fix-height.code
                         | weight: 508g
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Code")
+        slide-with-header(header="Linear Regression - Code")
             div.notebook-name Teil 1 in linear_regression.ipynb
             img(src="/assets/images/code.png")
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Theory - Verallgemeinern")
+        slide-with-header(header="Linear Regression - Theory - Verallgemeinern")
             ul
                 li Wir möchten das lineare Modell verallgemeinern
                     ol
@@ -61,7 +49,7 @@ ng-template('#slides'='')
                         li Mehrere Features
                         li Bezug zu echten Beobachtungen
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Theory - Verallgemeinern")
+        slide-with-header(header="Linear Regression - Theory - Verallgemeinern")
             ul
                 li Wir möchten das lineare Modell verallgemeinern
                     ol
@@ -71,7 +59,7 @@ ng-template('#slides'='')
             div.mt-5.d-flex.justify-start.flex-column
                 div([mathjax]="linearRegressionGeneralize1DExample")
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Theory - Verallgemeinern")
+        slide-with-header(header="Linear Regression - Theory - Verallgemeinern")
             ul
                 li Wir möchten das lineare Modell verallgemeinern
                     ol
@@ -82,7 +70,7 @@ ng-template('#slides'='')
                 div([mathjax]="linearRegression1DToNDExample")
             div.fragment.text-center.alert.alert-primary Output ist eine #[span.highlight Gewichtete Summe] der Features
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Theory - Verallgemeinern")
+        slide-with-header(header="Linear Regression - Theory - Verallgemeinern")
             ul
                 li Wir möchten das lineare Modell verallgemeinern
                     ol
@@ -92,7 +80,12 @@ ng-template('#slides'='')
             div.mt-5.d-flex.justify-start.flex-column
                 div([mathjax]="linearRegressionFull")
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Mehrere Features", [extra]="true")
+        slide-with-header(header="\"Ganz simple Mathematik\"")
+            div([mathjax]="linearRegressionMathematicalNotation")
+            p.fragment.text-center.alert.alert-primary #[span.highlight Nur Notation]: Alle bedeutet das #[span.highlight Gleiche]!
+
+    section
+        slide-with-header(header="Linear Regression - Mehrere Features", [extra]="true")
             side-by-side-3
                 div(first).d-flex.flex-column
                     h3 1 Feature
@@ -110,7 +103,7 @@ ng-template('#slides'='')
                             div.m-auto ???
             p.fragment.text-center.alert.alert-primary #[span.highlight Visualisierung] gut für #[span.highlight Intuition].#[br]#[span.highlight Mathematik] verallgemeinert auf #[span.highlight höhere Dimensionen].
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Limits", [extra]="true")
+        slide-with-header(header="Linear Regression - Limits", [extra]="true")
             div.row
                 div.col-5.offset-1
                     h6 Possible
@@ -134,14 +127,14 @@ ng-template('#slides'='')
                     img(src="/assets/images/polynomial-regression-2d.png").limit-impossible
                 div.col-1
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Wissens Ansicht")
+        slide-with-header(header="Linear Regression - Wissens Ansicht")
             div
                 p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
             div.d-flex.justify-center
                 knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
             span.fragment(fragment-trigger, "(trigger)"="knowledgeView.start()", "(untrigger)"="knowledgeView.end()")
     question-slide([questions]="linearRegressionQuestions")
-    tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="null")
+    tables-of-content-concepts([active]="conceptLabels.METRICS")
     section
         title-page
             h1 Fehler, Metrik, Kostenfunktion
@@ -157,7 +150,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="{{problemLabels.REGRESSION.label}} - Metrik")
             ul
-                li Wie gewichten wir die Fehler?
+                li Wie gewichten wir die Fehler pro Datenpunkt?
                     ul.fragment
                         li Sind alle Fehler gleich zu bewerten?
                         li Sind gröbere Fehler mehr zu bestrafen?
@@ -183,6 +176,7 @@ ng-template('#slides'='')
                         div.fragment([mathjax]="metricMeanSquaredErrorM")
                         div.fragment([mathjax]="metricMeanSquaredError")
             p.fragment.text-center.alert.alert-primary MSE bestraft im Vergleich zu MAE Fehler grösser 1 stärker und Fehler kleiner 1 schwächer.
+    tables-of-content-concepts([active]="conceptLabels.COST_FUNCTION")
     section
         slide-with-header([header]="'Kostenfunktion'")
             div(style={marginBottom: "-10px"}).fragment
@@ -192,16 +186,16 @@ ng-template('#slides'='')
             p.fragment.text-center.alert.alert-warning Synonym: #[span.highlight Cost function] = Loss f. = Objective f.
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.COST_FUNCTION")
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Theory", [extra]="true")
+        slide-with-header(header="Linear Regression - Theory", [extra]="true")
             div.d-flex.flex-row
                 div([mathjax]="noiseNormalDistributed").fragment
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Code")
+        slide-with-header(header="Linear Regression - Code")
             div.notebook-name Teil 2 in in linear_regression.ipynb
             img(src="/assets/images/code.png")
-    tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.OPTIMIERUNG")
+    tables-of-content-concepts([active]="conceptLabels.OPTIMIZATION_ALGORITHMS")
     section
-        slide-with-header([header]="methodLabels.OPTIMIERUNG.label")
+        slide-with-header(header="Optimierung")
             ul
                 li
                     | Optimierung ist der Mechanismus, wie wir die #[span.highlight lernbaren Parameter] eines Models
@@ -211,8 +205,9 @@ ng-template('#slides'='')
                     ul
                         li #[span.highlight Performanz]: Wie schnell
                         li #[span.highlight Generalisierung]: Qualität
+    tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.OPTIMIERUNG")
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Kostenfunktion - Visuell")
+        slide-with-header(header="Linear Regression - Kostenfunktion - Visuell")
             div.mt-5.d-flex.justify-center
                 img(src="/assets/images/gradient-descent/gradient_descent_cost_function.png").fragment
             p.fragment.text-center.alert.alert-primary Schüssel nennt man #[span.highlight Convex Cost function]

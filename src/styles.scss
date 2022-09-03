@@ -6,6 +6,12 @@
   color: #dc3545 !important;
 }
 
+.disable-highlight {
+  .highlight{
+    color: inherit !important;
+  }
+}
+
 .highlight-seaborn-0 {
   color: #4c72b0 !important;
 }
@@ -125,7 +131,13 @@
 }
 
 .scale-05 {
+  transform-origin: top;
   transform: scale(0.5);
+}
+
+.scale-025 {
+  transform-origin: top;
+  transform: scale(0.25);
 }
 
 .true-positive {

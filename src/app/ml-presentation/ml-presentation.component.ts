@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {MethodTableOfContentLabel, ProblemTableOfContentLabel} from "../tables-of-content/table-of-content-data";
+import {ConceptTableOfContentLabel, ProblemTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 import {Question} from "../question-slide/question-slide.component";
 import l1Regularization from './regularization/l1-regularization.xml';
 import l2Regularization from './regularization/l2-regularization.xml';
@@ -12,7 +12,7 @@ import l2Regularization from './regularization/l2-regularization.xml';
 export class MlPresentationComponent {
 
   problemLabels = ProblemTableOfContentLabel
-  methodLabels = MethodTableOfContentLabel
+  methodLabels = ConceptTableOfContentLabel
 
   l1Regularization = l1Regularization
   l2Regularization = l2Regularization
@@ -27,6 +27,11 @@ export class MlPresentationComponent {
     new Question('Was ist Ziel einer Klassifikation?', 'Klassen-Zugehörigkeit anhand von Features vorherzusagen.'),
     new Question('Was für Annahmen trifft die Logistic Regression?', 'Klassen sind mit einer linearen Decision Boundary gut trennbar.'),
     new Question('Was ist der Zusammenhang mit der Linearen Regression', 'Das Modell der Logistic Regression ist die Sigmoid Funktion mit den Modell der Linearen Regression darin.'),
+  ]
+
+  supportVectorMachineQuestions = [
+    new Question('Was ist der Unterschied von der Logistischen Regression zur Support Vector Machine?', 'Hard-Margin vs. Wahrscheinlichkeit / Sigmoid vs. Heavyside Step / ...'),
+    new Question('Was ist der Zusammenhang der SVM zur Linearen Regression?', 'Das Modell der SVM nutzt einfach das Vorzeichen des Linearen Modells.')
   ]
 
 }

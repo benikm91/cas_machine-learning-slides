@@ -1,4 +1,10 @@
 span.tf-nc([ngClass]="{'active' : entry?.isActive}")
     a(href='#/{{entry?.label?.href}}') {{entry?.label?.label}}
-ul(*ngIf='entry?.children?.length ?? 0 > 0')
-    li(*ngFor='let childEntry of entry?.children' tables-of-content-node='' [entry]='childEntry')
+ul(*ngIf='hasChildren() && (isActiveButNotActualActive() || hasRemainingDepth() || isActualActiveAndHasDepthAfterActive())')
+
+    ng-container(*ngIf="entry?.isActualActive")
+        li(*ngFor='let childEntry of entry?.children' tables-of-content-node='', [depth-after-active]="-1", [remaining-depth]='(depthAfterActive == null) ? null : depthAfterActive - 1', [show-siblings]="showSiblingsOfActualActive", [entry]='childEntry')
+
+    ng-container(*ngIf="!entry?.isActualActive")
+        ng-container(*ngFor='let childEntry of entry?.children')
+            li(*ngIf='childEntry.isActive || hasRemainingDepth() || (showSiblingsOfActualActive && isParentOfActualActive())' tables-of-content-node='', [depth-after-active]="depthAfterActive", [remaining-depth]='(remainingDepth == null) ? null : remainingDepth - 1', [show-siblings]="showSiblingsOfActualActive", [entry]='childEntry')

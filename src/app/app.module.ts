@@ -5,7 +5,7 @@ import { WhatIsMachineLearningComponent } from './what-is-machine-learning/what-
 import {RevealPresentationComponent} from "./reveal-presentation/reveal-presentation.component";
 import {MlPresentationComponent} from "./ml-presentation/ml-presentation.component";
 import {KnowledgeViewComponent} from "./knowledge-view/knowledge-view.component";
-import {TablesOfContentComponent} from "./tables-of-content/tables-of-content.component";
+import {TablesOfContentConceptsComponent} from "./tables-of-content/tables-of-content-concepts.component";
 import {TableOfContentNode} from "./tables-of-content/tables-of-content-node.component";
 import {QuestionSlideComponent} from "./question-slide/question-slide.component";
 import {RemoveWrapperDirective} from "./remove-wrapper.directive";
@@ -58,11 +58,13 @@ import {KNearestNeighboursComponent} from "./k-nearest-neighbours/k-nearest-neig
 import {
   TablesOfContentPCAComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-pca.component";
+import {WhatIsKernelTrickComponent} from "./what-is-kernel-trick/what-is-kernel-trick.component";
+import {TablesOfContentProblemsComponent} from "./tables-of-content/tables-of-content-problems.component";
 
 @NgModule({
   declarations: [
     WhatIsMachineLearningComponent, RevealPresentationComponent, MlPresentationComponent, KnowledgeViewComponent,
-    TablesOfContentComponent, TableOfContentNode,
+    TablesOfContentConceptsComponent, TablesOfContentProblemsComponent, TableOfContentNode,
     QuestionSlideComponent, RemoveWrapperDirective,
     StairSlideComponent, WhatIsRegressionComponent, LinearRegressionComponent,
     SpaceTermExplanationComponents, SpaceTermExplanationFsOsComponents, SlideWithHeaderComponent,
@@ -71,7 +73,8 @@ import {
     ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent,
     SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent, WhatIsEncodingComponent,
     WhatIsFeatureEngineeringComponent, ModelComplexityComponent, LogisticRegressionComponent, TablesOfContentLogisticRegressionComponent,
-    PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent, KNearestNeighboursComponent, TablesOfContentPCAComponent
+    PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent, KNearestNeighboursComponent, TablesOfContentPCAComponent,
+    WhatIsKernelTrickComponent
   ],
   imports: [
     BrowserModule,

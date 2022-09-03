@@ -1,15 +1,12 @@
 ng-template('#slides'='')
     section
         title-page
-            h1 Feature Engineering
+            h1 Kernel Trick
     section
-        slide-with-header(header="Feature Engineering")
-            ul
-                li Idee: Mache #[span.highlight aus bestehende Features neue Features], um dem Modell zu helfen
-                li #[span.highlight Standard]: Polynomielle Features
-                li #[span.highlight Kreatives]: Durchschnittlicher Quadratmeter-Preis im Umkreis
+        slide-with-header(header="Kernel Trick - Intuition")
+            h6 Reminder Feature Engineering:
             div.mt-5.d-flex.justify-center.fragment
-                model-3-visualization(input-header="Input Space", feature-header="Feature Space", output-header="Output Space" )
+                model-3-visualization("#featureEngineering"="", input-header="Input Space", feature-header="Feature Space", output-header="Output Space" )
                     div(input).rect-styling
                         div([mathjax]="inputs")
                     div(pre).model-box Feature Engineering
@@ -18,4 +15,68 @@ ng-template('#slides'='')
                     div(model).model-box Modell
                     div(output).rect-styling
                         div([mathjax]="outputs")
-            div.mt-5.fragment.text-center.alert.alert-primary Riesen Potenzial für Verbesserung!
+                span.fragment(fragment-trigger, "(trigger)"="featureEngineering.end()")
+            div.fragment
+                h6.mt-5 Kernel-Trick macht #[span.highlight implizites Feature Engineering] (mit anderem Rechenaufwand)
+                div.d-flex.justify-center
+                    model-3-visualization("#kernelTrick"="", input-header="Input Space", feature-header="Feature Space", output-header="Output Space" )
+                        div(input).rect-styling
+                            div([mathjax]="inputs")
+                        div(pre, style={borderColor: "#C0C0C0", backgroundColor: "lightgray"}).model-box Feature Engineering
+                        div(feature, style={opacity: 0.25}).rect-styling
+                            div([mathjax]="features")
+                        div(model).model-box SVM
+                        div(output).rect-styling
+                            div([mathjax]="outputs")
+                    span.fragment(fragment-trigger, "(trigger)"="kernelTrick.end()")
+            div.mt-5.fragment.text-center.alert.alert-primary
+                div (Meistens) #[span.highlight gleicher Effekt], #[span.highlight anderes Verfahren]
+    section
+        slide-with-header(header="Kernel Trick - Representer Theorem", [extra]="true")
+            ul(style={fontSize: "22pt"})
+                li
+                    div #[span.highlight Gewicht pro Datenpunkt], anstatt #[span.highlight Gewicht pro Feature] ist äquivalent (Dual Form)
+                    div([mathjax]="representerTheorem")
+                li Änderung auf das z.B. Linear Modell
+                    div([mathjax]="linearModelDualFormDerivation")
+                li
+                    div Wir können also #[span.code N]&nbsp;#[span(mathjax="<math><mi>α</mi></math>")]'s lernen anstatt #[span.code M]&nbsp;#[span(mathjax="<math><mi>β</mi></math>")]'s (#[span.code N] = Anzahl Datenpunkte, #[span.code M] = Anzahl Features) und lernen das von aussen #[span.highlight identische Modell]
+                li Anzahl lernbare Parameter nicht mehr abhängig von Anzahl Features. Gut wenn #[span.code M] >> #[span.code N]
+    section
+        slide-with-header(header="Kernel Trick - Kernel", [extra]="true")
+            ul
+                li
+                    div In der Dual-Form misst das Dot-Product (#[span(mathjax="<math><msub><mi>x</mi><mn>j</mn></msub><mi>x</mi></math>")]) die #[span.highlight Distanz] vom neuen Datenpunkt (#[span(mathjax="<math><mi>x</mi></math>")]) zum Train-Set-Datenpunkten (#[span(mathjax="<math><msub><mi>x</mi><mn>j</mn></msub></math>")]):
+                    div([mathjax]="linearModelDualFormHighlight")
+                li #[span.highlight Kernel Trick]: Diese Messung von Distanz so verändern, dass es #[span.highlight der Distanz im Feature Space] entspricht
+    section
+        slide-with-header(header="Kernel Trick - Beispiel", [extra]="true")
+            div([mathjax]="linearModelDualFormKernel")
+            ul
+                li Kernel #[span([mathjax]="kernel")] misst die Distanz vom neuen Datenpunkt zum Train-Set-Datenpunkten.
+    section
+        slide-with-header(header="Kernel Trick - Feature Engineering", [extra]="true")
+            div
+                | Dual Form mit quadratischer Kernel: #[span([mathjax]="quadraticKernel")] ist
+                | gleich (*) zu #[span.code PolynomialFeatures (n_degree=2)] als Feature Engineering gefolgt von der linearen Form.
+            div Bei Ersterem lernen wir einfach #[span.highlight #[span.code N]&nbsp;#[span(mathjax="<math><mi>α</mi></math>")] Parameters], bei zweiterem lernen wir #[span.highlight #[span.code M²]&nbsp;#[span(mathjax="<math><mi>β</mi></math>")] Parameters]
+            div.mt-5.fragment.text-center.alert.alert-primary In der Praxis wird der Kernel-Trick meistens nur mit der SVM eingesetzt.
+    section
+        slide-with-header(header="Kernel Trick - Most Common Kernels", [extra]="true")
+            side-by-side-3
+                div(first)
+                    h5 Linear
+                    div([mathjax]="linearKernel")
+                    img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d.png")
+                div(second)
+                    h5 Polynomial
+                    div([mathjax]="polynomialKernel")
+                    img(src="assets/images/classification/svm/support-vector-machine-poly-support-vectors-2d.png")
+                div(third)
+                    h5 RBF
+                    div([mathjax]="rbfKernel")
+                    img(src="assets/images/classification/svm/support-vector-machine-rbf-support-vectors-2d.png")
+    section
+        slide-with-header(header="Support Vector Machine (und Kernel Trick) - Code")
+            div.notebook-name support_vector_machine.ipynb
+            img(src="/assets/images/code.png")

@@ -45,7 +45,7 @@ ng-template('#slides'='')
                     ul
                         li #[span.highlight Ordinal-Encoding]
                         li #[span.highlight One-Hot-Encoding]
-                        li #[span.highlight Latent-Encoding]
+                        li (#[span.highlight Latent-Encoding])
                 // li Bei Kategorischen Features die eine Ordnung aufweisen (z.B. Kleidergrössen "S", "M", "L", "XL") kann #[span.highlight Oridnal-Encoding] besser sein.
                 // li Bei Kategorischen Features wird generell #[span.highlight One-Hot-Encoding] verwendet.
                 // li.fragment Ordinal-Encoding trifft #[span.highlight mehr Annahmen] wie One-Hot-Encoding.
@@ -87,22 +87,22 @@ ng-template('#slides'='')
             span.fragment(fragment-trigger, "(trigger)"="oneHotEncoderRoach.start(); oneHotEncoderPike.start()", "(untrigger)"="oneHotEncoderRoach.end(); oneHotEncoderPike.end()")
             span.fragment(fragment-trigger, "(trigger)"="oneHotEncoderRoach.end(); oneHotEncoderPike.end()")
             div.fragment.text-center.alert.alert-primary Macht aus #[span.code-font 1] Feature, #[span.highlight #[span.code-font n] Features]. Kategorien haben #[span.highlight keinen Zusammenhang]!
-    section
-        slide-with-header(header="Latent-Encoding", [extra]="true")
-            div Mappt einer Menge an Objekten zu #[span.highlight #[span.code-font m]-dimensionalen] Vektoren
-            div.mt-2.d-flex.justify-center
-                model-visualization("#latentEncoderRoach"='', [with-trigger]="false")
-                    div(input, class="input").transparent-border-1.code Roach
-                    div(model, class="model").model-box.code
-                        div Latent-Encoder
-                    div(output, class="output").fix-height.code [ 167, 235, 207, 76, 97, 119, 50, 8, 239, 168, 215, ... ]
-            div.mt-2.d-flex.justify-center
-                model-visualization("#latentEncoderPike"='', [with-trigger]="false")
-                    div(input, class="input").transparent-border-1.code Pike
-                    div(model, class="model").model-box.code
-                        div Latent-Encoder
-                    div(output, class="output").fix-height.code [ 137, 181, 203, 131, 208, 47, 140, 17, 183, 78, 211, ... ]
-            div ...
-            span.fragment(fragment-trigger, "(trigger)"="latentEncoderRoach.start(); latentEncoderPike.start()", "(untrigger)"="latentEncoderRoach.end(); latentEncoderPike.end()")
-            span.fragment(fragment-trigger, "(trigger)"="latentEncoderRoach.end(); latentEncoderPike.end()")
-            div.fragment.text-center.alert.alert-primary Macht aus Features (hier #[span.code-font 1] Feature), #[span.highlight #[span.code-font m] Features]! Werte haben #[span.highlight Zusammenhang]
+    // section
+    //     slide-with-header(header="Latent-Encoding", [extra]="true")
+    //         div Mappt einer Menge an Objekten zu #[span.highlight #[span.code-font m]-dimensionalen] Vektoren
+    //         div.mt-2.d-flex.justify-center
+    //             model-visualization("#latentEncoderRoach"='', [with-trigger]="false")
+    //                 div(input, class="input").transparent-border-1.code Roach
+    //                 div(model, class="model").model-box.code
+    //                     div Latent-Encoder
+    //                 div(output, class="output").fix-height.code [ 167, 235, 207, 76, 97, 119, 50, 8, 239, 168, 215, ... ]
+    //         div.mt-2.d-flex.justify-center
+    //             model-visualization("#latentEncoderPike"='', [with-trigger]="false")
+    //                 div(input, class="input").transparent-border-1.code Pike
+    //                 div(model, class="model").model-box.code
+    //                     div Latent-Encoder
+    //                 div(output, class="output").fix-height.code [ 137, 181, 203, 131, 208, 47, 140, 17, 183, 78, 211, ... ]
+    //         div ...
+    //         span.fragment(fragment-trigger, "(trigger)"="latentEncoderRoach.start(); latentEncoderPike.start()", "(untrigger)"="latentEncoderRoach.end(); latentEncoderPike.end()")
+    //         span.fragment(fragment-trigger, "(trigger)"="latentEncoderRoach.end(); latentEncoderPike.end()")
+    //         div.fragment.text-center.alert.alert-primary Macht aus Features (hier #[span.code-font 1] Feature), #[span.highlight #[span.code-font m] Features]! Werte haben #[span.highlight Zusammenhang]

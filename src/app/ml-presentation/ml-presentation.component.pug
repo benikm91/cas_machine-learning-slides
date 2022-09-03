@@ -1,10 +1,14 @@
 doctype html
 reveal-presentation
     what-is-machine-learning
-    tables-of-content
-    tables-of-content([activeProblem]="problemLabels.SUPERVISED_PROBLEM")
+    tables-of-content-concepts([depth]="2")
+    tables-of-content-concepts([active]="methodLabels.FEATURE_PREPROCESSING", [depth]="0", [depth-after-active]="1")
+    tables-of-content-concepts([active]="methodLabels.OPTIMIZATION", [depth]="0", [depth-after-active]="1")
+    tables-of-content-concepts([active]="methodLabels.OPTIMIZATION", [depth]="0", [depth-after-active]="2")
+    tables-of-content-concepts([active]="methodLabels.KERNEL_TRICK", [depth] = "0")
+    tables-of-content-problems([active]="problemLabels.SUPERVISED_LEARNING")
     what-is-supervised-learning
-    tables-of-content([activeProblem]="problemLabels.REGRESSION")
+    tables-of-content-problems([active]="problemLabels.REGRESSION")
     what-is-regression
 
     // Is this good here?
@@ -15,18 +19,15 @@ reveal-presentation
     // section
     //     slide-with-header(header="Begriffe")
     //         space-term-explanation-fs-os
-    tables-of-content([activeProblem]="problemLabels.REGRESSION", [activeMethod]="methodLabels.LINEAR_REGRESSION")
     linear-regression
     question-slide([questions]="linearRegressionQuestions")
+    tables-of-content-concepts([active]="methodLabels.ENCODING")
     what-is-encoding
-        section
-            slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Code")
-                div.notebook-name linear_regression_categorical_feature.ipynb
-                img(src="/assets/images/code.png")
     section
-        slide-with-header(header="{{methodLabels.LINEAR_REGRESSION.label}} - Code")
+        slide-with-header(header="Linear Regression - Code")
             div.notebook-name linear_regression_categorical_feature.ipynb
             img(src="/assets/images/code.png")
+    tables-of-content-concepts([active]="methodLabels.FEATURE_ENGINEERING_EXPLICIT")
     what-is-feature-engineering
     section
         slide-with-header(header="Polynomielle Regression - Code")
@@ -59,7 +60,8 @@ reveal-presentation
     section
         div.fragment.strike Lineare Regression < Polynomielle Regression
         div.fragment Auf dem Train Set, aber nicht zwingend auf neuen Daten!
-        div.fragment.highlight Und Neue Daten ist das Entscheidende!
+        div.fragment.highlight Und neue Daten ist das Entscheidende!
+    tables-of-content-concepts([active]="methodLabels.MODEL_COMPLEXITY")
     section
         title-page
             h1 Komplexität von Modellen
@@ -99,7 +101,8 @@ reveal-presentation
                 div.col-4.code-font = &nbsp;9127
                 div.col-6.col-md-offset-2.text-end MSE RandomForest
                 div.col-4.code-font = 14824
-            div.mt-3.fragment.text-center.alert.alert-success Auf anderen Daten evaluieren!
+            div.mt-3.fragment.text-center.alert.alert-success Auf neuen Daten evaluieren!
+    tables-of-content-concepts([active]="methodLabels.OVERFITTING_UNDERFITTING")
     section
         slide-with-header(header="Underfitting vs. Overfitting")
             div #[span.highlight Overfitting]: Wir sind #[span.highlight gut auf den trainings] Daten, aber #[span.highlight schlecht auf neuen] Daten!
@@ -125,6 +128,7 @@ reveal-presentation
             h3 Train-Set / Validation-Set / Test-Set
                 div.d-flex.justify-center
                     img(src="/assets/images/overfitting/train_set_val_set_test_set.png").img-fluid
+    tables-of-content-concepts([active]="methodLabels.CROSS_VALIDATION")
     section
         slide-with-header(header="k-Fold Cross Validation")
             div.d-flex.justify-center
@@ -133,6 +137,7 @@ reveal-presentation
     section
         slide-with-header(header="Model-Komplexität und Performanz")
             model-complexity
+    tables-of-content-concepts([active]="methodLabels.REGULARIZATION")
     section
         slide-with-header(header="Regularization")
             ul
@@ -168,12 +173,12 @@ reveal-presentation
         slide-with-header(header="Übungszeit")
             div.notebook-name exercise/linear_regression.ipynb
             img(src="/assets/images/code.png")
-    tables-of-content([activeProblem]="problemLabels.CLASSIFICATION")
+    tables-of-content-problems([active]="problemLabels.CLASSIFICATION")
     what-is-classification
-    tables-of-content([activeProblem]="problemLabels.CLASSIFICATION", [activeMethod]="methodLabels.MODEL")
     logistic-regression
+    question-slide([questions]="logisticRegressionQuestions")
     k-nearest-neighbours
     support-vector-machine
-    question-slide([questions]="logisticRegressionQuestions")
-    tables-of-content([activeProblem]="problemLabels.UNSUPERVISED_LEARNING", [activeMethod]="methodLabels.MODEL")
+    question-slide([questions]="supportVectorMachineQuestions")
+    what-is-kernel-trick
     pca

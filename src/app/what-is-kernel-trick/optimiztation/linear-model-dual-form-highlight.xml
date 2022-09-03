@@ -1,31 +1,5 @@
 <math display="block">
-    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array equation equation-colored tml-gather">
-        <mtr>
-            <mtd style="text-align:-webkit-right;">
-                <mover class="output">
-                    <mi>y</mi>
-                    <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
-                </mover>
-            </mtd>
-            <mtd style="text-align:-webkit-left;">
-                <mrow>
-                    <mo>=</mo>
-                    <mover class="weight">
-                        <mi>β</mi>
-                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-                    </mover>
-                    <mover class="feature">
-                        <mi>x</mi>
-                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-                    </mover>
-                    <mo>+</mo>
-                    <msub class="weight">
-                        <mi>β</mi>
-                        <mn>0</mn>
-                    </msub>
-                </mrow>
-            </mtd>
-        </mtr>
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array equation tml-gather">
         <mtr>
             <mtd style="text-align:-webkit-right;">
                 <mover class="output">
@@ -57,12 +31,12 @@
                             <mi>j</mi>
                         </msub>
                         <mo form="prefix" stretchy="false">(</mo>
-                        <msub class="data">
+                        <msub class="data highlight">
                             <mi>x</mi>
                             <mi>j</mi>
                         </msub>
                     </mrow>
-                    <mover class="feature">
+                    <mover class="feature highlight">
                         <mi>x</mi>
                         <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
                     </mover>
