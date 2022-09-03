@@ -16,13 +16,13 @@ ng-template('#slides'='')
         slide-with-header(header="Heaviside step function")
             div.mt-5(mathjax="<math display=\"block\"><mrow>  <mi>H</mi>  <mo form=\"prefix\" stretchy=\"false\">(</mo>  <mi>x</mi>  <mo form=\"postfix\" stretchy=\"false\">)</mo></mrow></math>")
             div.mt-5.d-flex.justify-center
-                img(src="/assets/images/classification/heaviside.png").img-fluid
+                img(src="assets/images/classification/heaviside.png").img-fluid
     section
         slide-with-header(header="Support Vector Machine - Model")
             .row
                 .col-6
                     div.r-stack
-                    img(src="/assets/images/classification/svm/support-vector-machine-linear-2d.png")
+                    img(src="assets/images/classification/svm/support-vector-machine-linear-2d.png")
                 .col-6
                     div Wir verwenden das folgende #[span.highlight Modell]
                         div([mathjax]="svmModel2D")
@@ -40,16 +40,16 @@ ng-template('#slides'='')
         slide-with-header(header="Support Vector Machine - Intuition")
             div Was wäre hier die beste lineare Decision Boundary?
                 .mt-5.d-flex.justify-center
-                    img(src="/assets/images/classification/svm/example-data-only.png", style={height: "200px"})
+                    img(src="assets/images/classification/svm/example-data-only.png", style={height: "200px"})
                     div.fragment
-                        img(src="/assets/images/classification/svm/classification-model-0.png", style={height: "100px"})
-                        img(src="/assets/images/classification/svm/classification-model-1.png", style={height: "100px"})
-                        img(src="/assets/images/classification/svm/classification-model-2.png", style={height: "100px"})
-                        img(src="/assets/images/classification/svm/classification-model-3.png", style={height: "100px"})
-                        img(src="/assets/images/classification/svm/classification-model-4.png", style={height: "100px"})
-                        img(src="/assets/images/classification/svm/classification-model-5.png", style={height: "100px"})
-                        img(src="/assets/images/classification/svm/classification-model-6.png", style={height: "100px"})
-                        img(src="/assets/images/classification/svm/classification-model-7.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-0.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-1.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-2.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-3.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-4.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-5.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-6.png", style={height: "100px"})
+                        img(src="assets/images/classification/svm/classification-model-7.png", style={height: "100px"})
     section
         slide-with-header(header="Support Vector Machine - Intuition")
             div Annahme: Decision Boundary mit #[span.highlight maximalem Abstand] zum nächsten Punkt ist die Beste!
@@ -57,8 +57,8 @@ ng-template('#slides'='')
                 .col-12.fragment
                     h5 (Lineare) Support Vector Machine
                     div.r-stack
-                        img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-without-margin.png")
-                        img.fragment(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-with-margin-2d.png")
+                        img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-without-margin.png")
+                        img.fragment(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-with-margin-2d.png")
             div.fragment.mt-5.text-center.alert.alert-primary Idee: Verallgemeinert auf #[span.highlight neue] Punkte am Besten
     section
         slide-with-header(header="Support Vector Machine - Cost Function", [extra]="true")
@@ -133,16 +133,16 @@ ng-template('#slides'='')
         slide-with-header(header="SVM - Hard-Margin vs. Soft-Margin", [extra]="true")
             .row
                 .col-6
-                    img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable.png")
+                    img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable.png")
                 .col-6
-                    img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable-class-errors.png")
+                    img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable-class-errors.png")
     section
         slide-with-header(header="SVM - Optimization - Soft-Margin", [extra]="true")
             div.mt-5([mathjax]="svmProblemSlack")
     section
         slide-with-header(header="SVM - Hard-Margin vs. Soft-Margin", [extra]="true")
             .d-flex.justify-center
-                img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable-margin-errors.png")
+                img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-non-separable-margin-errors.png")
     section
         slide-with-header(header="SVM - Hyperparameter - C", [extra]="true")
             div([mathjax]="svmProblemSlack", style={fontSize: "16px"})
@@ -153,18 +153,18 @@ ng-template('#slides'='')
                     .d-flex.flex-wrap.justify-center
                         div
                             div.code C=10
-                            img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-C10.png", style={width: "200px"})
+                            img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-C10.png", style={width: "200px"})
                         div
                             div.code C=1
-                            img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-C1.png", style={width: "200px"})
+                            img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-C1.png", style={width: "200px"})
                         div
                             div.code C=0.1
-                            img(src="/assets/images/classification/svm/support-vector-machine-linear-support-vectors-C0.1.png", style={width: "200px"})
+                            img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-C0.1.png", style={width: "200px"})
     tables-of-content-support-vector-machine
         div.mt-5.row
             div.col-6
                 div.d-flex.justify-center
-                    img(src="/assets/images/classification/heaviside.png", style={height: "150px"}).img-fluid
+                    img(src="assets/images/classification/heaviside.png", style={height: "150px"}).img-fluid
             div.col-6.mt-5
                 div.d-flex.justify-center.scale-05
                     div([mathjax]="svmModelND")

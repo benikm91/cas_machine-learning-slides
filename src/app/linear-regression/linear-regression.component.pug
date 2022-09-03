@@ -23,8 +23,8 @@ ng-template('#slides'='')
             .row
                 .col-6
                     div.r-stack
-                        img(src="/assets/images/data.png", data-fragment-index="0").fragment
-                        img(src="/assets/images/data-with-linear-regression-model.png", data-fragment-index="2").fragment
+                        img(src="assets/images/data.png", data-fragment-index="0").fragment
+                        img(src="assets/images/data-with-linear-regression-model.png", data-fragment-index="2").fragment
                 .col-6
                     .fragment(data-fragment-index="1") Dazu verwenden wir das folgende #[span.highlight Lineare Modell]
                         div([mathjax]="linearRegression1DExample")
@@ -39,7 +39,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Linear Regression - Code")
             div.notebook-name Teil 1 in linear_regression.ipynb
-            img(src="/assets/images/code.png")
+            img(src="assets/images/code.png")
     section
         slide-with-header(header="Linear Regression - Theory - Verallgemeinern")
             ul
@@ -90,11 +90,11 @@ ng-template('#slides'='')
                 div(first).d-flex.flex-column
                     h3 1 Feature
                     div([mathjax]="linearRegression1D", style={fontSize: "14pt"})
-                    img(src="/assets/images/data-with-linear-regression-model-1d.png").fragment
+                    img(src="assets/images/data-with-linear-regression-model-1d.png").fragment
                 div(second).d-flex.flex-column
                     h3 2 Feature
                     div([mathjax]="linearRegression2D", style={fontSize: "14pt"})
-                    img(src="/assets/images/data-with-linear-regression-model-2d.png").fragment
+                    img(src="assets/images/data-with-linear-regression-model-2d.png").fragment
                 div(third).d-flex.flex-column
                     h3 3 Feature
                     div([mathjax]="linearRegression3D", style={fontSize: "14pt"})
@@ -114,17 +114,17 @@ ng-template('#slides'='')
                 div.col-1.m-auto
                     h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
                 div.col-5.p-2
-                    img(src="/assets/images/data-with-linear-regression-model-1d.png").limit-possible
+                    img(src="assets/images/data-with-linear-regression-model-1d.png").limit-possible
                 div.col-5.p-2
-                    img(src="/assets/images/polynomial-regression.png").limit-impossible
+                    img(src="assets/images/polynomial-regression.png").limit-impossible
                 div.col-1
             div.row.fragment
                 div.col-1.m-auto
                     h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
                 div.col-5.p-2
-                    img(src="/assets/images/data-with-linear-regression-model-2d.png").limit-possible
+                    img(src="assets/images/data-with-linear-regression-model-2d.png").limit-possible
                 div.col-5.p-2
-                    img(src="/assets/images/polynomial-regression-2d.png").limit-impossible
+                    img(src="assets/images/polynomial-regression-2d.png").limit-impossible
                 div.col-1
     section
         slide-with-header(header="Linear Regression - Wissens Ansicht")
@@ -144,7 +144,7 @@ ng-template('#slides'='')
                 li.fragment
                     div #[span.highlight Residuals] messen Fehler pro Datenpunkt
                     div.d-flex.justify-center
-                        img(style={width: "350px"}, src="/assets/images/linear-regression-model-residuals.png").img-fluid
+                        img(style={width: "350px"}, src="assets/images/linear-regression-model-residuals.png").img-fluid
                     div([mathjax]='metricResiduals')
                 li.fragment Residuals zu einer Zahl zusammenfassen => #[span.highlight Metrik]
     section
@@ -192,7 +192,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Linear Regression - Code")
             div.notebook-name Teil 2 in in linear_regression.ipynb
-            img(src="/assets/images/code.png")
+            img(src="assets/images/code.png")
     tables-of-content-concepts([active]="conceptLabels.OPTIMIZATION_ALGORITHMS")
     section
         slide-with-header(header="Optimierung")
@@ -209,7 +209,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Linear Regression - Kostenfunktion - Visuell")
             div.mt-5.d-flex.justify-center
-                img(src="/assets/images/gradient-descent/gradient_descent_cost_function.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_cost_function.png").fragment
             p.fragment.text-center.alert.alert-primary Schüssel nennt man #[span.highlight Convex Cost function]
     section
         slide-with-header(header="Linear Regression - Optimierung - Analytisch", [repetition]="'Regression'")
@@ -217,19 +217,19 @@ ng-template('#slides'='')
             div.d-flex.justify-center(style={marginTop: "-10px"})
                 div([mathjax]="linearRegressionAnalytic").fragment
             div.fragment.d-flex.justify-center
-                img(src="/assets/images/gradient-descent/gradient_descent_solution.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_solution.png").fragment
             p.fragment.text-center.alert.alert-warning Nur bei #[span.highlight Convex Cost function] möglich
     section
         slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
             p Alternative Methode zur Analytischen Methode zum setzen der Parameter (betas)
             div.r-stack
-                img(src="/assets/images/gradient-descent/gradient_descent_solution.png").fragment
-                img(src="/assets/images/gradient-descent/gradient_descent_step_0.png").fragment
-                img(src="/assets/images/gradient-descent/gradient_descent_step_1.png").fragment
-                img(src="/assets/images/gradient-descent/gradient_descent_step_2.png").fragment
-                img(src="/assets/images/gradient-descent/gradient_descent_step_3.png").fragment
-                img(src="/assets/images/gradient-descent/gradient_descent_step_4.png").fragment
-                img(src="/assets/images/gradient-descent/gradient_descent_step_5.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_solution.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_0.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_1.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_2.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_3.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_4.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_5.png").fragment
     section
         slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
             p Wie finden wir die #[span.highlight Richtung] herunter?
@@ -266,4 +266,4 @@ ng-template('#slides'='')
                 div.d-flex.justify-start.flex-column.scale-05
                     div([mathjax]="metricMeanSquaredError")
             div.col-6
-                img(src="/assets/images/gradient-descent/gradient_descent_step_5.png").img-fluid
+                img(src="assets/images/gradient-descent/gradient_descent_step_5.png").img-fluid

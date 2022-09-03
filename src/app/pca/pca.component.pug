@@ -6,10 +6,10 @@ ng-template('#slides'='')
         slide-with-header(header="Dimensionality Reduction - Manifold")
             h6 3 Features
             div.d-flex.justify-center
-                img(src="/assets/images/pca/manifold.png").img-fluid
+                img(src="assets/images/pca/manifold.png").img-fluid
             h6.mt-5 Aber eigentlich 2 Features
             div.d-flex.justify-center.fragment
-                img(src="/assets/images/pca/maniunfolding.png").img-fluid
+                img(src="assets/images/pca/maniunfolding.png").img-fluid
     section
         slide-with-header(header="Dimensionality Reduction - Manifold - Beispiel")
             .manifold-example
@@ -17,26 +17,26 @@ ng-template('#slides'='')
                     .col-6
                         h6 CIFAR-Space
                         .d-flex.justify-center.flex-wrap
-                            img(src="/assets/images/pca/img-space-cifar-0.png")
-                            img(src="/assets/images/pca/img-space-cifar-1.png")
-                            img(src="/assets/images/pca/img-space-cifar-2.png")
-                            img(src="/assets/images/pca/img-space-cifar-3.png")
-                            img(src="/assets/images/pca/img-space-cifar-4.png")
-                            img(src="/assets/images/pca/img-space-cifar-5.png")
-                            img(src="/assets/images/pca/img-space-cifar-6.png")
-                            img(src="/assets/images/pca/img-space-cifar-7.png")
+                            img(src="assets/images/pca/img-space-cifar-0.png")
+                            img(src="assets/images/pca/img-space-cifar-1.png")
+                            img(src="assets/images/pca/img-space-cifar-2.png")
+                            img(src="assets/images/pca/img-space-cifar-3.png")
+                            img(src="assets/images/pca/img-space-cifar-4.png")
+                            img(src="assets/images/pca/img-space-cifar-5.png")
+                            img(src="assets/images/pca/img-space-cifar-6.png")
+                            img(src="assets/images/pca/img-space-cifar-7.png")
                         div 32 Pixel * 32 Pixel * 3 Channels = #[span.highlight 3072 Features]
                     .col-6.fragment
                         h6 Image-Space (3072 Features = 32 Pixel * 32 Pixel * 3 Channels)
                         .d-flex.justify-center.flex-wrap
-                            img(src="/assets/images/pca/img-space-0-0-0.png")
-                            img(src="/assets/images/pca/img-space-0-0-1.png")
-                            img(src="/assets/images/pca/img-space-0-1-0.png")
-                            img(src="/assets/images/pca/img-space-1-0-0.png")
-                            img(src="/assets/images/pca/img-space-random-0.png")
-                            img(src="/assets/images/pca/img-space-random-1.png")
-                            img(src="/assets/images/pca/img-space-random-2.png")
-                            img(src="/assets/images/pca/img-space-random-3.png")
+                            img(src="assets/images/pca/img-space-0-0-0.png")
+                            img(src="assets/images/pca/img-space-0-0-1.png")
+                            img(src="assets/images/pca/img-space-0-1-0.png")
+                            img(src="assets/images/pca/img-space-1-0-0.png")
+                            img(src="assets/images/pca/img-space-random-0.png")
+                            img(src="assets/images/pca/img-space-random-1.png")
+                            img(src="assets/images/pca/img-space-random-2.png")
+                            img(src="assets/images/pca/img-space-random-3.png")
                         div 32 Pixel * 32 Pixel * 3 Channels = #[span.highlight 3072 Features]
                 div.fragment.mt-5 #[span.highlight CIFAR-Space] ist ein Sub-Space vom #[span.highlight Image-Space]
                 p.fragment.text-center.alert.alert-primary
@@ -57,7 +57,7 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) Input Space
                             h6(margin="0") 3072 Pixelwerte (Features)
                     div(input).rect-styling
-                        img(src="/assets/images/pca/example-img.png", style={height: "150px"})
+                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
                     div(model, class="model").model-box.code
                         div Encoder
                         div #[span.code.small e.g. TODO]
@@ -94,7 +94,7 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) Input Space
                             h6(margin="0") 3072 Features
                     div(input).rect-styling
-                        img(src="/assets/images/pca/example-img.png", style={height: "150px"})
+                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
                     div(model, class="model").model-box.code
                         div Modell
                         div #[span.code.small e.g. Logistic Regression]
@@ -112,7 +112,7 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) Latent Space
                             h6(margin="0") 200 Features
                     div(input).rect-styling
-                        img(src="/assets/images/pca/example-img.png")
+                        img(src="assets/images/pca/example-img.png")
                     div(pre).model-box
                         div Encoder
                     div(feature).fix-height.code
@@ -130,10 +130,10 @@ ng-template('#slides'='')
                 li Idee: Wir reduzieren die Anzahl der Features (Dimensionen) indem wir Features #[span.highlight weglassen].
             div.mt-5.d-flex.justify-center
                 div.r-stack
-                    img.fragment(src="/assets/images/pca/feature-selection-data-only.png")
-                    img.fragment(src="/assets/images/pca/feature-selection-1.png")
-                    img.fragment(src="/assets/images/pca/feature-selection-data-only.png")
-                    img.fragment(src="/assets/images/pca/feature-selection-2.png")
+                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
+                    img.fragment(src="assets/images/pca/feature-selection-1.png")
+                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
+                    img.fragment(src="assets/images/pca/feature-selection-2.png")
             div.fragment.mt-4.text-center.alert.alert-warning Problem: Grosser Informationsverlust
     tables-of-content-pca
     tables-of-content-pca([active]="pcaLabel.MODEL")
@@ -143,8 +143,8 @@ ng-template('#slides'='')
                 li Können wir #[span.highlight bessere Features] selektieren?
             div.mt-5.d-flex.justify-center
                 div.r-stack
-                    img.fragment(src="/assets/images/pca/feature-selection-data-only.png")
-                    img.fragment(src="/assets/images/pca/pca-1.png")
+                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
+                    img.fragment(src="assets/images/pca/pca-1.png")
             div.fragment.text-center.alert.alert-success
                 | PCA #[span.highlight fasst] Features zu einem #[span.highlight neuen Feature zusammen].
                 | Dadurch gehen #[span.highlight weniger Informationen (Daten Varianz) verloren].
@@ -158,23 +158,23 @@ ng-template('#slides'='')
                     h6 Hauptkomponenten im Input Space
                     div.d-flex.justify-center
                         div.r-stack
-                            img(src="/assets/images/pca/pca-2d-anim-data.png")
-                            img.fragment(src="/assets/images/pca/pca-2d-anim-1.png")
-                            img.fragment(src="/assets/images/pca/pca-2d-anim-2.png")
+                            img(src="assets/images/pca/pca-2d-anim-data.png")
+                            img.fragment(src="assets/images/pca/pca-2d-anim-1.png")
+                            img.fragment(src="assets/images/pca/pca-2d-anim-2.png")
                 .col-6.fragment
                     h6 Daten im PC-Space
                     div.d-flex.justify-center
-                        img(src="/assets/images/pca/pca_2d.gif")
+                        img(src="assets/images/pca/pca_2d.gif")
     section
         slide-with-header(header="PCA - PC Selection")
             div Im PC-Space machen wir dann "Feature Selection", sprich wir #[span.highlight werfen die weniger wichtigen Hauptkomponenten (neuen "Features") weg].
             .row.mt-5
                 .col-6.fragment
                     div.d-flex.justify-center
-                        img(src="/assets/images/pca/pca-selection-1.png")
+                        img(src="assets/images/pca/pca-selection-1.png")
                 .col-6.fragment
                     div.d-flex.justify-center
-                        img(src="/assets/images/pca/pca-1.png")
+                        img(src="assets/images/pca/pca-1.png")
             div.fragment.mt-4.text-center.alert.alert-warning Weniger Informationsverlust, aber es gehen weiterhin Informationen verloren!
     section
         slide-with-header(header="PC Selection vs. Feature Selection - Intuition", [extra]="true")
@@ -182,21 +182,21 @@ ng-template('#slides'='')
                 li Die #[span.highlight Principal Components (PC)] Selection #[span.highlight verliert weniger Information] als die Feature Selection.
                 li.fragment Hoffnung: Wir können dann damit besser ein Modell lernen (z.B. #[span.code-font weight] eines Fisches).
             div.fragment
-                img(src="/assets/images/pca/pca-example.png")
+                img(src="assets/images/pca/pca-example.png")
                 // div.text-center.alert.alert-success Bereits 2 Dimensional zu 1 Dimensional sichtbar
             div.fragment.text-center.alert.alert-warning In Praxis nur für viel mehr Features #[span.highlight notwendig]!
     section
         slide-with-header(header="PC Selection vs. Feature Selection - Intuition", [extra]="true")
             div.fragment
                 h6 Original Image (100%)
-                img(src="/assets/images/pca/example-img.png").img-fluid.limit-possible
+                img(src="assets/images/pca/example-img.png").img-fluid.limit-possible
             .row.mt-5
                 .col-6.fragment
                     h6 Feature Selection: Pixels of 200 Features (9.3%)
-                    img(src="/assets/images/pca/example-img-pixel-selection.png").img-fluid.limit-impossible
+                    img(src="assets/images/pca/example-img-pixel-selection.png").img-fluid.limit-impossible
                 .col-6.fragment
                     h6 PC-Selection: Reconstruction 200 Features (PCA) (94.4%)
-                    img(src="/assets/images/pca/example-img-reconstruction.png").img-fluid.limit-possible
+                    img(src="assets/images/pca/example-img-reconstruction.png").img-fluid.limit-possible
     section
         slide-with-header(header="Logistic Regression - Mehrere Features", [extra]="true")
             side-by-side-3
@@ -204,28 +204,28 @@ ng-template('#slides'='')
                     h3 1 Feature
                     div.mt-5.d-flex.justify-center
                         div.r-stack
-                            img.fragment(src="/assets/images/pca/pca-1d-anim-data.png")
-                            img.fragment(src="/assets/images/pca/pca-1d-anim-1.png")
-                            img.fragment(src="/assets/images/pca/pca-1d-anim-pc1.png")
+                            img.fragment(src="assets/images/pca/pca-1d-anim-data.png")
+                            img.fragment(src="assets/images/pca/pca-1d-anim-1.png")
+                            img.fragment(src="assets/images/pca/pca-1d-anim-pc1.png")
                 div(second).d-flex.flex-column
                     h3 2 Feature
                     div.mt-5.d-flex.justify-center
                         div.r-stack
-                            img(src="/assets/images/pca/pca-2d-anim-2.png")
-                            img.fragment("#gif"="", src="/assets/images/pca/pca_2d.gif")
-                            img.fragment(src="/assets/images/pca/pca-2d-anim-2.png")
+                            img(src="assets/images/pca/pca-2d-anim-2.png")
+                            img.fragment("#gif"="", src="assets/images/pca/pca_2d.gif")
+                            img.fragment(src="assets/images/pca/pca-2d-anim-2.png")
                 div(third).d-flex.flex-column
                     h3 3 Feature
                     div.mt-5.d-flex.justify-center
                         div.r-stack
-                            img.fragment(src="/assets/images/pca/pca-3d-anim-data.png")
-                            img.fragment(src="/assets/images/pca/pca-3d-anim-1.png").img-fluid
-                            img.fragment(src="/assets/images/pca/pca-3d-anim-2.png").img-fluid
-                            img.fragment(src="/assets/images/pca/pca-3d-anim-3.png").img-fluid
-                            img.fragment(src="/assets/images/pca/pca-3d-3.gif").img-fluid
-                            img.fragment(src="/assets/images/pca/pca-3d-anim-3.png").img-fluid
-                            img.fragment(src="/assets/images/pca/pca_3d.gif").img-fluid
-                            img.fragment(src="/assets/images/pca/pca-3d-anim-3.png").img-fluid
+                            img.fragment(src="assets/images/pca/pca-3d-anim-data.png")
+                            img.fragment(src="assets/images/pca/pca-3d-anim-1.png").img-fluid
+                            img.fragment(src="assets/images/pca/pca-3d-anim-2.png").img-fluid
+                            img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
+                            img.fragment(src="assets/images/pca/pca-3d-3.gif").img-fluid
+                            img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
+                            img.fragment(src="assets/images/pca/pca_3d.gif").img-fluid
+                            img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
     section
         slide-with-header(header="PCA - PC Selection")
             h6 Idee
@@ -244,15 +244,15 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) PC Space
                             h6(margin="0") 1 Features
                     div(input).rect-styling
-                        img(src="/assets/images/pca/data-input-space.png")
+                        img(src="assets/images/pca/data-input-space.png")
                     div(pre).model-box.code
                         div "Rotate"
                     div(feature).fix-height.code
-                        img(src="/assets/images/pca/data-pca-space.png")
+                        img(src="assets/images/pca/data-pca-space.png")
                     div(model).model-box.code
                         div PC Selection
                     div(output).rect-styling
-                        img(src="/assets/images/pca/data-pca-space-1d.png")
+                        img(src="assets/images/pca/data-pca-space-1d.png")
                 span.fragment(fragment-trigger, "(trigger)"="pcaRotSel.end()")
             div.mt-5.fragment
                 h6 Praxis
@@ -267,12 +267,12 @@ ng-template('#slides'='')
                                 h5(style={marginBottom: "0"}) PC Space
                                 h6(margin="0") 1 Features
                         div(input).rect-styling
-                            img(src="/assets/images/pca/data-input-space.png")
+                            img(src="assets/images/pca/data-input-space.png")
                         div(model).model-box.code
                             div PCA #[span.code.small (n_components=1)]
                             div.code.small fit_transform
                         div(output).rect-styling
-                            img(src="/assets/images/pca/data-pca-space-1d.png")
+                            img(src="assets/images/pca/data-pca-space-1d.png")
                     span.fragment(fragment-trigger, "(trigger)"="pcaDirect.end()")
     section
         slide-with-header(header="Dimensionsreduktion - PCA")
@@ -283,7 +283,7 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) Input Space
                             h6(margin="0") 3072 Features
                     div(input).rect-styling
-                        img(src="/assets/images/pca/example-img.png", style={height: "150px"})
+                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
                     div(model, class="model").model-box.code
                         div Encoder
                         div #[span.code.small e.g. PCA.transform]
@@ -310,7 +310,7 @@ ng-template('#slides'='')
                                 h5(style={marginBottom: "0"}) Reconstructed Input Space
                                 h6(margin="0") 3072 Features
                         div(input).rect-styling
-                            img(src="/assets/images/pca/example-img.png")
+                            img(src="assets/images/pca/example-img.png")
                         div(pre).model-box.code
                             div Encoder
                             div.small PCA.transform
@@ -320,7 +320,7 @@ ng-template('#slides'='')
                             div Decoder
                             div.small PCA.inverse_transform
                         div(output).rect-styling
-                            img(src="/assets/images/pca/example-img-reconstruction.png")
+                            img(src="assets/images/pca/example-img-reconstruction.png")
                     span.fragment(fragment-trigger, "(trigger)"="pcaEncDec.end()")
             div.fragment.mt-5.text-center.alert.alert-success Decoder kann uns zeigen, was #[span.highlight verloren] geht.
     section
@@ -336,7 +336,7 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) Latent Space
                             h6(margin="0") 200 Features
                     div(input).rect-styling
-                        img(src="/assets/images/pca/example-img.png")
+                        img(src="assets/images/pca/example-img.png")
                     div(pre).model-box
                         div Encoder
                         div.small PCA.transform
@@ -351,7 +351,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="PCA - Code")
             div.notebook-name pca.ipynb
-            img(src="/assets/images/code.png")
+            img(src="assets/images/code.png")
     tables-of-content-pca([active]="pcaLabel.DATA_SPECIFICATION")
     section
         slide-with-header(header="PCA - Data Specification")
@@ -363,7 +363,7 @@ ng-template('#slides'='')
     tables-of-content-pca([active]="pcaLabel.COST_FUNCTION")
     section
         slide-with-header(header="PCA - Cost function")
-            img(src="/assets/images/pca/placeholder-cost-function.png")
+            img(src="assets/images/pca/placeholder-cost-function.png")
             // https://stats.stackexchange.com/questions/10251/what-is-the-objective-function-of-pca
     tables-of-content-pca([active]="pcaLabel.OPTIMIERUNG")
     section(id="current")
@@ -378,9 +378,9 @@ ng-template('#slides'='')
                 div.col-1.m-auto
                     h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap', marginBottom: "-300px"}) 2 Features zu 1
                 div.col-5.p-2
-                    img(src="/assets/images/pca/example-data-with-model-2d-possible.png").limit-possible
+                    img(src="assets/images/pca/example-data-with-model-2d-possible.png").limit-possible
                 div.col-5.p-2
-                    img(src="/assets/images/pca/example-data-with-model-2d-limit.png").limit-impossible
+                    img(src="assets/images/pca/example-data-with-model-2d-limit.png").limit-impossible
                 div.col-1
             div.row.fragment
                 div.col-1.m-auto
@@ -390,9 +390,9 @@ ng-template('#slides'='')
                         marginBottom: "-300px"
                     }) 3 Features zu 2
                 div.col-5.p-2
-                    img(src="/assets/images/pca/pca-limit-3d.png").limit-possible
+                    img(src="assets/images/pca/pca-limit-3d.png").limit-possible
                 div.col-5.p-2.fragment
-                    img(src="/assets/images/pca/pca-limit-3d-isomap.png").limit-impossible
+                    img(src="assets/images/pca/pca-limit-3d-isomap.png").limit-impossible
                 div.col-1
             div.mt-2.fragment.text-center.alert.alert-warning
                 .row

@@ -26,13 +26,13 @@ reveal-presentation
     section
         slide-with-header(header="Linear Regression - Code")
             div.notebook-name linear_regression_categorical_feature.ipynb
-            img(src="/assets/images/code.png")
+            img(src="assets/images/code.png")
     tables-of-content-concepts([active]="methodLabels.FEATURE_ENGINEERING_EXPLICIT")
     what-is-feature-engineering
     section
         slide-with-header(header="Polynomielle Regression - Code")
             div.notebook-name poly_regression.ipynb
-            img(src="/assets/images/code.png")
+            img(src="assets/images/code.png")
     section
         slide-with-header(header="Polynomielle Regression", [extra]="true")
             div.row
@@ -45,17 +45,17 @@ reveal-presentation
                 div.col-1.m-auto
                     h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
                 div.col-5.p-2
-                    img(src="/assets/images/data-with-linear-regression-model-1d.png").limit-possible
+                    img(src="assets/images/data-with-linear-regression-model-1d.png").limit-possible
                 div.col-5.p-2
-                    img(src="/assets/images/polynomial-regression.png").limit-possible
+                    img(src="assets/images/polynomial-regression.png").limit-possible
                 div.col-1
             div.row
                 div.col-1.m-auto
                     h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
                 div.col-5.p-2
-                    img(src="/assets/images/data-with-linear-regression-model-2d.png").limit-possible
+                    img(src="assets/images/data-with-linear-regression-model-2d.png").limit-possible
                 div.col-5.p-2
-                    img(src="/assets/images/polynomial-regression-2d.png").limit-possible
+                    img(src="assets/images/polynomial-regression-2d.png").limit-possible
                 div.col-1
     section
         div.fragment.strike Lineare Regression < Polynomielle Regression
@@ -70,13 +70,13 @@ reveal-presentation
         slide-with-header(header="Test")
             side-by-side-3
                 div(first).d-flex.flex-column
-                    img(src="/assets/images/overfitting/overfitting-linear-regression.png")
+                    img(src="assets/images/overfitting/overfitting-linear-regression.png")
                     div.code-font
 
                 div(second).d-flex.flex-column
-                    img(src="/assets/images/overfitting/overfitting-polynomial-regression.png")
+                    img(src="assets/images/overfitting/overfitting-polynomial-regression.png")
                 div(third).d-flex.flex-column
-                    img(src="/assets/images/overfitting/overfitting-random-forest.png")
+                    img(src="assets/images/overfitting/overfitting-random-forest.png")
             div.row
                 div.col-6.col-md-offset-2.text-end MSE Linear Regression
                 div.col-4.code-font = 33174
@@ -89,11 +89,11 @@ reveal-presentation
         slide-with-header(header="Test")
             side-by-side-3
                 div(first).d-flex.flex-column
-                    img(src="/assets/images/overfitting/overfitting-linear-regression-with-val.png")
+                    img(src="assets/images/overfitting/overfitting-linear-regression-with-val.png")
                 div(second).d-flex.flex-column
-                    img(src="/assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
+                    img(src="assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
                 div(third).d-flex.flex-column
-                    img(src="/assets/images/overfitting/overfitting-random-forest-with-val.png")
+                    img(src="assets/images/overfitting/overfitting-random-forest-with-val.png")
             div.row
                 div.col-6.col-md-offset-2.text-end MSE Linear Regression
                 div.col-4.code-font = 14667
@@ -112,27 +112,27 @@ reveal-presentation
                 side-by-side-3
                     div(first).d-flex.flex-column
                         h4.align-center Underfitting
-                        img(src="/assets/images/overfitting/overfitting-linear-regression-with-val.png")
+                        img(src="assets/images/overfitting/overfitting-linear-regression-with-val.png")
                     div(second).d-flex.flex-column
                         h4.align-center Richtig
-                        img(src="/assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
+                        img(src="assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
                     div(third).d-flex.flex-column
                         h4.align-center Overfitting
-                        img(src="/assets/images/overfitting/overfitting-random-forest-with-val.png")
+                        img(src="assets/images/overfitting/overfitting-random-forest-with-val.png")
     section
         div
             h3 Train-Set / Validation-Set
                 div.d-flex.justify-center
-                    img(src="/assets/images/overfitting/train_set_test_set.png").img-
+                    img(src="assets/images/overfitting/train_set_test_set.png").img-
         div.mt-5.fragment
             h3 Train-Set / Validation-Set / Test-Set
                 div.d-flex.justify-center
-                    img(src="/assets/images/overfitting/train_set_val_set_test_set.png").img-fluid
+                    img(src="assets/images/overfitting/train_set_val_set_test_set.png").img-fluid
     tables-of-content-concepts([active]="methodLabels.CROSS_VALIDATION")
     section
         slide-with-header(header="k-Fold Cross Validation")
             div.d-flex.justify-center
-                img(src="/assets/images/overfitting/k-fold-cross-validation.png").img-fluid
+                img(src="assets/images/overfitting/k-fold-cross-validation.png").img-fluid
             div.mt-3.text-center.alert.alert-primary Hier 5-Fold Cross Validation
     section
         slide-with-header(header="Model-Komplexität und Performanz")
@@ -156,7 +156,7 @@ reveal-presentation
             ul
                 li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
                     div.d-flex.justify-center
-                        img(src="/assets/images/regularization/l1-prior.png", style={height: "150px"}).img-fluid
+                        img(src="assets/images/regularization/l1-prior.png", style={height: "150px"}).img-fluid
                 li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
                     div([mathjax]="l1Regularization")
             div.fragment.mt-4.text-center.alert.alert-primary Gut für Feature-Selection!
@@ -165,14 +165,14 @@ reveal-presentation
             ul
                 li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
                     div.d-flex.justify-center
-                        img(src="/assets/images/regularization/l2-prior.png", style={height: "150px"}).img-fluid
+                        img(src="assets/images/regularization/l2-prior.png", style={height: "150px"}).img-fluid
                 li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
                     div([mathjax]="l2Regularization")
                 // https://ekamperi.github.io/mathematics/2020/08/02/bayesian-connection-to-lasso-and-ridge-regression.html
     section
         slide-with-header(header="Übungszeit")
             div.notebook-name exercise/linear_regression.ipynb
-            img(src="/assets/images/code.png")
+            img(src="assets/images/code.png")
     tables-of-content-problems([active]="problemLabels.CLASSIFICATION")
     what-is-classification
     logistic-regression

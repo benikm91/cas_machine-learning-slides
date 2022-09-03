@@ -27,7 +27,7 @@ ng-template('#slides'='')
                     div.col-6.fragment
                         div([mathjax]="sigmoid")
                     div.col-6.fragment
-                        img(src="/assets/images/classification/sigmoid.png").img-fluid
+                        img(src="assets/images/classification/sigmoid.png").img-fluid
                 div.row
                     div.col-12.fragment
                         div([mathjax]="logisticRegression1D")
@@ -43,8 +43,8 @@ ng-template('#slides'='')
             .row
                 .col-6
                     div.r-stack
-                        img(src="/assets/images/classification/example-data-only.png", data-fragment-index="0").fragment
-                        img(src="/assets/images/classification/example-data-with-model.png", data-fragment-index="2").fragment
+                        img(src="assets/images/classification/example-data-only.png", data-fragment-index="0").fragment
+                        img(src="assets/images/classification/example-data-with-model.png", data-fragment-index="2").fragment
                 .col-6
                     .fragment(data-fragment-index="1") Dazu verwenden wir das folgende #[span.highlight Modell]
                         div([mathjax]="logisticRegression2D")
@@ -69,22 +69,22 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Logistic Regression - Code")
             div.notebook-name logistic_regression.ipynb
-            img(src="/assets/images/code.png")
+            img(src="assets/images/code.png")
     section
         slide-with-header(header="Logistic Regression - Mehrere Features", [extra]="true")
             side-by-side-3
                 div(first).d-flex.flex-column
                     h3 1 Feature
                     div([mathjax]="logisticRegression1D", style={fontSize: "14pt"})
-                    img(src="/assets/images/classification/example-data-with-model-1d.png").fragment
+                    img(src="assets/images/classification/example-data-with-model-1d.png").fragment
                 div(second).d-flex.flex-column
                     h3 2 Feature
                     div([mathjax]="logisticRegression2D", style={fontSize: "14pt"})
-                    img(src="/assets/images/classification/example-data-with-model.png")
+                    img(src="assets/images/classification/example-data-with-model.png")
                 div(third).d-flex.flex-column
                     h3 3 Feature
                     div([mathjax]="logisticRegression3D", style={fontSize: "14pt"})
-                    img(src="/assets/images/classification/example-data-with-model-3d.gif").fragment
+                    img(src="assets/images/classification/example-data-with-model-3d.gif").fragment
     section
         slide-with-header(header="Logistic Regression - Limits", [extra]="true")
             div.row
@@ -98,17 +98,17 @@ ng-template('#slides'='')
                 div.col-1.m-auto
                     h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
                 div.col-5.p-2
-                    img(src="/assets/images/classification/example-data-with-model-2d-possible.png").limit-possible
+                    img(src="assets/images/classification/example-data-with-model-2d-possible.png").limit-possible
                 div.col-5.p-2
-                    img(src="/assets/images/classification/example-data-with-model-2d-limit.png").limit-impossible
+                    img(src="assets/images/classification/example-data-with-model-2d-limit.png").limit-impossible
                 div.col-1
             div.row.fragment
                 div.col-1.m-auto
                     h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
                 div.col-5.p-2
-                    img(src="/assets/images/classification/example-data-with-model-1d-possible.png").limit-possible
+                    img(src="assets/images/classification/example-data-with-model-1d-possible.png").limit-possible
                 div.col-5.p-2
-                    img(src="/assets/images/classification/example-data-with-model-1d-limit.png").limit-impossible
+                    img(src="assets/images/classification/example-data-with-model-1d-limit.png").limit-impossible
                 div.col-1
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.COST_FUNCTION")
     section
@@ -174,7 +174,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Classification - Confusion Matrix")
             div.fragment.d-flex.justify-center
-                img(src="/assets/images/classification/confusion_matrix.png")
+                img(src="assets/images/classification/confusion_matrix.png")
             p.fragment.text-center.alert.alert-primary #[span.highlight Confusion Matrix] zeigt die Fehler #[span.highlight pro Datenpunkt]!
     section
         slide-with-header(header="Classification - Metrik - Beispiele")
@@ -270,7 +270,7 @@ ng-template('#slides'='')
         slide-with-header(header="Logistic Regression Optimierung - Gradient Descent")
             div Idee: #[span.highlight Gradient Descent] anwenden auf der Maximum Likelihood Kostenfunktion
             div.d-flex.justify-center
-                img(src="/assets/images/classification/gradient_descent.gif")
+                img(src="assets/images/classification/gradient_descent.gif")
             div.mt-5.fragment.text-center.alert.alert-primary #[span.highlight Andere] Verfahren (z.B. Coordinate Descent) möglich
     section
         slide-with-header(header="Logistic Regression Optimierung", [extra]="true")
@@ -305,7 +305,7 @@ ng-template('#slides'='')
         div.mt-5.row
             div.col-6
                 div.d-flex.justify-center
-                    img(src="/assets/images/classification/sigmoid.png", style={height: "150px"}).img-fluid
+                    img(src="assets/images/classification/sigmoid.png", style={height: "150px"}).img-fluid
             div.col-6.mt-5
                 div.d-flex.justify-center.scale-05
                     div([mathjax]="logisticRegressionND")
@@ -314,4 +314,4 @@ ng-template('#slides'='')
                     div([mathjax]="metricLikelihood")
             div.col-6
                 div.d-flex.justify-center
-                    img(src="/assets/images/classification/gradient_descent.gif", style={height: "150px"}).img-fluid
+                    img(src="assets/images/classification/gradient_descent.gif", style={height: "150px"}).img-fluid
