@@ -6,15 +6,6 @@ This repository contains my slides for the "Machine Learning" subject at CAS Dat
 
 The current slides are hosted on github pages: https://benikm91.github.io/cas_machine-learning-slides/
 
-<div>
-    <iframe 
-        title="Current Slides"
-         width="1280px"
-         height="720px"
-        src="https://benikm91.github.io/cas_machine-learning-slides">
-    </iframe>
-</div>
-
 ## Technology
 
 ### Illustrations
