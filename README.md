@@ -1,5 +1,8 @@
 # CAS Data Science - Machine Learning slides
 
+| WARNING: Slides are still work in progress, as they will be used the first time in HS22. |
+|------------------------------------------------------------------------------------------|
+
 This repository contains my slides for the "Machine Learning" subject at CAS Data Science.
 
 ## Slides
