@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {Slide} from "../slide/slide";
+import {
+  KNNTableOfContentLabel
+} from "../tables-of-content-machine-learning-algorithm/table-of-content-linear-regression-data";
 
 @Component({
   selector: 'k-nearest-neighbours',
@@ -9,6 +12,8 @@ import {Slide} from "../slide/slide";
 export class KNearestNeighboursComponent extends Slide {
 
   knn2D = "Lookup & average neighbors"
+
+  knnLabels = KNNTableOfContentLabel
 
   // https://www.fromthegenesis.com/pros-and-cons-of-k-nearest-neighbors/
   // homogeneous features

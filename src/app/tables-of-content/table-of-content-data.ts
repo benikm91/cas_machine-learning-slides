@@ -47,6 +47,15 @@ export function createProblemTableOfContent(active: ProblemTableOfContentLabel |
     ])
 }
 
+export class AlgorithmTableOfContentLabel extends TableOfContentLabel {
+    public static readonly LINEAR_REGRESSION = new AlgorithmTableOfContentLabel("Linear Regression", "Linear Regression");
+    public static readonly LOGISTIC_REGRESSION = new AlgorithmTableOfContentLabel("Logistic Regression", "Logistic Regression");
+    public static readonly SVM = new AlgorithmTableOfContentLabel("Support Vector Machine", "Support Vector Machine");
+    public static readonly KNN = new AlgorithmTableOfContentLabel("K-Nearest Neighbors", "K-Nearest Neighbors");
+    public static readonly PCA = new AlgorithmTableOfContentLabel("Principal Component Analysis", "Principal Component Analysis");
+
+}
+
 export class ConceptTableOfContentLabel extends TableOfContentLabel {
     public static readonly CONCEPTS = new ProblemTableOfContentLabel("Machine Learning Konzepte", "Machine Learning Konzepte");
     public static readonly FEATURE_PREPROCESSING = new ProblemTableOfContentLabel("Feature Preprocessing", "Feature Preprocessing");
@@ -62,6 +71,8 @@ export class ConceptTableOfContentLabel extends TableOfContentLabel {
     public static readonly REGULARIZATION = new ProblemTableOfContentLabel("Regularization", "Regularization");
     public static readonly OPTIMIZATION = new ProblemTableOfContentLabel("Optimization", "Optimization");
     public static readonly METRICS = new ProblemTableOfContentLabel("Metrik", "Metrik");
+    public static readonly REGRESSION_METRICS = new ProblemTableOfContentLabel("Regression Metrik", "Regression Metrik");
+    public static readonly CLASSIFICATION_METRICS = new ProblemTableOfContentLabel("Klassifikation Metrik", "Klassifikation Metrik");
     public static readonly COST_FUNCTION = new ProblemTableOfContentLabel("Cost Function", "Cost Function");
     public static readonly OPTIMIZATION_ALGORITHMS = new ProblemTableOfContentLabel("Optimization Algorithms", "Optimization Algorithms");
     public static readonly ANALYTICAL = new ProblemTableOfContentLabel("Analytisch", "Analytisch");
@@ -77,9 +88,9 @@ export class ConceptTableOfContentLabel extends TableOfContentLabel {
 export function createMethodTableOfContent(active: ConceptTableOfContentLabel | null): TableOfContentEntry<ConceptTableOfContentLabel> {
     return c(ConceptTableOfContentLabel.CONCEPTS, active, [
         c(ConceptTableOfContentLabel.FEATURE_PREPROCESSING, active, [
-            c(ConceptTableOfContentLabel.DIMENSIONALITY_REDUCTION, active),
+            c(ConceptTableOfContentLabel.ENCODING, active),
             c(ConceptTableOfContentLabel.STANDARDIZE, active),
-            c(ConceptTableOfContentLabel.ENCODING, active)
+            c(ConceptTableOfContentLabel.DIMENSIONALITY_REDUCTION, active),
         ]),
         c(ConceptTableOfContentLabel.FEATURE_ENGINEERING, active, [
             c(ConceptTableOfContentLabel.FEATURE_ENGINEERING_EXPLICIT, active),
@@ -91,7 +102,10 @@ export function createMethodTableOfContent(active: ConceptTableOfContentLabel | 
             c(ConceptTableOfContentLabel.REGULARIZATION, active),
         ]),
         c(ConceptTableOfContentLabel.OPTIMIZATION, active, [
-            c(ConceptTableOfContentLabel.METRICS, active),
+            c(ConceptTableOfContentLabel.METRICS, active, [
+            c(ConceptTableOfContentLabel.REGRESSION_METRICS, active),
+              c(ConceptTableOfContentLabel.CLASSIFICATION_METRICS, active)
+            ]),
             c(ConceptTableOfContentLabel.COST_FUNCTION, active),
             c(ConceptTableOfContentLabel.OPTIMIZATION_ALGORITHMS, active, [
                 c(ConceptTableOfContentLabel.ANALYTICAL, active),

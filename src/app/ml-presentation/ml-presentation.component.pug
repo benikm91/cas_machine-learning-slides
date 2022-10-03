@@ -1,11 +1,7 @@
 doctype html
 reveal-presentation
+    about-me
     what-is-machine-learning
-    tables-of-content-concepts([depth]="2")
-    tables-of-content-concepts([active]="methodLabels.FEATURE_PREPROCESSING", [depth]="0", [depth-after-active]="1")
-    tables-of-content-concepts([active]="methodLabels.OPTIMIZATION", [depth]="0", [depth-after-active]="1")
-    tables-of-content-concepts([active]="methodLabels.OPTIMIZATION", [depth]="0", [depth-after-active]="2")
-    tables-of-content-concepts([active]="methodLabels.KERNEL_TRICK", [depth] = "0")
     tables-of-content-problems([active]="problemLabels.SUPERVISED_LEARNING")
     what-is-supervised-learning
     tables-of-content-problems([active]="problemLabels.REGRESSION")
@@ -22,155 +18,42 @@ reveal-presentation
     linear-regression
     question-slide([questions]="linearRegressionQuestions")
     tables-of-content-concepts([active]="methodLabels.ENCODING")
+    section
+        slide-with-header(header="Übungszeit (30 Minuten)")
+            div.notebook-name exercise/introduction.ipynb
+            img(src="assets/images/code.png")
     what-is-encoding
+    question-slide([questions]="encodingQuestions")
     section
         slide-with-header(header="Linear Regression - Code")
             div.notebook-name linear_regression_categorical_feature.ipynb
             img(src="assets/images/code.png")
     tables-of-content-concepts([active]="methodLabels.FEATURE_ENGINEERING_EXPLICIT")
     what-is-feature-engineering
+    question-slide([questions]="featureEngineeringQuestions")
+    polynomial-regression
     section
-        slide-with-header(header="Polynomielle Regression - Code")
-            div.notebook-name poly_regression.ipynb
-            img(src="assets/images/code.png")
-    section
-        slide-with-header(header="Polynomielle Regression", [extra]="true")
-            div.row
-                div.col-5.offset-1
-                    h6 Possible
-                div.col-5
-                    h6 Possible (in Input Space)
-                div.col-1
-            div.row
-                div.col-1.m-auto
-                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
-                div.col-5.p-2
-                    img(src="assets/images/data-with-linear-regression-model-1d.png").limit-possible
-                div.col-5.p-2
-                    img(src="assets/images/polynomial-regression.png").limit-possible
-                div.col-1
-            div.row
-                div.col-1.m-auto
-                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
-                div.col-5.p-2
-                    img(src="assets/images/data-with-linear-regression-model-2d.png").limit-possible
-                div.col-5.p-2
-                    img(src="assets/images/polynomial-regression-2d.png").limit-possible
-                div.col-1
-    section
-        div.fragment.strike Lineare Regression < Polynomielle Regression
-        div.fragment Auf dem Train Set, aber nicht zwingend auf neuen Daten!
-        div.fragment.highlight Und neue Daten ist das Entscheidende!
+        div.fragment.text-center.alert.alert-danger.strike Ist die Polynomielle Regression immer besser als die Lineare Regression?
+        div.fragment.text-center.alert.alert-success
+            div Ja auf den #[span.highlight Trainings-Daten], aber Nein (nicht immer) #[span.highlight auf neuen, ungesehenen Daten]!
+            div.fragment.highlight Und Performanz auf neuen, ungesehenen Daten ist das Entscheidende!
     tables-of-content-concepts([active]="methodLabels.MODEL_COMPLEXITY")
-    section
-        title-page
-            h1 Komplexität von Modellen
-            h1 Overfitting vs. Underfitting
-    section
-        slide-with-header(header="Test")
-            side-by-side-3
-                div(first).d-flex.flex-column
-                    img(src="assets/images/overfitting/overfitting-linear-regression.png")
-                    div.code-font
-
-                div(second).d-flex.flex-column
-                    img(src="assets/images/overfitting/overfitting-polynomial-regression.png")
-                div(third).d-flex.flex-column
-                    img(src="assets/images/overfitting/overfitting-random-forest.png")
-            div.row
-                div.col-6.col-md-offset-2.text-end MSE Linear Regression
-                div.col-4.code-font = 33174
-                div.col-6.col-md-offset-2.text-end MSE Poly. Regression
-                div.col-4.code-font = 27875
-                div.col-6.col-md-offset-2.text-end MSE RandomForest
-                div.col-4.code-font = &nbsp;4336
-            div.mt-3.fragment.text-center.alert.alert-danger Was fällt auf? Was ist falsch?
-    section
-        slide-with-header(header="Test")
-            side-by-side-3
-                div(first).d-flex.flex-column
-                    img(src="assets/images/overfitting/overfitting-linear-regression-with-val.png")
-                div(second).d-flex.flex-column
-                    img(src="assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
-                div(third).d-flex.flex-column
-                    img(src="assets/images/overfitting/overfitting-random-forest-with-val.png")
-            div.row
-                div.col-6.col-md-offset-2.text-end MSE Linear Regression
-                div.col-4.code-font = 14667
-                div.col-6.col-md-offset-2.text-end MSE Poly. Regression
-                div.col-4.code-font = &nbsp;9127
-                div.col-6.col-md-offset-2.text-end MSE RandomForest
-                div.col-4.code-font = 14824
-            div.mt-3.fragment.text-center.alert.alert-success Auf neuen Daten evaluieren!
+    overfitting-underfitting-example
     tables-of-content-concepts([active]="methodLabels.OVERFITTING_UNDERFITTING")
-    section
-        slide-with-header(header="Underfitting vs. Overfitting")
-            div #[span.highlight Overfitting]: Wir sind #[span.highlight gut auf den trainings] Daten, aber #[span.highlight schlecht auf neuen] Daten!
-            div #[span.highlight Underfitting]: Wir sind #[span.highlight okay auf den trainings] Daten und #[span.highlight okay auf neuen] Daten!
-            div #[span.highlight Genau richtig]: Wir sind #[span.highlight gut auf den trainings]  Daten und #[span.highlight gut auf neuen] Daten!
-            div(style={transformOrigin: "top"}).scale-05.mt-5.fragment
-                side-by-side-3
-                    div(first).d-flex.flex-column
-                        h4.align-center Underfitting
-                        img(src="assets/images/overfitting/overfitting-linear-regression-with-val.png")
-                    div(second).d-flex.flex-column
-                        h4.align-center Richtig
-                        img(src="assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
-                    div(third).d-flex.flex-column
-                        h4.align-center Overfitting
-                        img(src="assets/images/overfitting/overfitting-random-forest-with-val.png")
-    section
-        div
-            h3 Train-Set / Validation-Set
-                div.d-flex.justify-center
-                    img(src="assets/images/overfitting/train_set_test_set.png").img-
-        div.mt-5.fragment
-            h3 Train-Set / Validation-Set / Test-Set
-                div.d-flex.justify-center
-                    img(src="assets/images/overfitting/train_set_val_set_test_set.png").img-fluid
+    what-is-overfitting-underfitting
+    what-is-train-test-split
     tables-of-content-concepts([active]="methodLabels.CROSS_VALIDATION")
-    section
-        slide-with-header(header="k-Fold Cross Validation")
-            div.d-flex.justify-center
-                img(src="assets/images/overfitting/k-fold-cross-validation.png").img-fluid
-            div.mt-3.text-center.alert.alert-primary Hier 5-Fold Cross Validation
+    what-is-cross-validation
     section
         slide-with-header(header="Model-Komplexität und Performanz")
             model-complexity
+    question-slide([questions]="modelComplexityQuestions")
     tables-of-content-concepts([active]="methodLabels.REGULARIZATION")
+    what-is-regularization
+    what-is-standardization
+    question-slide([questions]="regularizationAndStandardizationQuestions")
     section
-        slide-with-header(header="Regularization")
-            ul
-                li Wir treffe zusätzliche #[span.highlight Annahme] über Parameter #[span(mathjax="<math><mi>β</mi></math>")]
-                li.fragment Übliche Annahme:
-                    ul
-                        li Grosse Betas sind #[span.highlight unwahrscheinlicher]
-                        li Betas sind #[span.highlight nahe 0]
-                li.fragment Beispiel:
-                    ul
-                        li #[span.highlight L1-Regularization] (Absolut Wert - "Hoch 1")
-                        li #[span.highlight L2-Regularization] (Quadrieren - Hoch 2)
-                div.fragment.mt-3.text-center.alert.alert-warning Daten müssen Standard Skaliert werden!
-    section
-        slide-with-header(header="L1-Regularization")
-            ul
-                li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
-                    div.d-flex.justify-center
-                        img(src="assets/images/regularization/l1-prior.png", style={height: "150px"}).img-fluid
-                li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
-                    div([mathjax]="l1Regularization")
-            div.fragment.mt-4.text-center.alert.alert-primary Gut für Feature-Selection!
-    section
-        slide-with-header(header="L2-Regularization")
-            ul
-                li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
-                    div.d-flex.justify-center
-                        img(src="assets/images/regularization/l2-prior.png", style={height: "150px"}).img-fluid
-                li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
-                    div([mathjax]="l2Regularization")
-                // https://ekamperi.github.io/mathematics/2020/08/02/bayesian-connection-to-lasso-and-ridge-regression.html
-    section
-        slide-with-header(header="Übungszeit")
+        slide-with-header(header="Übungszeit (60 Minuten)")
             div.notebook-name exercise/linear_regression.ipynb
             img(src="assets/images/code.png")
     tables-of-content-problems([active]="problemLabels.CLASSIFICATION")
@@ -181,4 +64,11 @@ reveal-presentation
     support-vector-machine
     question-slide([questions]="supportVectorMachineQuestions")
     what-is-kernel-trick
+    cart
+    section
+        slide-with-header(header="Übungszeit (60 Minuten)")
+            div.notebook-name exercise/classification.ipynb
+            img(src="assets/images/code.png")
+    tables-of-content-problems([active]="problemLabels.UNSUPERVISED_LEARNING")
+    what-is-dimensionality-reduction
     pca

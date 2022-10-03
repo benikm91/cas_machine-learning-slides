@@ -1,0 +1,49 @@
+<math display="block">
+    <mrow>
+        <mi>σ</mi>
+        <mo form="prefix" stretchy="false">(</mo>
+        <msub>
+            <mi>z</mi>
+            <mi>i</mi>
+        </msub>
+        <mo form="postfix" stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+            <mrow>
+                <msup>
+                    <mi>e</mi>
+                    <mrow>
+                        <msub>
+                            <mi>z</mi>
+                            <mi>i</mi>
+                        </msub>
+                    </mrow>
+                </msup>
+            </mrow>
+            <mrow>
+                <msubsup>
+                    <mo movablelimits="false">∑</mo>
+                    <mrow>
+                        <mi>l</mi>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                    </mrow>
+                    <mrow>
+                        <mi>K</mi>
+                        <mo>−</mo>
+                        <mn>1</mn>
+                    </mrow>
+                </msubsup>
+                <msup>
+                    <mi>e</mi>
+                    <mrow>
+                        <msub>
+                            <mi>z</mi>
+                            <mi>l</mi>
+                        </msub>
+                    </mrow>
+                </msup>
+            </mrow>
+        </mfrac>
+    </mrow>
+</math>

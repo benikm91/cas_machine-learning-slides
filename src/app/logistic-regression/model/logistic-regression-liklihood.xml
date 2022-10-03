@@ -5,31 +5,14 @@
                 <mrow>
                     <mi>p</mi>
                     <mo form="prefix" stretchy="false">(</mo>
-                    <msup class="output">
-                        <mi>y</mi>
-                        <mrow>
-                            <mo form="prefix" stretchy="false">(</mo>
-                            <mi>i</mi>
-                            <mo form="postfix" stretchy="false">)</mo>
-                        </mrow>
-                    </msup>
+                    <mi class="label">y</mi>
                     <mo>=</mo>
-                    <mn>1</mn>
+                    <mn class="label">1</mn>
                     <mi>|</mi>
-                    <msubsup class="feature">
+                    <msub class="feature">
                         <mi>x</mi>
                         <mn>1</mn>
-                        <mrow>
-                            <mo form="prefix" stretchy="false">(</mo>
-                            <mi>i</mi>
-                            <mo form="postfix" stretchy="false">)</mo>
-                        </mrow>
-                    </msubsup>
-                    <mo separator="true">;</mo>
-                    <mover class="weight">
-                        <mi>β</mi>
-                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-                    </mover>
+                    </msub>
                     <mo form="postfix" stretchy="false">)</mo>
                 </mrow>
             </mtd>
@@ -43,15 +26,10 @@
                         <mn>0</mn>
                     </msub>
                     <mo>+</mo>
-                    <msubsup class="feature">
+                    <msub class="feature">
                         <mi>x</mi>
                         <mn>1</mn>
-                        <mrow>
-                            <mo form="prefix" stretchy="false">(</mo>
-                            <mi>i</mi>
-                            <mo form="postfix" stretchy="false">)</mo>
-                        </mrow>
-                    </msubsup>
+                    </msub>
                     <msub class="weight">
                         <mi>β</mi>
                         <mn>1</mn>
@@ -65,31 +43,14 @@
                 <mrow>
                     <mi>p</mi>
                     <mo form="prefix" stretchy="false">(</mo>
-                    <msup class="output">
-                        <mi>y</mi>
-                        <mrow>
-                            <mo form="prefix" stretchy="false">(</mo>
-                            <mi>i</mi>
-                            <mo form="postfix" stretchy="false">)</mo>
-                        </mrow>
-                    </msup>
+                    <mi class="label">y</mi>
                     <mo>=</mo>
-                    <mn>0</mn>
+                    <mn class="label">0</mn>
                     <mi>|</mi>
-                    <msubsup class="feature">
+                    <msub class="feature">
                         <mi>x</mi>
                         <mn>1</mn>
-                        <mrow>
-                            <mo form="prefix" stretchy="false">(</mo>
-                            <mi>i</mi>
-                            <mo form="postfix" stretchy="false">)</mo>
-                        </mrow>
-                    </msubsup>
-                    <mo separator="true">;</mo>
-                    <mover class="weight">
-                        <mi>β</mi>
-                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-                    </mover>
+                    </msub>
                     <mo form="postfix" stretchy="false">)</mo>
                 </mrow>
             </mtd>
@@ -105,15 +66,10 @@
                         <mn>0</mn>
                     </msub>
                     <mo>+</mo>
-                    <msubsup class="feature">
+                    <msub class="feature">
                         <mi>x</mi>
                         <mn>1</mn>
-                        <mrow>
-                            <mo form="prefix" stretchy="false">(</mo>
-                            <mi>i</mi>
-                            <mo form="postfix" stretchy="false">)</mo>
-                        </mrow>
-                    </msubsup>
+                    </msub>
                     <msub class="weight">
                         <mi>β</mi>
                         <mn>1</mn>

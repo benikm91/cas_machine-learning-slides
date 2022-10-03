@@ -55,6 +55,23 @@ export function createSupportVectorMachineTableOfContent(active: SupportVectorMa
     ])
 }
 
+export class CartTableOfContentLabel extends TableOfContentLabel {
+    public static readonly DECISION_TREE = new CartTableOfContentLabel("Decision Trees", "Decision Trees");
+    public static readonly DATA_SPECIFICATION = new CartTableOfContentLabel("Data Specification", "Decision Trees/Data Specification");
+    public static readonly MODEL = new CartTableOfContentLabel("Model" , "Decision Trees/Model" );
+    public static readonly OPTIMIERUNG = new CartTableOfContentLabel("Optimierung" , "Decision Trees/Optimierung" );
+    public static readonly COST_FUNCTION = new CartTableOfContentLabel("Cost function", "Decision Trees/Cost function");
+}
+
+export function createCartTableOfContent(active: CartTableOfContentLabel | null): TableOfContentEntry<CartTableOfContentLabel> {
+    return c(CartTableOfContentLabel.DECISION_TREE, active, [
+        c(CartTableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(CartTableOfContentLabel.MODEL, active, []),
+        c(CartTableOfContentLabel.COST_FUNCTION, active, []),
+        c(CartTableOfContentLabel.OPTIMIERUNG, active, []),
+    ])
+}
+
 export class PCATableOfContentLabel extends TableOfContentLabel {
     public static readonly PCA = new PCATableOfContentLabel("PCA", "PCA");
     public static readonly DATA_SPECIFICATION = new PCATableOfContentLabel("Data Specification", "PCA/Data Specification");
@@ -69,5 +86,19 @@ export function createPCATableOfContent(active: PCATableOfContentLabel | null): 
         c(PCATableOfContentLabel.DATA_SPECIFICATION, active, []),
         c(PCATableOfContentLabel.COST_FUNCTION, active, []),
         c(PCATableOfContentLabel.OPTIMIERUNG, active, []),
+    ])
+}
+
+
+export class KNNTableOfContentLabel extends TableOfContentLabel {
+    public static readonly KNN = new KNNTableOfContentLabel("K-Nearest Neighbors", "KNN");
+    public static readonly DATA_SPECIFICATION = new KNNTableOfContentLabel("Data Specification", "KNN/Data Specification");
+    public static readonly MODEL = new KNNTableOfContentLabel("Model" , "KNN/Model" );
+}
+
+export function createKNNTableOfContent(active: KNNTableOfContentLabel | null): TableOfContentEntry<KNNTableOfContentLabel> {
+    return c(KNNTableOfContentLabel.KNN, active, [
+        c(KNNTableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(KNNTableOfContentLabel.MODEL, active, []),
     ])
 }

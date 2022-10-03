@@ -1,0 +1,51 @@
+<math display="block" class="equation equation-colored">
+    <mrow>
+        <mi>M</mi>
+        <mo form="prefix" stretchy="false">(</mo>
+        <msub class="cart-region">
+            <mi>R</mi>
+            <mi>m</mi>
+        </msub>
+        <mo form="postfix" stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo>−</mo>
+        <mrow>
+            <munder>
+                <mo movablelimits="false">∑</mo>
+                <mi>k</mi>
+            </munder>
+        </mrow>
+        <mrow title="p: Wahrscheinlichkeit der Klasse k in Region R_m">
+            <mi>p</mi>
+            <mo form="prefix" stretchy="false">(</mo>
+            <mi class="label">y</mi>
+            <mo>=</mo>
+            <mi class="label">k</mi>
+            <mi>|</mi>
+            <msub class="cart-region">
+                <mi>R</mi>
+                <mi>m</mi>
+            </msub>
+            <mo form="postfix" stretchy="false">)</mo>
+        </mrow>
+        <mrow>
+            <mi>log</mi>
+            <mo>⁡</mo>
+        </mrow>
+        <mo form="prefix" stretchy="false">(</mo>
+        <mrow title="p: Wahrscheinlichkeit der Klasse k in Region R_m">
+            <mi>p</mi>
+            <mo form="prefix" stretchy="false">(</mo>
+            <mi class="label">y</mi>
+            <mo>=</mo>
+            <mi class="label">k</mi>
+            <mi>|</mi>
+            <msub class="cart-region">
+                <mi>R</mi>
+                <mi>m</mi>
+            </msub>
+            <mo form="postfix" stretchy="false">)</mo>
+        </mrow>
+        <mo form="postfix" stretchy="false">)</mo>
+    </mrow>
+</math>

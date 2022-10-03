@@ -12,7 +12,7 @@
                         <munderover>
                             <mo movablelimits="false">∑</mo>
                             <mrow>
-                                <mi>j</mi>
+                                <mi>i</mi>
                                 <mo>=</mo>
                                 <mn>1</mn>
                             </mrow>
@@ -22,19 +22,16 @@
                     <mrow>
                         <msub>
                             <mi>α</mi>
-                            <mi>j</mi>
+                            <mi>i</mi>
                         </msub>
-                        <msub class="label">
+                        <msup class="label">
                             <mi>y</mi>
-                            <mi>j</mi>
-                        </msub>
-                        <msub class="feature">
-                            <mover>
-                                <mi>x</mi>
-                                <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-                            </mover>
-                            <mi>j</mi>
-                        </msub>
+                            <mi>(i)</mi>
+                        </msup>
+                        <msup class="feature">
+                            <mi>x</mi>
+                            <mi>(i)</mi>
+                        </msup>
                     </mrow>
                 </mrow>
             </mtd>

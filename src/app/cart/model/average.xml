@@ -1,0 +1,51 @@
+<math display="block" class="equation equation-colored">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <msub class="output">
+                        <mover>
+                            <mi>y</mi>
+                            <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+                        </mover>
+                        <msub class="cart-region">
+                            <mi>R</mi>
+                            <mi>m</mi>
+                        </msub>
+                    </msub>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <msub>
+                            <mi>N</mi>
+                            <msub class="cart-region">
+                                <mi>R</mi>
+                                <mi>m</mi>
+                            </msub>
+                        </msub>
+                    </mfrac>
+                    <mrow>
+                        <munder>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <msub class="feature">
+                                    <mi>x</mi>
+                                    <mi>i</mi>
+                                </msub>
+                                <mo>∈</mo>
+                                <msub class="cart-region">
+                                    <mi>R</mi>
+                                    <mi>m</mi>
+                                </msub>
+                            </mrow>
+                        </munder>
+                    </mrow>
+                    <msub class="label">
+                        <mi>y</mi>
+                        <mi>i</mi>
+                    </msub>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

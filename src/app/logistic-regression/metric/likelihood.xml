@@ -11,8 +11,6 @@
                     </mover>
                     <mi>|</mi>
                     <mi class="feature">X</mi>
-                    <mo separator="true">;</mo>
-                    <mi class="weight">β</mi>
                     <mo form="postfix" stretchy="false">)</mo>
                 </mrow>
             </mtd>

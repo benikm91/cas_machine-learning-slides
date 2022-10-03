@@ -60,6 +60,32 @@ import {
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-pca.component";
 import {WhatIsKernelTrickComponent} from "./what-is-kernel-trick/what-is-kernel-trick.component";
 import {TablesOfContentProblemsComponent} from "./tables-of-content/tables-of-content-problems.component";
+import {TablesOfContentLinkComponent} from "./tables-of-content/tables-of-content-link.component";
+import {WhatIsStandardizationComponent} from "./what-is-standardization/what-is-standardization.component";
+import {
+  WhatIsDimensionalityReductionComponent
+} from "./what-is-dimensionality-reduction/what-is-dimensionality-reduction.component";
+import {
+  BinaryClassificationMetricExampleComponent
+} from "./binary-classification-metric-example/binary-classification-metric-example.component";
+import {FormsModule} from "@angular/forms";
+import {OverfittingUnderfittingExampleComponent} from "./overfitting-underfitting-example/overfitting-underfitting-example.component";
+import {
+  WhatIsOverfittingUnderfittingComponent
+} from "./what-is-overfitting-underfitting/what-is-overfitting-underfitting.component";
+import {WhatIsTrainTestSplitComponent} from "./what-is-train-test-split/what-is-train-test-split.component";
+import {WhatIsCrossValidationComponent} from "./what-is-cross-validation/what-is-cross-validation.component";
+import {WhatIsRegularizationComponent} from "./what-is-regularization/what-is-regularization.component";
+import {CartComponent} from "./cart/cart.component";
+import {
+  TablesOfContentCartComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-cart.component";
+import {
+  TablesOfContentKNNComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-knn.component";
+import {AboutMeComponent} from "./about-me/about-me.component";
+import {Softmax3ExampleComponent} from "./softmax-3-example/softmax-3-example.component";
+import {PolynomialRegressionComponent} from "./polynomial-regression/polynomial-regression.component";
 
 @NgModule({
   declarations: [
@@ -74,10 +100,13 @@ import {TablesOfContentProblemsComponent} from "./tables-of-content/tables-of-co
     SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent, WhatIsEncodingComponent,
     WhatIsFeatureEngineeringComponent, ModelComplexityComponent, LogisticRegressionComponent, TablesOfContentLogisticRegressionComponent,
     PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent, KNearestNeighboursComponent, TablesOfContentPCAComponent,
-    WhatIsKernelTrickComponent
+    WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
+    OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
+    CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([]),
     MathjaxModule.forRoot()
   ],

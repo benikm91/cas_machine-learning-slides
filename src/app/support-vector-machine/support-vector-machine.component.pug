@@ -1,7 +1,4 @@
 ng-template('#slides'='')
-    section
-        title-page
-            h1 Support Vector Machine
     tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.SUPPORT_VECTOR_MACHINE")
     tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.DATA_SPECIFICATION")
     section
@@ -60,13 +57,13 @@ ng-template('#slides'='')
                         img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-2d-without-margin.png")
                         img.fragment(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-with-margin-2d.png")
             div.fragment.mt-5.text-center.alert.alert-primary Idee: Verallgemeinert auf #[span.highlight neue] Punkte am Besten
-    section
-        slide-with-header(header="Support Vector Machine - Cost Function", [extra]="true")
-            div.mt-5([mathjax]="svmCostFunction")
-            div.mt-5 Bedingung: #[span(mathjax="<math><mo>||</mo><mi>β</mi><mo>||</mo><mo>=</mo><mi>1</mi></math>")]
+    // section
+    //     slide-with-header(header="Support Vector Machine - Cost Function", [extra]="true")
+    //         div.mt-5([mathjax]="svmCostFunction")
+    //         div.mt-5 Bedingung: #[span(mathjax="<math><mo>||</mo><mi>β</mi><mo>||</mo><mo>=</mo><mi>1</mi></math>")]
     tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.OPTIMIERUNG")
     section
-        slide-with-header(header="SVM - Optimization - Hard-Margin - Intuitive Form", [extra]="true")
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Intuitive Form")
             div.mt-3.fragment([mathjax]="svmProblem")
             div.fragment.mt-5.text-center.alert.alert-primary #[span.highlight Solver] löst Problemstellung für uns und gibt optimale #[span(mathjax='<math><mi>β</mi></math>')] zurück.
     section
@@ -120,7 +117,7 @@ ng-template('#slides'='')
                     h5.mt-5 Nacher
                     div([mathjax]="svmProblem4")
     section
-        slide-with-header(header="SVM - Optimization - Hard-Margin - Übliche Form", [extra]="true")
+        slide-with-header(header="SVM - Optimization - Hard-Margin - Übliche Form")
             .row
                 .col-6(style={fontSize: "28px"})
                     h5.mt-5 Anfang
@@ -171,7 +168,9 @@ ng-template('#slides'='')
         div.mt-5.row
             div.col-6
                 div.d-flex.justify-center.scale-05
-                    div([mathjax]="svmCostFunction")
+                    // div([mathjax]="svmCostFunction")
             div.col-6
                 div.d-flex.justify-center.scale-025
                     div([mathjax]="svmProblem")
+    section
+        div TODO - Mehrere Klassen one-vs-one, one-vs-rest

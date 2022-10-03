@@ -1,0 +1,15 @@
+<math display="block" class="equation equation-colored">
+    <mrow>
+        <mover class="feature">
+            <mi>X</mi>
+            <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+        </mover>
+        <mo>=</mo>
+        <mi class="feature">X</mi>
+        <mi class="weight">W</mi>
+        <msup class="weight">
+            <mi>W</mi>
+            <mi>T</mi>
+        </msup>
+    </mrow>
+</math>

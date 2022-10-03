@@ -1,140 +1,4 @@
 ng-template('#slides'='')
-    section
-        title-page
-            h1 Dimensionality Reduction
-    section
-        slide-with-header(header="Dimensionality Reduction - Manifold")
-            h6 3 Features
-            div.d-flex.justify-center
-                img(src="assets/images/pca/manifold.png").img-fluid
-            h6.mt-5 Aber eigentlich 2 Features
-            div.d-flex.justify-center.fragment
-                img(src="assets/images/pca/maniunfolding.png").img-fluid
-    section
-        slide-with-header(header="Dimensionality Reduction - Manifold - Beispiel")
-            .manifold-example
-                .row
-                    .col-6
-                        h6 CIFAR-Space
-                        .d-flex.justify-center.flex-wrap
-                            img(src="assets/images/pca/img-space-cifar-0.png")
-                            img(src="assets/images/pca/img-space-cifar-1.png")
-                            img(src="assets/images/pca/img-space-cifar-2.png")
-                            img(src="assets/images/pca/img-space-cifar-3.png")
-                            img(src="assets/images/pca/img-space-cifar-4.png")
-                            img(src="assets/images/pca/img-space-cifar-5.png")
-                            img(src="assets/images/pca/img-space-cifar-6.png")
-                            img(src="assets/images/pca/img-space-cifar-7.png")
-                        div 32 Pixel * 32 Pixel * 3 Channels = #[span.highlight 3072 Features]
-                    .col-6.fragment
-                        h6 Image-Space (3072 Features = 32 Pixel * 32 Pixel * 3 Channels)
-                        .d-flex.justify-center.flex-wrap
-                            img(src="assets/images/pca/img-space-0-0-0.png")
-                            img(src="assets/images/pca/img-space-0-0-1.png")
-                            img(src="assets/images/pca/img-space-0-1-0.png")
-                            img(src="assets/images/pca/img-space-1-0-0.png")
-                            img(src="assets/images/pca/img-space-random-0.png")
-                            img(src="assets/images/pca/img-space-random-1.png")
-                            img(src="assets/images/pca/img-space-random-2.png")
-                            img(src="assets/images/pca/img-space-random-3.png")
-                        div 32 Pixel * 32 Pixel * 3 Channels = #[span.highlight 3072 Features]
-                div.fragment.mt-5 #[span.highlight CIFAR-Space] ist ein Sub-Space vom #[span.highlight Image-Space]
-                p.fragment.text-center.alert.alert-primary
-                    | #[span.highlight Dimensionsreduktion]: Finde neue Features (z.B. #[span.highlight 200]), die die Daten #[span.highlight präziser] beschreiben können.
-    section
-        slide-with-header(header="Dimensionality Reduction - Learning")
-            ul
-                li Eine Dimensionality Reduction wird gelernt indem ein #[span.highlight ganzer Datensatz] (z.B. 40'000 Bilder) auf Gemeinsamkeiten analysiert wird.
-                li Es wird die #[span.highlight zugrundeliegende Struktur] des Datensatzes gelernt.
-                li Die gelernte Reduktion kann dann auf #[span.highlight neue Daten] (neue Bilder) angewandt werden.
-                li Die gelernte Reduktion kann auch auf #[span.highlight die Daten selbst] angewandt werden.
-    section
-        slide-with-header(header="Dimensionality Reduction - Beispiele")
-            div.mt-5.d-flex.justify-content-center.fragment
-                model-visualization("#imageEnc"="").mt-5
-                    div(inputHeader)
-                        div(style={marginTop: "-90px"})
-                            h5(style={marginBottom: "0"}) Input Space
-                            h6(margin="0") 3072 Pixelwerte (Features)
-                    div(input).rect-styling
-                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
-                    div(model, class="model").model-box.code
-                        div Encoder
-                        div #[span.code.small e.g. TODO]
-                    div(output, class="output").fix-height.code [ 167, 235, 207, 76, 97, 119, 50, 8, 239, 168, 215, ... ]
-                    div(outputHeader)
-                        div(style={marginTop: "-50px"})
-                            h5(style={marginBottom: "0"}) Latent Space
-                            h6(margin="0") 200 Features
-                span.fragment(fragment-trigger, "(trigger)"="imageEnc.end()")
-            div.mt-5.d-flex.justify-content-center.fragment
-                model-visualization("#word2Vec"="").mt-5
-                    div(inputHeader)
-                        div(style={marginTop: "-25px"})
-                            h5(style={marginBottom: "0"}) Input Space
-                            h6(margin="0") 1'000'000 Words #[br] (1-Hot-Features)
-                    div(input).rect-styling.code
-                        | [0, ..., 0, 1, 0,  ..., 0]
-                    div(model, class="model").model-box.code
-                        div Encoder
-                        div #[span.code.small e.g. Word2Vec]
-                    div(output, class="output").fix-height.code [ -1.7, 0.97, 1.9, 0.73, ... -0.53 ]
-                    div(outputHeader)
-                        div(style={marginTop: "-50px"})
-                            h5(style={marginBottom: "0"}) Latent Space
-                            h6(margin="0") 300 Features
-                span.fragment(fragment-trigger, "(trigger)"="word2Vec.end()")
-            div.fragment.mt-4.text-center.alert.alert-primary Ziel ist die #[span.highlight Reduktion von Features] (Dimensionen).
-    section
-        slide-with-header(header="Dimensionality Reduction - Einsatzgebiet")
-            div.d-flex.justify-content-center.fragment
-                model-visualization("#onlyModel"="", output-header="Output Space" ).mt-5
-                    div(inputHeader)
-                        div(style={marginTop: "-75px"})
-                            h5(style={marginBottom: "0"}) Input Space
-                            h6(margin="0") 3072 Features
-                    div(input).rect-styling
-                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
-                    div(model, class="model").model-box.code
-                        div Modell
-                        div #[span.code.small e.g. Logistic Regression]
-                    div(output, class="output").fix-height.code.text-danger Frog
-                span.fragment(fragment-trigger, "(trigger)"="onlyModel.end()")
-            div.fragment.mt-3.text-center.alert.alert-danger(style={marginBottom: "60px"}) Mit wenig Daten #[span.highlight overfitted] das Modell
-            div.mt-5.d-flex.justify-content-center.fragment
-                model-3-visualization("#encMod"="", output-header="Output Space" )
-                    div(inputHeader)
-                        div(style={marginTop: "-75px"})
-                            h5(style={marginBottom: "0"}) Input Space
-                            h6(margin="0") 3072 Features
-                    div(featureHeader)
-                        div(style={marginTop: "-50px"})
-                            h5(style={marginBottom: "0"}) Latent Space
-                            h6(margin="0") 200 Features
-                    div(input).rect-styling
-                        img(src="assets/images/pca/example-img.png")
-                    div(pre).model-box
-                        div Encoder
-                    div(feature).fix-height.code
-                        | [ -57.2, -3.6, ..., 2.3, -3.4 ]
-                    div(model).model-box
-                        div Modell
-                        div #[span.code.small e.g. LogisticRegression]
-                    div(output).rect-styling
-                        div.code Deer
-                span.fragment(fragment-trigger, "(trigger)"="encMod.end()")
-            div.fragment.mt-4.text-center.alert.alert-success Präzisere Features => Bessere Lern-Ausgangslage
-    section
-        slide-with-header(header="Dimensionality Reduction - Feature Selection")
-            ul
-                li Idee: Wir reduzieren die Anzahl der Features (Dimensionen) indem wir Features #[span.highlight weglassen].
-            div.mt-5.d-flex.justify-center
-                div.r-stack
-                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
-                    img.fragment(src="assets/images/pca/feature-selection-1.png")
-                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
-                    img.fragment(src="assets/images/pca/feature-selection-2.png")
-            div.fragment.mt-4.text-center.alert.alert-warning Problem: Grosser Informationsverlust
     tables-of-content-pca
     tables-of-content-pca([active]="pcaLabel.MODEL")
     section
@@ -152,7 +16,7 @@ ng-template('#slides'='')
         slide-with-header(header="PCA - Modell")
             ul
                 li Wir suchen die #[span.highlight Principal Components] (Hauptkomponenten) des Datensatzes
-                li Die Hauptkomponenten werden #[span.highlight zu unserem neuen Koordinatensystem]
+                li Die Hauptkomponenten werden #[span.highlight zu unserem neuen Koordinatensystem] (neuen Features)
             .row.mt-5
                 .col-6
                     h6 Hauptkomponenten im Input Space
@@ -198,7 +62,7 @@ ng-template('#slides'='')
                     h6 PC-Selection: Reconstruction 200 Features (PCA) (94.4%)
                     img(src="assets/images/pca/example-img-reconstruction.png").img-fluid.limit-possible
     section
-        slide-with-header(header="Logistic Regression - Mehrere Features", [extra]="true")
+        slide-with-header(header="PCA - Mehrere Features", [extra]="true")
             side-by-side-3
                 div(first).d-flex.flex-column
                     h3 1 Feature
@@ -212,8 +76,6 @@ ng-template('#slides'='')
                     div.mt-5.d-flex.justify-center
                         div.r-stack
                             img(src="assets/images/pca/pca-2d-anim-2.png")
-                            img.fragment("#gif"="", src="assets/images/pca/pca_2d.gif")
-                            img.fragment(src="assets/images/pca/pca-2d-anim-2.png")
                 div(third).d-flex.flex-column
                     h3 3 Feature
                     div.mt-5.d-flex.justify-center
@@ -223,8 +85,6 @@ ng-template('#slides'='')
                             img.fragment(src="assets/images/pca/pca-3d-anim-2.png").img-fluid
                             img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
                             img.fragment(src="assets/images/pca/pca-3d-3.gif").img-fluid
-                            img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
-                            img.fragment(src="assets/images/pca/pca_3d.gif").img-fluid
                             img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
     section
         slide-with-header(header="PCA - PC Selection")
@@ -286,7 +146,7 @@ ng-template('#slides'='')
                         img(src="assets/images/pca/example-img.png", style={height: "150px"})
                     div(model, class="model").model-box.code
                         div Encoder
-                        div #[span.code.small e.g. PCA.transform]
+                        div #[span.code.small PCA.transform]
                     div(output, class="output").fix-height.code [ 167, 235, 207, 76, 97, 119, 50, 8, 239, 168, 215, ... ]
                     div(outputHeader)
                         div(style={marginTop: "-75px"})
@@ -322,7 +182,7 @@ ng-template('#slides'='')
                         div(output).rect-styling
                             img(src="assets/images/pca/example-img-reconstruction.png")
                     span.fragment(fragment-trigger, "(trigger)"="pcaEncDec.end()")
-            div.fragment.mt-5.text-center.alert.alert-success Decoder kann uns zeigen, was #[span.highlight verloren] geht.
+            div.fragment.mt-5.text-center.alert.alert-success Decoder kann visualisieren, was #[span.highlight verloren] geht.
     section
         slide-with-header(header="Dimensionsreduktion - PCA als Preprocessing")
             div.mt-5.d-flex.justify-content-center.fragment
@@ -344,14 +204,83 @@ ng-template('#slides'='')
                         | [ -57.2, -3.6, ..., 2.3, -3.4 ]
                     div(model).model-box
                         div Modell
-                        div #[span.code.small e.g. LogisticRegression]
+                        div #[span.code.small z.B. LogisticRegression]
                     div(output).rect-styling
                         div.code Deer
                 span.fragment(fragment-trigger, "(trigger)"="pcaWithModel.end()")
     section
-        slide-with-header(header="PCA - Code")
-            div.notebook-name pca.ipynb
-            img(src="assets/images/code.png")
+        slide-with-header(header="PCA - Modell")
+            div.fragment
+                div.d-flex.justify-content-center
+                    model-3-visualization("#pcaEncDec"="", [with-trigger]="false").mt-5
+                        div(inputHeader)
+                            div(style={marginTop: "-75px"})
+                                h5(style={marginBottom: "0"}) Input Space
+                                h6(margin="0") 3072 Features
+                        div(featureHeader)
+                            div(style={marginTop: "-50px"})
+                                h5(style={marginBottom: "0"}) Latent Space
+                                h6(margin="0") 200 Features
+                        div(outputHeader)
+                            div(style={marginTop: "-100px"})
+                                h5(style={marginBottom: "0"}) Reconstructed Input Space
+                                h6(margin="0") 3072 Features
+                        div(input).rect-styling
+                            img(src="assets/images/pca/example-img.png")
+                        div(pre).model-box.code
+                            div([mathjax]="encoder")
+                            div.small PCA.transform
+                        div(feature).fix-height.code
+                            div [ -57.2, -3.6, ..., 2.3, -3.4 ]
+                        div(model).model-box.code
+                            div([mathjax]="decoder")
+                            div.small PCA.inverse_transform
+                        div(output).rect-styling
+                            img(src="assets/images/pca/example-img-reconstruction.png")
+                    span.fragment(fragment-trigger, "(trigger)"="pcaEncDec.end()")
+            div.mt-5.fragment
+                div.d-flex.justify-content-center
+                    model-3-visualization("#pcaEncDec"="", [with-trigger]="false").mt-5
+                        div(inputHeader)
+                            div(style={marginTop: "-75px"})
+                                h5(style={marginBottom: "0"}) Input Space
+                                h6(margin="0")
+                                    span(style={textTransform: "none"}, mathjax="<math><mi>m</mi></math>")
+                                    | &nbsp;
+                                    | Features
+                        div(featureHeader)
+                            div(style={marginTop: "-50px"})
+                                h5(style={marginBottom: "0"}) Latent Space
+                                h6(margin="0")
+                                    span(style={textTransform: "none"}, mathjax="<math><mi>l</mi></math>")
+                                    | &nbsp;
+                                    | Features
+                        div(outputHeader)
+                            div(style={marginTop: "-100px"})
+                                h5(style={marginBottom: "0"}) Reconstructed Input Space
+                                h6(margin="0")
+                                    span(style={textTransform: "none"}, mathjax="<math><mi>p</mi></math>")
+                                    | &nbsp;
+                                    | Features
+                        div(input).rect-styling
+                            img(src="assets/images/pca/example-img.png")
+                        div(pre).model-box.code
+                            div([mathjax]="encoderWithDim")
+                            div.small PCA.transform
+                        div(feature).fix-height.code
+                            div [ -57.2, -3.6, ..., 2.3, -3.4 ]
+                        div(model).model-box.code
+                            div([mathjax]="decoderWithDim")
+                            div.small PCA.inverse_transform
+                        div(output).rect-styling
+                            img(src="assets/images/pca/example-img-reconstruction.png")
+                    span.fragment(fragment-trigger, "(trigger)"="pcaEncDec.end()")
+            div.fragment.mt-5.text-center.alert.alert-primary
+                div([mathjax]="encoderWithDecoder")
+    // section
+    //     slide-with-header(header="PCA - Code")
+    //         div.notebook-name pca.ipynb
+    //         img(src="assets/images/code.png")
     tables-of-content-pca([active]="pcaLabel.DATA_SPECIFICATION")
     section
         slide-with-header(header="PCA - Data Specification")
@@ -363,10 +292,31 @@ ng-template('#slides'='')
     tables-of-content-pca([active]="pcaLabel.COST_FUNCTION")
     section
         slide-with-header(header="PCA - Cost function")
-            img(src="assets/images/pca/placeholder-cost-function.png")
-            // https://stats.stackexchange.com/questions/10251/what-is-the-objective-function-of-pca
+            div([mathjax]="costFunction")
+            div.fragment.mt-5.text-center.alert.alert-primary
+                | #[span.highlight L2-Distanz] der Rekonstruktion.
+            div.fragment.mt-5.text-center.alert.alert-primary
+                | Encoder und Decoder sind einfach eine Matrix, beziehungsweise sind #[span.highlight linear].
     tables-of-content-pca([active]="pcaLabel.OPTIMIERUNG")
-    section(id="current")
+    section
+        slide-with-header(header="PCA - Optimierung")
+            ul
+                li "Einfache" Lineare Algebra
+                li Schauen wir nicht im Detail (Intuition) an.
+                li Nutzt Singular Value Decomposition (SVD)
+                hr
+                li.code-font U, S, V = numpy.linalg.svd(X.T)
+                li
+                    span.code-font U
+                    | &nbsp;
+                    span sind unsere Principal Components (Achsen)
+                li
+                    span.code-font S
+                    | &nbsp;
+                    span ist die Wichtigkeit der Achsen.
+                li
+                    span.code-font W = U[:, 0:l]
+    section
         slide-with-header(header="PCA - Limits", [extra]="true")
             div.row
                 div.col-5.offset-1
@@ -396,4 +346,11 @@ ng-template('#slides'='')
                 div.col-1
             div.mt-2.fragment.text-center.alert.alert-warning
                 .row
-                    .col-12 PCA hat #[span.highlight die starke Annahme], dass #[span.highlight gesuchtes Manifold linear im Input-Space] steht!
+                    .col-12 PCA hat #[span.highlight die starke Annahme], dass das #[span.highlight gesuchtes Manifold linear im Feature-Space] ist!
+    section
+        slide-with-header(header="PCA - Wann")
+            ul
+                li Datenreduzieren für Speicherplatz
+                li Datenreduzieren für Speed-up von folge Modell
+            div.mt-5.fragment.text-center.alert.alert-danger
+                | PCA #[span.highlight nicht verwenden für Overfitting]. Bei Overfitting ist #[span.highlight Regularisierung] meistens die bessere Wahl.

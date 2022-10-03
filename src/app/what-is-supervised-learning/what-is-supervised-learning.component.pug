@@ -1,11 +1,15 @@
 ng-template('#slides'='')
     section
         slide-with-header(header="{{problemTableOfContentLabel.SUPERVISED_LEARNING.label}}")
-            div
+            div.fragment.fade-up.mt-5.d-flex.justify-content-center
+                model-visualization("#supervisedLearningModel"='', input-header="Input Space", output-header="Output Space")
+                    div(input).code-font Input(s)
+                    div(model).model-box Model
+                    div(output).code-font Output
+                span.fragment(fragment-trigger, "(trigger)"="supervisedLearningModel.end();")
+            div.fragment.mt-5
                 div
                     span
-                        | Daten unterteilt in #[span.fragment.highlight-red Input und dazugehörende Output] (unabhängige und abhängige Variablen)
-            div.fragment.fade-up.pt-5.d-flex.justify-content-center
-                supervised-model-visualization
+                        | Daten unterteilt in #[span.highlight Input und dazugehörende Output] (unabhängige und abhängige Variablen)
             p.fragment.text-center.alert.alert-primary Vorhergehende Problemfälle waren alle #[span.highlight Supervised Learning]!
 

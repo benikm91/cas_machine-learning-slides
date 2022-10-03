@@ -1,8 +1,18 @@
 div.d-flex.justify-center
     img(src="assets/images/overfitting/model-complexity.png", style={height: "300px"}).img-fluid
-ul
-    li Model Komplexität <=>
-    li Mehr Annahmen <=
-    li Regularisierung <=
-    li Mehr Features =>
+ul.scale-05
+    li Model Komplexität (Annahmen) <=>
+        ul
+            li Representation Capacity <=>
+            li Regularisierung <=
+            li Domänen-Wissen ausprogrammieren
+                ul
+                    li spezifisches Feature Preprocessing
+                    li Neural Network Architektur
     li Mehr Daten =>
+        ul
+            li Mehr Samples =>
+            li Data Augmentation
+            li Mehr Features =>
+                ul
+                    li Feature Engineering

@@ -1,0 +1,66 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="equation equation-colored tml-array tml-gather">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <msub>
+                        <mi>R</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi class="feature">f</mi>
+                    <mo separator="true">,</mo>
+                    <mi class="threshold">t</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo form="prefix" stretchy="false">{</mo>
+                    <mi>X</mi>
+                    <mi>|</mi>
+                    <msub>
+                        <mi>X</mi>
+                        <mi class="feature">f</mi>
+                    </msub>
+                    <mo>≤</mo>
+                    <mi class="threshold">t</mi>
+                    <mo form="postfix" stretchy="false">}</mo>
+                    <mspace width="1cm"></mspace>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mspace width="1cm"></mspace>
+                    <msub>
+                        <mi>R</mi>
+                        <mn>2</mn>
+                    </msub>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi class="feature">f</mi>
+                    <mo separator="true">,</mo>
+                    <mi class="threshold">t</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo form="prefix" stretchy="false">{</mo>
+                    <mi>X</mi>
+                    <mi>|</mi>
+                    <msub>
+                        <mi>X</mi>
+                        <mi class="feature">f</mi>
+                    </msub>
+                    <mo>&gt;</mo>
+                    <mi class="threshold">t</mi>
+                    <mo form="postfix" stretchy="false">}</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

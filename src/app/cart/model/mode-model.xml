@@ -1,0 +1,39 @@
+<math display="block" class="equation equation-colored">
+    <mrow>
+        <msub class="output" title="y_R_m: Vorhersage für Region R_m, die das Modell machen wird.">
+            <mover>
+                <mi>y</mi>
+                <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+            </mover>
+            <msub class="cart-region">
+                <mi>R</mi>
+                <mi>m</mi>
+            </msub>
+        </msub>
+        <mo>=</mo>
+        <mrow title="argmax_k: Gibt die Klasse k zurück, für welche p_mk (Wahrscheinlichkeit in Region R_m) am höchsten ist.">
+            <munder>
+                <mrow>
+                    <mi>arg</mi>
+                    <mspace width="0.167em"></mspace>
+                    <mi>max</mi>
+                    <mspace width="0.167em"></mspace>
+                </mrow>
+                <mi class="label">k</mi>
+            </munder>
+            <mrow title="p: Wahrscheinlichkeit der Klasse k in Region R_m">
+                <mi>p</mi>
+                <mo form="prefix" stretchy="false">(</mo>
+                <mi class="label">y</mi>
+                <mo>=</mo>
+                <mi class="label">k</mi>
+                <mi>|</mi>
+                <msub class="cart-region">
+                    <mi>R</mi>
+                    <mi>m</mi>
+                </msub>
+                <mo form="postfix" stretchy="false">)</mo>
+            </mrow>
+        </mrow>
+    </mrow>
+</math>

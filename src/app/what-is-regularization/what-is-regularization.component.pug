@@ -1,0 +1,36 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Regularization")
+            ul
+                li Wir treffe #[span.highlight zusätzliche Annahme] über Parameter #[span(mathjax="<math><mi>β</mi></math>")]
+                li.fragment Übliche Annahme:
+                    ul
+                        li Grosse Betas sind #[span.highlight unwahrscheinlicher]
+                        li Betas sind #[span.highlight nahe 0]
+                li.fragment Beispiel:
+                    ul
+                        li #[span.highlight L1-Regularization] (Absolut Wert - "Hoch 1")
+                        li #[span.highlight L2-Regularization] (Quadrieren - Hoch 2)
+                div.fragment.mt-3.text-center.alert.alert-warning Daten müssen Standard Skaliert werden!
+    section
+        slide-with-header(header="L1-Regularization")
+            ul
+                li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
+                    div.d-flex.justify-center
+                        img(src="assets/images/regularization/l1-prior.png", style={height: "150px"}).img-fluid
+                li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
+                    div([mathjax]="l1Regularization")
+            div.fragment.mt-4.text-center.alert.alert-primary Gut für Feature-Selection!
+    section
+        slide-with-header(header="L2-Regularization")
+            ul
+                li Wir #[span.highlight nehmen an] jeder Parameter #[span(mathjax="<math><mi>β</mi></math>")] ist so verteilt:
+                    div.d-flex.justify-center
+                        img(src="assets/images/regularization/l2-prior.png", style={height: "150px"}).img-fluid
+                li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
+                    div([mathjax]="l2Regularization")
+                // https://ekamperi.github.io/mathematics/2020/08/02/bayesian-connection-to-lasso-and-ridge-regression.html
+    section
+        slide-with-header(header="Linear Regression mit Regularization")
+            div #[span.code-font Lasso] = Linear Regression mit L1-Regularization
+            div #[span.code-font Ridge] = Linear Regression mit L2-Regularization

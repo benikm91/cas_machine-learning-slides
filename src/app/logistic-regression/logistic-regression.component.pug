@@ -1,9 +1,6 @@
 ng-template('#slides'='')
-    section
-        title-page
-            h1 Logistic Regression
-        div.mt-5.fragment.text-center.alert.alert-warning Logistic Regression macht #[span.highlight keine Regression], sondern eine #[span.highlight Klassifikation]!
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.LOGISTIC_REGRESSION")
+        div.mt-5.fragment.text-center.alert.alert-warning Logistic Regression macht #[span.highlight keine Regression], sondern eine #[span.highlight Klassifikation]!
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.DATA_SPECIFICATION")
     section
         slide-with-header(header="Logistic Regression - Data Specification")
@@ -37,6 +34,7 @@ ng-template('#slides'='')
                 li.unhighlight-step #[span.highlight Modifikation]: lineares Modell ändern, dass Output #[span.highlight zwischen 0 und 1] liegt.
                 li.highlight-step #[span.highlight Interpretation]: Output als #[span.highlight Wahrscheinlichkeit] für eine von zwei Klassen interpretieren.
                 div.mt-5.fragment([mathjax]="logisticRegressionLikelihood")
+                div.mt-5.fragment([mathjax]="modeModel")
     section
         slide-with-header(header="Logistische Regression - Intuition")
             p Beispiel: Ob #[span.highlight Setosa] Blumenart anhand 2 Features (#[span.code-font petal-length, petal-width]).
@@ -57,19 +55,6 @@ ng-template('#slides'='')
                         div([mathjax]="logisticRegression2D")
                     div(output, class="output").fix-height.code
                         | #[span.highlight-seaborn-1 Setosa]: 99%
-    section
-        slide-with-header(header="Logistic Regression - Theory - Verallgemeinern")
-            ul
-                li Wir möchten das Modell verallgemeinern
-                    ol
-                        li.fragment.strike(data-fragment-index="0") Unabhängig  vom Problem
-                        li.fragment.strike(data-fragment-index="0") Mehrere Features
-                        li.fragment.strike(data-fragment-index="0") Bezug zu echten Beobachtungen
-                        li (Mehrere Klassen)
-    section
-        slide-with-header(header="Logistic Regression - Code")
-            div.notebook-name logistic_regression.ipynb
-            img(src="assets/images/code.png")
     section
         slide-with-header(header="Logistic Regression - Mehrere Features", [extra]="true")
             side-by-side-3
@@ -110,10 +95,7 @@ ng-template('#slides'='')
                 div.col-5.p-2
                     img(src="assets/images/classification/example-data-with-model-1d-limit.png").limit-impossible
                 div.col-1
-    tables-of-content-logistic-regression([active]="logisticRegressionLabel.COST_FUNCTION")
-    section
-        title-page
-            h1 Fehler, Metrik, Kostenfunktion
+    tables-of-content-concepts([active]="conceptLabels.CLASSIFICATION_METRICS")
     section
         slide-with-header(header="Classification - Fehler eines Modells messen?")
             ul
@@ -188,7 +170,7 @@ ng-template('#slides'='')
                 .col-5([mathjax]="metricAccuracy")
             p.fragment.text-center.alert.alert-primary Accuracy wird oft verwendet.
             .fragment.text-center.alert.alert-warning
-                div Accuracy ist #[span.highlight ungeeignet] bei #[span.highlight inbalanced] Klassen
+                div Accuracy ist #[span.highlight irreführend] bei #[span.highlight inbalanced] Klassen
     section
         slide-with-header(header="Classification - Metrik - Beispiele")
             .mt-2.row.fragment
@@ -207,68 +189,21 @@ ng-template('#slides'='')
                 div F1 ist #[span.highlight geeignet] bei #[span.highlight inbalanced] Klassen, wenn Anzahl neagative Beispiele >> Anzahl positive Beispiele
     section
         slide-with-header(header="Classification - Metrik - Beispiele")
-            table(style={fontSize: "22pt"})
-                tr
-                    td
-                    th(colspan=2) Predicted
-                tr
-                    td
-                    th Spam
-                    th Not Spam
-                tr
-                    th Spam
-                    td
-                        input("#TP"="", type="number", value="5", width="100px").true-positive
-                    td
-                        input("#FP"="", type="number", value="5").false-positive
-                tr
-                    th Not Spam
-                    td
-                        input("#FN"="", type="number", value="5").false-negative
-                    td
-                        input("#TN"="", type="number", value="5").true-negative
-            div(style={fontSize: "15pt"}, *ngFor="let precision of [round(((toInt(TP.value))/(toInt(TP.value)+toInt(FN.value)))*100)]")
-                ng-container(*ngFor="let recall of [round(((toInt(TP.value))/(toInt(TP.value)+toInt(FP.value)))*100)]")
-                    .mt-5.d-flex.justify-center.align-items-center
-                        div Accuracy
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"true-negative\">'+TN.value+'</mi></mrow><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"true-negative\">'+TN.value+'</mi><mo>+</mo><mi class=\"false-positive\">'+FP.value+'</mi><mo>+</mo><mi class=\"false-negative\">'+FN.value+'</mi></mrow></mfrac></math>'")
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+(toInt(TP.value)+toInt(TN.value))+'</mi></mrow><mrow><mi class=\"true-positive\">'+(toInt(TP.value)+toInt(TN.value)+toInt(FP.value)+toInt(FN.value))+'</mi></mrow></mfrac></math>'")
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((toInt(TP.value)+toInt(TN.value))/(toInt(TP.value)+toInt(TN.value)+toInt(FP.value)+toInt(FN.value)))*100)+'%</mi></mrow></math>'")
-                    .mt-2.d-flex.justify-center.align-items-center
-                        div Recall
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+TP.value+'</mi></mrow><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"false-positive\">'+FP.value+'</mi></mrow></mfrac></math>'")
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+toInt(TP.value)+'</mi></mrow><mrow><mi class=\"true-positive\">'+(toInt(TP.value)+toInt(FP.value))+'</mi></mrow></mfrac></math>'")
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((toInt(TP.value))/(toInt(TP.value)+toInt(FP.value)))*100)+'%</mi></mrow></math>'")
-                    .mt-2.d-flex.justify-center.align-items-center
-                        div Precision
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+TP.value+'</mi></mrow><mrow><mi class=\"true-positive\">'+TP.value+'</mi><mo>+</mo><mi class=\"false-positive\">'+FN.value+'</mi></mrow></mfrac></math>'")
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+toInt(TP.value)+'</mi></mrow><mrow><mi class=\"true-positive\">'+(toInt(TP.value)+toInt(FN.value))+'</mi></mrow></mfrac></math>'")
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((toInt(TP.value))/(toInt(TP.value)+toInt(FN.value)))*100)+'%</mi></mrow></math>'")
-                    .mt-2.d-flex.justify-center.align-items-center
-                        div F1-Score
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mi>2</mi><mo>*</mo><mfrac><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>*</mo><mi class=\"true-negative\">'+recall+'</mi></mrow><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>+</mo><mi class=\"true-negative\">'+recall+'</mi></mrow></mfrac></math>'")
-                        div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-                        div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(2 * precision*recall / (precision+recall))+'%</mi></mrow></math>'")
+            binary-classification-metric-example
+    section
+        slide-with-header(header="Classification - Metrik - Beispiel für F1-Score")
+            binary-classification-metric-example([tp]="1", [fp]="1", [fn]="1", [tn]="99")
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.COST_FUNCTION")
     section
         slide-with-header(header="Cost function - Maximum Likelihood")
-            div Bei der #[span.highlight Logistic Regression] gibt das Modell eine Wahrscheinlichkeit für eine Klasse (Likelihood).
+            div Bei der #[span.highlight Logistic Regression] gibt das Modell eine #[span.highlight Wahrscheinlichkeit] für eine Klasse (Likelihood).
             div Mit dieser können wir eine #[span.highlight spezielle Kostenfunktion] erstellen, die #[span.highlight Maximum Likelihood]:
+            div.fragment.mt-5([mathjax]="logisticRegressionNDVector")
             div.fragment.mt-5([mathjax]="metricLikelihood")
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.OPTIMIERUNG")
     section
         slide-with-header(header="Logistic Regression Optimierung - Gradient Descent")
-            div Idee: #[span.highlight Gradient Descent] anwenden auf der Maximum Likelihood Kostenfunktion
+            div Idee: #[a(href="#/{{conceptLabels.GRADIENT_DESCENT.href}}").highlight Gradient Descent] anwenden auf der Maximum Likelihood Kostenfunktion
             div.d-flex.justify-center
                 img(src="assets/images/classification/gradient_descent.gif")
             div.mt-5.fragment.text-center.alert.alert-primary #[span.highlight Andere] Verfahren (z.B. Coordinate Descent) möglich
@@ -301,6 +236,29 @@ ng-template('#slides'='')
                 div.mt-5([mathjax]="metricNegativeLogLikelihoodNegate", style={fontSize: "22pt"})
                 div.fragment.mt-5([mathjax]="metricNegativeLogLikelihoodLog", style={fontSize: "22pt"})
             div.fragment.mt-5.text-center.alert.alert-primary "Nur" notwendig wegen #[span.highlight Floating Point Precision]!
+    section
+        slide-with-header(header="Logistic Regression - Mehrere Klassen - Softmax")
+            ul
+                li.fragment
+                    | Sigmoid (
+                    span(mathjax="<math><mi>ϕ</mi></math>")
+                    | ) gibt uns für den #[span.highlight Beweis einer Klasse], die #[span.highlight Wahrscheinlichkeit] für diese Klasse.
+                li.fragment
+                    div Softmax gibt uns für #[span.highlight Beweise] für #[span.highlight mehrere Klassen], die #[span.highlight Wahrscheinlichkeiten] der Klassen.
+                div.fragment([mathjax]="softmax")
+                div.fragment.mt-5
+                    softmax-3-example([i1]="-2", [i2]="5", [i3]="1")
+    section
+        slide-with-header(header="Logistic Regression - 3 Klassen", [extra]="true")
+            ul
+                li.fragment #[span.highlight 3 eigene Lineare Modelle] (3 Outputs = 3 Beweise)
+                li.fragment 3 Outputs zu 3 Wahrscheinlichkeiten (#[span.highlight Softmax])
+                li.fragment Weiterhin Maximum Likelihood als Cost Function (#[span.highlight Cross-Entropy])
+            div.fragment.mt-5.text-center.alert.alert-primary 3 Linearen Modelle werden zusammen trainiert
+    section
+        slide-with-header(header="Logistic Regression - Code")
+            div.notebook-name logistic_regression.ipynb
+            img(src="assets/images/code.png")
     tables-of-content-logistic-regression
         div.mt-5.row
             div.col-6

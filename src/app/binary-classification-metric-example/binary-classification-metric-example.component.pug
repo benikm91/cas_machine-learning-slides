@@ -1,0 +1,52 @@
+table(style={fontSize: "22pt"})
+    tr
+        td
+        th(colspan=2) Predicted
+    tr
+        td
+        th Spam
+        th Not Spam
+    tr
+        th Spam
+        td
+            input(type="number", [(ngModel)]="tp", width="100px").true-positive
+        td
+            input(type="number", [(ngModel)]="fp").false-positive
+    tr
+        th Not Spam
+        td
+            input(type="number", [(ngModel)]="fn").false-negative
+        td
+            input(type="number", [(ngModel)]="tn").true-negative
+div(style={fontSize: "15pt"}, *ngFor="let precision of [round(((tp)/(tp+fn))*100)]")
+    ng-container(*ngFor="let recall of [round(((tp)/(tp+fp))*100)]")
+        .mt-5.d-flex.justify-center.align-items-center
+            div Accuracy
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+tp+'</mi><mo>+</mo><mi class=\"true-negative\">'+tn+'</mi></mrow><mrow><mi class=\"true-positive\">'+tp+'</mi><mo>+</mo><mi class=\"true-negative\">'+tn+'</mi><mo>+</mo><mi class=\"false-positive\">'+fp+'</mi><mo>+</mo><mi class=\"false-negative\">'+fn+'</mi></mrow></mfrac></math>'")
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+(tp+tn)+'</mi></mrow><mrow><mi class=\"true-positive\">'+(tp+tn+fp+fn)+'</mi></mrow></mfrac></math>'")
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((tp+tn)/(tp+tn+fp+fn))*100)+'%</mi></mrow></math>'")
+        .mt-2.d-flex.justify-center.align-items-center
+            div Recall
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+tp+'</mi></mrow><mrow><mi class=\"true-positive\">'+tp+'</mi><mo>+</mo><mi class=\"false-positive\">'+fp+'</mi></mrow></mfrac></math>'")
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+tp+'</mi></mrow><mrow><mi class=\"true-positive\">'+(tp+fp)+'</mi></mrow></mfrac></math>'")
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((tp)/(tp+fp))*100)+'%</mi></mrow></math>'")
+        .mt-2.d-flex.justify-center.align-items-center
+            div Precision
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi class=\"true-positive\">'+tp+'</mi></mrow><mrow><mi class=\"true-positive\">'+tp+'</mi><mo>+</mo><mi class=\"false-positive\">'+fn+'</mi></mrow></mfrac></math>'")
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+tp+'</mi></mrow><mrow><mi class=\"true-positive\">'+(tp+fn)+'</mi></mrow></mfrac></math>'")
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((tp)/(tp+fn))*100)+'%</mi></mrow></math>'")
+        .mt-2.d-flex.justify-center.align-items-center
+            div F1-Score
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mi>2</mi><mo>*</mo><mfrac><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>*</mo><mi class=\"true-negative\">'+recall+'</mi></mrow><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>+</mo><mi class=\"true-negative\">'+recall+'</mi></mrow></mfrac></math>'")
+            div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
+            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(2 * precision*recall / (precision+recall))+'%</mi></mrow></math>'")

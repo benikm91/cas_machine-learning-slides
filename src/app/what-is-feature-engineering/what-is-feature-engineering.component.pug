@@ -1,13 +1,10 @@
 ng-template('#slides'='')
     section
-        title-page
-            h1 Feature Engineering
-    section
         slide-with-header(header="Feature Engineering")
             ul
                 li Idee: Mache #[span.highlight aus bestehende Features neue Features], um dem Modell zu helfen
-                li #[span.highlight Standard]: Polynomielle Features
-                li #[span.highlight Kreatives]: Durchschnittlicher Quadratmeter-Preis im Umkreis
+                li #[span.highlight Standard], z.B. Polynomielle Features
+                li #[span.highlight Kreatives], z.B. Durchschnittlicher Quadratmeter-Preis im Umkreis der Immobilie
             div.mt-5.d-flex.justify-center.fragment
                 model-3-visualization(input-header="Input Space", feature-header="Feature Space", output-header="Output Space" )
                     div(input).rect-styling

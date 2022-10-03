@@ -23,7 +23,25 @@ ng-template('#slides'='')
                                 p Spam
                 span.fragment(fragment-trigger, "(trigger)"="spamModel.start(); nonSpamModel.start()", "(untrigger)"="spamModel.end(); nonSpamModel.end()")
     section
-        slide-with-header(header="Für alle Inputs einen Output vorhersage")
-            div.d-flex.justify-center
-                img(src="assets/images/classification/classification-example.png").img-fluid
+        slide-with-header(header="Classification - Beispiel - Name der Blumenart")
+            ul
+                li Input(s): #[span.code-font length (cm), width (cm)]
+                li Output: #[span.code-font "Setosa" oder "Other" ]
+            div.fragment.fade-up.pt-5.d-flex.justify-content-center
+                model-visualization("#classificationExample"='', output-header="Output Space")
+                    div(inputHeader)
+                        div(style={marginTop: "-50px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 2 Features
+                    div(input, class="input").transparent-border-1.code
+                        div length: 1.5cm
+                        div width: 0.25cm
+                    div(model, class="model").model-box.code
+                        div Modell
+                    div(output, class="output").fix-height.code
+                        | #[span.highlight-seaborn-1 Setosa]
+                span.fragment(fragment-trigger, "(trigger)"="classificationExample.end();")
+            div.mt-5.r-stack
+                img.fragment(src="assets/images/classification/example-data-only.png", style={height: "200px"}).img-fluid
+                img.fragment(src="assets/images/classification/example-data-with-model.png", style={height: "200px"}).img-fluid
 

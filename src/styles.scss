@@ -99,6 +99,9 @@
 }
 
 .equation-colored {
+  .unimportant {
+    color: gray;
+  }
   .residual {
     color: #d62728;
   }
@@ -114,11 +117,23 @@
   .weight {
     color: blue;
   }
+  .class {
+    color: darkblue;
+  }
   .feature {
     color: green;
   }
+  .latent {
+    color: #808007
+  }
+  .threshold {
+    color: red;
+  }
   .hyper-parameter {
     color: purple;
+  }
+  .cart-region {
+    color: orangered;
   }
 }
 
@@ -128,6 +143,11 @@
 
 .limit-impossible {
   border: 5px solid red;
+}
+
+.scale-075 {
+  transform-origin: top;
+  transform: scale(0.75);
 }
 
 .scale-05 {
@@ -158,4 +178,12 @@
 
 .unhighlight-step {
   opacity: 0.1;
+}
+
+.small-font {
+  font-size: 20px;
+}
+
+.smaller-font {
+  font-size: 28px;
 }

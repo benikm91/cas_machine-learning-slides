@@ -1,0 +1,23 @@
+<math display="block" class="equation equation-colored">
+    <mrow>
+        <munder>
+            <mrow>
+                <mi>arg</mi>
+                <mspace width="0.167em"></mspace>
+                <mi>max</mi>
+                <mspace width="0.167em"></mspace>
+            </mrow>
+            <mi>k</mi>
+        </munder>
+        <msub>
+            <mover>
+                <mi>p</mi>
+                <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+            </mover>
+            <mrow>
+                <mi>m</mi>
+                <mi>k</mi>
+            </mrow>
+        </msub>
+    </mrow>
+</math>

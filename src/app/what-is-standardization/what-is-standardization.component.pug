@@ -1,0 +1,34 @@
+ng-template('#slides'='')
+    tables-of-content-concepts([active]="conceptLabel.STANDARDIZE")
+    section
+        slide-with-header(header="Standard Scaler - Intuition")
+            h4 Berechnung pro Feature
+            ol
+                li Minus den Durchschnitt
+                li Durch die Standardabweichung
+            h4.mt-5 Intuition
+            ol
+                li Um Nullpunkt verschieben
+                li Einheit der Messung entfernen
+    section
+        slide-with-header(header="Standard Scaler - Intuition")
+            video(src="assets/videos/preprocessing/standardization/standard_scaler.mp4", controls="true")
+    section
+        slide-with-header(header="Wann?")
+            ol
+                li
+                    div Lernbare Parameter #[span.highlight vergleichbar] sein müssen
+                    div(style={fontSize: "22px"})
+                        | z.B.&nbsp;
+                        a(href="#/{{conceptLabel.REGULARIZATION.href}}") Regularization
+                        | ,&nbsp;
+                        a(href="#/{{conceptLabel.GRADIENT_DESCENT.href}}") Gradient Descent
+                li
+                    div #[span.highlight Distanzen] im Input-Space eine Rolle spielen
+                    div(style={fontSize: "22px"})
+                        | z.B.&nbsp;
+                        a(href="#/{{algorithmLabel.KNN.href}}") k-nearest-neighbors
+                        | ,&nbsp;
+                        a(href="#/{{algorithmLabel.SVM.href}}") Support Vector Machine
+                        | ,&nbsp;
+                        a(href="#/{{algorithmLabel.PCA.href}}") PCA

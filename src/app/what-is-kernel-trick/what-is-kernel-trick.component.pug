@@ -1,7 +1,5 @@
 ng-template('#slides'='')
-    section
-        title-page
-            h1 Kernel Trick
+    tables-of-content-concepts([active]="conceptLabels.KERNEL_TRICK")
     section
         slide-with-header(header="Kernel Trick - Intuition")
             h6 Reminder Feature Engineering:
@@ -34,19 +32,19 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Kernel Trick - Representer Theorem", [extra]="true")
             ul(style={fontSize: "22pt"})
-                li
+                li.fragment
                     div #[span.highlight Gewicht pro Datenpunkt], anstatt #[span.highlight Gewicht pro Feature] ist äquivalent (Dual Form)
                     div([mathjax]="representerTheorem")
-                li Änderung auf das z.B. Linear Modell
+                li.fragment Änderung auf das z.B. Linear Modell
                     div([mathjax]="linearModelDualFormDerivation")
-                li
+                li.fragment
                     div Wir können also #[span.code N]&nbsp;#[span(mathjax="<math><mi>α</mi></math>")]'s lernen anstatt #[span.code M]&nbsp;#[span(mathjax="<math><mi>β</mi></math>")]'s (#[span.code N] = Anzahl Datenpunkte, #[span.code M] = Anzahl Features) und lernen das von aussen #[span.highlight identische Modell]
-                li Anzahl lernbare Parameter nicht mehr abhängig von Anzahl Features. Gut wenn #[span.code M] >> #[span.code N]
+                li.fragment Anzahl lernbare Parameter nicht mehr abhängig von Anzahl Features. Gut wenn #[span.code M] >> #[span.code N]
     section
         slide-with-header(header="Kernel Trick - Kernel", [extra]="true")
             ul
                 li
-                    div In der Dual-Form misst das Dot-Product (#[span(mathjax="<math><msub><mi>x</mi><mn>j</mn></msub><mi>x</mi></math>")]) die #[span.highlight Distanz] vom neuen Datenpunkt (#[span(mathjax="<math><mi>x</mi></math>")]) zum Train-Set-Datenpunkten (#[span(mathjax="<math><msub><mi>x</mi><mn>j</mn></msub></math>")]):
+                    div In der Dual-Form misst das Dot-Product (#[span(mathjax="<math><msup><mi>x</mi><mi>(i)</mi></msup><mi>x</mi></math>")]) die #[span.highlight Distanz] vom neuen Datenpunkt (#[span(mathjax="<math><mi>x</mi></math>")]) zum Train-Set-Datenpunkten (#[span(mathjax="<math><msup><mi>x</mi><mi>(i)</mi></msup></math>")]):
                     div([mathjax]="linearModelDualFormHighlight")
                 li #[span.highlight Kernel Trick]: Diese Messung von Distanz so verändern, dass es #[span.highlight der Distanz im Feature Space] entspricht
     section

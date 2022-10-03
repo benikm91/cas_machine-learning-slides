@@ -1,21 +1,16 @@
 ng-template('#slides'='')
-    section
-        title-page
-            h1 K-Nearest-Neighbors
+    tables-of-content-knn
+    tables-of-content-knn([active]="knnLabels.DATA_SPECIFICATION")
     section
         slide-with-header(header="K-Nearest-Neighbors - Data Specification")
             ul
-                li.fragment Was ist die #[span.highlight Ziel-Variable], z.B. #[span.code-font weight (g)]
-                li.fragment Welche #[span.highlight Features] wählen wir, z.B. um einen Fisch zu repräsentieren (#[span.code-font width (cm), ...])
+                li.fragment Was ist die #[span.highlight kategorische Ziel-Variable], z.B. #[span.code-font name]
+                li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
                 li.fragment
                     | Kategorische Features (z.B. Fisch-Art) müssen für das Modell #[span.highlight encoded] werden.
                     | One-Hot-Encoding funktioniert nicht gut, bräuchte Latent-Encoding.
                 li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
-                // li.fragment
-                //     div #[span.highlight Anzahl Features] gibt die #[span.highlight Anzahl Parameter] vor.
-                //     div Also #[span.highlight mehr Features machen das Modell komplexer].
-                // li Features müssen für das Modell #[span.highlight nicht skaliert] werden
-                // li Label muss je nach Problemfall #[span.highlight transformiert] werden (Tusky-Anscombe Plot)
+    tables-of-content-knn([active]="knnLabels.MODEL")
     section
         slide-with-header(header="K-Nearest-Neighbors - Intuition")
             ol
@@ -40,3 +35,14 @@ ng-template('#slides'='')
                         div([mathjax]="knn2D")
                     div(output, class="output").fix-height.code
                         | #[span.highlight-seaborn-1 Setosa]: 100%
+    section
+        slide-with-header(header="K-Nearest-Neighbors - Regression")
+            ul
+                li Kann auch für #[span.highlight Regression] eingesetz werden.
+                li Einfach Labels (z.B. Kosten) von K-Nearest-Neighbors als Vorhersage #[span.highlight mitteln] (allenfalls noch gewichtet nach Distanz zum Nachbarn).
+    section
+        slide-with-header(header="K-Nearest-Neighbors - Summary")
+            ul
+                li #[span.highlight Kein Optimierung-Algorithmus]: "Nur" effizientes Abspeichern des Train-Sets (KD-Tree)
+                li Bei vielen Features empirisch meistens #[span.highlight nicht gut]. #[br] Grund: #[a(href="https://en.wikipedia.org/wiki/Curse_of_dimensionality", target="_blank") Curse of Dimensionality]
+                li Einfacher Algorithmus, wo man #[span.highlight kennen sollte].

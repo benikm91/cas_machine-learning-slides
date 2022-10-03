@@ -1,0 +1,30 @@
+<math display="block" class="equation equation-colored">
+  <mrow>
+    <mrow>
+      <munder>
+        <mo movablelimits="false">∑</mo>
+        <msub class="cart-region">
+          <mi>R</mi>
+          <mi>m</mi>
+        </msub>
+      </munder>
+    </mrow>
+    <mfrac>
+      <msub>
+        <mi>N</mi>
+        <msub class="cart-region">
+          <mi>R</mi>
+          <mi>m</mi>
+        </msub>
+      </msub>
+      <mi>N</mi>
+    </mfrac>
+    <mi>M</mi>
+    <mo form="prefix" stretchy="false">(</mo>
+    <msub class="cart-region">
+      <mi>R</mi>
+      <mi>m</mi>
+    </msub>
+    <mo form="postfix" stretchy="false">)</mo>
+  </mrow>
+</math>

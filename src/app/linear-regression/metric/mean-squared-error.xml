@@ -1,5 +1,5 @@
 <math display="block">
-    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array equation equation-colored tml-gather">
         <mtr>
             <mtd>
                 <mrow>
@@ -7,12 +7,12 @@
                     <mi>S</mi>
                     <mi>E</mi>
                     <mo form="prefix" stretchy="false">(</mo>
-                    <mover>
+                    <mover class="label">
                         <mi>y</mi>
                         <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
                     </mover>
                     <mo separator="true">,</mo>
-                    <mover>
+                    <mover class="output">
                         <mover>
                             <mi>y</mi>
                             <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
@@ -37,8 +37,8 @@
                         </munderover>
                     </mrow>
                     <mo form="prefix" stretchy="false">(</mo>
-                    <mrow class="residual">
-                        <msup>
+                    <mrow>
+                        <msup class="label">
                             <mi>y</mi>
                             <mrow>
                                 <mo form="prefix" stretchy="false">(</mo>
@@ -47,7 +47,7 @@
                             </mrow>
                         </msup>
                         <mo>−</mo>
-                        <msup>
+                        <msup class="output">
                             <mover>
                                 <mi>y</mi>
                                 <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>

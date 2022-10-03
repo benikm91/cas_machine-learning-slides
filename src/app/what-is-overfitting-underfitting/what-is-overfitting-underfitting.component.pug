@@ -1,0 +1,23 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Underfitting vs. Overfitting")
+            .row
+                .col-4.highlight Overfitting:
+                .col-8.text-start Wir sind #[span.highlight gut auf den Trainings-Daten], aber #[span.highlight schlecht auf neuen] Daten!
+            .row
+                .col-4.highlight Underfitting:
+                .col-8.text-start Wir sind #[span.highlight okay auf den Trainings-Daten] und #[span.highlight okay auf neuen] Daten!
+            .row
+                .col-4.highlight Genau richtig:
+                .col-8.text-start Wir sind #[span.highlight gut auf den Trainings-Daten] und #[span.highlight gut auf neuen] Daten!
+            div(style={transformOrigin: "top"}).scale-05.mt-5.fragment
+                side-by-side-3
+                    div(first).d-flex.flex-column
+                        h4.align-center Underfitting
+                        img(src="assets/images/overfitting/overfitting-linear-regression-with-val.png")
+                    div(second).d-flex.flex-column
+                        h4.align-center Richtig
+                        img(src="assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
+                    div(third).d-flex.flex-column
+                        h4.align-center Overfitting
+                        img(src="assets/images/overfitting/overfitting-random-forest-with-val.png")

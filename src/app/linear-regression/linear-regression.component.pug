@@ -1,14 +1,11 @@
 ng-template('#slides'='')
-    section
-        title-page
-            h1 Linear Regression
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.LINEAR_REGRESSION")
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.DATA_SPECIFICATION")
     section
         slide-with-header(header="Linear Regression - Data Specification")
-            div #[span.highlight Data Specification]: In welcher Form erwartet der Machine Learning Algorithmus die Daten.
+            // div #[span.highlight Data Specification]: In welcher Form erwartet der Machine Learning Algorithmus die Daten.
             ul
-                li.fragment Was ist die #[span.highlight Ziel-Variable], z.B. #[span.code-font weight (g)]
+                li.fragment Was ist die kontinuierliche #[span.highlight Ziel-Variable], z.B. #[span.code-font weight (g)]
                 li.fragment Welche #[span.highlight Features] wählen wir, z.B. um einen Fisch zu repräsentieren (#[span.code-font width (cm), ...])
                 li.fragment Kategorische Features (z.B. Fisch-Art) müssen für das Modell #[span.highlight encoded] werden.
                 // li.fragment
@@ -29,7 +26,7 @@ ng-template('#slides'='')
                     .fragment(data-fragment-index="1") Dazu verwenden wir das folgende #[span.highlight Lineare Modell]
                         div([mathjax]="linearRegression1DExample")
             div.d-flex.justify-content-center.fragment
-                model-visualization
+                model-visualization(input-header="Input Space", output-header="Output Space")
                     div(input, class="input").transparent-border-1.code
                         | width: 5cm
                     div(model, class="model").model-box.code
@@ -134,10 +131,7 @@ ng-template('#slides'='')
                 knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
             span.fragment(fragment-trigger, "(trigger)"="knowledgeView.start()", "(untrigger)"="knowledgeView.end()")
     question-slide([questions]="linearRegressionQuestions")
-    tables-of-content-concepts([active]="conceptLabels.METRICS")
-    section
-        title-page
-            h1 Fehler, Metrik, Kostenfunktion
+    tables-of-content-concepts([active]="conceptLabels.REGRESSION_METRICS")
     section
         slide-with-header(header="{{problemLabels.REGRESSION.label}} - Fehler eines Modells messen?")
             ul
@@ -189,6 +183,11 @@ ng-template('#slides'='')
         slide-with-header(header="Linear Regression - Theory", [extra]="true")
             div.d-flex.flex-row
                 div([mathjax]="noiseNormalDistributed").fragment
+            div
+                ul
+                    li.framgent (Annahme motiviert durch Central limit theorem)
+                    li.fragment Diese Annahme führt (mit dem üblichen Maximum Liklihood Ansatz) mathematisch zur #[span.highlight MSE Metrik].
+                    li.fragment Darum: Im #[span.code-font sklearn] wird #[span.code-font LinearRegression] nach der MSE-Kostenfunktion optimiert.
     section
         slide-with-header(header="Linear Regression - Code")
             div.notebook-name Teil 2 in in linear_regression.ipynb
@@ -218,7 +217,8 @@ ng-template('#slides'='')
                 div([mathjax]="linearRegressionAnalytic").fragment
             div.fragment.d-flex.justify-center
                 img(src="assets/images/gradient-descent/gradient_descent_solution.png").fragment
-            p.fragment.text-center.alert.alert-warning Nur bei #[span.highlight Convex Cost function] möglich
+            p.fragment.text-center.alert.alert-warning Nur bei #[span.highlight bestimmten Funktionen] möglich
+    tables-of-content-concepts([active]="conceptLabels.GRADIENT_DESCENT")
     section
         slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
             p Alternative Methode zur Analytischen Methode zum setzen der Parameter (betas)
@@ -239,6 +239,7 @@ ng-template('#slides'='')
             div([mathjax]="metricCostFunctionDerivative").fragment
     section
         slide-with-header(header="Optimierung - Gradient Descent")
+            tables-of-content-concepts-link([active]="conceptLabels.OPTIMIZATION_ALGORITHMS")
             div #[span.highlight Gradient Descent]-Algorithmus funktioniert wie folgt:
             ol
                 li.fragment.mt-5
@@ -250,8 +251,8 @@ ng-template('#slides'='')
                     div.d-flex.align-end(style={alignItems: "stretch"})
                         div.align-self-end Aktualisiere:&nbsp;
                         div.align-self-end([mathjax]="gradientDescentUpdate")
-            p.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Cost function] möglich
-            p.mt-5.fragment.text-center.alert.alert-warning In der Praxis wird die #[span.highlight Analytische Methode für Lineare Regression] eingesetzt (schneller)
+            p.mt-5.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Cost function] möglich
+            p.mt-2.fragment.text-center.alert.alert-warning In der Praxis wird die #[span.highlight Analytische Methode für Lineare Regression] eingesetzt (schneller)
             // div.fragment
             //     div.mt-5.d-flex.justify-center.align-end(style={alignItems: "stretch"})
             //         div.align-self-end Wiederhole Schritt 2. bis&nbsp;

@@ -1,0 +1,90 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="equation equation-colored tml-array tml-gather">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mi class="feature">f</mi>
+                    <mo separator="true">,</mo>
+                    <mi class="threshold">t</mi>
+                    <mo>=</mo>
+                    <munder>
+                        <mrow>
+                            <mi>arg</mi>
+                            <mspace width="0.167em"></mspace>
+                            <mi>min</mi>
+                            <mspace width="0.167em"></mspace>
+                        </mrow>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi class="feature">f</mi>
+                            <mo separator="true">,</mo>
+                            <mi class="threshold">t</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </munder>
+                    <mo fence="false" symmetric="true" minsize="1.2em">[</mo>
+                    <mfrac class="unimportant">
+                        <msub>
+                            <mi>N</mi>
+                            <mrow>
+                                <msub>
+                                    <mi>R</mi>
+                                    <mn>1</mn>
+                                </msub>
+                            </mrow>
+                        </msub>
+                        <msub>
+                            <mi>N</mi>
+                            <mi>R</mi>
+                        </msub>
+                    </mfrac>
+                    <mi>M</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mrow>
+                        <msub>
+                            <mi>R</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="feature">f</mi>
+                        <mo separator="true">,</mo>
+                        <mi class="threshold">t</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>+</mo>
+                    <mfrac class="unimportant">
+                        <msub>
+                            <mi>N</mi>
+                            <mrow>
+                                <msub>
+                                    <mi>R</mi>
+                                    <mn>2</mn>
+                                </msub>
+                            </mrow>
+                        </msub>
+                        <msub>
+                            <mi>N</mi>
+                            <mi>R</mi>
+                        </msub>
+                    </mfrac>
+                    <mi>M</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mrow>
+                        <msub>
+                            <mi>R</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="feature">f</mi>
+                        <mo separator="true">,</mo>
+                        <mi class="threshold">t</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo fence="false" symmetric="true" minsize="1.2em">]</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

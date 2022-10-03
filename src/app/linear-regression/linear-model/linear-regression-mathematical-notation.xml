@@ -131,5 +131,20 @@
                 </mrow>
             </mtd>
         </mtr>
+        <mtr class="fragment">
+            <mtd style="text-align:-webkit-right;">
+                <mover class="output">
+                    <mi>y</mi>
+                    <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+                </mover>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo>=</mo>
+                    <mi class="feature">x</mi>
+                    <mi class="weight">β</mi>
+                </mrow>
+            </mtd>
+        </mtr>
     </mtable>
 </math>

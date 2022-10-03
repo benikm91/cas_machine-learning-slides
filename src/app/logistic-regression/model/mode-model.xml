@@ -1,0 +1,35 @@
+<math display="block" class="equation equation-colored">
+    <mrow>
+        <mover class="output">
+            <mi>y</mi>
+            <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+        </mover>
+        <mo>=</mo>
+        <mrow>
+            <mrow>
+                <munder>
+                    <mrow>
+                        <mi>arg</mi>
+                        <mspace width="0.167em"></mspace>
+                        <mi>max</mi>
+                        <mspace width="0.167em"></mspace>
+                    </mrow>
+                    <mi class="label">k</mi>
+                </munder>
+            </mrow>
+            <mrow>
+                <mi>p</mi>
+                <mo form="prefix" stretchy="false">(</mo>
+                <mi class="label">y</mi>
+                <mo>=</mo>
+                <mi class="label">k</mi>
+                <mi>|</mi>
+                <msub class="feature">
+                    <mi>x</mi>
+                    <mi>1</mi>
+                </msub>
+                <mo form="postfix" stretchy="false">)</mo>
+            </mrow>
+        </mrow>
+    </mrow>
+</math>

@@ -1,0 +1,221 @@
+ng-template('#slides'='')
+    tables-of-content-cart([active]="cartLabels.DECISION_TREE")
+    tables-of-content-cart([active]="cartLabels.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="Decision Trees - Data Specification")
+            ol
+                li.fragment Was ist die #[span.highlight Ziel-Variable], z.B. #[span.code-font name]
+                li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
+                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
+    tables-of-content-cart([active]="cartLabels.MODEL")
+    section
+        slide-with-header(header="Decision Trees - Intuition")
+            ul
+                li #[span.highlight Feature-Space] in #[span.highlight Regionen] aufteilen
+                li Mit Train-Samples in Regionen eine #[span.highlight Vorhersage] treffen.
+            .row
+                .col-6
+                    div
+                        .r-stack(style={height: "300px"})
+                            img.fragment(data-fragment-index="0", src="assets/images/classification/cart/cart-example-data-only.png").img-fluid-both
+                            img.fragment(data-fragment-index="1", src="assets/images/classification/cart/cart-example-max-depth-1.png").img-fluid-both
+                            img.fragment(data-fragment-index="3", src="assets/images/classification/cart/cart-example-max-depth-2.png").img-fluid-both
+                            img.fragment(data-fragment-index="4", src="assets/images/classification/cart/cart-example-max-depth-3.png").img-fluid-both
+                            img.fragment(data-fragment-index="5", src="assets/images/classification/cart/cart-example-max-depth-4.png").img-fluid-both
+                            img.fragment(data-fragment-index="6", src="assets/images/classification/cart/cart-example-max-depth-5.png").img-fluid-both
+                .col-6
+                    div
+                        .r-stack(style={height: "300px"})
+                            img.fragment(data-fragment-index="2", src="assets/images/classification/cart/cart-example-max-depth-1-tree.png").img-fluid-both
+                            img.fragment(data-fragment-index="3", src="assets/images/classification/cart/cart-example-max-depth-2-tree.png").img-fluid-both
+                            img.fragment(data-fragment-index="4", src="assets/images/classification/cart/cart-example-max-depth-3-tree.png").img-fluid-both
+                            img.fragment(data-fragment-index="5", src="assets/images/classification/cart/cart-example-max-depth-4-tree.png").img-fluid-both
+                            img.fragment(data-fragment-index="6", src="assets/images/classification/cart/cart-example-max-depth-5-tree.png").img-fluid-both
+            div.fragment.text-center.alert.alert-primary #[span.highlight Abbruchbedingung] z.B. Maximale Tiefe vom Tree (z.B. #[span.code-font max_depth=3])
+    section
+        slide-with-header(header="Decision Trees - Modell")
+            ol
+                li
+                    | Feature Space unterteilen in Regionen (
+                    span(mathjax="<math><msub><mi>R</mi><mi>1</mi></msub><mo>,</mo><mi>...</mi></math>")
+                    | ) mittels #[span.highlight Decision Tree] (
+                    img(height="50px", src="assets/images/classification/cart/cart-example-max-depth-5-tree.png")
+                    | )
+                li.fragment
+                    | #[span.highlight Wahrscheinlichkeit] für Klasse (
+                    span(mathjax="<math><mi>k</mi></math>")
+                    | ) pro Region (
+                    span(mathjax="<math><msub><mi>R</mi><mi>m</mi></msub></math>")
+                    | )
+                    div([mathjax]="modelProbability")
+                li.fragment(class="equation-colored")
+                    | Klasse mit #[span.highlight höchster Wahrscheinlichkeit vorhersagen] für Region
+                    | &nbsp;
+                    span(class="cart-region" mathjax="<math><msub><mi>R</mi><mi>m</mi></msub></math>")
+                    | :
+                    div([mathjax]="modeModel")
+    tables-of-content-cart([active]="cartLabels.COST_FUNCTION")
+    section
+        slide-with-header(header="Decision Tree - Cost Function", [extra]="true")
+            div
+                div
+                    | Impurity (Verunreinigt) der Regionen (
+                    span(mathjax="<math><msub><mi>R</mi><mi>1</mi></msub><mo>,</mo><mi>...</mi></math>")
+                    | ) messen.
+                div([mathjax]="optimizationSumOfImpurities")
+            div.mt-5
+                div Most common impurities:
+                ul
+                    li
+                        div #[span.highlight Gini-index]
+                        div([mathjax]="optimizationGiniImpurity")
+                    li
+                        div #[span.highlight Cross-Entropy]
+                        div([mathjax]="optimizationCrossEntropyImpurity")
+    tables-of-content-cart([active]="cartLabels.OPTIMIERUNG")
+    section
+        slide-with-header(header="Decision Tree - Optimierung")
+            ul
+                li.fragment
+                    div #[span.highlight Theoretisch existiert ein optimaler Tree], der die Kostenfunktion #[span.highlight perfekt] minimiert
+                    div.fragment => NP-Hard (braucht zu viel Rechenzeit)
+                li.fragment
+                    div #[span.highlight Praxis eine guten Tree] mit einem #[span.highlight Greedy-Algorithmus] finden, der Kostenfunktion #[span.highlight gut] minimiert
+                    div.fragment => P-Hard (braucht wenig Rechenzeit)
+                div.mt-5.fragment.text-center.alert.alert-primary #[span.highlight Allenfalls nicht mal schlimm]: Optimaler Tree ist "optimal" nur für Train-Set nicht neue Daten!
+    section
+        slide-with-header(header="Decision Tree - Optimierung")
+            div
+                | Greedy: Finde besten Split für aktuelle Region
+                | &nbsp;
+                span(mathjax="<math><mi>R</mi></math>")
+                | , zum Unterteilen in
+                | &nbsp;
+                span(mathjax="<math><msub><mi>R</mi><mn>1</mn></msub></math>")
+                | &nbsp;
+                | und
+                | &nbsp;
+                span(mathjax="<math><msub><mi>R</mi><mn>2</mn></msub></math>")
+                | &nbsp;
+                | nach
+                | &nbsp;
+                span(mathjax="<math><mi>M</mi></math>")
+                | .
+            img(height="200px", src="assets/images/classification/cart/cart-example-data-only.png")
+            img(height="200px", src="assets/images/classification/cart/cart-example-max-depth-1.png")
+            div.mt-2.smaller-font.fragment([mathjax]="optimizationGreedySplitRegions")
+            div.mt-2.equation-colored.fragment Bestes #[span.feature Feature (f)] mit bestem #[span.threshold Threshold (t)]
+            div.mt-2.smaller-font.fragment([mathjax]="optimizationGreedySplit")
+    section
+        slide-with-header(header="Decision Tree - Optimierung")
+            div.mt-2.smaller-font([mathjax]="optimizationGreedySplit")
+            ul.mt-5
+                li Wiederholt angewendet auf #[span(mathjax="<math><msub><mi>R</mi><mn>1</mn></msub></math>")] und/oder #[span(mathjax="<math><msub><mi>R</mi><mn>2</mn></msub></math>")] je nach Abbruchbedingung.
+    section
+        slide-with-header(header="Decision Tree - Für Regression", [extra]="true")
+            ol
+                li.fragment
+                    | Feature Space unterteilen in Regionen (
+                    span(mathjax="<math><msub><mi>R</mi><mi>1</mi></msub><mo>,</mo><mi>...</mi></math>")
+                    | ) mittels #[span.highlight Decision Tree] (
+                    img(height="50px", src="assets/images/classification/cart/cart-example-max-depth-5-tree.png")
+                    | )
+                li.fragment
+                    | Durchschnitt vorhersagen für
+                    | &nbsp;
+                    span(mathjax="<math><msub><mi>R</mi><mi>m</mi></msub></math>")
+                    | :
+                    div([mathjax]="modelAverage")
+            div.fragment
+                hr
+                div Beim Optimieren: Split nach #[span.highlight MSE] (oder andere Regression-Metrik)
+    section
+        slide-with-header(header="Decision Tree - Intuition", [extra]="true")
+            side-by-side-3
+                div(first).d-flex.flex-column
+                    h3 1 Feature
+                    div.fragment.small-font Unterteilen 1D Feature-Space #[br] in 1D Teilräume
+                    div.mt-2.d-flex.justify-center
+                        div.r-stack
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-1-1d.png")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-2-1d.png")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-3-1d.png")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-4-1d.png")
+                div(second).d-flex.flex-column
+                    h3 2 Feature
+                    div.fragment.small-font Unterteilen 2D Feature-Space #[br] in 2D Teilräume
+                    div.mt-2.d-flex.justify-center
+                        div.r-stack
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-1.png")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-2.png")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-3.png")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-4.png")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-5.png")
+                div(third).d-flex.flex-column
+                    h3 3 Feature
+                    div.fragment.small-font Unterteilen 3D Feature-Space #[br] in 3D Teilräume
+                    div.mt-2.d-flex.justify-center
+                        div.r-stack
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-1-3d.gif")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-2-3d.gif")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-3-3d.gif")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-4-3d.gif")
+                            img.fragment(src="assets/images/classification/cart/cart-example-max-depth-5-3d.gif")
+            div.mt-5.fragment.text-center.alert.alert-primary #[span.highlight Nicht lineare] Zusammenhänge einfach lernbar.
+    section
+        slide-with-header(header="Decision Tree - Eigenschaften", [extra]="true")
+            ul
+                li.fragment Decision Trees können #[span.highlight gut interpretiert] werden.
+                li.fragment Decision Trees können schnell #[span.highlight overfitten]
+                li.fragment
+                    div Decision Trees können leicht #[span.highlight unterschiedlich] gemacht werden (nicht alle Daten, Zufall in Splits)
+                    div.fragment Dadurch sind sie stark als #[span.highlight Ensemble], wie #[span.highlight Random Forest] und #[span.highlight Gradient Boosting]
+                div.fragment
+                    hr
+                    li #[span.highlight Robuster bei vielen Features]: Trees haben eine inherente Eigenschaft für #[span.highlight Feature-Selection]. Unwichtige Features werden nicht/selten für Splits verwendet.
+    section
+        slide-with-header(header="Random Forest", [extra]="true")
+            ul
+                li #[span.highlight Trainiere viele Decision Trees] (üblicherweise 100-1000) auf zufälligen Teilen der Daten
+                li Als finale Prediction wird dann der #[span.highlight Durchschnitt der trainierten Decision Trees] verwendet.
+            div.mt-5.fragment.text-center.alert.alert-primary Diese Art von Ensemble nennt man #[span.highlight Bagging]
+            div.mt-5.fragment.text-center.alert.alert-warning In der Praxis werden #[span.highlight Decision Trees meistens als Ensemble] eingesetzt und selten als einzelnes Modell.
+    section
+        slide-with-header(header="Decision Trees - Code")
+            div.notebook-name decision_trees.ipynb
+            img(src="assets/images/code.png")
+    section
+        slide-with-header(header="Decision Trees - Limit")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) Global Pattern
+                div.col-5.p-2
+                    img(src="assets/images/regression/cart/cart-extrapolation-limit.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/regression/cart/cart-extrapolation-nolimit.png").limit-impossible
+                div.col-1
+            div.mt-5.fragment.text-center.alert.alert-primary Decision Trees (und deren Ensemble) lernen "nur" #[span.highlight interpolation] zwischen den Datenpunkten.
+    section
+        slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
+            ul
+                li
+                    div [Alternative] Decision Tree
+                        ul
+                            li
+                                a(href="https://www.youtube.com/watch?v=ZVR2Way4nwQ") Video: "Decision Tree Classification Clearly Explained!"
+                            li
+                                a(href="https://scikit-learn.org/stable/modules/tree.html")
+                                    span.code-font sklearn Documentation
+                li
+                    div [Additional] Ensemble, Random Forest, Gradient Boosting:
+                    ul
+                        li Wird MAS behandelt
+                        li
+                            a(href="https://www.youtube.com/watch?v=Un9zObFjBH0&list=PLAwxTw4SYaPnIRwl6rad_mYwEk4Gmj7Mx&index=192") Video(s) about Bagging (and Boosting)
+                        li Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow - Kapitel 7

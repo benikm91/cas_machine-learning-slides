@@ -1,0 +1,41 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Model-Komplexität")
+            side-by-side-3
+                div(first).d-flex.flex-column
+                    img(src="assets/images/overfitting/overfitting-linear-regression.png")
+                    div.code-font
+
+                div(second).d-flex.flex-column
+                    img(src="assets/images/overfitting/overfitting-polynomial-regression.png")
+                div(third).d-flex.flex-column
+                    div.r-stack
+                        img(src="assets/images/overfitting/overfitting-random-forest.png")
+                        img(src="assets/images/overfitting/overfitting-random-forest.png").limit-impossible.fragment
+            div.row
+                div.col-6.col-md-offset-2.text-end MSE Linear Regression
+                div.col-4.code-font = 33174
+                div.col-6.col-md-offset-2.text-end MSE Poly. Regression
+                div.col-4.code-font = 27875
+                div.col-6.col-md-offset-2.text-end MSE RandomForest
+                div.col-4.code-font
+                    | = &nbsp;
+                    span.fragment.highlight-red 4336
+            div.mt-3.text-center.alert.alert-danger Was fällt auf? Was ist falsch?
+    section
+        slide-with-header(header="Model-Komplexität")
+            side-by-side-3
+                div(first).d-flex.flex-column
+                    img(src="assets/images/overfitting/overfitting-linear-regression-with-val.png")
+                div(second).d-flex.flex-column
+                    img(src="assets/images/overfitting/overfitting-polynomial-regression-with-val.png")
+                div(third).d-flex.flex-column
+                    img(src="assets/images/overfitting/overfitting-random-forest-with-val.png")
+            div.row
+                div.col-6.col-md-offset-2.text-end MSE Linear Regression
+                div.col-4.code-font = 14667
+                div.col-6.col-md-offset-2.text-end MSE Poly. Regression
+                div.col-4.code-font = &nbsp;9127
+                div.col-6.col-md-offset-2.text-end MSE RandomForest
+                div.col-4.code-font = 14824
+            div.mt-3.fragment.text-center.alert.alert-success Modell-Performanz #[span.highlight nicht (nur) auf Trainings-Daten], sondern auf #[span.highlight neuen, ungesehenen Daten] evaluieren!

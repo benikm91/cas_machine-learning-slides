@@ -3,19 +3,22 @@ ng-template('#slides'='')
         slide-with-header(header="{{problemTableOfContentLabel.REGRESSION.label}}")
             div
                 p.fragment.fade-up Der Output ist eine kontinuierliche Grösse.
-                p.fragment.fade-up Output-Space ist o-Dimensional (meistens 1-Dimensional)
                 ul
                     li.fragment.fade-up Immobilien Verkaufspreis abschätzen
-                    li.fragment.fade-up Immobilien Verkaufspreis
-                div.fragment.fade-up.pt-5.d-flex.justify-content-center
-                    model-visualization
-                        div(input, class="input").transparent-border-1.code
-                            | Fläche: 500m&#178;
-                            | Baujahr: 1998
-                        div(model, class="model").model-box Modell
-                        div(output, class="output").fix-height.code
-                            | 100'000$
+                    li.fragment.fade-up Gewicht eines Fisches vorhersagen
     section
-        slide-with-header(header="Für alle Inputs einen Output vorhersage")
-            div.d-flex.justify-center
-                img(src="assets/images/regression/regression-example.png").img-fluid
+        slide-with-header(header="Regression - Beispiel - Gewicht eines Fisches")
+            ul
+                li Input(s): #[span.code-font width (cm)]; Output: #[span.code-font weight (g)]
+            div.fragment.fade-up.pt-5.d-flex.justify-content-center
+                model-visualization("#regressionExample"='', input-header="Input Space", output-header="Output Space")
+                    div(input, class="input").transparent-border-1.code
+                        | width: 5cm
+                    div(model, class="model").model-box Modell
+                    div(output, class="output").fix-height.code
+                        | weight: 508g
+                span.fragment(fragment-trigger, "(trigger)"="regressionExample.end();")
+            div.mt-5.r-stack
+                img.fragment(src="assets/images/regression/basics/regression-example-data-only.png").img-fluid
+                img.fragment(src="assets/images/regression/basics/regression-example-data-only-highlight.png").img-fluid
+                img.fragment(src="assets/images/regression/basics/regression-example.png").img-fluid

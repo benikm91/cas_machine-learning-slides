@@ -10,11 +10,6 @@
                                     <mtext class="highlight">minimize</mtext>
                                     <mrow>
                                         <mi class="weight">β</mi>
-                                        <mo separator="true">,</mo>
-                                        <msub class="weight">
-                                            <mi>β</mi>
-                                            <mn>0</mn>
-                                        </msub>
                                     </mrow>
                                 </munder>
                             </mrow>
@@ -67,11 +62,6 @@
                                             <mo form="postfix" stretchy="false">)</mo>
                                         </mrow>
                                     </msup>
-                                    <mo>+</mo>
-                                    <msub class="weight">
-                                        <mi>β</mi>
-                                        <mn>0</mn>
-                                    </msub>
                                 </mrow>
                                 <mo>≥</mo>
                                 <mi>1</mi>
@@ -114,11 +104,6 @@
                                             <mo form="postfix" stretchy="false">)</mo>
                                         </mrow>
                                     </msup>
-                                    <mo>+</mo>
-                                    <msub class="weight">
-                                        <mi>β</mi>
-                                        <mn>0</mn>
-                                    </msub>
                                 </mrow>
                             <mo form="postfix" stretchy="false">)</mo>
                             <mo>≥</mo>

@@ -1,4 +1,5 @@
-model-visualization
-    div(input).rect-styling {{ inputLabel }}
+model-visualization("#supervisedLearningModel"='', [with-trigger]="false")
+    div(input).code-font {{ inputLabel }}
     div(model).model-box {{ modelLabel }}
-    div(output).rect-styling {{ outputLabel }}
+    div(output).code-font {{ outputLabel }}
+span.fragment(fragment-trigger, "(trigger)"="supervisedLearningModel.start();", "(untrigger)"="supervisedLearningModel.end();")

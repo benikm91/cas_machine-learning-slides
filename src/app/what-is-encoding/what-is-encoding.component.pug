@@ -1,42 +1,39 @@
 ng-template('#slides'='')
     section
-        title-page
-            h1 Encoding
-    section
         slide-with-header(header="Encoding")
             ul
                 li Informationen in anderer Form (meistens #[span.highlight Machinen freundlicher]) zu repräsentieren.
                 li Oft notwendig damit Machine Learning Algorithmus #[span.highlight mit Text] sinnvoll umgehen kann.
                 li Kann mit oder ohne Informationsverlust passieren.
                 // li Ein gutes Encoding kann auch gelernt werden.
-    section
-        slide-with-header(header="Encoding - Generelle Beispiele")
-            div.d-flex.justify-center
-                model-visualization("#asciiEncoder"='', [with-trigger]="false")
-                    div(input, class="input").transparent-border-1.code
-                        | Character: @
-                    div(model, class="model").model-box.code
-                        div ASCII-Code-Encoder
-                    div(output, class="output").fix-height.code
-                        | Hash Code: 64
-            div.mt-5.d-flex.justify-center
-                model-visualization("#textEncoder"='', [with-trigger]="false")
-                    div(input, class="input").transparent-border-1.code
-                        | Text: Guten Tag Herr Meyer, Wie geht es Ihnen?
-                    div(model, class="model").model-box.code
-                        div Text-Encoder
-                    div(output, class="output").fix-height.code
-                        | Representation: [ 229, 37, 23, 39, 125, 16, 86, 106, 171, 128, 73, 132, 184, 5, ... ]
-            div.mt-5.d-flex.justify-center
-                model-visualization("#imageEncoder"='', [with-trigger]="false")
-                    div(input, class="input").transparent-border-1.code
-                        img(src="assets/images/code.png").img-fluid
-                    div(model, class="model").model-box.code
-                        div Image-Encoder
-                    div(output, class="output").fix-height.code
-                        | Representation: [ 46, 36, 201, 243, 159, 113, 13, 152, 114, 177, 19, 120, 160, 253, ... ]
-            span.fragment(fragment-trigger, "(trigger)"="asciiEncoder.start(); textEncoder.start(); imageEncoder.start()", "(untrigger)"="asciiEncoder.end(); textEncoder.end(); imageEncoder.end()")
-            span.fragment(fragment-trigger, "(trigger)"="asciiEncoder.end(); textEncoder.end(); imageEncoder.end()")
+    // section
+    //     slide-with-header(header="Encoding - Generelle Beispiele")
+    //         div.d-flex.justify-center
+    //             model-visualization("#asciiEncoder"='', [with-trigger]="false")
+    //                 div(input, class="input").transparent-border-1.code
+    //                     | Character: @
+    //                 div(model, class="model").model-box.code
+    //                     div ASCII-Code-Encoder
+    //                 div(output, class="output").fix-height.code
+    //                     | Hash Code: 64
+    //         div.mt-5.d-flex.justify-center
+    //             model-visualization("#textEncoder"='', [with-trigger]="false")
+    //                 div(input, class="input").transparent-border-1.code
+    //                     | Text: Guten Tag Herr Meyer, Wie geht es Ihnen?
+    //                 div(model, class="model").model-box.code
+    //                     div Text-Encoder
+    //                 div(output, class="output").fix-height.code
+    //                     | Representation: [ 229, 37, 23, 39, 125, 16, 86, 106, 171, 128, 73, 132, 184, 5, ... ]
+    //         div.mt-5.d-flex.justify-center
+    //             model-visualization("#imageEncoder"='', [with-trigger]="false")
+    //                 div(input, class="input").transparent-border-1.code
+    //                     img(src="assets/images/code.png").img-fluid
+    //                 div(model, class="model").model-box.code
+    //                     div Image-Encoder
+    //                 div(output, class="output").fix-height.code
+    //                     | Representation: [ 46, 36, 201, 243, 159, 113, 13, 152, 114, 177, 19, 120, 160, 253, ... ]
+    //         span.fragment(fragment-trigger, "(trigger)"="asciiEncoder.start(); textEncoder.start(); imageEncoder.start()", "(untrigger)"="asciiEncoder.end(); textEncoder.end(); imageEncoder.end()")
+    //         span.fragment(fragment-trigger, "(trigger)"="asciiEncoder.end(); textEncoder.end(); imageEncoder.end()")
     section
         slide-with-header(header="Encoding für Kategorische Features")
             ul
@@ -45,20 +42,19 @@ ng-template('#slides'='')
                     ul
                         li #[span.highlight Ordinal-Encoding]
                         li #[span.highlight One-Hot-Encoding]
-                        li (#[span.highlight Latent-Encoding])
                 // li Bei Kategorischen Features die eine Ordnung aufweisen (z.B. Kleidergrössen "S", "M", "L", "XL") kann #[span.highlight Oridnal-Encoding] besser sein.
                 // li Bei Kategorischen Features wird generell #[span.highlight One-Hot-Encoding] verwendet.
                 // li.fragment Ordinal-Encoding trifft #[span.highlight mehr Annahmen] wie One-Hot-Encoding.
     section
         slide-with-header(header="Ordinal-Encoding")
             div Mappt ein #[span.highlight Kategorisches Feature] mit #[span.code-font n] einzigartigen Werten zu #[span.highlight aufsteigende Zahlen] (#[span.code-font 0] bis #[span.code-font n-1])
-            div.mt-2.d-flex.justify-center
+            div.mt-1.d-flex.justify-center
                 model-visualization("#labelEncoderRoach"='', [with-trigger]="false")
                     div(input, class="input").transparent-border-1.code Roach
                     div(model, class="model").model-box.code
                         div Ordinal-Encoder
                     div(output, class="output").fix-height.code 0
-            div.mt-2.d-flex.justify-center
+            div.mt-1.d-flex.justify-center
                 model-visualization("#labelEncoderPike"='', [with-trigger]="false")
                     div(input, class="input").transparent-border-1.code Pike
                     div(model, class="model").model-box.code

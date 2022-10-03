@@ -1,0 +1,49 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Polynomielle Regression - Intuition")
+            div.mt-5.d-flex.justify-center.fragment
+                model-3-visualization(output-header="Output Space" )
+                    div(inputHeader)
+                        div(style={marginTop: "-25px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 2 Features
+                    div(featureHeader)
+                        div(style={marginTop: "-25px"})
+                            h5(style={marginBottom: "0"}) Feature Space
+                            h6(margin="0") 6 Features
+                    div(input).rect-styling
+                        div.small-font([mathjax]="inputs")
+                    div(pre).model-box Feature Engineering
+                    div(feature).rect-styling
+                        div.small-font([mathjax]="features")
+                    div(model).model-box Modell
+                    div(output).rect-styling
+                        div.small-font([mathjax]="outputs")
+    section
+        slide-with-header(header="Polynomielle Regression - Code")
+            div.notebook-name poly_regression.ipynb
+            img(src="assets/images/code.png")
+    section
+        slide-with-header(header="Polynomielle Regression", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Possible (in Input Space)
+                div.col-1
+            div.row
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
+                div.col-5.p-2
+                    img(src="assets/images/data-with-linear-regression-model-1d.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/polynomial-regression.png").limit-possible
+                div.col-1
+            div.row
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
+                div.col-5.p-2
+                    img(src="assets/images/data-with-linear-regression-model-2d.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/polynomial-regression-2d.png").limit-possible
+                div.col-1

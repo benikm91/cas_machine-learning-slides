@@ -1,0 +1,24 @@
+.row
+    .col-2.text-end
+        span(mathjax="<math><msub><mi>z</mi><mi>1</mi></msub><mo>=</mo></math>")
+    .col-4
+        input(type="number", [(ngModel)]="i1", style={width: "100px"})
+    .col-3.text-end
+        span(mathjax="<math><mi>σ</mi><mo form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>z</mi><mi>1</mi></msub><mo form=\"postfix\" stretchy=\"false\">)</mo><mo>=</mo></math>")
+    .col-3 {{ softmax(i1) }}%
+.row
+    .col-2.text-end
+        span(mathjax="<math><msub><mi>z</mi><mi>2</mi></msub><mo>=</mo></math>")
+    .col-4
+        input(type="number", [(ngModel)]="i2", style={width: "100px"})
+    .col-3.text-end
+        span(mathjax="<math><mi>σ</mi><mo form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>z</mi><mi>2</mi></msub><mo form=\"postfix\" stretchy=\"false\">)</mo><mo>=</mo></math>")
+    .col-3 {{ softmax(i2) }}%
+.row
+    .col-2.text-end
+        span(mathjax="<math><msub><mi>z</mi><mi>3</mi></msub><mo>=</mo></math>")
+    .col-4
+        input(type="number", [(ngModel)]="i3", style={width: "100px"})
+    .col-3.text-end
+        span(mathjax="<math><mi>σ</mi><mo form=\"prefix\" stretchy=\"false\">(</mo><msub><mi>z</mi><mi>3</mi></msub><mo form=\"postfix\" stretchy=\"false\">)</mo><mo>=</mo></math>")
+    .col-3 {{ softmax(i3) }}%

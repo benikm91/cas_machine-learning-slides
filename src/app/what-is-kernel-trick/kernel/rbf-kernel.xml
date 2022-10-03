@@ -10,10 +10,10 @@
         <mi>‖</mi>
         <mi>x</mi>
         <mo>−</mo>
-        <msub>
+        <msup>
             <mi>x</mi>
-            <mo>j</mo>
-        </msub>
+            <mo>(i)</mo>
+        </msup>
         <msup>
             <mi>‖</mi>
             <mn>2</mn>

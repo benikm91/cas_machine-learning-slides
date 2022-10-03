@@ -1,6 +1,6 @@
 ng-template('#slides')
     section([id]="active?.href")
-        slide-with-header(header="Table(s) of Content")
+        slide-with-header([header]="(active != null) ? active.label : 'Table(s) of Content'")
             div.tf-tree(*ngIf=rootNode != null)
                 ul
                     li(tables-of-content-node='', [remaining-depth]="(depth == null) ? null : depth - 1", [show-siblings]="showSiblingsOfActualActive", [depth-after-active]="depthAfterActive", [entry]="methodRootNode")

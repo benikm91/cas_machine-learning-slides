@@ -1,0 +1,135 @@
+ng-template('#slides'='')
+    tables-of-content-concepts([active]="conceptLabels.DIMENSIONALITY_REDUCTION")
+    section
+        slide-with-header(header="Dimensionality Reduction - Manifold")
+            h6 3 Features
+            div.d-flex.justify-center
+                img(src="assets/images/pca/manifold.png").img-fluid
+            h6.mt-5 Aber eigentlich 2 Features
+            div.d-flex.justify-center.fragment
+                img(src="assets/images/pca/maniunfolding.png").img-fluid
+    section
+        slide-with-header(header="Dimensionality Reduction - Manifold - Beispiel")
+            .manifold-example
+                .row
+                    .col-6
+                        h6 CIFAR-Space
+                        .d-flex.justify-center.flex-wrap
+                            img(src="assets/images/pca/img-space-cifar-0.png")
+                            img(src="assets/images/pca/img-space-cifar-1.png")
+                            img(src="assets/images/pca/img-space-cifar-2.png")
+                            img(src="assets/images/pca/img-space-cifar-3.png")
+                            img(src="assets/images/pca/img-space-cifar-4.png")
+                            img(src="assets/images/pca/img-space-cifar-5.png")
+                            img(src="assets/images/pca/img-space-cifar-6.png")
+                            img(src="assets/images/pca/img-space-cifar-7.png")
+                        div 32 Pixel * 32 Pixel * 3 Channels = #[span.highlight 3072 Features]
+                    .col-6.fragment
+                        h6 Image-Space (3072 Features = 32 Pixel * 32 Pixel * 3 Channels)
+                        .d-flex.justify-center.flex-wrap
+                            img(src="assets/images/pca/img-space-0-0-0.png")
+                            img(src="assets/images/pca/img-space-0-0-1.png")
+                            img(src="assets/images/pca/img-space-0-1-0.png")
+                            img(src="assets/images/pca/img-space-1-0-0.png")
+                            img(src="assets/images/pca/img-space-random-0.png")
+                            img(src="assets/images/pca/img-space-random-1.png")
+                            img(src="assets/images/pca/img-space-random-2.png")
+                            img(src="assets/images/pca/img-space-random-3.png")
+                        div 32 Pixel * 32 Pixel * 3 Channels = #[span.highlight 3072 Features]
+                div.fragment.mt-5 #[span.highlight CIFAR-Space] ist ein Sub-Space vom #[span.highlight Image-Space]
+                p.fragment.text-center.alert.alert-primary
+                    | #[span.highlight Dimensionsreduktion]: Finde neue Features (z.B. #[span.highlight 200]), die die Daten #[span.highlight präziser] beschreiben können.
+    section
+        slide-with-header(header="Dimensionality Reduction - Learning")
+            ul
+                li Eine Dimensionality Reduction wird gelernt indem ein #[span.highlight ganzer Datensatz] (z.B. 40'000 Bilder) auf Gemeinsamkeiten analysiert wird.
+                li Es wird die #[span.highlight zugrundeliegende Struktur] des Datensatzes gelernt.
+                li Die gelernte Reduktion kann dann auf #[span.highlight neue Daten] (neue Bilder) angewandt werden.
+                li Die gelernte Reduktion kann auch auf #[span.highlight die Daten selbst] angewandt werden.
+    section
+        slide-with-header(header="Dimensionality Reduction - Beispiele")
+            div.mt-5.d-flex.justify-content-center.fragment
+                model-visualization("#imageEnc"="").mt-5
+                    div(inputHeader)
+                        div(style={marginTop: "-90px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 3072 Pixelwerte (Features)
+                    div(input).rect-styling
+                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
+                    div(model, class="model").model-box.code
+                        div Encoder
+                        div #[span.code.small z.B. TODO]
+                    div(output, class="output").fix-height.code [ 167, 235, 207, 76, 97, 119, 50, 8, 239, 168, 215, ... ]
+                    div(outputHeader)
+                        div(style={marginTop: "-50px"})
+                            h5(style={marginBottom: "0"}) Latent Space
+                            h6(margin="0") 200 Features
+                span.fragment(fragment-trigger, "(trigger)"="imageEnc.end()")
+            div.mt-5.d-flex.justify-content-center.fragment
+                model-visualization("#word2Vec"="").mt-5
+                    div(inputHeader)
+                        div(style={marginTop: "-25px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 1'000'000 Words #[br] (1-Hot-Features)
+                    div(input).rect-styling.code
+                        | [0, ..., 0, 1, 0,  ..., 0]
+                    div(model, class="model").model-box.code
+                        div Encoder
+                        div #[span.code.small z.B. Word2Vec]
+                    div(output, class="output").fix-height.code [ -1.7, 0.97, 1.9, 0.73, ... -0.53 ]
+                    div(outputHeader)
+                        div(style={marginTop: "-50px"})
+                            h5(style={marginBottom: "0"}) Latent Space
+                            h6(margin="0") 300 Features
+                span.fragment(fragment-trigger, "(trigger)"="word2Vec.end()")
+            div.fragment.mt-4.text-center.alert.alert-primary Ziel ist die #[span.highlight Reduktion von Features] (Dimensionen).
+    section
+        slide-with-header(header="Dimensionality Reduction - Einsatzgebiet")
+            div.d-flex.justify-content-center.fragment
+                model-visualization("#onlyModel"="", output-header="Output Space" ).mt-5
+                    div(inputHeader)
+                        div(style={marginTop: "-75px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 3072 Features
+                    div(input).rect-styling
+                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
+                    div(model, class="model").model-box.code
+                        div Modell
+                        div #[span.code.small z.B. Logistic Regression]
+                    div(output, class="output").fix-height.code.text-danger Frog
+                span.fragment(fragment-trigger, "(trigger)"="onlyModel.end()")
+            div.fragment.mt-3.text-center.alert.alert-danger(style={marginBottom: "60px"}) Mit wenig Daten #[span.highlight overfitted] das Modell
+            div.mt-5.d-flex.justify-content-center.fragment
+                model-3-visualization("#encMod"="", output-header="Output Space" )
+                    div(inputHeader)
+                        div(style={marginTop: "-75px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 3072 Features
+                    div(featureHeader)
+                        div(style={marginTop: "-50px"})
+                            h5(style={marginBottom: "0"}) Latent Space
+                            h6(margin="0") 200 Features
+                    div(input).rect-styling
+                        img(src="assets/images/pca/example-img.png")
+                    div(pre).model-box
+                        div Encoder
+                    div(feature).fix-height.code
+                        | [ -57.2, -3.6, ..., 2.3, -3.4 ]
+                    div(model).model-box
+                        div Modell
+                        div #[span.code.small z.B. LogisticRegression]
+                    div(output).rect-styling
+                        div.code Deer
+                span.fragment(fragment-trigger, "(trigger)"="encMod.end()")
+            div.fragment.mt-4.text-center.alert.alert-success Präzisere Features => Bessere Lern-Ausgangslage
+    section
+        slide-with-header(header="Dimensionality Reduction - Feature Selection")
+            ul
+                li Idee: Wir reduzieren die Anzahl der Features (Dimensionen) indem wir Features #[span.highlight weglassen].
+            div.mt-5.d-flex.justify-center
+                div.r-stack
+                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
+                    img.fragment(src="assets/images/pca/feature-selection-1.png")
+                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
+                    img.fragment(src="assets/images/pca/feature-selection-2.png")
+            div.fragment.mt-4.text-center.alert.alert-warning Problem: Grosser Informationsverlust

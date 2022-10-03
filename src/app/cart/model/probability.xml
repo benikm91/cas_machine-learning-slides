@@ -1,0 +1,66 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="equation equation-colored tml-array tml-gather">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mrow title="p: Wahrscheinlichkeit der Klasse k in Region R_m">
+                        <mi>p</mi>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="label">y</mi>
+                        <mo>=</mo>
+                        <mi class="label">k</mi>
+                        <mi>|</mi>
+                        <msub class="cart-region">
+                            <mi>R</mi>
+                            <mi>m</mi>
+                        </msub>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <msub title="N_m: Anzahl Train-Set Samples in Region R_m">
+                            <mi>N</mi>
+                            <mi class="cart-region">m</mi>
+                        </msub>
+                    </mfrac>
+                    <mrow title="Zähle die Anzahl Train-Set Samples, die in der Region R_m sind und die Klasse k haben.">
+                        <munder>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <msup class="feature">
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mo>∈</mo>
+                                <msub class="cart-region">
+                                    <mi>R</mi>
+                                    <mi>m</mi>
+                                </msub>
+                            </mrow>
+                        </munder>
+                    </mrow>
+                    <mrow title="I: 1 wenn label y_i Klasse k ist, sonst 0">
+                        <mi>I</mi>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <msup class="label" title="y_i: Label vom Datenpunkt i">
+                            <mi>y</mi>
+                            <mrow>
+                                <mo form="prefix" stretchy="false">(</mo>
+                                <mi>i</mi>
+                                <mo form="postfix" stretchy="false">)</mo>
+                            </mrow>
+                        </msup>
+                        <mo>=</mo>
+                        <mi class="label" title="k: Klasse k für welche wir die Wahrscheinlichkeit berechnen">k</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>
