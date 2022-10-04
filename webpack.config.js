@@ -1,6 +1,8 @@
 const path = require('path');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
+  plugins: [new CompressionPlugin()],
   resolveLoader: {
     alias: {
       'pug-loader': '@webdiscus/pug-loader',
@@ -38,7 +40,8 @@ module.exports = {
       },
       {
         test: /\.xml$/i,
-        type: 'asset/source',
+        loader: 'xml-minify-loader'
+        // type: 'asset/source',
       },
       /*{
         test: /\.pug$/,

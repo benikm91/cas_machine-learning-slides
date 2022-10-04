@@ -32,3 +32,9 @@ Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The 
 ### Build
 
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+### Debug Bundle Size
+
+`ng build --stats-json`
+
+`webpack-bundle-analyzer dist/cas-ml-slides/stats.json`
