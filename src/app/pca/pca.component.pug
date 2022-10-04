@@ -299,10 +299,10 @@ ng-template('#slides'='')
                 | Encoder und Decoder sind einfach eine Matrix, beziehungsweise sind #[span.highlight linear].
     tables-of-content-pca([active]="pcaLabel.OPTIMIERUNG")
     section
-        slide-with-header(header="PCA - Optimierung")
+        slide-with-header(header="PCA - Optimierung", [extra]="true")
             ul
                 li "Einfache" Lineare Algebra
-                li Schauen wir nicht im Detail (Intuition) an.
+                li Schauen wir nicht im Detail an.
                 li Nutzt Singular Value Decomposition (SVD)
                 hr
                 li.code-font U, S, V = numpy.linalg.svd(X.T)
