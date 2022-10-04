@@ -9,8 +9,8 @@ $model-offset-y: 250;
 
 .animation-container {
   position: relative;
-  height: ($model-offset-y + $rect-height) * 1px;
-  width: ($data-knowledge-offset + $knowledge-width) * 1px;
+  height: calc(($model-offset-y + $rect-height) * 1px);
+  width: calc(($data-knowledge-offset + $knowledge-width) * 1px);
 }
 
 .rect {
@@ -18,42 +18,42 @@ $model-offset-y: 250;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $rect-width * 1px;
-  height: $rect-height * 1px;
+  width: calc($rect-width * 1px);
+  height: calc($rect-height * 1px);
 }
 
 .rect-knowledge {
   font-size: 24pt;
-  width: $knowledge-width * 1px;;
-  height: $knowledge-height * 1px;
+  width: calc($knowledge-width * 1px);
+  height: calc($knowledge-height * 1px);
 
   &.rect-data-knowledge {
-    left: $data-knowledge-offset * 1px;
+    left: calc($data-knowledge-offset * 1px);
   }
 
   &.rect-human-knowledge {
     transform-origin: top left;
-    left: $human-knowledge-offset * 1px;
+    left: calc($human-knowledge-offset * 1px);
   }
 
 }
 
 .rect-data {
   color: white;
-  left: ($data-knowledge-offset + ($knowledge-width - $rect-width) / 2) * 1px;
-  top: ($rect-offset) * 1px;
+  left: calc(($data-knowledge-offset + ($knowledge-width - $rect-width) / 2) * 1px);
+  top: calc(($rect-offset) * 1px);
 }
 
 .rect-human {
   color: white;
-  left: ($human-knowledge-offset + ($knowledge-width - $rect-width) / 2) * 1px;
-  top: ($rect-offset) * 1px;
+  left: calc(($human-knowledge-offset + ($knowledge-width - $rect-width) / 2) * 1px);
+  top: calc(($rect-offset) * 1px);
 }
 
 .rect-model {
-  border-radius: ($rect-width / 2) * 1px;
-  left: ($human-knowledge-offset + $data-knowledge-offset) / 2 + $rect-width / 4 * 1px;
-  top: $model-offset-y * 1px;
+  border-radius: calc(($rect-width / 2) * 1px);
+  left: calc((($human-knowledge-offset + $data-knowledge-offset) / 2 + $rect-width / 4) * 1px);
+  top: calc($model-offset-y * 1px);
 }
 
 .model-start-styling {

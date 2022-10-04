@@ -9,21 +9,21 @@ $header-height: 50;
 
 .animation-container {
   position: relative;
-  height: $step-box-height * 1px;
-  width: ($value-box-width * 3 + $gap-x * 4 + $step-box-width * 2) * 1px;
+  height: calc($step-box-height * 1px);
+  width: calc(($value-box-width * 3 + $gap-x * 4 + $step-box-width * 2) * 1px);
 }
 
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $value-box-width * 1px;
-  height: $value-box-height * 1px;
+  width: calc($value-box-width * 1px);
+  height: calc($value-box-height * 1px);
 }
 
 .header {
   @extend .box;
-  height: $header-height * 1px;
+  height: calc($header-height * 1px);
   opacity: 0.5;
 }
 
@@ -34,22 +34,22 @@ $header-height: 50;
 
 .pos-x-pre {
   position: absolute;
-  left: ($value-box-width + $gap-x) * 1px
+  left: calc(($value-box-width + $gap-x) * 1px);
 }
 
 .pos-x-feature {
   position: absolute;
-  left: ($value-box-width + $gap-x + $step-box-width + $gap-x) * 1px;
+  left: calc(($value-box-width + $gap-x + $step-box-width + $gap-x) * 1px);
 }
 
 .pos-x-model {
   position: absolute;
-  left: ($value-box-width + $gap-x + $step-box-width + $gap-x + $value-box-width + $gap-x) * 1px
+  left: calc(($value-box-width + $gap-x + $step-box-width + $gap-x + $value-box-width + $gap-x) * 1px);
 }
 
 .pos-x-output {
   position: absolute;
-  left: ($value-box-width + $gap-x + $step-box-width + $gap-x + $value-box-width + $gap-x + $step-box-width + $gap-x) * 1px;
+  left: calc(($value-box-width + $gap-x + $step-box-width + $gap-x + $value-box-width + $gap-x + $step-box-width + $gap-x) * 1px);
 }
 
 .pos-y-header {
@@ -59,7 +59,7 @@ $header-height: 50;
 
 .pos-y-box {
   position: absolute;
-  top: ($step-box-height - $value-box-height) / 2 * 1px;
+  top: calc(($step-box-height - $value-box-height) / 2 * 1px);
 }
 
 .rect-model{
@@ -67,7 +67,7 @@ $header-height: 50;
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: $step-box-width * 1px;
-  height: $step-box-height * 1px;
+  width: calc($step-box-width * 1px);
+  height: calc($step-box-height * 1px);
   top: 0;
 }

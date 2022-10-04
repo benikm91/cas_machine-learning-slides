@@ -47,7 +47,7 @@ $header-height: 50;
 
 .pos-y-box {
   position: absolute;
-  top: ($model-offset-y + (($model-height - $io-height)) / 2) * 1px;
+  top: calc(($model-offset-y + (($model-height - $io-height)) / 2) * 1px);
 }
 
 .rect-model{
@@ -55,10 +55,10 @@ $header-height: 50;
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: $model-width * 1px;
-  height: $model-height * 1px;
-  top: $model-offset-y * 1px;
-  left: ($io-width + $offset) * 1px
+  width: calc($model-width * 1px);
+  height: calc($model-height * 1px);
+  top: calc($model-offset-y * 1px);
+  left: calc(($io-width + $offset) * 1px);
 }
 
 
