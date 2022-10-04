@@ -2,11 +2,11 @@
     <mrow>
         <msub class="weight">
             <mover class="feature">
-                <mi>X</mi>
+                <mi>x</mi>
                 <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
             </mover>
             <mrow>
-                <mi>m</mi>
+                <mi>1</mi>
                 <mo>×</mo>
                 <mi>p</mi>
             </mrow>
@@ -15,7 +15,7 @@
         <msub class="latent">
             <mi>L</mi>
             <mrow>
-                <mi>m</mi>
+                <mi>1</mi>
                 <mo>×</mo>
                 <mi>l</mi>
             </mrow>

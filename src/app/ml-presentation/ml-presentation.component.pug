@@ -72,3 +72,12 @@ reveal-presentation
     tables-of-content-problems([active]="problemLabels.UNSUPERVISED_LEARNING")
     what-is-dimensionality-reduction
     pca
+    question-slide([questions]="pcaQuestions")
+    data-science-pitfalls
+    section
+        slide-with-header(header="Linear Regression - Wissens Ansicht")
+            div
+                p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
+            div.d-flex.justify-center
+                knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
+            span.fragment(fragment-trigger, (trigger)="knowledgeView.start()", (untrigger)="knowledgeView.end()")

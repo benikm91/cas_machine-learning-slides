@@ -86,6 +86,7 @@ import {
 import {AboutMeComponent} from "./about-me/about-me.component";
 import {Softmax3ExampleComponent} from "./softmax-3-example/softmax-3-example.component";
 import {PolynomialRegressionComponent} from "./polynomial-regression/polynomial-regression.component";
+import {DataSciencePitfallsComponent} from "./data-science-pitfalls/data-science-pitfalls.component";
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import {PolynomialRegressionComponent} from "./polynomial-regression/polynomial-
     PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent, KNearestNeighboursComponent, TablesOfContentPCAComponent,
     WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
     OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
-    CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent
+    CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
+    DataSciencePitfallsComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
     <mrow>
         <mi class="latent">L</mi>
         <mo>=</mo>
-        <mi class="feature">X</mi>
+        <mi class="feature">x</mi>
         <mi class="weight">W</mi>
     </mrow>
 </math>

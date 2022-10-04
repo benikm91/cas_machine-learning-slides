@@ -40,13 +40,6 @@ ng-template('#slides'='')
                 p.fragment.text-center.alert.alert-primary
                     | #[span.highlight Dimensionsreduktion]: Finde neue Features (z.B. #[span.highlight 200]), die die Daten #[span.highlight präziser] beschreiben können.
     section
-        slide-with-header(header="Dimensionality Reduction - Learning")
-            ul
-                li Eine Dimensionality Reduction wird gelernt indem ein #[span.highlight ganzer Datensatz] (z.B. 40'000 Bilder) auf Gemeinsamkeiten analysiert wird.
-                li Es wird die #[span.highlight zugrundeliegende Struktur] des Datensatzes gelernt.
-                li Die gelernte Reduktion kann dann auf #[span.highlight neue Daten] (neue Bilder) angewandt werden.
-                li Die gelernte Reduktion kann auch auf #[span.highlight die Daten selbst] angewandt werden.
-    section
         slide-with-header(header="Dimensionality Reduction - Beispiele")
             div.mt-5.d-flex.justify-content-center.fragment
                 model-visualization("#imageEnc"="").mt-5
@@ -83,6 +76,13 @@ ng-template('#slides'='')
                             h6(margin="0") 300 Features
                 span.fragment(fragment-trigger, (trigger)="word2Vec.end()")
             div.fragment.mt-4.text-center.alert.alert-primary Ziel ist die #[span.highlight Reduktion von Features] (Dimensionen).
+    section
+        slide-with-header(header="Dimensionality Reduction - Learning")
+            ul
+                li Eine Dimensionality Reduction wird gelernt indem ein #[span.highlight ganzer Datensatz] (z.B. 40'000 Bilder) auf Gemeinsamkeiten analysiert wird.
+                li Es wird die #[span.highlight zugrundeliegende Struktur] des Datensatzes gelernt.
+                li Die gelernte Reduktion kann dann auf #[span.highlight neue Daten] (neue Bilder) angewandt werden.
+                li Die gelernte Reduktion kann auch auf #[span.highlight die Daten selbst] angewandt werden.
     section
         slide-with-header(header="Dimensionality Reduction - Einsatzgebiet")
             div.d-flex.justify-content-center.fragment
