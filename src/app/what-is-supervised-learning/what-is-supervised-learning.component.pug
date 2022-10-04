@@ -6,7 +6,7 @@ ng-template('#slides'='')
                     div(input).code-font Input(s)
                     div(model).model-box Model
                     div(output).code-font Output
-                span.fragment(fragment-trigger, "(trigger)"="supervisedLearningModel.end();")
+                span.fragment(fragment-trigger, (trigger)="supervisedLearningModel.end();")
             div.fragment.mt-5
                 div
                     span

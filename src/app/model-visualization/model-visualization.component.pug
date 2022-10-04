@@ -11,4 +11,4 @@
         ng-content(select="[outputHeader]")
     div('#output'='').pos-x-output.pos-y-box.box
         ng-content(select="[output]")
-span(*ngIf="withTrigger").fragment(fragment-trigger, "(trigger)"="start()", "(untrigger)"="end()")
+span(*ngIf="withTrigger").fragment(fragment-trigger, (trigger)="start()", (untrigger)="end()")

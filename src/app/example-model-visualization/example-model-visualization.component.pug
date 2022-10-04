@@ -2,5 +2,5 @@ model-visualization("#model"="")
     ng-content(input, select="[input]")
     ng-content(model, select="[model]")
     ng-content(output, select="[output]")
-span.fragment(fragment-trigger, "(trigger)"="model.end()")
+span.fragment(fragment-trigger, (trigger)="model.end()")
 

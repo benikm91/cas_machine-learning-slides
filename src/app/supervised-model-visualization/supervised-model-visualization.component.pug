@@ -2,4 +2,4 @@ model-visualization("#supervisedLearningModel"='', [with-trigger]="false")
     div(input).code-font {{ inputLabel }}
     div(model).model-box {{ modelLabel }}
     div(output).code-font {{ outputLabel }}
-span.fragment(fragment-trigger, "(trigger)"="supervisedLearningModel.start();", "(untrigger)"="supervisedLearningModel.end();")
+span.fragment(fragment-trigger, (trigger)="supervisedLearningModel.start();", (untrigger)="supervisedLearningModel.end();")

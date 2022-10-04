@@ -14,7 +14,7 @@ ng-template('#slides'='')
             ul.mt-5.fragment
                 li #[span.model-styling f] ist eine TicTacToe-AI die #[span.highlight perfekt] spielt
             p.fragment.text-center.alert.alert-primary Ist das möglich?
-            span.fragment(fragment-trigger, "(trigger)"="ticTacToeExample.highlightStart()", "(untrigger)"="ticTacToeExample.highlightEnd()")
+            span.fragment(fragment-trigger, (trigger)="ticTacToeExample.highlightStart()", (untrigger)="ticTacToeExample.highlightEnd()")
     section
         slide-with-header(header="Problemfälle")
             div.d-flex.justify-content-center
@@ -26,7 +26,7 @@ ng-template('#slides'='')
                         img(src="assets/images/machine-learning/chessEndboardOptimal.png").img-fluid-both
             ul.mt-5.fragment
                 li #[span.model-styling f] ist eine Chess-AI die #[span.highlight perfekt] spielt
-            span.fragment(fragment-trigger, "(trigger)"="chessExample.highlightStart()", "(untrigger)"="chessExample.highlightEnd()")
+            span.fragment(fragment-trigger, (trigger)="chessExample.highlightStart()", (untrigger)="chessExample.highlightEnd()")
             div.mt-5.d-flex.justify-content-center.fragment
                 example-model-visualization("#chessApproxExample"="", [positives]="['input', 'model', 'output']")
                     div(input, class="input").fix-height.transparent-border-1
@@ -36,7 +36,7 @@ ng-template('#slides'='')
                         img(src="assets/images/machine-learning/chessEndboardSuboptimal.png").img-fluid-both
             ul.mt-5.fragment
                 li #[span.model-styling approx f] ist eine Chess-AI die #[span.highlight sehr gut] spielt
-            span.fragment(fragment-trigger, "(trigger)"="chessApproxExample.highlightStart()", "(untrigger)"="chessApproxExample.highlightEnd()")
+            span.fragment(fragment-trigger, (trigger)="chessApproxExample.highlightStart()", (untrigger)="chessApproxExample.highlightEnd()")
     section
         slide-with-header(header="Problemfälle")
             div.d-flex.justify-content-center
@@ -48,7 +48,7 @@ ng-template('#slides'='')
                         img(src="assets/images/machine-learning/dollar.png").img-fluid-both
             ul.mt-5.fragment
                 li #[span.model-styling f] ist eine AI die Häuserpreise #[span.highlight perfekt] vorhersagt
-            span.fragment(fragment-trigger, "(trigger)"="houseExample.highlightStart()", "(untrigger)"="houseExample.highlightEnd()")
+            span.fragment(fragment-trigger, (trigger)="houseExample.highlightStart()", (untrigger)="houseExample.highlightEnd()")
             div.mt-5.d-flex.justify-content-center.fragment
                 example-model-visualization("#houseApproxExample"="", [positives]="['input', 'model', 'output']")
                     div(input, class="input").transparent-border-1.code
@@ -59,7 +59,7 @@ ng-template('#slides'='')
                         p 100'000$
             ul.mt-5.fragment
                 li #[span.model-styling approx f] ist eine AI die Häuserpreise #[span.highlight gut] vorhersagt
-            span.fragment(fragment-trigger, "(trigger)"="houseApproxExample.highlightStart()", "(untrigger)"="houseApproxExample.highlightEnd()")
+            span.fragment(fragment-trigger, (trigger)="houseApproxExample.highlightStart()", (untrigger)="houseApproxExample.highlightEnd()")
     section
         slide-with-header(header="Was ist Machine Learning")
             p.fragment #[span.model-styling approx f] nennen wir ein #[span.highlight Modell]
@@ -78,7 +78,7 @@ ng-template('#slides'='')
                 p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
             div.d-flex.justify-center
                 knowledge-view("#knowledgeView"="").fragment
-            span.fragment(fragment-trigger, "(trigger)"="knowledgeView.start()", "(untrigger)"="knowledgeView.end()")
+            span.fragment(fragment-trigger, (trigger)="knowledgeView.start()", (untrigger)="knowledgeView.end()")
     section
         slide-with-header(header="Was ist \"Learning\" - Trade-off")
             p.fragment Woher das Wissen kommt ist ein #[span.highlight Trade-Off].
@@ -97,8 +97,8 @@ ng-template('#slides'='')
                         knowledge-view("#tradeOff3"="", [showHeader]="false", [tradeoff]="0.1")
             span.fragment(
                 fragment-trigger,
-            "(trigger)"="tradeOff1.start(); tradeOff2.start(); tradeOff3.start()",
-            "(untrigger)"="tradeOff1.end(); tradeOff2.end(); tradeOff3.end()"
+            (trigger)="tradeOff1.start(); tradeOff2.start(); tradeOff3.start()",
+            (untrigger)="tradeOff1.end(); tradeOff2.end(); tradeOff3.end()"
             )
     section
         slide-with-header(header="Was ist \"Learning\"")

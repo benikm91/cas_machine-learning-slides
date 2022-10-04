@@ -13,7 +13,7 @@ ng-template('#slides'='')
                     div(model).model-box Modell
                     div(output).rect-styling
                         div([mathjax]="outputs")
-                span.fragment(fragment-trigger, "(trigger)"="featureEngineering.end()")
+                span.fragment(fragment-trigger, (trigger)="featureEngineering.end()")
             div.fragment
                 h6.mt-5 Kernel-Trick macht #[span.highlight implizites Feature Engineering] (mit anderem Rechenaufwand)
                 div.d-flex.justify-center
@@ -26,7 +26,7 @@ ng-template('#slides'='')
                         div(model).model-box SVM
                         div(output).rect-styling
                             div([mathjax]="outputs")
-                    span.fragment(fragment-trigger, "(trigger)"="kernelTrick.end()")
+                    span.fragment(fragment-trigger, (trigger)="kernelTrick.end()")
             div.mt-5.fragment.text-center.alert.alert-primary
                 div (Meistens) #[span.highlight gleicher Effekt], #[span.highlight anderes Verfahren]
     section

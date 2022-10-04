@@ -64,7 +64,7 @@ ng-template('#slides'='')
                         div(style={marginTop: "-50px"})
                             h5(style={marginBottom: "0"}) Latent Space
                             h6(margin="0") 200 Features
-                span.fragment(fragment-trigger, "(trigger)"="imageEnc.end()")
+                span.fragment(fragment-trigger, (trigger)="imageEnc.end()")
             div.mt-5.d-flex.justify-content-center.fragment
                 model-visualization("#word2Vec"="").mt-5
                     div(inputHeader)
@@ -81,7 +81,7 @@ ng-template('#slides'='')
                         div(style={marginTop: "-50px"})
                             h5(style={marginBottom: "0"}) Latent Space
                             h6(margin="0") 300 Features
-                span.fragment(fragment-trigger, "(trigger)"="word2Vec.end()")
+                span.fragment(fragment-trigger, (trigger)="word2Vec.end()")
             div.fragment.mt-4.text-center.alert.alert-primary Ziel ist die #[span.highlight Reduktion von Features] (Dimensionen).
     section
         slide-with-header(header="Dimensionality Reduction - Einsatzgebiet")
@@ -97,7 +97,7 @@ ng-template('#slides'='')
                         div Modell
                         div #[span.code.small z.B. Logistic Regression]
                     div(output, class="output").fix-height.code.text-danger Frog
-                span.fragment(fragment-trigger, "(trigger)"="onlyModel.end()")
+                span.fragment(fragment-trigger, (trigger)="onlyModel.end()")
             div.fragment.mt-3.text-center.alert.alert-danger(style={marginBottom: "60px"}) Mit wenig Daten #[span.highlight overfitted] das Modell
             div.mt-5.d-flex.justify-content-center.fragment
                 model-3-visualization("#encMod"="", output-header="Output Space" )
@@ -120,7 +120,7 @@ ng-template('#slides'='')
                         div #[span.code.small z.B. LogisticRegression]
                     div(output).rect-styling
                         div.code Deer
-                span.fragment(fragment-trigger, "(trigger)"="encMod.end()")
+                span.fragment(fragment-trigger, (trigger)="encMod.end()")
             div.fragment.mt-4.text-center.alert.alert-success Präzisere Features => Bessere Lern-Ausgangslage
     section
         slide-with-header(header="Dimensionality Reduction - Feature Selection")

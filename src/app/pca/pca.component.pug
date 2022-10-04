@@ -113,7 +113,7 @@ ng-template('#slides'='')
                         div PC Selection
                     div(output).rect-styling
                         img(src="assets/images/pca/data-pca-space-1d.png")
-                span.fragment(fragment-trigger, "(trigger)"="pcaRotSel.end()")
+                span.fragment(fragment-trigger, (trigger)="pcaRotSel.end()")
             div.mt-5.fragment
                 h6 Praxis
                 div.d-flex.justify-center.mt-5
@@ -133,7 +133,7 @@ ng-template('#slides'='')
                             div.code.small fit_transform
                         div(output).rect-styling
                             img(src="assets/images/pca/data-pca-space-1d.png")
-                    span.fragment(fragment-trigger, "(trigger)"="pcaDirect.end()")
+                    span.fragment(fragment-trigger, (trigger)="pcaDirect.end()")
     section
         slide-with-header(header="Dimensionsreduktion - PCA")
             div.d-flex.justify-content-center.fragment
@@ -152,7 +152,7 @@ ng-template('#slides'='')
                         div(style={marginTop: "-75px"})
                             h5(style={marginBottom: "0"}) Latent Space
                             h6(margin="0") 200 Features
-                span.fragment(fragment-trigger, "(trigger)"="pcaEncOnly.end()")
+                span.fragment(fragment-trigger, (trigger)="pcaEncOnly.end()")
             div.fragment
                 h5.mt-5 PCA kommt mit einem Decoder
                 div.d-flex.justify-content-center
@@ -181,7 +181,7 @@ ng-template('#slides'='')
                             div.small PCA.inverse_transform
                         div(output).rect-styling
                             img(src="assets/images/pca/example-img-reconstruction.png")
-                    span.fragment(fragment-trigger, "(trigger)"="pcaEncDec.end()")
+                    span.fragment(fragment-trigger, (trigger)="pcaEncDec.end()")
             div.fragment.mt-5.text-center.alert.alert-success Decoder kann visualisieren, was #[span.highlight verloren] geht.
     section
         slide-with-header(header="Dimensionsreduktion - PCA als Preprocessing")
@@ -207,12 +207,12 @@ ng-template('#slides'='')
                         div #[span.code.small z.B. LogisticRegression]
                     div(output).rect-styling
                         div.code Deer
-                span.fragment(fragment-trigger, "(trigger)"="pcaWithModel.end()")
+                span.fragment(fragment-trigger, (trigger)="pcaWithModel.end()")
     section
         slide-with-header(header="PCA - Modell")
             div.fragment
                 div.d-flex.justify-content-center
-                    model-3-visualization("#pcaEncDec"="", [with-trigger]="false").mt-5
+                    model-3-visualization([with-trigger]="false").mt-5
                         div(inputHeader)
                             div(style={marginTop: "-75px"})
                                 h5(style={marginBottom: "0"}) Input Space
@@ -237,10 +237,9 @@ ng-template('#slides'='')
                             div.small PCA.inverse_transform
                         div(output).rect-styling
                             img(src="assets/images/pca/example-img-reconstruction.png")
-                    span.fragment(fragment-trigger, "(trigger)"="pcaEncDec.end()")
             div.mt-5.fragment
                 div.d-flex.justify-content-center
-                    model-3-visualization("#pcaEncDec"="", [with-trigger]="false").mt-5
+                    model-3-visualization([with-trigger]="false").mt-5
                         div(inputHeader)
                             div(style={marginTop: "-75px"})
                                 h5(style={marginBottom: "0"}) Input Space
@@ -274,7 +273,6 @@ ng-template('#slides'='')
                             div.small PCA.inverse_transform
                         div(output).rect-styling
                             img(src="assets/images/pca/example-img-reconstruction.png")
-                    span.fragment(fragment-trigger, "(trigger)"="pcaEncDec.end()")
             div.fragment.mt-5.text-center.alert.alert-primary
                 div([mathjax]="encoderWithDecoder")
     // section

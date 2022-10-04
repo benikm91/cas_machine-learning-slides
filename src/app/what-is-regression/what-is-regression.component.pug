@@ -17,7 +17,7 @@ ng-template('#slides'='')
                     div(model, class="model").model-box Modell
                     div(output, class="output").fix-height.code
                         | weight: 508g
-                span.fragment(fragment-trigger, "(trigger)"="regressionExample.end();")
+                span.fragment(fragment-trigger, (trigger)="regressionExample.end();")
             div.mt-5.r-stack
                 img.fragment(src="assets/images/regression/basics/regression-example-data-only.png").img-fluid
                 img.fragment(src="assets/images/regression/basics/regression-example-data-only-highlight.png").img-fluid

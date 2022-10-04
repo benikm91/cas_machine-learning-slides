@@ -21,7 +21,7 @@ ng-template('#slides'='')
                             div(model, class="model").model-box Modell
                             div(output, class="output").fix-height.transparent-border-1.code
                                 p Spam
-                span.fragment(fragment-trigger, "(trigger)"="spamModel.start(); nonSpamModel.start()", "(untrigger)"="spamModel.end(); nonSpamModel.end()")
+                span.fragment(fragment-trigger, (trigger)="spamModel.start(); nonSpamModel.start()", (untrigger)="spamModel.end(); nonSpamModel.end()")
     section
         slide-with-header(header="Classification - Beispiel - Name der Blumenart")
             ul
@@ -40,7 +40,7 @@ ng-template('#slides'='')
                         div Modell
                     div(output, class="output").fix-height.code
                         | #[span.highlight-seaborn-1 Setosa]
-                span.fragment(fragment-trigger, "(trigger)"="classificationExample.end();")
+                span.fragment(fragment-trigger, (trigger)="classificationExample.end();")
             div.mt-5.r-stack
                 img.fragment(src="assets/images/classification/example-data-only.png", style={height: "200px"}).img-fluid
                 img.fragment(src="assets/images/classification/example-data-with-model.png", style={height: "200px"}).img-fluid
