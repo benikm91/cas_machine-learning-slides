@@ -76,6 +76,8 @@ ng-template('#slides'='')
                     div.mt-5.d-flex.justify-center
                         div.r-stack
                             img(src="assets/images/pca/pca-2d-anim-2.png")
+                            img.fragment(src="assets/images/pca/pca_2d.gif")
+                            img.fragment(src="assets/images/pca/pca-2d-anim-2.png")
                 div(third).d-flex.flex-column
                     h3 3 Feature
                     div.mt-5.d-flex.justify-center
@@ -86,58 +88,11 @@ ng-template('#slides'='')
                             img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
                             img.fragment(src="assets/images/pca/pca-3d-3.gif").img-fluid
                             img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
-    section
-        slide-with-header(header="PCA - PC Selection")
-            h6 Idee
-            div.d-flex.justify-center.mt-5
-                model-3-visualization("#pcaRotSel"="").mt-5
-                    div(inputHeader)
-                        div(style={marginTop: "-50px"})
-                            h5(style={marginBottom: "0"}) Input Space
-                            h6(margin="0") 2 Features
-                    div(featureHeader)
-                        div(style={marginTop: "-50px"})
-                            h5(style={marginBottom: "0"}) PC Space
-                            h6(margin="0") 2 Features
-                    div(outputHeader)
-                        div(style={marginTop: "-50px"})
-                            h5(style={marginBottom: "0"}) PC Space
-                            h6(margin="0") 1 Features
-                    div(input).rect-styling
-                        img(src="assets/images/pca/data-input-space.png")
-                    div(pre).model-box.code
-                        div "Rotate"
-                    div(feature).fix-height.code
-                        img(src="assets/images/pca/data-pca-space.png")
-                    div(model).model-box.code
-                        div PC Selection
-                    div(output).rect-styling
-                        img(src="assets/images/pca/data-pca-space-1d.png")
-                span.fragment(fragment-trigger, (trigger)="pcaRotSel.end()")
-            div.mt-5.fragment
-                h6 Praxis
-                div.d-flex.justify-center.mt-5
-                    model-visualization("#pcaDirect"="")
-                        div(inputHeader)
-                            div(style={marginTop: "-50px"})
-                                h5(style={marginBottom: "0"}) Input Space
-                                h6(margin="0") 2 Features
-                        div(outputHeader)
-                            div(style={marginTop: "-50px"})
-                                h5(style={marginBottom: "0"}) PC Space
-                                h6(margin="0") 1 Features
-                        div(input).rect-styling
-                            img(src="assets/images/pca/data-input-space.png")
-                        div(model).model-box.code
-                            div PCA #[span.code.small (n_components=1)]
-                            div.code.small fit_transform
-                        div(output).rect-styling
-                            img(src="assets/images/pca/data-pca-space-1d.png")
-                    span.fragment(fragment-trigger, (trigger)="pcaDirect.end()")
+                            img.fragment(src="assets/images/pca/pca_3d.gif").img-fluid
     section
         slide-with-header(header="Dimensionsreduktion - PCA")
             div.d-flex.justify-content-center.fragment
-                model-visualization("#pcaEncOnly"="").mt-5
+                model-visualization("#pcaEncOnly"="", [with-trigger]="false").mt-5
                     div(inputHeader)
                         div(style={marginTop: "-75px"})
                             h5(style={marginBottom: "0"}) Input Space
@@ -156,7 +111,7 @@ ng-template('#slides'='')
             div.fragment
                 h5.mt-5 PCA kommt mit einem Decoder
                 div.d-flex.justify-content-center
-                    model-3-visualization("#pcaEncDec"="").mt-5
+                    model-3-visualization("#pcaEncDec"="", [with-trigger]="false").mt-5
                         div(inputHeader)
                             div(style={marginTop: "-75px"})
                                 h5(style={marginBottom: "0"}) Input Space
@@ -186,7 +141,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Dimensionsreduktion - PCA als Preprocessing")
             div.mt-5.d-flex.justify-content-center.fragment
-                model-3-visualization("#pcaWithModel"="", output-header="Output Space" )
+                model-3-visualization("#pcaWithModel"="", [with-trigger]="false", output-header="Output Space" )
                     div(inputHeader)
                         div(style={marginTop: "-75px"})
                             h5(style={marginBottom: "0"}) Input Space
@@ -204,7 +159,7 @@ ng-template('#slides'='')
                         | [ -57.2, -3.6, ..., 2.3, -3.4 ]
                     div(model).model-box
                         div Modell
-                        div #[span.code.small z.B. LogisticRegression]
+                        div #[span.code.small z.B. SVC]
                     div(output).rect-styling
                         div.code Deer
                 span.fragment(fragment-trigger, (trigger)="pcaWithModel.end()")
@@ -299,7 +254,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="PCA - Optimierung", [extra]="true")
             ul
-                li "Einfache" Lineare Algebra
+                li "Einfach" Lineare Algebra
                 li Schauen wir nicht im Detail an.
                 li Nutzt Singular Value Decomposition (SVD)
                 hr
@@ -347,11 +302,13 @@ ng-template('#slides'='')
                     .col-12 PCA hat #[span.highlight die starke Annahme], dass das #[span.highlight gesuchtes Manifold linear im Feature-Space] ist!
     section
         slide-with-header(header="PCA - Wann")
-            ul
-                li Datenreduzieren für Speicherplatz
-                li Datenreduzieren für Speed-up von folge Modell
-            div.mt-5.fragment.text-center.alert.alert-danger
-                | PCA #[span.highlight nicht verwenden für Overfitting]. Bei Overfitting ist #[span.highlight Regularisierung] meistens die bessere Wahl.
+            div.mt-5
+                ul
+                    li.fragment Performanz Optimierung:
+                        ul
+                            li Speed-up (CPU)
+                            li Less memory (RAM/disk)
+                    li.fragment PCA (sollte man) #[span.highlight nicht verwenden für Overfitting]. Bei Overfitting ist #[span.highlight Regularisierung] meistens die bessere Wahl.
     section
         slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
             ul

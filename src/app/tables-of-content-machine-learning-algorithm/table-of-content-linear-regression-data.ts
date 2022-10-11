@@ -76,8 +76,8 @@ export class PCATableOfContentLabel extends TableOfContentLabel {
     public static readonly PCA = new PCATableOfContentLabel("PCA", "PCA");
     public static readonly DATA_SPECIFICATION = new PCATableOfContentLabel("Data Specification", "PCA/Data Specification");
     public static readonly MODEL = new PCATableOfContentLabel("Model" , "PCA/Model" );
-    public static readonly OPTIMIERUNG = new PCATableOfContentLabel("Optimierung" , "PCA/Optimierung" );
     public static readonly COST_FUNCTION = new PCATableOfContentLabel("Cost function", "PCA/Cost function");
+    public static readonly OPTIMIERUNG = new PCATableOfContentLabel("Optimierung" , "PCA/Optimierung" );
 }
 
 export function createPCATableOfContent(active: PCATableOfContentLabel | null): TableOfContentEntry<PCATableOfContentLabel> {
@@ -100,5 +100,23 @@ export function createKNNTableOfContent(active: KNNTableOfContentLabel | null): 
     return c(KNNTableOfContentLabel.KNN, active, [
         c(KNNTableOfContentLabel.DATA_SPECIFICATION, active, []),
         c(KNNTableOfContentLabel.MODEL, active, []),
+    ])
+}
+
+
+export class FNNTableOfContentLabel extends TableOfContentLabel {
+    public static readonly FNN = new FNNTableOfContentLabel("(Feed-Forward) Neural Network", "NN");
+    public static readonly DATA_SPECIFICATION = new FNNTableOfContentLabel("Specification", "NN/Specification");
+    public static readonly MODEL = new FNNTableOfContentLabel("Model" , "NN/Model" );
+    public static readonly COST_FUNCTION = new FNNTableOfContentLabel("Cost function" , "NN/Cost function" );
+    public static readonly OPTIMIERUNG = new FNNTableOfContentLabel("Optimierung" , "NN/Optimierung" );
+}
+
+export function createFNNTableOfContent(active: FNNTableOfContentLabel | null): TableOfContentEntry<FNNTableOfContentLabel> {
+    return c(FNNTableOfContentLabel.FNN, active, [
+        c(FNNTableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(FNNTableOfContentLabel.MODEL, active, []),
+        c(FNNTableOfContentLabel.COST_FUNCTION, active, []),
+        c(FNNTableOfContentLabel.OPTIMIERUNG, active, []),
     ])
 }

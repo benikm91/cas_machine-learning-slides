@@ -1,0 +1,246 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Deep Learning - Hype oder Realität")
+            div TODO
+    section
+        slide-with-header(header="Deep Learning - Übersicht")
+            ul
+                li Machine Learning Modell ist ein #[span.highlight Neural Network]
+                li Kann Supervised Learning
+                li Kann Unsupervised Learning
+                li Benötigt viele Daten
+                li Benötigt viel Rechenzeit (GPU)
+                li Meistens beste Wahl bei #[span.highlight unstrukturierten Daten] (Sequenzen, Text, Bilder, ...)
+    section
+        slide-with-header(header="Deep Learning - Grundidee")
+            ul
+                li Inspiriert vom biologischen Gehirn
+                li Neuronen die mit einander verbunden sind (Knoten in einem Graph).
+                li Neuronen haben eingehende und ausgehende Verbindungen (Kanten).
+                li Neuronen feuern (geben einen Wert weiter), wenn eingehende Neuronen #[span.highlight genug stark] feuern.
+    tables-of-content-fnn
+        div.fragment.text-center.alert.alert-warning (FF) Neural Network = Multi Layer Perceptron (MLP)
+    tables-of-content-fnn([active]="fnnLabels.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="Neural Network - Specification")
+            ul
+                li.fragment Was ist das #[span.highlight Ziel]
+                li.fragment Was ist die #[span.highlight Kostenfunktion]
+                li.fragment Welche #[span.highlight Features] wählen wir
+                li.fragment Kategorische Features müssen #[span.highlight encoded] werden
+    tables-of-content-fnn([active]="fnnLabels.MODEL")
+    section
+        slide-with-header(header="Erinnerung: Lineare Regression - Nun als Network")
+            .row
+                .col-6
+                    h5 Als Formell
+                .col-6
+                    h5 Als Netzwerk
+            .row.mt-4
+                .col-6.small-font
+                    div([mathjax]="linearRegression")
+                .col-6
+                    img(src="assets/images/neural-network/linear_regression_as_nn.png").img-fluid-both
+            div.fragment.text-center.alert.alert-primary Die Berechnung der Linearen Regression als Netzwerk dargestellt.
+    section
+        slide-with-header(header="Idee eines Neural Networks")
+            .row.mt-5
+                .col-6
+                    h5 Als Formell
+                .col-6
+                    h5 Als Netzwerk
+            .row.mt-4
+                .col-6.small-font
+                    div([mathjax]="oneHiddenLayerZ1")
+                    div ...
+                    div([mathjax]="oneHiddenLayerZh")
+                    div.mt-5([mathjax]="oneHiddenLayerOutput")
+                .col-6.r-stack
+                    img(src="assets/images/neural-network/one_hidden_nn.png").img-fluid-both
+                    img.fragment(src="assets/images/neural-network/one_hidden_nn_with_params.png").img-fluid-both
+            div.fragment.text-center.alert.alert-primary
+                div Mehrere Lineare Regressionen nebeneinander und übereinander!
+    section
+        slide-with-header(header="Idee eines Neural Networks mit Aktivierungsfunktion")
+            .row.mt-5
+                .col-6
+                    h5 Als Formell
+                .col-6
+                    h5 Als Netzwerk
+            .row.mt-4
+                .col-6.small-font
+                    div([mathjax]="oneHiddenLayerWithActivationZ1")
+                    div ...
+                    div([mathjax]="oneHiddenLayerWithActivationZh")
+                    div.mt-5([mathjax]="oneHiddenLayerWithActivationOutput")
+                .col-6
+                    img(src="assets/images/neural-network/one_hidden_nn_with_phi.png").img-fluid-both
+            div.fragment.text-center.alert.alert-primary
+                div
+                    span(class="highlight", mathjax="<math><mi>ϕ</mi></math>")
+                    span &nbsp;
+                    span nennt man die #[span.highlight Aktivierungsfunktion]
+                div.small-font
+                    span Die Aktivierungsfunktion macht das Modell #[span.highlight non-linear]. Heute wird oft ReLU verwendet (#[a(href="https://en.wikipedia.org/wiki/Activation_function") Liste von gängigen Aktivierungsfunktionen]).
+    section
+        slide-with-header(header="Erinnerung: Logistic Regression - Nun als Network")
+            .row
+                .col-6
+                    h5 Als Formell
+                .col-6
+                    h5 Als Netzwerk
+            .row.mt-4
+                .col-6.small-font
+                    div([mathjax]="logisticRegression")
+                .col-6
+                    img(src="assets/images/neural-network/logistic_regression_as_nn.png").img-fluid-both
+    section
+        slide-with-header(header="Neural Network - Mehrere Outputs möglich", [extra]="true")
+            .row
+                .col-6
+                    h5 Als Formell
+                .col-6
+                    h5 Als Netzwerk
+            .row.mt-4
+                .col-6.small-font
+                    div([mathjax]="oneHiddenLayerWithActivationZ1Colored")
+                    div ...
+                    div([mathjax]="oneHiddenLayerWithActivationZhColored")
+                    div.mt-5([mathjax]="oneHiddenLayerWithActivationY1")
+                    div ...
+                    div([mathjax]="oneHiddenLayerWithActivationYo")
+                .col-6
+                    img(src="assets/images/neural-network/one_hidden_nn_with_multiple_outputs.png").img-fluid-both
+    section
+        slide-with-header(header="Deep Learning - Framework für Modelle")
+            h5.mt-5 Modellkomplexität einfach anpassbar
+            ul(style={fontSize: "32px"})
+                li #[span.highlight mehr Hidden Layers] => #[span.highlight Mehr lernbare Parameter]
+                li #[span.highlight weniger Hidden Layers] => #[span.highlight Weniger lernbare Parameter]
+                li In einem Layer #[span.highlight mehr Nodes] => #[span.highlight Mehr lernbare Parameter]
+                li In einem Layer #[span.highlight weniger Nodes] => #[span.highlight Weniger lernbare Parameter]
+            div.scale-075
+                h5.mt-5 Kostenfunktion
+                ul.small-font
+                    li Kostenfunktion kann je nach Problem gewählt werden.
+                h5.mt-5 Viele weitere Möglichkeiten, Deep Learning
+                ul.small-font
+                    li Wir können die Architektur (Verbindungen) vom Netzwerk anders gestalten, entsprechend dem zugrunde liegenden Problem (z.B. CNN und RNN).
+    section
+        slide-with-header(header="Deep Learning - Gelerntes Feature Engineering")
+           .row
+               .col-12
+                   img(src="assets/images/neural-network/one_hidden_nn_with_phi.png").img-fluid-both
+               .col-12.scale-05
+                   model-3-visualization(input-header="Input Space", [with-trigger]="false", feature-header="Feature Space", output-header="Output Space" )
+                       div(input).rect-styling
+                           div(mathjax="x")
+                       div(pre).model-box Feature Engineering
+                       div(feature).rect-styling
+                           div(mathjax="z")
+                       div(model).model-box Modell
+                       div(output).rect-styling
+                           div(mathjax="y")
+           div.fragment.text-center.alert.alert-primary.small-font
+               | Die Hidden Layers in einem Neural Network können als aus den Daten lernbares Feature Engineering betrachtet werden (mit gewissen Einschränkungen).
+    section
+        slide-with-header(header="Deep Learning - Gelernte Dimensionality Reduction")
+            div.primary
+            .row
+                .col-12
+                    img(src="assets/images/neural-network/one_hidden_nn_with_phi.png").img-fluid-both
+                .col-12.scale-05
+                    model-3-visualization("#encMod"="", [with-trigger]="false", output-header="Output Space" )
+                        div(inputHeader)
+                            div(style={marginTop: "-75px"})
+                                h5(style={marginBottom: "0"}) Input Space
+                                h6(margin="0") 3072 Features
+                        div(featureHeader)
+                            div(style={marginTop: "-50px"})
+                                h5(style={marginBottom: "0"}) Latent Space
+                                h6(margin="0") 200 Features
+                        div(input).rect-styling
+                            img(src="assets/images/pca/example-img.png")
+                        div(pre).model-box
+                            div Encoder
+                        div(feature).fix-height.code
+                            | [ -57.2, -3.6, ..., 2.3, -3.4 ]
+                        div(model).model-box
+                            div Modell
+                        div(output).rect-styling
+                            div.code Deer
+            div.fragment.text-center.alert.alert-primary.small-font
+                | Die Hidden Layers in einem Neural Network können als Dimensionality Reduction betrachtet werden.
+                | Dabei lernt das Modell, welche Informationen für den spezifischen Task weggeworfen werden können.
+    tables-of-content-fnn([active]="fnnLabels.COST_FUNCTION")
+    section
+        slide-with-header(header="Problemspezifische Kosten Funktion")
+            ul
+                li Bei Regression: MSE / MAE
+                li Bei Klassifikation: Maximum Liklihood
+                li Bei Unsupervised: Reconstruction Error
+                li ...
+    tables-of-content-fnn([active]="fnnLabels.OPTIMIERUNG")
+    section
+        slide-with-header(header="Gradient Descent")
+            .row
+                .col-6
+                    h5 Reminder: Convex Problem (Tag 1)
+                    div.small-font Bei Linearen Modellen
+                    img.mt-5(src="assets/images/gradient-descent/gradient_descent_step_5.png")
+                .col-6
+                    h5 Non-Convex Problem
+                    div.small-font Bei NN mit Hidden Layer(s)
+                    img.mt-5(src="assets/images/neural-network/gd_nn.png").img-fluid-both
+            div.mt-4.fragment.text-center.alert.alert-primary
+                | Gleicher Algorithmus. Aber bei non-convex Kostenfunktionen, können wir in einem #[span.highlight lokalen Minimum] landen.
+    section
+        slide-with-header(header="Stochastic und Batch Gradient Descent")
+            ul
+                li Wie funktionierte Gradient Descent? (Tafel)
+                li.fragment #[span.highlight Stochastic Gradient Descent] berechnet die Richtung zum Minimum mit nur einem Sample.
+                    ul.fragment
+                        li Update viel schneller zu berechnen.
+                        li Update sehr noisy (oft in falsche Richtung)
+                li.fragment #[span.highlight Batch Gradient Descent] berechnet die Richtung zum Minimum mit z.B. 128 Sample (Batch Size).
+                    ul.fragment
+                        li Update schneller zu berechnen.
+                        li Update noisy (oft in falsche Richtung)
+            div.mt-4.fragment.text-center.alert.alert-warning(style={fontSize: "26px"})
+                | In Literatur heisst #[span.highlight Batch Gradient Descent] oft auch #[span.highlight Stochastic Gradient Descent].
+    section
+        slide-with-header(header="Backpropagation", [extra]="true")
+            ul(style={fontSize: "22px"})
+                li Algorithmus für das #[span.highlight effiziente Berechnen der Gradienten] der Kostenfunktion #[span.highlight in einem Neural Network]
+                li Nutzt die Chain-Rule von der Analysis um Zwischenergebnisse zu cachen.
+            .r-stack.mt-5
+                .row(style={background: "white", width: "100%"}).fragment
+                    .col-6
+                        img(src="assets/images/neural-network/a_very_simple_nn.png").img-fluid-both
+                    .col-6
+                        div([mathjax]="backpropSetting", style={fontSize: "22px"})
+                .row(style={background: "white", width: "100%"}).fragment
+                    .col-6
+                        img(src="assets/images/neural-network/a_very_simple_nn_2.png").img-fluid-both
+                    .col-6
+                        div([mathjax]="backpropSetting2", style={fontSize: "22px"})
+                .row(style={background: "white", width: "100%"}).fragment
+                    .col-6
+                        img(src="assets/images/neural-network/a_very_simple_nn_2.png").img-fluid-both
+                    .col-6
+                        div([mathjax]="backpropSetting3", style={fontSize: "22px"})
+            div.fragment.text-center.alert.alert-danger(style={fontSize: "22px"})
+                div Optimierungsalgorithmus von Neuralen Netzen ist (Batch) Gradient Descent.
+                div Backpropagation ist effizientes Berechnung der Gradienten.
+    section
+        slide-with-header(header="Ausblick", [extra]="true")
+            ul
+                li Neuronen anders vernetzen
+                    ul
+                        li ResNet (skip connection)
+                        li Convolutional Neural Network (CNN)
+                        li Recurrent Neural Network (RNN)
+                        li Transformer (in NLP)
+                li Learning und Regularization: Momentum, Adam, Learning Rate Decay, Dropout, Batch Normalization, ...
+            div.fragment.text-center.alert.alert-primary.mt-2
+                 | Grundidee immer: #[span.highlight Annahmen] treffen, um das Lernen zu vereinfachen.

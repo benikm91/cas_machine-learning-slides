@@ -1,0 +1,181 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right" columnspacing="" class="tml-array tml-gather">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,0</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msub>
+                                <mi>z</mi>
+                                <mn>1</mn>
+                            </msub>
+                        </mrow>
+                    </mfrac>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msub>
+                                <mi>z</mi>
+                                <mn>1</mn>
+                            </msub>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,0</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,1</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msub>
+                                <mi>z</mi>
+                                <mn>1</mn>
+                            </msub>
+                        </mrow>
+                    </mfrac>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msub>
+                                <mi>z</mi>
+                                <mn>1</mn>
+                            </msub>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,1</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,2</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msub>
+                                <mi>z</mi>
+                                <mn>1</mn>
+                            </msub>
+                        </mrow>
+                    </mfrac>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msub>
+                                <mi>z</mi>
+                                <mn>1</mn>
+                            </msub>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,2</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

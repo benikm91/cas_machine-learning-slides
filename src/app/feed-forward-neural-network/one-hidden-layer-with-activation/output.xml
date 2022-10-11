@@ -1,0 +1,51 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation">
+        <mtr>
+            <mtd>
+                <mover class="output">
+                    <mi>y</mi>
+                    <mo>^</mo>
+                </mover>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <mi class="highlight">ϕ</mi>
+                    <mo class="highlight" form="prefix" stretchy="false">(</mo>
+                    <msubsup class="weight">
+                        <mi>β</mi>
+                        <mn>1,0</mn>
+                        <mn>(2)</mn>
+                    </msubsup>
+                    <mo>+</mo>
+                    <msubsup class="weight">
+                        <mi>β</mi>
+                        <mn>1,1</mn>
+                        <mn>(2)</mn>
+                    </msubsup>
+                    <msub class="feature">
+                        <mi>z</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <mo>…</mo>
+                    <mo>+</mo>
+                    <msubsup class="weight">
+                        <mi>β</mi>
+                        <mn>1,h</mn>
+                        <mn>(2)</mn>
+                    </msubsup>
+                    <msub class="feature">
+                        <mi>z</mi>
+                        <mn>h</mn>
+                    </msub>
+                    <mo class="highlight" form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

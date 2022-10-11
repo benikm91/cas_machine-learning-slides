@@ -94,12 +94,12 @@
                             <mo>+</mo>
                             <msub class="weight">
                                 <mi>β</mi>
-                                <mn>n</mn>
+                                <mn>p</mn>
                             </msub>
                             <mo>*</mo>
                             <msubsup class="feature">
                                 <mi>x</mi>
-                                <mn>n</mn>
+                                <mn>p</mn>
                                 <mrow>
                                     <mo form="prefix" stretchy="false">(</mo>
                                     <mi>i</mi>

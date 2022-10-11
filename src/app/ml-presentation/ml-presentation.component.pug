@@ -73,6 +73,8 @@ reveal-presentation
     what-is-dimensionality-reduction
     pca
     question-slide([questions]="pcaQuestions")
+    section
+        div TODO: Clustering, NMF?
     data-science-pitfalls
     section
         slide-with-header(header="Linear Regression - Wissens Ansicht")
@@ -81,3 +83,4 @@ reveal-presentation
             div.d-flex.justify-center
                 knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
             span.fragment(fragment-trigger, (trigger)="knowledgeView.start()", (untrigger)="knowledgeView.end()")
+    feed-forward-neural-network

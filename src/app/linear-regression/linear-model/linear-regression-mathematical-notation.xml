@@ -32,11 +32,11 @@
                     <mo>+</mo>
                     <msub class="feature">
                         <mi>x</mi>
-                        <mi>n</mi>
+                        <mi>p</mi>
                     </msub>
                     <msub class="weight">
                         <mi>β</mi>
-                        <mi>n</mi>
+                        <mi>p</mi>
                     </msub>
                     <mo>+</mo>
                     <msub class="weight">

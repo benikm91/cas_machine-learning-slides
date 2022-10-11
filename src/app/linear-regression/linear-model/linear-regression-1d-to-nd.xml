@@ -105,12 +105,12 @@
                     <mo>+</mo>
                     <msub class="weight">
                         <mi>β</mi>
-                        <mn>n</mn>
+                        <mn>p</mn>
                     </msub>
                     <mo>*</mo>
                     <msub class="feature">
                         <mi>x</mi>
-                        <mn>n</mn>
+                        <mn>p</mn>
                     </msub>
                 </mrow>
             </mtd>

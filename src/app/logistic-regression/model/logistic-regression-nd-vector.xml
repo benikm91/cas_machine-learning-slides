@@ -28,11 +28,11 @@
         <mo>+</mo>
         <msub class="feature">
             <mi>x</mi>
-            <mn>n</mn>
+            <mn>p</mn>
         </msub>
         <msub class="weight">
             <mi>β</mi>
-            <mn>n</mn>
+            <mn>p</mn>
         </msub>
         <mo form="postfix" stretchy="false">)</mo>
     </mrow>

@@ -1,0 +1,48 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd>
+                <msub class="latent">
+                    <mi>z</mi>
+                    <mn>1</mn>
+                </msub>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd>
+                <mrow>
+                    <msubsup class="weight">
+                        <mi>β</mi>
+                        <mn>1,0</mn>
+                        <mn>(1)</mn>
+                    </msubsup>
+                    <mo>+</mo>
+                    <msubsup class="weight">
+                        <mi>β</mi>
+                        <mn>1,1</mn>
+                        <mn>(1)</mn>
+                    </msubsup>
+                    <msub class="feature">
+                        <mi>x</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <mo>…</mo>
+                    <mo>+</mo>
+                    <msubsup class="weight">
+                        <mi>β</mi>
+                        <mn>1,p</mn>
+                        <mn>(1)</mn>
+                    </msubsup>
+                    <msub class="feature">
+                        <mi>x</mi>
+                        <mn>p</mn>
+                    </msub>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

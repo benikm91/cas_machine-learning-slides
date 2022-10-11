@@ -1,30 +1,11 @@
 <math display="block">
     <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
-        <mtr class="">
+        <mtr>
             <mtd>
-                <msup class="label">
+                <mover class="output">
                     <mi>y</mi>
-                    <mn>(i)</mn>
-                </msup>
-            </mtd>
-            <mtd>
-                <mrow>
-                    <mo>=</mo>
-                </mrow>
-            </mtd>
-            <mtd>
-                <msup class="output">
-                    <mover>
-                        <mi>y</mi>
-                        <mo>^</mo>
-                    </mover>
-                    <mn>(i)</mn>
-                </msup>
-                <mo>+</mo>
-                <msup class="noise">
-                    <mi>ϵ</mi>
-                    <mn>(i)</mn>
-                </msup>
+                    <mo>^</mo>
+                </mover>
             </mtd>
             <mtd>
                 <mrow>
@@ -43,11 +24,10 @@
                         <mn>1</mn>
                     </msub>
                     <mo>*</mo>
-                    <msubsup class="feature">
+                    <msub class="feature">
                         <mi>x</mi>
                         <mn>1</mn>
-                        <mn>(i)</mn>
-                    </msubsup>
+                    </msub>
                     <mo>+</mo>
                     <mo>…</mo>
                     <mo>+</mo>
@@ -56,16 +36,10 @@
                         <mn>p</mn>
                     </msub>
                     <mo>*</mo>
-                    <msubsup class="feature">
+                    <msub class="feature">
                         <mi>x</mi>
                         <mn>p</mn>
-                        <mn>(i)</mn>
-                    </msubsup>
-                    <mo>+</mo>
-                    <msup class="noise">
-                        <mi>ϵ</mi>
-                        <mn>(i)</mn>
-                    </msup>
+                    </msub>
                 </mrow>
             </mtd>
         </mtr>

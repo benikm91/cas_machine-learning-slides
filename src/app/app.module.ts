@@ -87,6 +87,10 @@ import {AboutMeComponent} from "./about-me/about-me.component";
 import {Softmax3ExampleComponent} from "./softmax-3-example/softmax-3-example.component";
 import {PolynomialRegressionComponent} from "./polynomial-regression/polynomial-regression.component";
 import {DataSciencePitfallsComponent} from "./data-science-pitfalls/data-science-pitfalls.component";
+import {FeedForwardNeuralNetworkComponent} from "./feed-forward-neural-network/feed-forward-neural-network.component";
+import {
+  TablesOfContentFNNComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-fnn.component";
 
 @NgModule({
   declarations: [
@@ -104,7 +108,7 @@ import {DataSciencePitfallsComponent} from "./data-science-pitfalls/data-science
     WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
     OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
-    DataSciencePitfallsComponent
+    DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent
   ],
   imports: [
     BrowserModule,

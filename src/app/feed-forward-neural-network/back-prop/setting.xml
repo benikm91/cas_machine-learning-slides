@@ -1,0 +1,153 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left right left right" columnspacing="0em 1em 0em 1em" class="tml-array tml-gather">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,0</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>2</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow></mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,1</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>2</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow></mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,0</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,1</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow></mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mfrac>
+                        <mrow>
+                            <mi>∂</mi>
+                            <mi>J</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>∂</mi>
+                            <msubsup>
+                                <mi>θ</mi>
+                                <mn>1,2</mn>
+                                <mrow>
+                                    <mo form="prefix" stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo form="postfix" stretchy="false">)</mo>
+                                </mrow>
+                            </msubsup>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                    <mo form="postfix" stretchy="false">?</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow></mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-right;">
+                <mrow></mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>
