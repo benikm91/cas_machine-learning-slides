@@ -1,8 +1,5 @@
 import {Component} from '@angular/core';
 import {Slide} from "../slide/slide";
-import {
-  PCATableOfContentLabel
-} from "../tables-of-content-machine-learning-algorithm/table-of-content-linear-regression-data";
 import {ConceptTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 
 @Component({

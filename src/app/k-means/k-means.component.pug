@@ -1,0 +1,61 @@
+ng-template('#slides'='')
+    tables-of-content-k-means([active]="kmeansLabel.K_MEANS")
+    tables-of-content-k-means([active]="kmeansLabel.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="K-Means - Data Specification")
+            ul
+                li.fragment Welche #[span.highlight Features] wählen wir.
+                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
+                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
+                li.fragment Wie viele #[span.highlight Clusters] suchen wir.
+    tables-of-content-k-means([active]="kmeansLabel.MODEL")
+    section
+        slide-with-header(header="K-Means - Intuition")
+            p Finde k (hier 2) #[span.highlight Cluster-Schwerpunkte]. Daten werden dem nächsten Cluster-Schwerpunkt zugewiesen.
+            div.r-stack
+                img(src="assets/images/k-means/data.png").fragment
+                img(src="assets/images/k-means/data-clusters.png").fragment
+                img(src="assets/images/k-means/data-clustered.png").fragment
+            div.fragment.text-center.alert.alert-warning Punkte haben kein (bekanntes) Klassen-Label.
+    tables-of-content-k-means([active]="kmeansLabel.COST_FUNCTION")
+    section
+        slide-with-header(header="K-Means - Cost Function")
+            div([mathjax]="costFunction")
+    tables-of-content-k-means([active]="kmeansLabel.OPTIMIERUNG")
+    section
+        slide-with-header(header="K-Means - Optimierung")
+            div Der Algorithmus funktioniert wie folgt:
+                ol
+                    li.fragment.mt-2
+                        div Initialisiere Schwerpunkte mit #[span.highlight zufälligen Werten].
+                    li.fragment.mt-2
+                        div #[span.highlight Weise Datenpunkte] nächstem Schwerpunkt #[span.highlight zu].
+                    li.fragment.mt-2
+                        div #[span.highlight Aktualisiere Schwerpunkte] anhand der zugewiesenen Datenpunkte.
+                    li.fragment.mt-2
+                        div #[span.highlight Wiederhole] 2. und 3., bis keine Veränderung mehr statt findet.
+            div.fragment.mt-5.text-center.alert.alert-warning Findet lokales Minimum! Ganzen Algorithmus mehrmals #[span.highlight wiederholen mit anderen Startwerten].
+    section
+        slide-with-header(header="K-Means - Optimierung - Intuition")
+            img(src="assets/images/k-means/kMeans2.gif")
+    section
+        slide-with-header(header="k-means - Limits", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                div.col-5.p-2
+                    img(src="assets/images/k-means/limit-1.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/k-means/limit-1-solution.png").limit-impossible
+                div.col-1
+            div.row.fragment
+                div.col-2.m-auto
+                div.col-8.p-2
+                    h5 Andere "Impossible" Beispiele
+                    img(src="assets/images/k-means/other-limits.jpg", height="300px").limit-impossible
+                div.col-2.m-auto

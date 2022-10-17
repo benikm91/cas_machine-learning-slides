@@ -1,0 +1,79 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi class="weight">C</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mn>2</mn>
+                    </mfrac>
+                    <mrow>
+                        <munderover>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <mi class="hyper-parameter">k</mi>
+                                <mo>=</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            <mi class="hyper-parameter">K</mi>
+                        </munderover>
+                    </mrow>
+                    <mrow>
+                        <munder>
+                            <mo movablelimits="false">∑</mo>
+                            <mrow>
+                                <msup class="feature">
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>i</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mo>,</mo>
+                                <msup class="feature">
+                                    <mi>x</mi>
+                                    <mrow>
+                                        <mo form="prefix" stretchy="false">(</mo>
+                                        <mi>j</mi>
+                                        <mo form="postfix" stretchy="false">)</mo>
+                                    </mrow>
+                                </msup>
+                                <mo>∈</mo>
+                                <msub>
+                                    <mi class="weight">C</mi>
+                                    <mi class="hyper-parameter">k</mi>
+                                </msub>
+                            </mrow>
+                        </munder>
+                    </mrow>
+                    <mi>d</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <msup class="feature">
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>i</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mo separator="true">,</mo>
+                    <msup class="feature">
+                        <mi>x</mi>
+                        <mrow>
+                            <mo form="prefix" stretchy="false">(</mo>
+                            <mi>j</mi>
+                            <mo form="postfix" stretchy="false">)</mo>
+                        </mrow>
+                    </msup>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

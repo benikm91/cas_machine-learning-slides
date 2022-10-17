@@ -120,3 +120,20 @@ export function createFNNTableOfContent(active: FNNTableOfContentLabel | null): 
         c(FNNTableOfContentLabel.OPTIMIERUNG, active, []),
     ])
 }
+
+export class KMeansTableOfContentLabel extends TableOfContentLabel {
+    public static readonly K_MEANS = new KMeansTableOfContentLabel("K-Means", "k-means");
+    public static readonly DATA_SPECIFICATION = new KMeansTableOfContentLabel("Data Specification", "k-means/Data Specification");
+    public static readonly MODEL = new KMeansTableOfContentLabel("Model" , "k-means/Model" );
+    public static readonly COST_FUNCTION = new KMeansTableOfContentLabel("Cost function" , "k-means/Cost function" );
+    public static readonly OPTIMIERUNG = new KMeansTableOfContentLabel("Optimierung" , "k-means/Optimierung" );
+}
+
+export function createKMeansTableOfContent(active: KMeansTableOfContentLabel | null): TableOfContentEntry<KMeansTableOfContentLabel> {
+    return c(KMeansTableOfContentLabel.K_MEANS, active, [
+        c(KMeansTableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(KMeansTableOfContentLabel.MODEL, active, []),
+        c(KMeansTableOfContentLabel.COST_FUNCTION, active, []),
+        c(KMeansTableOfContentLabel.OPTIMIERUNG, active, []),
+    ])
+}

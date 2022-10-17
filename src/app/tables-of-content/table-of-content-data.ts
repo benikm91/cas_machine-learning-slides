@@ -33,6 +33,8 @@ export class ProblemTableOfContentLabel extends TableOfContentLabel {
     public static readonly REGRESSION = new ProblemTableOfContentLabel("Regression", "Regression");
     public static readonly CLASSIFICATION = new ProblemTableOfContentLabel("Classification", "Classification");
     public static readonly UNSUPERVISED_LEARNING = new ProblemTableOfContentLabel("Unsupervised Learning", "Unsupervised Learning");
+    public static readonly CLUSTERING = new ProblemTableOfContentLabel("Clustering", "Clustering");
+    public static readonly DIMENSIONALITY_REDUCTION = new ProblemTableOfContentLabel("Dimensionality Reduction", "Dimensionality Reduction");
     public static readonly REINFORCEMENT_LEARNING = new ProblemTableOfContentLabel("Reinforcement Learning", "Reinforcement Learning");
 }
 
@@ -42,7 +44,10 @@ export function createProblemTableOfContent(active: ProblemTableOfContentLabel |
             c(ProblemTableOfContentLabel.REGRESSION, active),
             c(ProblemTableOfContentLabel.CLASSIFICATION, active),
         ]),
-        c(ProblemTableOfContentLabel.UNSUPERVISED_LEARNING, active),
+        c(ProblemTableOfContentLabel.UNSUPERVISED_LEARNING, active, [
+            c(ProblemTableOfContentLabel.DIMENSIONALITY_REDUCTION, active),
+            c(ProblemTableOfContentLabel.CLUSTERING, active)
+        ]),
         c(ProblemTableOfContentLabel.REINFORCEMENT_LEARNING, active),
     ])
 }

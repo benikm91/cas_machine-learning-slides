@@ -91,6 +91,11 @@ import {FeedForwardNeuralNetworkComponent} from "./feed-forward-neural-network/f
 import {
   TablesOfContentFNNComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-fnn.component";
+import {WhatIsClusteringComponent} from "./what-is-clustering/what-is-clustering.component";
+import {KMeansComponent} from "./k-means/k-means.component";
+import {
+  TablesOfContentKMeansComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-kmeans.component";
 
 @NgModule({
   declarations: [
@@ -108,7 +113,7 @@ import {
     WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
     OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
-    DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent
+    DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent
   ],
   imports: [
     BrowserModule,
