@@ -1,18 +1,64 @@
 div.d-flex.justify-center
-    img(src="assets/images/overfitting/model-complexity.png", style={height: "300px"}).img-fluid
-ul.scale-05
-    li Model Komplexität (Annahmen) <=>
-        ul
-            li Representation Capacity <=>
-            li Regularisierung <=
-            li Domänen-Wissen ausprogrammieren
-                ul
-                    li spezifisches Feature Preprocessing
-                    li Neural Network Architektur
-    li Mehr Daten =>
-        ul
-            li Mehr Samples =>
-            li Data Augmentation
-            li Mehr Features =>
-                ul
-                    li Feature Engineering
+    .row
+        .col-8
+            div#model-complexity-visualization
+        .col-4.text-start
+            table
+                colgroup
+                    col([width]="25")
+                tr
+                    th.p-1
+                        img(src="assets/images/model-complexity/legend/our.png").img-fluid-both
+                    td(style={fontSize: "20px"}) Unser Modell
+                tr
+                    th.p-1
+                        img(src="assets/images/model-complexity/legend/optimal.png").img-fluid-both
+                    td(style={fontSize: "20px"}) Optimales Modell
+                tr
+                    th.p-1
+                        img(src="assets/images/model-complexity/legend/train.png").img-fluid-both
+                    td(style={fontSize: "20px"}) Train Error
+                tr
+                    th.p-1
+                        img(src="assets/images/model-complexity/legend/val.png").img-fluid-both
+                    td(style={fontSize: "20px"}) Val Error
+div(style={fontSize: "14px"})
+    .row
+        .col-4.text-start
+            h5 Daten
+        .col-8
+            input.form-range(style={width: "100%"}, "#data"="", type="range" min="10" max="99" value="50", (input)="updateParamsAndDrawing()")
+        .col-12.text-start
+            ul
+                li Mehr Samples
+                li Data Augmentation
+    .row.mt-4
+        .col-4.text-start
+            h5 Featuers
+        .col-8
+            input.form-range(style={width: "100%"}, "#features"="", type="range" min="10" max="99" value="50", (input)="updateParamsAndDrawing()")
+        .col-12.text-start
+            ul
+                li Feature Engineering
+    .row.mt-4
+        .col-4.text-start
+            h5 Model Komplexität
+        .col-8
+            input.form-range(style={width: "100%"}, "#complexity"="", type="range" min="0" max="149" value="75", (input)="updateParamsAndDrawing()")
+        .col-12.text-start
+            ul
+                li.mt-1 Representation Capacity:
+                    span &nbsp;
+                    button.btn.btn-sm.btn-light((click)="setComplexityToLinearRegression()") Linear Regression
+                    span &nbsp;
+                    button.btn.btn-sm.btn-light((click)="setComplexityToPolynomialRegression()") Polynomielle Regression
+                    span &nbsp;
+                    button.btn.btn-sm.btn-light((click)="setComplexityTo(80)") Random Forest
+                    span &nbsp;
+                    button.btn.btn-sm.btn-light((click)="setComplexityTo(120)") Big Neural Network
+                li.mt-1 Regularisierung:
+                    span &nbsp;
+                    button.btn.btn-sm.btn-light((click)="addRegularization(-5)", [disabled]="complexity.value == '149'", style={width: "50px"}, title="Weniger Regularisierung") -
+                    span &nbsp;
+                    button.btn.btn-sm.btn-light((click)="addRegularization(5)", [disabled]="complexity.value == '0'", style={width: "50px"}, title="Mehr Regularisierung") +
+                li.mt-1 Domänen-Wissen ausprogrammieren (spezifisches Feature Encoding, Feature Preprocessing, Weight-Sharing, ...)

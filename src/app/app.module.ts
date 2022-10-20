@@ -96,6 +96,7 @@ import {KMeansComponent} from "./k-means/k-means.component";
 import {
   TablesOfContentKMeansComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-kmeans.component";
+import {ModelComplexitySlideComponent} from "./model-complexity-slide/model-complexity-slide.component";
 
 @NgModule({
   declarations: [
@@ -108,7 +109,7 @@ import {
     FragmentTriggerComponent, OfflineLearningVisualizationComponent, ModelVisualizationComponent, Model3VisualizationComponent,
     ExampleModelVisualizationTicTacToeComponent, ExampleModelVisualizationChessComponent, ExampleModelVisualizationComponent,
     SideBySide3Component, TitlePageComponent, TablesOfContentMachineLearningAlgorithmComponent, WhatIsEncodingComponent,
-    WhatIsFeatureEngineeringComponent, ModelComplexityComponent, LogisticRegressionComponent, TablesOfContentLogisticRegressionComponent,
+    WhatIsFeatureEngineeringComponent, ModelComplexitySlideComponent, ModelComplexityComponent, LogisticRegressionComponent, TablesOfContentLogisticRegressionComponent,
     PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent, KNearestNeighboursComponent, TablesOfContentPCAComponent,
     WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
     OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
