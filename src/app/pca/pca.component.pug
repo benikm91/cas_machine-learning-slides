@@ -92,7 +92,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Dimensionsreduktion - PCA")
             div.d-flex.justify-content-center.fragment
-                model-visualization("#pcaEncOnly"="", [with-trigger]="false").mt-5
+                model-visualization([with-trigger]="false").mt-5
                     div(inputHeader)
                         div(style={marginTop: "-75px"})
                             h5(style={marginBottom: "0"}) Input Space
@@ -102,16 +102,15 @@ ng-template('#slides'='')
                     div(model, class="model").model-box.code
                         div Encoder
                         div #[span.code.small PCA.transform]
-                    div(output, class="output").fix-height.code [ 167, 235, 207, 76, 97, 119, 50, 8, 239, 168, 215, ... ]
+                    div(output, class="output").fix-height.code [ -57.2, -3.6, ..., 2.3, -3.4 ]
                     div(outputHeader)
                         div(style={marginTop: "-75px"})
                             h5(style={marginBottom: "0"}) Latent Space
                             h6(margin="0") 200 Features
-                span.fragment(fragment-trigger, (trigger)="pcaEncOnly.end()")
             div.fragment
                 h5.mt-5 PCA kommt mit einem Decoder
                 div.d-flex.justify-content-center
-                    model-3-visualization("#pcaEncDec"="", [with-trigger]="false").mt-5
+                    model-3-visualization([with-trigger]="false").mt-5
                         div(inputHeader)
                             div(style={marginTop: "-75px"})
                                 h5(style={marginBottom: "0"}) Input Space
@@ -136,7 +135,6 @@ ng-template('#slides'='')
                             div.small PCA.inverse_transform
                         div(output).rect-styling
                             img(src="assets/images/pca/example-img-reconstruction.png")
-                    span.fragment(fragment-trigger, (trigger)="pcaEncDec.end()")
             div.fragment.mt-5.text-center.alert.alert-success Decoder kann visualisieren, was #[span.highlight verloren] geht.
     section
         slide-with-header(header="Dimensionsreduktion - PCA als Preprocessing")
@@ -162,7 +160,6 @@ ng-template('#slides'='')
                         div #[span.code.small z.B. SVC]
                     div(output).rect-styling
                         div.code Deer
-                span.fragment(fragment-trigger, (trigger)="pcaWithModel.end()")
     section
         slide-with-header(header="PCA - Modell")
             div.fragment
@@ -301,7 +298,7 @@ ng-template('#slides'='')
                 div.col-1
             div.mt-2.fragment.text-center.alert.alert-warning
                 .row
-                    .col-12 PCA hat #[span.highlight die starke Annahme], dass das #[span.highlight gesuchtes Manifold linear im Feature-Space] ist!
+                    .col-12 PCA hat #[span.highlight die starke Annahme], dass das gesuchtes Manifold im Feature-Space #[span.highlight linear] ist!
     section
         slide-with-header(header="PCA - Wann")
             div.mt-5
@@ -310,7 +307,7 @@ ng-template('#slides'='')
                         ul
                             li Speed-up (CPU)
                             li Less memory (RAM/disk)
-                    li.fragment PCA (sollte man) #[span.highlight nicht verwenden für Overfitting]. Bei Overfitting ist #[span.highlight Regularisierung] meistens die bessere Wahl.
+                    li.fragment PCA (sollte man) #[span.highlight nicht verwenden für Overfitting]. Bei Overfitting ist #[a.highlight(href="#/{{conceptLabel.REGULARIZATION.href}}") Regularisierung] meistens die bessere Wahl.
     section
         slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
             ul

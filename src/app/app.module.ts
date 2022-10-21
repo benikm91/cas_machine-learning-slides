@@ -104,9 +104,13 @@ import {
   DataSpecificationElementCategoricalFeatureEncodedComponent
 } from "./data-specification-elements/data-specification-element-categorical-feature-encoded.component";
 import {WhatIsFeatureSelectionComponent} from "./what-is-feature-selection/what-is-feature-selection.component";
+import {Day1TitleSlideComponent} from "./day-title-slide/day1-title-slide.component";
+import {Day2TitleSlideComponent} from "./day-title-slide/day2-title-slide.component";
+import {Day3TitleSlideComponent} from "./day-title-slide/day3-title-slide.component";
 
 @NgModule({
   declarations: [
+    Day1TitleSlideComponent, Day2TitleSlideComponent, Day3TitleSlideComponent,
     WhatIsMachineLearningComponent, RevealPresentationComponent, MlPresentationComponent, KnowledgeViewComponent,
     TablesOfContentConceptsComponent, TablesOfContentProblemsComponent, TableOfContentNode,
     QuestionSlideComponent, RemoveWrapperDirective,
