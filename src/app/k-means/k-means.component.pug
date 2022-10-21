@@ -5,8 +5,10 @@ ng-template('#slides'='')
         slide-with-header(header="K-Means - Data Specification")
             ul
                 li.fragment Welche #[span.highlight Features] wählen wir.
-                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
-                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    data-specification-element-numerical-feature-standardize
                 li.fragment Wie viele #[span.highlight Clusters] suchen wir.
     tables-of-content-k-means([active]="kmeansLabel.MODEL")
     section

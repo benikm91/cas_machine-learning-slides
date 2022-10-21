@@ -20,7 +20,9 @@ import metricMeanAbsoluteErrorA from './metric/mean-absolute-error-a.xml';
 import metricMeanAbsoluteErrorE from './metric/mean-absolute-error-e.xml';
 import metricMeanAbsoluteError from './metric/mean-absolute-error.xml';
 import metricCostFunctionMSE from './metric/cost-function-mse.xml';
+import metricCostFunctionMSECompact from './metric/cost-function-mse-compact.xml';
 import metricCostFunctionMSE1D from './metric/cost-function-mse-1d.xml';
+import metricCostFunctionMSE1DCompact from './metric/cost-function-mse-1d-compact.xml';
 import metricCostFunctionDerivative from './metric/cost-function-derivative.xml';
 import gradientDescentInit from './gradient-descent/gradient-descent-init.xml';
 import gradientDescentUpdate from './gradient-descent/gradient-descent-update.xml';
@@ -64,7 +66,9 @@ export class LinearRegressionComponent extends Slide {
   metricMeanAbsoluteErrorA = metricMeanAbsoluteErrorA
   metricMeanAbsoluteErrorE = metricMeanAbsoluteErrorE
   metricCostFunctionMSE = metricCostFunctionMSE
+  metricCostFunctionMSECompact = metricCostFunctionMSECompact
   metricCostFunctionMSE1D = metricCostFunctionMSE1D
+  metricCostFunctionMSE1DCompact = metricCostFunctionMSE1DCompact
   metricCostFunctionDerivative = metricCostFunctionDerivative
 
   gradientDescentInit = gradientDescentInit

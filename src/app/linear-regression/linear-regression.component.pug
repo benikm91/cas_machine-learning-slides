@@ -7,7 +7,8 @@ ng-template('#slides'='')
             ul
                 li.fragment Was ist die kontinuierliche #[span.highlight Ziel-Variable], z.B. #[span.code-font weight (g)]
                 li.fragment Welche #[span.highlight Features] wählen wir, z.B. um einen Fisch zu repräsentieren (#[span.code-font width (cm), ...])
-                li.fragment Kategorische Features (z.B. Fisch-Art) müssen für das Modell #[span.highlight encoded] werden.
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
                 // li.fragment
                 //     div #[span.highlight Anzahl Features] gibt die #[span.highlight Anzahl Parameter] vor.
                 //     div Also #[span.highlight mehr Features machen das Modell komplexer].
@@ -173,14 +174,26 @@ ng-template('#slides'='')
             p.fragment.text-center.alert.alert-warning Synonym: #[span.highlight Cost function] = Loss f. = Objective f.
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.COST_FUNCTION")
     section
-        slide-with-header(header="Linear Regression - Theory", [extra]="true")
-            div.d-flex.flex-row
-                div([mathjax]="noiseNormalDistributed").fragment
-            div
-                ul
-                    li.framgent (Annahme motiviert durch Central limit theorem)
-                    li.fragment Diese Annahme führt (mit dem üblichen Maximum Liklihood Ansatz) mathematisch zur #[span.highlight MSE Metrik].
-                    li.fragment Darum: Im #[span.code-font sklearn] wird #[span.code-font LinearRegression] nach der MSE-Kostenfunktion optimiert.
+        slide-with-header(header="Linear Regression - Kostenfunktion")
+            div([mathjax]="metricCostFunctionMSECompact")
+            div.fragment.mt-5.text-center.alert.alert-primary
+                div Im #[span.code-font sklearn] wird #[span.code-font LinearRegression] nach der MSE-Kostenfunktion optimiert.
+                div Es wären andere Kostenfunktionen möglich.
+    section
+        slide-with-header(header="Linear Regression - Kostenfunktion - Motivation", [extra]="true")
+            div.small-font
+                .row
+                    .col-6
+                        h5 Annahmen
+                        ul
+                            li #[span.highlight Lineares Modell]: Linearer Zusammenhang von Ziel und Features plus ein unabhängiger Fehler
+                            li Der unabhängige Fehler ist normalverteilt: #[span([mathjax]="noiseNormalDistributed")]
+                    .col-6
+                        h5 Konsequenzen
+                        div Diese Annahmen führt #[span.highlight mathematisch zur MSE Metrik].
+            div.mt-3
+                img(src="assets/images/regression/linear-regression-cost-function-motivation.png", height="290px")
+            div.mt-3.fragment.text-center.alert.alert-primary "Der Fehler ist normalverteilt" ist motiviert durch das #[a.highlight(href="https://en.wikipedia.org/wiki/Central_limit_theorem") Central Limit Theorem]
     section
         slide-with-header(header="Linear Regression - Code")
             div.notebook-name Teil 2 in in linear_regression.ipynb
@@ -196,11 +209,12 @@ ng-template('#slides'='')
                 li.fragment Unterschiedliche Garantien
                     ul
                         li #[span.highlight Performanz]: Wie schnell
-                        li #[span.highlight Generalisierung]: Qualität
+                        li (#[span.highlight Generalisierung]: Qualität)
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.OPTIMIERUNG")
     section
         slide-with-header(header="Linear Regression - Kostenfunktion - Visuell")
-            div.mt-5.d-flex.justify-center
+            div Folgende Funktion #[span([mathjax]="metricCostFunctionMSE1DCompact")] visualisiert für einen bestimmten Datensatz:
+            div.d-flex.justify-center
                 img(src="assets/images/gradient-descent/gradient_descent_cost_function.png").fragment
             p.fragment.text-center.alert.alert-primary Schüssel nennt man #[span.highlight Convex Cost function]
     section
@@ -235,17 +249,17 @@ ng-template('#slides'='')
             tables-of-content-concepts-link([active]="conceptLabels.OPTIMIZATION_ALGORITHMS")
             div #[span.highlight Gradient Descent]-Algorithmus funktioniert wie folgt:
             ol
-                li.fragment.mt-5
+                li.fragment
                     div.d-flex.align-end(style={alignItems: "stretch"})
                         div.align-self-end Initialisiere:&nbsp;
                         div.align-self-end([mathjax]="gradientDescentInit")
                         div.align-self-end mit zufälligen Werten.
-                li.fragment.mt-5
+                li.fragment
                     div.d-flex.align-end(style={alignItems: "stretch"})
                         div.align-self-end Aktualisiere:&nbsp;
                         div.align-self-end([mathjax]="gradientDescentUpdate")
             p.mt-5.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Cost function] möglich
-            p.mt-2.fragment.text-center.alert.alert-warning In der Praxis wird die #[span.highlight Analytische Methode für Lineare Regression] eingesetzt (schneller)
+            p.mt-5.fragment.text-center.alert.alert-warning In der Praxis wird die #[span.highlight Analytische Methode für Lineare Regression] eingesetzt (schneller)
             // div.fragment
             //     div.mt-5.d-flex.justify-center.align-end(style={alignItems: "stretch"})
             //         div.align-self-end Wiederhole Schritt 2. bis&nbsp;

@@ -11,7 +11,7 @@ ng-template('#slides'='')
                     ul
                         li #[span.highlight L1-Regularization] (Absolut Wert - "Hoch 1")
                         li #[span.highlight L2-Regularization] (Quadrieren - Hoch 2)
-                div.fragment.mt-3.text-center.alert.alert-warning Daten müssen Standard Skaliert werden!
+                div.fragment.mt-5.text-center.alert.alert-warning Daten müssen #[a(href="#/{{conceptLabels.STANDARDIZE.href}}").highlight Standard Skaliert] werden!
     section
         slide-with-header(header="L1-Regularization")
             ul
@@ -20,7 +20,7 @@ ng-template('#slides'='')
                         img(src="assets/images/regularization/l1-prior.png", style={height: "150px"}).img-fluid
                 li Dies erreichen wir mit der #[span.highlight Anpassung] der Kostenfunktion #[span(mathjax="<math><mi>J</mi></math>")]:
                     div([mathjax]="l1Regularization")
-            div.fragment.mt-4.text-center.alert.alert-primary Gut für Feature-Selection!
+            div.fragment.mt-4.text-center.alert.alert-primary Gut für automatische #[a.highlight(href="#/{{conceptLabels.FEATURE_SELECTION.href}}") Feature-Selection]!
     section
         slide-with-header(header="L2-Regularization")
             ul

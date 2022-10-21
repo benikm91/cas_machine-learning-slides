@@ -1,0 +1,22 @@
+<math>
+    <mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd>
+                <mrow>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>0</mn>
+                    </msub>
+                    <mo separator="true">,</mo>
+                    <msub class="weight">
+                        <mi>β</mi>
+                        <mn>1</mn>
+                    </msub>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

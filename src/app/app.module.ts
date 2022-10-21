@@ -97,6 +97,13 @@ import {
   TablesOfContentKMeansComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-kmeans.component";
 import {ModelComplexitySlideComponent} from "./model-complexity-slide/model-complexity-slide.component";
+import {
+  DataSpecificationElementNumericalFeatureStandardizeComponent
+} from "./data-specification-elements/data-specification-element-numerical-feature-standardize.component";
+import {
+  DataSpecificationElementCategoricalFeatureEncodedComponent
+} from "./data-specification-elements/data-specification-element-categorical-feature-encoded.component";
+import {WhatIsFeatureSelectionComponent} from "./what-is-feature-selection/what-is-feature-selection.component";
 
 @NgModule({
   declarations: [
@@ -114,7 +121,8 @@ import {ModelComplexitySlideComponent} from "./model-complexity-slide/model-comp
     WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
     OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
-    DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent
+    DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
+    DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent
   ],
   imports: [
     BrowserModule,

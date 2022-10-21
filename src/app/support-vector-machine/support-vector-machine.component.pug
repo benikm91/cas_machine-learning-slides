@@ -6,8 +6,10 @@ ng-template('#slides'='')
             ol
                 li.fragment Was ist die #[span.highlight kategorische Ziel-Variable], z.B. #[span.code-font name]
                 li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
-                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
-                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    data-specification-element-numerical-feature-standardize
     tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.MODEL")
     section
         slide-with-header(header="Heaviside step function")

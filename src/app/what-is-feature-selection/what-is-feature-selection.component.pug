@@ -1,0 +1,40 @@
+ng-template('#slides'='')
+    tables-of-content-concepts([active]="methodLabels.FEATURE_SELECTION")
+    section
+        slide-with-header(header="Feature Selection")
+            ul
+                li Nehme eine #[span.highlight Teilmenge der verfügbaren Features] (anstatt alle verfügbaren Features).
+                li Entferne Features, die mit dem Problem #[span.highlight wenig oder nichts] zu tun haben.
+            div.mt-5.d-flex.justify-center.fragment
+                model-3-visualization(feature-header="Feature Space", [with-trigger]="false", output-header="Output Space" )
+                    div(inputHeader)
+                        div(style={marginTop: "-40px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                    div(input).rect-styling
+                        div([mathjax]="inputs").smaller-font
+                    div(pre).model-box Feature Selection
+                    div(feature).rect-styling
+                        div([mathjax]="features").smaller-font
+                    div(model).model-box Modell
+                    div(output).rect-styling
+                        div([mathjax]="outputs").smaller-font
+            div.mt-5.fragment.text-center.alert.alert-success
+                div Weniger Features => Bessere Lern-Ausgangslage
+                div
+                    | => Bessere Interpretation
+    section
+        slide-with-header(header="Feature Selection - Ansätze")
+            ul
+                li
+                    span #[span.highlight Manuell:] Filtern der unwichtigen Features durch #[span.highlight Domänen-Wissen] (mit Annahmen).
+                    ul.smaller-font
+                        li z.B. Ausschliessen von Hausfarbe für den Verkaufspreis
+            ul.fragment
+                li
+                    span #[span.highlight Automatisch:] Filtern der unwichtigen Features durch #[span.highlight Zusammenhänge] in Daten (aus Daten).
+                    ul.smaller-font
+                        li z.B. Ausschliessen von Features die keine oder wenig Korrelation mit Zielvariable haben.
+                        li.fragment
+                            span [Additional Resources]:&nbsp;
+                            a(href="https://scikit-learn.org/stable/modules/feature_selection.html") sklearn User Guide
+                            div Empfehlung: Grundsätzlich Methoden von #[span.highlight "Recursive feature elimination"] nicht "Univariate feature selection" verwenden. Da Korrelationen zwischen den Features einen Einfluss hat.

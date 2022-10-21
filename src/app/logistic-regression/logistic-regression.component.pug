@@ -7,8 +7,11 @@ ng-template('#slides'='')
             ol
                 li.fragment Was ist die #[span.highlight kategorische Ziel-Variable], z.B. #[span.code-font name]
                 li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
-                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
-                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden (wenn Regularisiert).
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    span Wenn Regularisiert (default):&nbsp;
+                    data-specification-element-numerical-feature-standardize
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.MODEL")
     section
         slide-with-header(header="Logistic Regression - Intuition")
@@ -259,6 +262,14 @@ ng-template('#slides'='')
         slide-with-header(header="Logistic Regression - Code")
             div.notebook-name logistic_regression.ipynb
             img(src="assets/images/code.png")
+    section
+        slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
+            ul
+                li
+                    div [Alternative] Logistic Regression
+                        ul
+                            li
+                                a(href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression") sklearn User Guide
     tables-of-content-logistic-regression
         div.mt-5.row
             div.col-6

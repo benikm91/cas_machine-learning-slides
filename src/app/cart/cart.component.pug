@@ -6,7 +6,8 @@ ng-template('#slides'='')
             ol
                 li.fragment Was ist die #[span.highlight Ziel-Variable], z.B. #[span.code-font name]
                 li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
-                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
     tables-of-content-cart([active]="cartLabels.MODEL")
     section
         slide-with-header(header="Decision Trees - Intuition")

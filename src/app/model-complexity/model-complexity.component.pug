@@ -1,5 +1,5 @@
 div.d-flex.justify-center
-    .row
+    .row(style={marginTop:"-30px"})
         .col-8
             div#model-complexity-visualization
         .col-4.text-start
@@ -39,6 +39,7 @@ div(style={fontSize: "14px"})
             input.form-range(style={width: "100%"}, "#features"="", type="range" min="10" max="99" value="50", (input)="updateParamsAndDrawing()")
         .col-12.text-start
             ul
+                li Feature Selection
                 li Feature Engineering
     .row.mt-4
         .col-4.text-start

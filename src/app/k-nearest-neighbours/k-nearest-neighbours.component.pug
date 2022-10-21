@@ -7,9 +7,9 @@ ng-template('#slides'='')
                 li.fragment Was ist die #[span.highlight kategorische Ziel-Variable], z.B. #[span.code-font name]
                 li.fragment Welche #[span.highlight Features] wählen wir, z.B. um eine Blume zu repräsentieren (#[span.code-font petal-length (cm), petal-width (cm), ...])
                 li.fragment
-                    | Kategorische Features (z.B. Fisch-Art) müssen für das Modell #[span.highlight encoded] werden.
-                    | One-Hot-Encoding funktioniert nicht gut, bräuchte Latent-Encoding.
-                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    data-specification-element-numerical-feature-standardize
     tables-of-content-knn([active]="knnLabels.MODEL")
     section
         slide-with-header(header="K-Nearest-Neighbors - Intuition")

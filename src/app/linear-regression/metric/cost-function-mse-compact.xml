@@ -1,0 +1,39 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="equation equation-colored tml-array tml-gather">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="weight">
+                        <mi>β</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <mrow>
+                    <mo>=</mo>
+                    <mi>M</mi>
+                    <mi>S</mi>
+                    <mi>E</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mover class="label">
+                        <mi>y</mi>
+                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                    </mover>
+                    <mo separator="true">,</mo>
+                    <mover class="output">
+                        <mover>
+                            <mi>y</mi>
+                            <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
+                        </mover>
+                        <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+                    </mover>
+                    <mo form="postfix" stretchy="false">)</mo>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

@@ -239,8 +239,10 @@ ng-template('#slides'='')
         slide-with-header(header="PCA - Data Specification")
             ol
                 li.fragment Welche #[span.highlight Features] haben wir, z.B. #[span.code-font pixel]
-                li.fragment Kategorische Features müssen für das Modell #[span.highlight encoded] werden.
-                li.fragment Numerische Features müssen #[span.highlight standardisiert] werden.
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    data-specification-element-numerical-feature-standardize
             div.fragment.mt-5.text-center.alert.alert-primary Beachte: Wir haben keine Zielvariable. Wir sind im #[span.highlight Unsupervised Learning]
     tables-of-content-pca([active]="pcaLabel.COST_FUNCTION")
     section
@@ -336,3 +338,17 @@ ng-template('#slides'='')
                         li Independent component analysis (ICA)
                         li Isomap
                         li ...
+    tables-of-content-pca
+        div.mt-5.row
+            div.col-6
+                div.d-flex.justify-center
+                    img(src="assets/images/pca/pca-1.png", height="150px")
+            div.col-6.mt-5
+                div.d-flex.justify-center.scale-05
+                    div([mathjax]="encoder")
+            div.col-6.mt-5
+                div.d-flex.justify-center.scale-05
+                    div([mathjax]="costFunction")
+            div.col-6
+                div.d-flex.justify-center
+                    img(src="assets/images/pca/example-img-reconstruction.png", height="150px")

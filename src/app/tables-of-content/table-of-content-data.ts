@@ -34,7 +34,7 @@ export class ProblemTableOfContentLabel extends TableOfContentLabel {
     public static readonly CLASSIFICATION = new ProblemTableOfContentLabel("Classification", "Classification");
     public static readonly UNSUPERVISED_LEARNING = new ProblemTableOfContentLabel("Unsupervised Learning", "Unsupervised Learning");
     public static readonly CLUSTERING = new ProblemTableOfContentLabel("Clustering", "Clustering");
-    public static readonly DIMENSIONALITY_REDUCTION = new ProblemTableOfContentLabel("Dimensionality Reduction", "Dimensionality Reduction");
+    public static readonly DIMENSIONALITY_REDUCTION = new ProblemTableOfContentLabel("Dimensionality Reduction", "Unsupervised Learning/Dimensionality Reduction");
     public static readonly REINFORCEMENT_LEARNING = new ProblemTableOfContentLabel("Reinforcement Learning", "Reinforcement Learning");
 }
 
@@ -66,7 +66,8 @@ export class ConceptTableOfContentLabel extends TableOfContentLabel {
     public static readonly FEATURE_PREPROCESSING = new ProblemTableOfContentLabel("Feature Preprocessing", "Feature Preprocessing");
     public static readonly STANDARDIZE = new ProblemTableOfContentLabel("Standardize", "Standardize");
     public static readonly ENCODING = new ProblemTableOfContentLabel("Encoding", "Encoding");
-    public static readonly DIMENSIONALITY_REDUCTION = new ProblemTableOfContentLabel("Dimensionality Reduction", "Dimensionality Reduction");
+    public static readonly FEATURE_SELECTION = new ProblemTableOfContentLabel("Feature Selection", "Feature Selection");
+    public static readonly DIMENSIONALITY_REDUCTION = new ProblemTableOfContentLabel("Dimensionality Reduction", "Feature Preprocessing/Dimensionality Reduction");
     public static readonly FEATURE_ENGINEERING = new ProblemTableOfContentLabel("Feature Engineering", "Feature Engineering");
     public static readonly FEATURE_ENGINEERING_EXPLICIT = new ProblemTableOfContentLabel("Feature Engineering (Explizit)", "Feature Engineering (Explizit)");
     public static readonly KERNEL_TRICK = new ProblemTableOfContentLabel("Kernel Trick", "Kernel Trick");
@@ -94,6 +95,7 @@ export function createMethodTableOfContent(active: ConceptTableOfContentLabel | 
     return c(ConceptTableOfContentLabel.CONCEPTS, active, [
         c(ConceptTableOfContentLabel.FEATURE_PREPROCESSING, active, [
             c(ConceptTableOfContentLabel.ENCODING, active),
+            c(ConceptTableOfContentLabel.FEATURE_SELECTION, active),
             c(ConceptTableOfContentLabel.STANDARDIZE, active),
             c(ConceptTableOfContentLabel.DIMENSIONALITY_REDUCTION, active),
         ]),

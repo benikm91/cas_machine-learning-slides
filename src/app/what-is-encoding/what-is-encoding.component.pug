@@ -82,7 +82,13 @@ ng-template('#slides'='')
             div ...
             span.fragment(fragment-trigger, (trigger)="oneHotEncoderRoach.start(); oneHotEncoderPike.start()", (untrigger)="oneHotEncoderRoach.end(); oneHotEncoderPike.end()")
             span.fragment(fragment-trigger, (trigger)="oneHotEncoderRoach.end(); oneHotEncoderPike.end()")
-            div.fragment.text-center.alert.alert-primary Macht aus #[span.code-font 1] Feature, #[span.highlight #[span.code-font n] Features]. Kategorien haben #[span.highlight keinen Zusammenhang]!
+            div.fragment.text-center.alert.alert-primary Macht aus #[span.code-font 1] Feature, #[span.highlight #[span.code-font n] Features]. Kategorien haben dafür #[span.highlight keinen Zusammenhang]!
+    section
+        slide-with-header(header="Encoding")
+            ul
+                li Meistens wird #[span.highlight One-Hot-Encoding] eingesetzt, da es #[span.highlight keinen Zusammenhang] zwischen den Werten annimmt.
+                li.fragment Bei wenig Daten und dem richtigen Feature (z.B. Kleidergrössen "S", "M", "L") könnte Ordinal-Encoding besser sein.
+                li.fragment Man kann auch #[span.highlight eigene Encodings konstruieren] (z.B. durch Domänen-Wissen oder gelernt aus Daten).
     // section
     //     slide-with-header(header="Latent-Encoding", [extra]="true")
     //         div Mappt einer Menge an Objekten zu #[span.highlight #[span.code-font m]-dimensionalen] Vektoren

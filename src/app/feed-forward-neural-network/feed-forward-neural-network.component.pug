@@ -27,7 +27,10 @@ ng-template('#slides'='')
                 li.fragment Was ist das #[span.highlight Ziel]
                 li.fragment Was ist die #[span.highlight Kostenfunktion]
                 li.fragment Welche #[span.highlight Features] wählen wir
-                li.fragment Kategorische Features müssen #[span.highlight encoded] werden
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    data-specification-element-numerical-feature-standardize
     tables-of-content-fnn([active]="fnnLabels.MODEL")
     section
         slide-with-header(header="Erinnerung: Lineare Regression - Nun als Network")
