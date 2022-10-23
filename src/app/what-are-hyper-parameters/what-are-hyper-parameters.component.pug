@@ -1,7 +1,7 @@
 ng-template('#slides'='')
     tables-of-content-concepts([active]="conceptLabels.HYPERPARAMETER_SELECTION" )
     section
-        slide-with-header(header="Hyper Parameter")
+        slide-with-header(header="Hyper-Parameter")
             ul
                 li #[span.highlight Hyper-Parameter] sind Parameter, die #[span.highlight nicht gelernt] werden: #[span.highlight "konfiguriert" das Modell]
                 li Beispiele:
@@ -16,8 +16,8 @@ ng-template('#slides'='')
                         li Netzwerk Architektur (Neural Network)
                         li ...
     section
-        slide-with-header(header="Hyper Parameter Selection")
-            div Wie können wir einen Hyper Parameter wählen?
+        slide-with-header(header="Hyper-Parameter Selection")
+            div Wie können wir einen Hyper-Parameter wählen?
             ul
                 li #[span.highlight Manuell]: Mit Erfahrung und Theorie #[span.highlight bestmöglich setzen].
                     ul
@@ -27,7 +27,7 @@ ng-template('#slides'='')
                     ul
                         li Rechenintensiv, vor allem bei rechenintensiven Modellen (z.B. Neural Networks)
     section
-        slide-with-header(header="Hyper Parameter Selection - Suchen")
+        slide-with-header(header="Hyper-Parameter Selection - Suchen")
             .row.mt-2
                 .col-5 #[span.highlight GridSearch]
                 .col-7.text-start Probiere eine #[span.highlight Liste von Werten] für beispielsweise die Regularisierung Stärke durch, z.B. 0.1, 1.0 und 10.0
@@ -35,6 +35,6 @@ ng-template('#slides'='')
                 .col-5 #[span.highlight RandomizedSearch]
                 .col-7.text-start Probiere #[span.highlight zufällige Werte] für beispielsweise die Regularisierung Stärke innerhalb eines Bereiches aus, z.B. 10 zufällige Werte innerhalb [0.1, 10.0]
     section
-        slide-with-header(header="Hyper Parameter Selection - Code")
+        slide-with-header(header="Hyper-Parameter Selection - Code")
             div.notebook-name hyper_parameter_regularization.ipynb
             img.mt-5(src="assets/images/code.png")

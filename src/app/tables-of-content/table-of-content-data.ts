@@ -87,7 +87,7 @@ export class ConceptTableOfContentLabel extends TableOfContentLabel {
     public static readonly COORDINATE_DESCENT = new ProblemTableOfContentLabel("Coordinate Descent", "Coordinate Descent");
     public static readonly MODEL_SELECTION = new ProblemTableOfContentLabel("Model Selection", "Model Selection");
     public static readonly ALGORITHM_SELECTION = new ProblemTableOfContentLabel("Algorithm Selection", "Algorithm Selection");
-    public static readonly HYPERPARAMETER_SELECTION = new ProblemTableOfContentLabel("Hyperparameter Selection", "Hyperparameter Selection");
+    public static readonly HYPERPARAMETER_SELECTION = new ProblemTableOfContentLabel("Hyper-Parameter Selection", "Hyper-Parameter Selection");
 
 }
 
