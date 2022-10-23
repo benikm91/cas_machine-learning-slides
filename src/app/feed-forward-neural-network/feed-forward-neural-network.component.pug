@@ -1,15 +1,16 @@
 ng-template('#slides'='')
     section
-        slide-with-header(header="Deep Learning - Hype oder Realität")
-            div TODO
+        slide-with-header(header="Deep Learning")
+            img(src="assets/images/machine-learning/machine-learning-as-subfield-of-ai.png", style={height: "400px"}).mt-5.img-fluid
+            div.mt-3.fragment.text-center.alert.alert-primary Deep Learning = Machine Learning mit Neuralen Netzen als Modell
     section
         slide-with-header(header="Deep Learning - Übersicht")
             ul
                 li Machine Learning Modell ist ein #[span.highlight Neural Network]
                 li Kann Supervised Learning
                 li Kann Unsupervised Learning
-                li Benötigt viele Daten
-                li Benötigt viel Rechenzeit (GPU)
+                li Benötigt #[span.highlight viele Daten]
+                li Benötigt #[span.highlight viel Rechenzeit (GPU)]
                 li Meistens beste Wahl bei #[span.highlight unstrukturierten Daten] (Sequenzen, Text, Bilder, ...)
                 li Bei strukturierte Daten (z.B. ML Lab Tag 1) meistens nicht beste Wahl.
     section
@@ -20,7 +21,14 @@ ng-template('#slides'='')
                 li Neuronen haben eingehende und ausgehende Verbindungen (Kanten).
                 li Neuronen feuern (geben einen Wert weiter), wenn eingehende Neuronen #[span.highlight genug stark] feuern.
     tables-of-content-fnn
-        div.fragment.text-center.alert.alert-warning (FF) Neural Network = Multi Layer Perceptron (MLP)
+        div.fragment.text-center.alert.alert-warning
+            | Feedforward Neural Network =
+            br
+            | Fully Connected Neural Network =
+            br
+            | Multi Layer Perceptron (MLP) =
+            br
+            | Neural Network (NN)
     tables-of-content-fnn([active]="fnnLabels.DATA_SPECIFICATION")
     section
         slide-with-header(header="Neural Network - Specification")
@@ -34,25 +42,25 @@ ng-template('#slides'='')
                     data-specification-element-numerical-feature-standardize
     tables-of-content-fnn([active]="fnnLabels.MODEL")
     section
-        slide-with-header(header="Erinnerung: Lineare Regression - Nun als Network")
+        slide-with-header(header="Lineare Regression - Als (Neural) Network")
             .row
                 .col-6
                     h5 Als Formell
                 .col-6
-                    h5 Als Netzwerk
+                    h5 Als (Neural) Netzwerk
             .row.mt-4
                 .col-6.small-font
                     div([mathjax]="linearRegression")
                 .col-6
                     img(src="assets/images/neural-network/linear_regression_as_nn.png").img-fluid-both
-            div.mt-4.fragment.text-center.alert.alert-primary Die Berechnung der Linearen Regression als Netzwerk dargestellt.
+            div.mt-4.fragment.text-center.alert.alert-primary Die Berechnung der Linearen Regression als (Neural) Network dargestellt.
     section
-        slide-with-header(header="Idee eines Neural Networks")
-            .row.mt-5
+        slide-with-header(header="Hidden Layer(s) hinzufügen")
+            .row
                 .col-6
                     h5 Als Formell
                 .col-6
-                    h5 Als Netzwerk
+                    h5 Als (Neural) Netzwerk
             .row.mt-4
                 .col-6.small-font
                     div([mathjax]="oneHiddenLayerZ1")
@@ -63,14 +71,14 @@ ng-template('#slides'='')
                     img(src="assets/images/neural-network/one_hidden_nn.png").img-fluid-both
                     img.fragment(src="assets/images/neural-network/one_hidden_nn_with_params.png").img-fluid-both
             div.fragment.text-center.alert.alert-primary
-                div Mehrere Lineare Regressionen nebeneinander und übereinander!
+                div Hidden Layer entspricht mehreren Linearen Regressionen nebeneinander und übereinander!
     section
-        slide-with-header(header="Idee eines Neural Networks mit Aktivierungsfunktion")
-            .row.mt-5
+        slide-with-header(header="Aktivierungsfunktion hinzufügen")
+            .row
                 .col-6
                     h5 Als Formell
                 .col-6
-                    h5 Als Netzwerk
+                    h5 Als Neural Netzwerk
             .row.mt-4
                 .col-6.small-font
                     div([mathjax]="oneHiddenLayerWithActivationZ1")
@@ -87,17 +95,19 @@ ng-template('#slides'='')
                 div.small-font
                     span Die Aktivierungsfunktion macht das Modell #[span.highlight non-linear]. Heute wird oft ReLU verwendet (#[a(href="https://en.wikipedia.org/wiki/Activation_function") Liste von gängigen Aktivierungsfunktionen]).
     section
-        slide-with-header(header="Erinnerung: Logistic Regression - Nun als Network")
+        slide-with-header(header="Logistic Regression - Als (Neural) Netzwerk")
             .row
                 .col-6
                     h5 Als Formell
                 .col-6
-                    h5 Als Netzwerk
+                    h5 Als (Neural) Netzwerk
             .row.mt-4
                 .col-6.small-font
                     div([mathjax]="logisticRegression")
                 .col-6
                     img(src="assets/images/neural-network/logistic_regression_as_nn.png").img-fluid-both
+            div.mt-5.fragment.text-center.alert.alert-primary
+                div Hier ist die Aktivierungsfunktion der #[span.highlight Sigmoid].
     section
         slide-with-header(header="Neural Network - Mehrere Outputs möglich", [extra]="true")
             .row
@@ -116,6 +126,24 @@ ng-template('#slides'='')
                 .col-6
                     img(src="assets/images/neural-network/one_hidden_nn_with_multiple_outputs.png").img-fluid-both
     section
+        slide-with-header(header="Logistic Regression - Mehrere Outputs", [extra]="true")
+            .row
+                .col-6
+                    h5 Als Formell
+                .col-6
+                    h5 Als Netzwerk
+            .row.mt-4
+                .col-6.small-font
+                    div([mathjax]="logisticRegressionY1")
+                    div ...
+                    div([mathjax]="logisticRegressionYo")
+                .col-6
+                    img(src="assets/images/neural-network/logistic_regression_as_nn_with_multiple_output.png").img-fluid-both
+            div.mt-5.fragment.text-center.alert.alert-primary
+                div Logistische Regression mit mehreren Outputs.
+                div Hier ist die Aktivierungsfunktion #[span.highlight Softmax].
+
+    section
         slide-with-header(header="Deep Learning - Framework für Modelle")
             ul(style={fontSize: "32px"})
                 li Modellkomplexität einfach anpassbar
@@ -126,7 +154,8 @@ ng-template('#slides'='')
                     li In einem Layer #[span.highlight weniger Nodes] => #[span.highlight Weniger lernbare Parameter]
                 li.mt-2 Kostenfunktion
                 ul
-                    li Kostenfunktion muss einfach ableitbar sein. Kann je nach Problem spezifisch gewählt werden.
+                    li Kostenfunktion muss ableitbar sein.
+                    li Kann Problem spezifisch gewählt werden.
                 li.mt-2 Viele weitere Möglichkeiten (Deep Learning)
                 ul
                     li Wir können die Architektur (Verbindungen) vom Netzwerk anders gestalten, entsprechend dem zugrunde liegenden Problem (z.B. CNN und RNN).
@@ -176,7 +205,7 @@ ng-template('#slides'='')
                             div.code Deer
             div.fragment.text-center.alert.alert-primary.small-font
                 | Die Hidden Layers können als #[span.highlight lernbare Dimensionality Reduction] betrachtet werden.
-                | Dabei lernt das Modell, welche Informationen für den spezifischen Task weggeworfen werden können.
+                | Dabei lernt das Modell, welche Informationen für #[span.highlight das spezifische Ziel] weggeworfen werden können.
     tables-of-content-fnn([active]="fnnLabels.COST_FUNCTION")
     section
         slide-with-header(header="Problemspezifische Kosten Funktion", [extra]="true")

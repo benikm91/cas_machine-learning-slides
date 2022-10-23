@@ -2,12 +2,12 @@
     <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
         <mtr>
             <mtd>
-                <msub>
-                    <mover class="output">
+                <msub class="output">
+                    <mover>
                         <mi>y</mi>
                         <mo>^</mo>
                     </mover>
-                    <mi>o</mi>
+                    <mn>o</mn>
                 </msub>
             </mtd>
             <mtd>
@@ -19,32 +19,31 @@
                 <mrow>
                     <mi>ϕ</mi>
                     <mo form="prefix" stretchy="false">(</mo>
-                    <msubsup class="weight">
+                    <msub class="weight">
                         <mi>β</mi>
                         <mn>o,0</mn>
-                        <mn>(2)</mn>
-                    </msubsup>
+                    </msub>
                     <mo>+</mo>
-                    <msubsup class="weight">
+                    <msub class="weight">
                         <mi>β</mi>
                         <mn>o,1</mn>
-                        <mn>(2)</mn>
-                    </msubsup>
+                    </msub>
+                    <mo>*</mo>
                     <msub class="feature">
-                        <mi>z</mi>
+                        <mi>x</mi>
                         <mn>1</mn>
                     </msub>
                     <mo>+</mo>
                     <mo>…</mo>
                     <mo>+</mo>
-                    <msubsup class="weight">
+                    <msub class="weight">
                         <mi>β</mi>
-                        <mn>o,h</mn>
-                        <mn>(2)</mn>
-                    </msubsup>
+                        <mn>o,p</mn>
+                    </msub>
+                    <mo>*</mo>
                     <msub class="feature">
-                        <mi>z</mi>
-                        <mn>h</mn>
+                        <mi>x</mi>
+                        <mn>p</mn>
                     </msub>
                     <mo form="postfix" stretchy="false">)</mo>
                 </mrow>

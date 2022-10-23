@@ -105,7 +105,7 @@ export function createKNNTableOfContent(active: KNNTableOfContentLabel | null): 
 
 
 export class FNNTableOfContentLabel extends TableOfContentLabel {
-    public static readonly FNN = new FNNTableOfContentLabel("(Feed-Forward) Neural Network", "NN");
+    public static readonly FNN = new FNNTableOfContentLabel("Feedforward Neural Network", "NN");
     public static readonly DATA_SPECIFICATION = new FNNTableOfContentLabel("Specification", "NN/Specification");
     public static readonly MODEL = new FNNTableOfContentLabel("Model" , "NN/Model" );
     public static readonly COST_FUNCTION = new FNNTableOfContentLabel("Cost function" , "NN/Cost function" );

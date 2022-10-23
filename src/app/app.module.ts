@@ -108,6 +108,9 @@ import {Day1TitleSlideComponent} from "./day-title-slide/day1-title-slide.compon
 import {Day2TitleSlideComponent} from "./day-title-slide/day2-title-slide.component";
 import {Day3TitleSlideComponent} from "./day-title-slide/day3-title-slide.component";
 import {WhatAreHyperParametersComponent} from "./what-are-hyper-parameters/what-are-hyper-parameters.component";
+import {
+  DataSciencePitfallsInconsistentPreprocessingComponent
+} from "./data-science-pitfalls/inconsistent-preprocessing/data-science-pitfalls-inconsistent-preprocessing.component";
 
 @NgModule({
   declarations: [
@@ -128,7 +131,7 @@ import {WhatAreHyperParametersComponent} from "./what-are-hyper-parameters/what-
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
     DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
-    WhatAreHyperParametersComponent
+    WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent
   ],
   imports: [
     BrowserModule,

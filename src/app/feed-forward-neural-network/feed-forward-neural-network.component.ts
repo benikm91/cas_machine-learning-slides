@@ -5,6 +5,8 @@ import {
 } from "../tables-of-content-machine-learning-algorithm/table-of-content-linear-regression-data";
 import linearRegression from './linear-model/linear-regression.xml';
 import logisticRegression from './linear-model/logistic-regression.xml';
+import logisticRegressionY1 from './linear-model/logistic-regression-y1.xml';
+import logisticRegressionYo from './linear-model/logistic-regression-yo.xml';
 import oneHiddenLayerZ1 from './one-hidden-layer/z1.xml';
 import oneHiddenLayerZh from './one-hidden-layer/zh.xml';
 import oneHiddenLayerOutput from './one-hidden-layer/output.xml';
@@ -29,6 +31,8 @@ export class FeedForwardNeuralNetworkComponent extends Slide {
   fnnLabels = FNNTableOfContentLabel
   linearRegression = linearRegression
   logisticRegression = logisticRegression
+  logisticRegressionY1 = logisticRegressionY1
+  logisticRegressionYo = logisticRegressionYo
   oneHiddenLayerZ1 = oneHiddenLayerZ1
   oneHiddenLayerZh = oneHiddenLayerZh
   oneHiddenLayerOutput = oneHiddenLayerOutput
