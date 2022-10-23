@@ -92,7 +92,9 @@ ng-template('#slides'='')
                 div(second).d-flex.flex-column
                     h3 2 Feature
                     div([mathjax]="linearRegression2D", style={fontSize: "14pt"})
-                    img(src="assets/images/data-with-linear-regression-model-2d.png").fragment
+                    div.r-stack
+                        img(src="assets/images/data-2d.png").fragment
+                        img(src="assets/images/data-with-linear-regression-model-2d.png").fragment
                 div(third).d-flex.flex-column
                     h3 3 Feature
                     div([mathjax]="linearRegression3D", style={fontSize: "14pt"})
@@ -100,30 +102,6 @@ ng-template('#slides'='')
                         div(style={marginTop: "100px"}).w-100
                             div.m-auto ???
             p.fragment.text-center.alert.alert-primary #[span.highlight Visualisierung] gut für #[span.highlight Intuition].#[br]#[span.highlight Mathematik] verallgemeinert auf #[span.highlight höhere Dimensionen].
-    section
-        slide-with-header(header="Linear Regression - Limits", [extra]="true")
-            div.row
-                div.col-5.offset-1
-                    h6 Possible
-                div.col-5
-                    h6 Impossible (in Feature Space)
-                div.col-1
-            div.row.fragment
-                div.col-1.m-auto
-                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
-                div.col-5.p-2
-                    img(src="assets/images/data-with-linear-regression-model-1d.png").limit-possible
-                div.col-5.p-2
-                    img(src="assets/images/polynomial-regression.png").limit-impossible
-                div.col-1
-            div.row.fragment
-                div.col-1.m-auto
-                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
-                div.col-5.p-2
-                    img(src="assets/images/data-with-linear-regression-model-2d.png").limit-possible
-                div.col-5.p-2
-                    img(src="assets/images/polynomial-regression-2d.png").limit-impossible
-                div.col-1
     question-slide([questions]="linearRegressionQuestions")
     tables-of-content-concepts([active]="conceptLabels.REGRESSION_METRICS")
     section
@@ -144,7 +122,7 @@ ng-template('#slides'='')
                         li Sind gröbere Fehler mehr zu bestrafen?
                         li Sind Fehler Absolut oder Prozentual zu bestrafen?
                 li.fragment Die Wahl der #[span.highlight Metrik] gibt vor wie Fehler zu gewichten sind.
-            p.fragment.text-center.alert.alert-primary Welche Metrik ist #[span.highlight Problemabhängig]!
+            p.mt-5.fragment.text-center.alert.alert-primary Welche Metrik geeignet ist, ist #[span.highlight Problemabhängig]!
     section
         slide-with-header(header="{{problemLabels.REGRESSION.label}} - Metrik - Beispiele")
             ul
@@ -179,21 +157,21 @@ ng-template('#slides'='')
             div.fragment.mt-5.text-center.alert.alert-primary
                 div Im #[span.code-font sklearn] wird #[span.code-font LinearRegression] nach der MSE-Kostenfunktion optimiert.
                 div Es wären andere Kostenfunktionen möglich.
-    section
-        slide-with-header(header="Linear Regression - Kostenfunktion - Motivation", [extra]="true")
-            div.small-font
-                .row
-                    .col-6
-                        h5 Annahmen
-                        ul
-                            li #[span.highlight Lineares Modell]: Linearer Zusammenhang von Ziel und Features plus ein unabhängiger Fehler
-                            li Der unabhängige Fehler ist normalverteilt: #[span([mathjax]="noiseNormalDistributed")]
-                    .col-6
-                        h5 Konsequenzen
-                        div Diese Annahmen führt #[span.highlight mathematisch zur MSE Metrik].
-            div.mt-3
-                img(src="assets/images/regression/linear-regression-cost-function-motivation.png", height="290px")
-            div.mt-3.fragment.text-center.alert.alert-primary "Der Fehler ist normalverteilt" ist motiviert durch das #[a.highlight(href="https://en.wikipedia.org/wiki/Central_limit_theorem") Central Limit Theorem]
+    // section
+    //     slide-with-header(header="Linear Regression - Kostenfunktion - Motivation", [extra]="true")
+    //         div.small-font
+    //             .row
+    //                 .col-6
+    //                     h5 Annahmen
+    //                     ul
+    //                         li #[span.highlight Lineares Modell]: Linearer Zusammenhang von Ziel und Features plus ein unabhängiger Fehler
+    //                         li Der unabhängige Fehler ist normalverteilt: #[span([mathjax]="noiseNormalDistributed")]
+    //                 .col-6
+    //                     h5 Konsequenzen
+    //                     div Diese Annahmen führt #[span.highlight mathematisch zur MSE Metrik].
+    //         div.mt-3
+    //             img(src="assets/images/regression/linear-regression-cost-function-motivation.png", height="290px")
+    //         div.mt-3.fragment.text-center.alert.alert-primary "Der Fehler ist normalverteilt" ist motiviert durch das #[a.highlight(href="https://en.wikipedia.org/wiki/Central_limit_theorem") Central Limit Theorem]
     section
         slide-with-header(header="Linear Regression - Code")
             div.notebook-name Teil 2 in in linear_regression.ipynb
@@ -228,7 +206,11 @@ ng-template('#slides'='')
     tables-of-content-concepts([active]="conceptLabels.GRADIENT_DESCENT")
     section
         slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
-            p Alternative Methode zur Analytischen Methode zum setzen der Parameter (betas)
+            p Alternative Methode zur Analytischen Methode zum setzen der #[span.highlight lernbaren Parameter]
+                | &nbsp;
+                | (
+                span.equation.equation-colored(mathjax="<math><mi class='weight'>β</mi></math>")
+                | )
             div.r-stack
                 img(src="assets/images/gradient-descent/gradient_descent_solution.png").fragment
                 img(src="assets/images/gradient-descent/gradient_descent_step_0.png").fragment
@@ -251,19 +233,45 @@ ng-template('#slides'='')
             ol
                 li.fragment
                     div.d-flex.align-end(style={alignItems: "stretch"})
-                        div.align-self-end Initialisiere:&nbsp;
+                        div.align-self-end #[span.highlight Initialisiere]&nbsp;
                         div.align-self-end([mathjax]="gradientDescentInit")
                         div.align-self-end mit zufälligen Werten.
                 li.fragment
                     div.d-flex.align-end(style={alignItems: "stretch"})
-                        div.align-self-end Aktualisiere:&nbsp;
+                        div.align-self-end #[span.highlight Aktualisiere]:&nbsp;
                         div.align-self-end([mathjax]="gradientDescentUpdate")
+                li.fragment.mt-2
+                    div #[span.highlight Wiederhole] 2. bis eine Abbruchbedingung erreicht.
             p.mt-5.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Cost function] möglich
             p.mt-5.fragment.text-center.alert.alert-warning In der Praxis wird die #[span.highlight Analytische Methode für Lineare Regression] eingesetzt (schneller)
             // div.fragment
             //     div.mt-5.d-flex.justify-center.align-end(style={alignItems: "stretch"})
             //         div.align-self-end Wiederhole Schritt 2. bis&nbsp;
             //         div([mathjax]="gradientDescentStop")
+    section
+        slide-with-header(header="Linear Regression - Limits", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
+                div.col-5.p-2
+                    img(src="assets/images/data-with-linear-regression-model-1d.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/polynomial-regression.png").limit-impossible
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
+                div.col-5.p-2
+                    img(src="assets/images/data-with-linear-regression-model-2d.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/polynomial-regression-2d.png").limit-impossible
+                div.col-1
     tables-of-content-machine-learning-algorithm
         div.row
             div.col-12

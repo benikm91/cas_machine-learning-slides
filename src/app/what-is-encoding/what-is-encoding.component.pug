@@ -63,7 +63,7 @@ ng-template('#slides'='')
             div ...
             span.fragment(fragment-trigger, (trigger)="labelEncoderRoach.start(); labelEncoderPike.start()", (untrigger)="labelEncoderRoach.end(); labelEncoderPike.end()")
             span.fragment(fragment-trigger, (trigger)="labelEncoderRoach.end(); labelEncoderPike.end()")
-            div.fragment.text-center.alert.alert-primary Macht aus #[span.code-font 1] Feature, #[span.highlight #[span.code-font 1] Feature]. Kategorien haben Ordnung (#[span.highlight klaren Zusammenhang])!
+            div.fragment.text-center.alert.alert-primary Macht aus #[span.code-font 1] Feature, #[span.highlight #[span.code-font 1] Feature]. Das neue Feature (Kategorien) hat #[span.highlight eine Ordnung]!
     section
         slide-with-header(header="One-Hot-Encoding")
             div Mappt ein #[span.highlight Kategorisches Feature] mit #[span.code-font n] einzigartigen Werten zu #[span.highlight #[span.code-font n]-dimensionalen] Vektoren
@@ -82,12 +82,12 @@ ng-template('#slides'='')
             div ...
             span.fragment(fragment-trigger, (trigger)="oneHotEncoderRoach.start(); oneHotEncoderPike.start()", (untrigger)="oneHotEncoderRoach.end(); oneHotEncoderPike.end()")
             span.fragment(fragment-trigger, (trigger)="oneHotEncoderRoach.end(); oneHotEncoderPike.end()")
-            div.fragment.text-center.alert.alert-primary Macht aus #[span.code-font 1] Feature, #[span.highlight #[span.code-font n] Features]. Kategorien haben dafür #[span.highlight keinen Zusammenhang]!
+            div.fragment.text-center.alert.alert-primary Macht aus #[span.code-font 1] Feature, #[span.highlight #[span.code-font n] Features]. Die neuen Features (Kategorien) haben #[span.highlight keine Ordnung]!
     section
         slide-with-header(header="Encoding")
             ul
-                li Meistens wird #[span.highlight One-Hot-Encoding] eingesetzt, da es #[span.highlight keinen Zusammenhang] zwischen den Werten annimmt.
-                li.fragment Bei wenig Daten und dem richtigen Feature (z.B. Kleidergrössen "S", "M", "L") könnte Ordinal-Encoding besser sein.
+                li Meistens wird #[span.highlight One-Hot-Encoding] eingesetzt, da es #[span.highlight keine Ordnung] zwischen den Werten annimmt.
+                li.fragment Bei #[span.highlight wenig Daten] und #[span.highlight dem richtigen Feature] (z.B. Kleidergrössen "S", "M", "L") könnte Ordinal-Encoding besser sein.
                 li.fragment Man kann auch #[span.highlight eigene Encodings konstruieren] (z.B. durch Domänen-Wissen oder gelernt aus Daten).
     // section
     //     slide-with-header(header="Latent-Encoding", [extra]="true")

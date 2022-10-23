@@ -29,7 +29,7 @@
                         </mrow>
                     </msup>
                     <mo>−</mo>
-                    <mi>η</mi>
+                    <mi class="hyper-parameter">η</mi>
                     <mo>⋅</mo>
                     <mi>∇</mi>
                     <mi>J</mi>

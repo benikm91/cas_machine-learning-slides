@@ -2,7 +2,7 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Polynomielle Regression - Intuition")
             div.mt-5.d-flex.justify-center.fragment
-                model-3-visualization(output-header="Output Space" )
+                model-3-visualization(#polyRegression="", output-header="Output Space")
                     div(inputHeader)
                         div(style={marginTop: "-25px"})
                             h5(style={marginBottom: "0"}) Input Space
@@ -13,12 +13,13 @@ ng-template('#slides'='')
                             h6(margin="0") 6 Features
                     div(input).rect-styling
                         div.small-font([mathjax]="inputs")
-                    div(pre).model-box Feature Engineering
+                    div(pre).model-box Feature Engineering (Polynome)
                     div(feature).rect-styling
                         div.small-font([mathjax]="features")
-                    div(model).model-box Modell
+                    div(model).model-box Model (Lineare Regression)
                     div(output).rect-styling
                         div.small-font([mathjax]="outputs")
+                span.fragment(fragment-trigger, (trigger)="polyRegression.end();")
     section
         slide-with-header(header="Polynomielle Regression - Code")
             div.notebook-name poly_regression.ipynb
