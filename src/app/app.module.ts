@@ -107,6 +107,7 @@ import {WhatIsFeatureSelectionComponent} from "./what-is-feature-selection/what-
 import {Day1TitleSlideComponent} from "./day-title-slide/day1-title-slide.component";
 import {Day2TitleSlideComponent} from "./day-title-slide/day2-title-slide.component";
 import {Day3TitleSlideComponent} from "./day-title-slide/day3-title-slide.component";
+import {WhatAreHyperParametersComponent} from "./what-are-hyper-parameters/what-are-hyper-parameters.component";
 
 @NgModule({
   declarations: [
@@ -126,7 +127,8 @@ import {Day3TitleSlideComponent} from "./day-title-slide/day3-title-slide.compon
     OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
     DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
-    DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent
+    DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
+    WhatAreHyperParametersComponent
   ],
   imports: [
     BrowserModule,

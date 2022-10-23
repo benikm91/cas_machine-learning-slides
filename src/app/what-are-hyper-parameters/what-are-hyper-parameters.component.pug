@@ -1,0 +1,40 @@
+ng-template('#slides'='')
+    tables-of-content-concepts([active]="conceptLabels.HYPERPARAMETER_SELECTION" )
+    section
+        slide-with-header(header="Hyper Parameter")
+            ul
+                li #[span.highlight Hyper-Parameter] sind Parameter, die #[span.highlight nicht gelernt] werden: #[span.highlight "konfiguriert" das Modell]
+                li Beispiele:
+                    ul.smaller-font
+                        li
+                            span Regularisierung Stärke:&nbsp;
+                            span([mathjax]="l2Regularization")
+                        li Anzahl Bäume (Random Forest)
+                        li Anzahl Cluster (k-Means)
+                        li Polynomgrad (Feature Engineering)
+                        li Welche Features (Feature Selection)
+                        li Netzwerk Architektur (Neural Network)
+                        li ...
+    section
+        slide-with-header(header="Hyper Parameter Selection")
+            div Wie können wir einen Hyper Parameter wählen?
+            ul
+                li #[span.highlight Manuell]: Mit Erfahrung und Theorie #[span.highlight bestmöglich setzen].
+                    ul
+                        li Schwierig, braucht viel Erfahrung
+                        li Fehler anfällig
+                li #[span.highlight Suchen]: Verschiedene Werte #[span.highlight ausprobieren], #[span.highlight besten (auf ungesehenen Daten) merken].
+                    ul
+                        li Rechenintensiv, vor allem bei rechenintensiven Modellen (z.B. Neural Networks)
+    section
+        slide-with-header(header="Hyper Parameter Selection - Suchen")
+            .row.mt-2
+                .col-5 #[span.highlight GridSearch]
+                .col-7.text-start Probiere eine #[span.highlight Liste von Werten] für beispielsweise die Regularisierung Stärke durch, z.B. 0.1, 1.0 und 10.0
+            .row.mt-2
+                .col-5 #[span.highlight RandomizedSearch]
+                .col-7.text-start Probiere #[span.highlight zufällige Werte] für beispielsweise die Regularisierung Stärke innerhalb eines Bereiches aus, z.B. 10 zufällige Werte innerhalb [0.1, 10.0]
+    section
+        slide-with-header(header="Hyper Parameter Selection - Code")
+            div.notebook-name hyper_parameter_regularization.ipynb
+            img.mt-5(src="assets/images/code.png")

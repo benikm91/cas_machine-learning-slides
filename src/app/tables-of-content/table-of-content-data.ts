@@ -122,8 +122,8 @@ export function createMethodTableOfContent(active: ConceptTableOfContentLabel | 
             ])
         ]),
         c(ConceptTableOfContentLabel.MODEL_SELECTION, active, [
-            c(ConceptTableOfContentLabel.ALGORITHM_SELECTION, active),
             c(ConceptTableOfContentLabel.HYPERPARAMETER_SELECTION, active),
+            c(ConceptTableOfContentLabel.ALGORITHM_SELECTION, active),
         ]),
     ])
 }
