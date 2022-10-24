@@ -12,6 +12,7 @@ import svmCostFunction from './optimiztation/cost-function.xml'
 import {
   SupportVectorMachineTableOfContentLabel
 } from "../tables-of-content-machine-learning-algorithm/table-of-content-linear-regression-data";
+import {ConceptTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 
 @Component({
   selector: 'support-vector-machine',
@@ -32,5 +33,6 @@ export class SupportVectorMachineComponent extends Slide {
   svmProblemSlack = svmProblemSlack
 
   svmCostFunction = svmCostFunction
+  conceptLabels = ConceptTableOfContentLabel
 
 }

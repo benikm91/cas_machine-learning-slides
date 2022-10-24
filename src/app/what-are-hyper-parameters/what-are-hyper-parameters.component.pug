@@ -7,7 +7,7 @@ ng-template('#slides'='')
                 li Beispiele:
                     ul.smaller-font
                         li
-                            span Regularisierung Stärke:&nbsp;
+                            span Regularisierungsstärke:&nbsp;
                             span([mathjax]="l2Regularization")
                         li Anzahl Bäume (Random Forest)
                         li Anzahl Cluster (k-Means)
@@ -30,10 +30,10 @@ ng-template('#slides'='')
         slide-with-header(header="Hyper-Parameter Selection - Suchen")
             .row.mt-2
                 .col-5 #[span.highlight GridSearch]
-                .col-7.text-start Probiere eine #[span.highlight Liste von Werten] für beispielsweise die Regularisierung Stärke durch, z.B. 0.1, 1.0 und 10.0
+                .col-7.text-start Probiere eine #[span.highlight Liste von Werten] für beispielsweise die Regularisierungsstärke durch, z.B. 0.1, 1.0 und 10.0
             .row.mt-2
                 .col-5 #[span.highlight RandomizedSearch]
-                .col-7.text-start Probiere #[span.highlight zufällige Werte] für beispielsweise die Regularisierung Stärke innerhalb eines Bereiches aus, z.B. 10 zufällige Werte innerhalb [0.1, 10.0]
+                .col-7.text-start Probiere #[span.highlight zufällige Werte] für beispielsweise die Regularisierungsstärke innerhalb eines Bereiches aus, z.B. 10 zufällige Werte innerhalb [0.1, 10.0]
     section
         slide-with-header(header="Hyper-Parameter Selection - Code")
             div.notebook-name hyper_parameter_regularization.ipynb

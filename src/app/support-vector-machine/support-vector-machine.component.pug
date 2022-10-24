@@ -147,7 +147,7 @@ ng-template('#slides'='')
             div([mathjax]="svmProblemSlack", style={fontSize: "16px"})
             div.mt-5
                 ul(style={fontSize: "26px"})
-                    li Bestrafe mehr Margin-"Cheating" #[br] => Regularization-Strength
+                    li Bestrafe mehr Margin-"Cheating" #[br] => Regularisierungsstärke
                 div.w-100
                     .d-flex.flex-wrap.justify-center
                         div
@@ -159,6 +159,7 @@ ng-template('#slides'='')
                         div
                             div.code C=0.1
                             img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-C0.1.png", style={width: "200px"})
+            div.mt-2.fragment.text-center.alert.alert-primary Kann mit #[a.highlight(href="#/{{conceptLabels.HYPERPARAMETER_SELECTION.href}}") Hyper Parameter Selection] gesetzt werden.
     tables-of-content-support-vector-machine
         div.mt-5.row
             div.col-6
@@ -175,4 +176,16 @@ ng-template('#slides'='')
                 div.d-flex.justify-center.scale-025
                     div([mathjax]="svmProblem")
     section
-        div TODO - Mehrere Klassen one-vs-one, one-vs-rest
+        slide-with-header(header="Support Vector Machine - Mehrere Klassen")
+            div.text-start Keine Wahrscheinlichkeit, sprich Softmax geht nicht.
+            div.text-start #[span.highlight One-vs-One] Verfahren
+                ul.text-start
+                    li Ein Model #[span.highlight pro Klassen-Paar]:
+                        ul
+                            li #[span.text-setosa Setosa]-vs-#[span.text-versicolor Versicolor]
+                            li #[span.text-setosa Setosa]-vs-#[span.text-virginica Virginica]
+                            li #[span.text-versicolor Versicolor]-vs-#[span.text-virginica Virginica]
+                    li Predict Klasse mit meisten "Votes".
+            hr
+            div.text-start [Additional] #[span.highlight One-vs-Rest]:&nbsp;
+                a(href="https://scikit-learn.org/stable/modules/multiclass.html#ovr-classification") sklearn User Guide
