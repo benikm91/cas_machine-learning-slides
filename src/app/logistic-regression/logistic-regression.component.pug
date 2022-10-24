@@ -73,31 +73,6 @@ ng-template('#slides'='')
                     h3 3 Feature
                     div([mathjax]="logisticRegression3D", style={fontSize: "14pt"})
                     img(src="assets/images/classification/example-data-with-model-3d.gif").fragment
-    section
-        slide-with-header(header="Logistic Regression - Limits", [extra]="true")
-            div.row
-                div.col-5.offset-1
-                    h6 Possible
-                div.col-5
-                    h6 Impossible (in Feature Space)
-                div.col-1
-
-            div.row.fragment
-                div.col-1.m-auto
-                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
-                div.col-5.p-2
-                    img(src="assets/images/classification/example-data-with-model-2d-possible.png").limit-possible
-                div.col-5.p-2
-                    img(src="assets/images/classification/example-data-with-model-2d-limit.png").limit-impossible
-                div.col-1
-            div.row.fragment
-                div.col-1.m-auto
-                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
-                div.col-5.p-2
-                    img(src="assets/images/classification/example-data-with-model-1d-possible.png").limit-possible
-                div.col-5.p-2
-                    img(src="assets/images/classification/example-data-with-model-1d-limit.png").limit-impossible
-                div.col-1
     tables-of-content-concepts([active]="conceptLabels.CLASSIFICATION_METRICS")
     section
         slide-with-header(header="Classification - Fehler eines Modells messen?")
@@ -177,11 +152,11 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Classification - Metrik - Beispiele")
             .mt-2.row.fragment
-                .col-3.highlight Recall
+                .col-3.highlight Precision
                 .col-3 Binär:
                 .col-5([mathjax]="metricRecallBinary")
             .mt-2.row.fragment
-                .col-3.highlight Precision
+                .col-3.highlight Recall
                 .col-3 Binär:
                 .col-5([mathjax]="metricPrecisionBinary")
             .mt-2.row.fragment
@@ -263,6 +238,31 @@ ng-template('#slides'='')
             div.notebook-name logistic_regression.ipynb
             img(src="assets/images/code.png")
     section
+        slide-with-header(header="Logistic Regression - Limits", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 2 Features
+                div.col-5.p-2
+                    img(src="assets/images/classification/example-data-with-model-2d-possible.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/classification/example-data-with-model-2d-limit.png").limit-impossible
+                div.col-1
+            div.row.fragment
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature
+                div.col-5.p-2
+                    img(src="assets/images/classification/example-data-with-model-1d-possible.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/classification/example-data-with-model-1d-limit.png").limit-impossible
+                div.col-1
+    section
         slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
             ul
                 li
@@ -270,6 +270,11 @@ ng-template('#slides'='')
                         ul
                             li
                                 a(href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression") sklearn User Guide
+                    hr
+                    div [Additional]
+                        ul
+                            li
+                                a(href="https://www.youtube.com/watch?v=ytbYRIN0N4g") Video: Softmax Function Explained In Depth with 3D Visuals
     tables-of-content-logistic-regression
         div.mt-5.row
             div.col-6
