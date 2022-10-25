@@ -10,6 +10,7 @@ ng-template('#slides'='')
                 li.fragment
                     data-specification-element-numerical-feature-standardize
                 li.fragment Wie viele #[span.highlight Clusters] suchen wir.
+            div.fragment.mt-5.text-center.alert.alert-primary Beachte: Wir haben keine Zielvariable. Wir sind im #[span.highlight Unsupervised Learning]
     tables-of-content-k-means([active]="kmeansLabel.MODEL")
     section
         slide-with-header(header="K-Means - Intuition")
@@ -29,17 +30,42 @@ ng-template('#slides'='')
             div Der Algorithmus funktioniert wie folgt:
                 ol
                     li.fragment.mt-2
-                        div Initialisiere Schwerpunkte mit #[span.highlight zufälligen Werten].
+                        div #[span.highlight Initialisiere] Schwerpunkte mit zufälligen Werten.
                     li.fragment.mt-2
                         div #[span.highlight Weise Datenpunkte] nächstem Schwerpunkt #[span.highlight zu].
                     li.fragment.mt-2
                         div #[span.highlight Aktualisiere Schwerpunkte] anhand der zugewiesenen Datenpunkte.
                     li.fragment.mt-2
                         div #[span.highlight Wiederhole] 2. und 3., bis keine Veränderung mehr statt findet.
-            div.fragment.mt-5.text-center.alert.alert-warning Findet lokales Minimum! Ganzen Algorithmus mehrmals #[span.highlight wiederholen mit anderen Startwerten].
+            div.fragment.mt-5.text-center.alert.alert-warning Findet lokales Minimum! Ganzen Algorithmus mehrmals #[span.highlight wiederholen mit anderen Initialwerten].
     section
         slide-with-header(header="K-Means - Optimierung - Intuition")
             img(src="assets/images/k-means/kMeans2.gif")
+    section
+        slide-with-header(header="K-Means - Elbow plot")
+            div #[span.highlight num_cluster] gibt an wie viele Cluster wir suchen.
+            .row.mt-3
+                .col-6
+                    img(src="assets/images/k-means/4-data.png")
+                .col-6
+                    .r-stack
+                        img.fragment(src="assets/images/k-means/4-data-clustered-1.png")
+                        img.fragment(src="assets/images/k-means/4-data-clustered-2.png")
+                        img.fragment(src="assets/images/k-means/4-data-clustered-3.png")
+                        img.fragment(src="assets/images/k-means/4-data-clustered-4.png")
+                        img.fragment(src="assets/images/k-means/4-data-clustered-5.png")
+                        img.fragment(src="assets/images/k-means/4-data-clustered-6.png")
+                        div.fragment ???
+                .col-6
+                    .r-stack
+                        img.fragment(src="assets/images/k-means/4-elbow-plot.png")
+                        img.fragment(src="assets/images/k-means/4-elbow-plot-with-marking.png")
+                .col-6.fragment
+                    img(src="assets/images/k-means/4-data-clustered-4.png")
+    section
+        slide-with-header(header="K-Means - Code")
+            div.notebook-name k_means.ipynb
+            img.mt-5(src="assets/images/code.png")
     section
         slide-with-header(header="k-means - Limits", [extra]="true")
             div.row
