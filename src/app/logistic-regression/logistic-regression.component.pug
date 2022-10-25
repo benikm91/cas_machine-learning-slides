@@ -173,7 +173,7 @@ ng-template('#slides'='')
             binary-classification-metric-example([tp]="1", [fp]="1", [fn]="1", [tn]="99")
     tables-of-content-logistic-regression([active]="logisticRegressionLabel.COST_FUNCTION")
     section
-        slide-with-header(header="Cost function - Maximum Likelihood")
+        slide-with-header(header="Kostenfunktion - Maximum Likelihood")
             div Bei der #[span.highlight Logistic Regression] gibt das Modell eine #[span.highlight Wahrscheinlichkeit] für eine Klasse (Likelihood).
             div Mit dieser können wir eine #[span.highlight spezielle Kostenfunktion] erstellen, die #[span.highlight Maximum Likelihood]:
             div.fragment.mt-5([mathjax]="logisticRegressionNDVector")
@@ -218,11 +218,11 @@ ng-template('#slides'='')
         slide-with-header(header="Logistic Regression - Mehrere Klassen - Softmax")
             ul
                 li.fragment
-                    | Sigmoid (
+                    | #[span.highlight Sigmoid] (
                     span(mathjax="<math><mi>ϕ</mi></math>")
                     | ) gibt uns für den #[span.highlight Beweis einer Klasse], die #[span.highlight Wahrscheinlichkeit] für diese Klasse.
                 li.fragment
-                    div Softmax gibt uns für #[span.highlight Beweise] für #[span.highlight mehrere Klassen], die #[span.highlight Wahrscheinlichkeiten] der Klassen.
+                    div #[span.highlight Softmax] gibt uns für #[span.highlight Beweise] für #[span.highlight mehrere Klassen], die #[span.highlight Wahrscheinlichkeiten] der Klassen.
                 div.fragment([mathjax]="softmax")
                 div.fragment.mt-5
                     softmax-3-example([i1]="-2", [i2]="5", [i3]="1")
@@ -231,7 +231,7 @@ ng-template('#slides'='')
             ul
                 li.fragment #[span.highlight 3 eigene Lineare Modelle] (3 Outputs = 3 Beweise)
                 li.fragment 3 Outputs zu 3 Wahrscheinlichkeiten (#[span.highlight Softmax])
-                li.fragment Weiterhin Maximum Likelihood als Cost Function (#[span.highlight Cross-Entropy])
+                li.fragment Weiterhin Maximum Likelihood als Kostenfunktion (#[span.highlight Cross-Entropy])
             div.fragment.mt-5.text-center.alert.alert-primary 3 Linearen Modelle werden zusammen trainiert
     section
         slide-with-header(header="Logistic Regression - Code")

@@ -79,7 +79,7 @@ export class ConceptTableOfContentLabel extends TableOfContentLabel {
     public static readonly METRICS = new ProblemTableOfContentLabel("Metrik", "Metrik");
     public static readonly REGRESSION_METRICS = new ProblemTableOfContentLabel("Regression Metrik", "Regression Metrik");
     public static readonly CLASSIFICATION_METRICS = new ProblemTableOfContentLabel("Klassifikation Metrik", "Klassifikation Metrik");
-    public static readonly COST_FUNCTION = new ProblemTableOfContentLabel("Cost Function", "Cost Function");
+    public static readonly COST_FUNCTION = new ProblemTableOfContentLabel("Kostenfunktion", "Kostenfunktion");
     public static readonly OPTIMIZATION_ALGORITHMS = new ProblemTableOfContentLabel("Optimization Algorithms", "Optimization Algorithms");
     public static readonly ANALYTICAL = new ProblemTableOfContentLabel("Analytisch", "Analytisch");
     public static readonly SOLVERS = new ProblemTableOfContentLabel("Solvers", "Solvers");

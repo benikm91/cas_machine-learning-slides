@@ -1,0 +1,37 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% one_hidden_nn_with_params.png
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,p}}
+    \hidden{{1,missing,h}}{$\sum$}
+    \outputs{{1}}{$\sum$}
+    \layers
+
+    \foreach \i in {bias}
+    \foreach \j in {1}
+    \draw [->,red] (input-\i) -- (hidden-\j) node[pos=0.25,left,above] {$\beta^{(1)}_{\j,0}$};
+    \foreach \i in {1,2,p}
+    \foreach \j in {1}
+    \draw [->,red] (input-\i) -- (hidden-\j) node[pos=0.25,left,above] {$\beta^{(1)}_{\j,\i}$};
+    \foreach \i in {bias,1,2,p}
+    \foreach \j in {h}
+    \draw [->,opacity=0.1] (input-\i) -- (hidden-\j);
+
+    \foreach \i in {bias}
+    \foreach \j in {1}
+    \draw [->,red] (hidden-\i) -- (output-\j) node[pos=0.25,left,above] {$\beta^{(2)}_{\j,0}$};
+    \foreach \i in {1,h}
+    \foreach \j in {1}
+    \draw [->,red] (hidden-\i) -- (output-\j) node[pos=0.25,left,above] {$\beta^{(2)}_{\j,\i}$};
+
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

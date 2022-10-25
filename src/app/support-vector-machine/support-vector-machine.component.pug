@@ -60,7 +60,7 @@ ng-template('#slides'='')
                         img.fragment(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-with-margin-2d.png")
             div.fragment.mt-5.text-center.alert.alert-primary Idee: Verallgemeinert auf #[span.highlight neue] Punkte am Besten
     // section
-    //     slide-with-header(header="Support Vector Machine - Cost Function", [extra]="true")
+    //     slide-with-header(header="Support Vector Machine - Kostenfunktion", [extra]="true")
     //         div.mt-5([mathjax]="svmCostFunction")
     //         div.mt-5 Bedingung: #[span(mathjax="<math><mo>||</mo><mi>β</mi><mo>||</mo><mo>=</mo><mi>1</mi></math>")]
     tables-of-content-support-vector-machine([active]="supportVectorMachineLabel.OPTIMIERUNG")
@@ -147,7 +147,7 @@ ng-template('#slides'='')
             div([mathjax]="svmProblemSlack", style={fontSize: "16px"})
             div.mt-5
                 ul(style={fontSize: "26px"})
-                    li Bestrafe mehr Margin-"Cheating" #[br] => Regularisierungsstärke
+                    li Bestrafe mehr Margin-"Cheating" #[br] => Invertierte Regularisierungsstärke
                 div.w-100
                     .d-flex.flex-wrap.justify-center
                         div
@@ -160,6 +160,20 @@ ng-template('#slides'='')
                             div.code C=0.1
                             img(src="assets/images/classification/svm/support-vector-machine-linear-support-vectors-C0.1.png", style={width: "200px"})
             div.mt-2.fragment.text-center.alert.alert-primary Kann mit #[a.highlight(href="#/{{conceptLabels.HYPERPARAMETER_SELECTION.href}}") Hyper Parameter Selection] gesetzt werden.
+    section
+        slide-with-header(header="Support Vector Machine - Mehrere Klassen")
+            div.text-start Keine Wahrscheinlichkeit, sprich Softmax geht nicht.
+            div.text-start #[span.highlight One-vs-One] Verfahren
+                ul.text-start
+                    li Ein Model #[span.highlight pro Klassen-Paar]:
+                        ul
+                            li #[span.text-setosa Setosa]-vs-#[span.text-versicolor Versicolor]
+                            li #[span.text-setosa Setosa]-vs-#[span.text-virginica Virginica]
+                            li #[span.text-versicolor Versicolor]-vs-#[span.text-virginica Virginica]
+                    li Predict Klasse mit meisten "Votes".
+            hr
+            div.text-start [Additional] #[span.highlight One-vs-Rest]:&nbsp;
+                a(href="https://scikit-learn.org/stable/modules/multiclass.html#ovr-classification") sklearn User Guide
     tables-of-content-support-vector-machine
         div.mt-5.row
             div.col-6
@@ -175,17 +189,3 @@ ng-template('#slides'='')
             div.col-6
                 div.d-flex.justify-center.scale-025
                     div([mathjax]="svmProblem")
-    section
-        slide-with-header(header="Support Vector Machine - Mehrere Klassen")
-            div.text-start Keine Wahrscheinlichkeit, sprich Softmax geht nicht.
-            div.text-start #[span.highlight One-vs-One] Verfahren
-                ul.text-start
-                    li Ein Model #[span.highlight pro Klassen-Paar]:
-                        ul
-                            li #[span.text-setosa Setosa]-vs-#[span.text-versicolor Versicolor]
-                            li #[span.text-setosa Setosa]-vs-#[span.text-virginica Virginica]
-                            li #[span.text-versicolor Versicolor]-vs-#[span.text-virginica Virginica]
-                    li Predict Klasse mit meisten "Votes".
-            hr
-            div.text-start [Additional] #[span.highlight One-vs-Rest]:&nbsp;
-                a(href="https://scikit-learn.org/stable/modules/multiclass.html#ovr-classification") sklearn User Guide

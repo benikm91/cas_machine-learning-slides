@@ -1,0 +1,30 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% one_hidden_nn_bsp.png
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,p}}
+    \hidden{{1,missing,h}}{$\sum \rightarrow \phi$}
+    \outputs{{1,missing,o}}{$\sum \rightarrow \phi$}
+    \layers
+    \foreach \i in {bias}
+    \foreach \j in {1}
+    \draw [->,red] (input-\i) -- (hidden-\j) node[pos=0.5,left,above] {$\beta^{(1)}_{\j,0}$};
+    \foreach \i in {1,2,p}
+    \foreach \j in {1}
+    \draw [->,red] (input-\i) -- (hidden-\j) node[pos=0.5,left,above] {$\beta^{(1)}_{\j,\i}$};
+    \foreach \i in {bias,1,2,p}
+    \foreach \j in {h}
+    \draw [->] (input-\i) -- (hidden-\j);
+    \hiddenoutputconnections{{bias,1,h}}{{1,o}}
+
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

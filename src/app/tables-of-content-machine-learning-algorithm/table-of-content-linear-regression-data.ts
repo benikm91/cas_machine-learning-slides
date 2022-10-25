@@ -9,7 +9,7 @@ export class LinearRegressionTableOfContentLabel extends TableOfContentLabel {
     public static readonly DATA_SPECIFICATION = new LinearRegressionTableOfContentLabel("Data Specification", "Linear Regression/Data Specification");
     public static readonly MODEL = new LinearRegressionTableOfContentLabel("Model" , "Linear Regression/Model" );
     public static readonly OPTIMIERUNG = new LinearRegressionTableOfContentLabel("Optimierung" , "Linear Regression/Optimierung" );
-    public static readonly COST_FUNCTION = new LinearRegressionTableOfContentLabel("Cost function", "Linear Regression/Cost function");
+    public static readonly COST_FUNCTION = new LinearRegressionTableOfContentLabel("Kostenfunktion", "Linear Regression/Kostenfunktion");
 }
 
 export function createLinearRegressionTableOfContent(active: LinearRegressionTableOfContentLabel | null): TableOfContentEntry<LinearRegressionTableOfContentLabel> {
@@ -26,7 +26,7 @@ export class LogisticRegressionTableOfContentLabel extends TableOfContentLabel {
     public static readonly DATA_SPECIFICATION = new LogisticRegressionTableOfContentLabel("Data Specification", "Logistic Regression/Data Specification");
     public static readonly MODEL = new LogisticRegressionTableOfContentLabel("Model" , "Logistic Regression/Model" );
     public static readonly OPTIMIERUNG = new LogisticRegressionTableOfContentLabel("Optimierung" , "Logistic Regression/Optimierung" );
-    public static readonly COST_FUNCTION = new LogisticRegressionTableOfContentLabel("Cost function", "Logistic Regression/Cost function");
+    public static readonly COST_FUNCTION = new LogisticRegressionTableOfContentLabel("Kostenfunktion", "Logistic Regression/Kostenfunktion");
 }
 
 export function createLogisticRegressionTableOfContent(active: LogisticRegressionTableOfContentLabel | null): TableOfContentEntry<LogisticRegressionTableOfContentLabel> {
@@ -43,7 +43,7 @@ export class SupportVectorMachineTableOfContentLabel extends TableOfContentLabel
     public static readonly DATA_SPECIFICATION = new SupportVectorMachineTableOfContentLabel("Data Specification", "Support Vector Machine/Data Specification");
     public static readonly MODEL = new SupportVectorMachineTableOfContentLabel("Model" , "Support Vector Machine/Model" );
     public static readonly OPTIMIERUNG = new SupportVectorMachineTableOfContentLabel("Optimierung" , "Support Vector Machine/Optimierung" );
-    public static readonly COST_FUNCTION = new SupportVectorMachineTableOfContentLabel("Cost function", "Support Vector Machine/Cost function");
+    public static readonly COST_FUNCTION = new SupportVectorMachineTableOfContentLabel("Kostenfunktion", "Support Vector Machine/Kostenfunktion");
 }
 
 export function createSupportVectorMachineTableOfContent(active: SupportVectorMachineTableOfContentLabel | null): TableOfContentEntry<SupportVectorMachineTableOfContentLabel> {
@@ -60,7 +60,7 @@ export class CartTableOfContentLabel extends TableOfContentLabel {
     public static readonly DATA_SPECIFICATION = new CartTableOfContentLabel("Data Specification", "Decision Trees/Data Specification");
     public static readonly MODEL = new CartTableOfContentLabel("Model" , "Decision Trees/Model" );
     public static readonly OPTIMIERUNG = new CartTableOfContentLabel("Optimierung" , "Decision Trees/Optimierung" );
-    public static readonly COST_FUNCTION = new CartTableOfContentLabel("Cost function", "Decision Trees/Cost function");
+    public static readonly COST_FUNCTION = new CartTableOfContentLabel("Kostenfunktion", "Decision Trees/Kostenfunktion");
 }
 
 export function createCartTableOfContent(active: CartTableOfContentLabel | null): TableOfContentEntry<CartTableOfContentLabel> {
@@ -76,7 +76,7 @@ export class PCATableOfContentLabel extends TableOfContentLabel {
     public static readonly PCA = new PCATableOfContentLabel("PCA", "PCA");
     public static readonly DATA_SPECIFICATION = new PCATableOfContentLabel("Data Specification", "PCA/Data Specification");
     public static readonly MODEL = new PCATableOfContentLabel("Model" , "PCA/Model" );
-    public static readonly COST_FUNCTION = new PCATableOfContentLabel("Cost function", "PCA/Cost function");
+    public static readonly COST_FUNCTION = new PCATableOfContentLabel("Kostenfunktion", "PCA/Kostenfunktion");
     public static readonly OPTIMIERUNG = new PCATableOfContentLabel("Optimierung" , "PCA/Optimierung" );
 }
 
@@ -108,7 +108,7 @@ export class FNNTableOfContentLabel extends TableOfContentLabel {
     public static readonly FNN = new FNNTableOfContentLabel("Feedforward Neural Network", "NN");
     public static readonly DATA_SPECIFICATION = new FNNTableOfContentLabel("Specification", "NN/Specification");
     public static readonly MODEL = new FNNTableOfContentLabel("Model" , "NN/Model" );
-    public static readonly COST_FUNCTION = new FNNTableOfContentLabel("Cost function" , "NN/Cost function" );
+    public static readonly COST_FUNCTION = new FNNTableOfContentLabel("Kostenfunktion" , "NN/Kostenfunktion" );
     public static readonly OPTIMIERUNG = new FNNTableOfContentLabel("Optimierung" , "NN/Optimierung" );
 }
 
@@ -125,7 +125,7 @@ export class KMeansTableOfContentLabel extends TableOfContentLabel {
     public static readonly K_MEANS = new KMeansTableOfContentLabel("K-Means", "k-means");
     public static readonly DATA_SPECIFICATION = new KMeansTableOfContentLabel("Data Specification", "k-means/Data Specification");
     public static readonly MODEL = new KMeansTableOfContentLabel("Model" , "k-means/Model" );
-    public static readonly COST_FUNCTION = new KMeansTableOfContentLabel("Cost function" , "k-means/Cost function" );
+    public static readonly COST_FUNCTION = new KMeansTableOfContentLabel("Kostenfunktion" , "k-means/Kostenfunktion" );
     public static readonly OPTIMIERUNG = new KMeansTableOfContentLabel("Optimierung" , "k-means/Optimierung" );
 }
 

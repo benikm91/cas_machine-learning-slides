@@ -33,9 +33,9 @@ ng-template('#slides'='')
         slide-with-header(header="Kernel Trick - Representer Theorem", [extra]="true")
             ul(style={fontSize: "22pt"})
                 li.fragment
-                    div #[span.highlight Gewicht pro Datenpunkt], anstatt #[span.highlight Gewicht pro Feature] ist äquivalent (Dual Form)
+                    div #[span.highlight Gewicht pro Datenpunkt], anstatt #[span.highlight Gewicht pro Feature] ist äquivalent
                     div([mathjax]="representerTheorem")
-                li.fragment Änderung auf das z.B. Linear Modell
+                li.fragment Änderung auf das z.B. Linear Modell (Dual Form)
                     div([mathjax]="linearModelDualFormDerivation")
                 li.fragment
                     div Wir können also #[span.code N]&nbsp;#[span(mathjax="<math><mi>α</mi></math>")]'s lernen anstatt #[span.code M]&nbsp;#[span(mathjax="<math><mi>β</mi></math>")]'s (#[span.code N] = Anzahl Datenpunkte, #[span.code M] = Anzahl Features) und lernen das von aussen #[span.highlight identische Modell]
@@ -52,13 +52,7 @@ ng-template('#slides'='')
             div([mathjax]="linearModelDualFormKernel")
             ul
                 li Kernel #[span([mathjax]="kernel")] misst die Distanz vom neuen Datenpunkt zum Train-Set-Datenpunkten.
-    section
-        slide-with-header(header="Kernel Trick - Feature Engineering", [extra]="true")
-            div
-                | Dual Form mit quadratischer Kernel: #[span([mathjax]="quadraticKernel")] ist
-                | gleich (*) zu #[span.code PolynomialFeatures (n_degree=2)] als Feature Engineering gefolgt von der linearen Form.
-            div Bei Ersterem lernen wir einfach #[span.highlight #[span.code N]&nbsp;#[span(mathjax="<math><mi>α</mi></math>")] Parameters], bei zweiterem lernen wir #[span.highlight #[span.code M²]&nbsp;#[span(mathjax="<math><mi>β</mi></math>")] Parameters]
-            div.mt-5.fragment.text-center.alert.alert-primary In der Praxis wird der Kernel-Trick meistens nur mit der SVM eingesetzt.
+            div.mt-5.fragment.text-center.alert.alert-primary In der Praxis wird der Kernel-Trick meistens #[span.highlight nur mit der SVM] eingesetzt.
     section
         slide-with-header(header="Kernel Trick - Most Common Kernels", [extra]="true")
             side-by-side-3
@@ -74,6 +68,7 @@ ng-template('#slides'='')
                     h5 RBF
                     div([mathjax]="rbfKernel")
                     img(src="assets/images/classification/svm/support-vector-machine-rbf-support-vectors-2d.png")
+            div.mt-5.fragment.text-center.alert.alert-primary Kernel macht die Modelle nicht linear.
     section
         slide-with-header(header="Support Vector Machine (und Kernel Trick) - Code")
             div.notebook-name support_vector_machine.ipynb

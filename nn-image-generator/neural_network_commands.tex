@@ -1,0 +1,138 @@
+\usepackage[pdftex,active,tightpage]{preview}
+\usepackage{tikz}
+\usepackage{ifthen}
+\usetikzlibrary{positioning}
+
+\tikzset{%
+  every neuron/.style={
+    circle,
+    draw,
+    minimum size=1cm
+  },
+  neuron missing/.style={
+    draw=none,
+    scale=4,
+    text height=0.333cm,
+    execute at begin node=\color{black}$\vdots$
+  },
+}
+
+%%% INPUT NODES
+
+\newcommand{\inputs}[1]{
+  \foreach \m/\l [count=\y] in {bias}
+    \node [every neuron/.try, neuron \m/.try] (input-\m) at (0,-\y) {1};
+
+  \foreach \m/\l [count=\y from 2] in #1
+    \node [every neuron/.try, neuron \m/.try] (input-\m) at (0,-\y) {};
+
+  %%% INPUT VALUES
+
+  \node [above] at (input-bias.north) {$x_0$};
+
+  \foreach \l in #1 {
+    \ifthenelse{\equal{\l}{missing}} { } {
+      \draw [<-] (input-\l) -- ++(-1,0) node [above, midway] {$x_{\l}$};
+    }
+  }
+
+}
+
+%%% HIDDEN NODES
+
+\newcommand{\hidden}[2]{
+  \foreach \m [count=\y] in {bias}
+    \node [every neuron/.try, neuron \m/.try ] (hidden-\m) at (2,-\y) {1};
+
+  \foreach \m [count=\y from 2] in #1{
+    \ifthenelse{\equal{\m}{missing}} {
+      \node [every neuron/.try, neuron \m/.try ] (hidden-\m) at (2,-\y*1.25) {};
+    } {
+      \node [every neuron/.try, neuron \m/.try ] (hidden-\m) at (2,-\y*1.25) {#2};
+    }
+  }
+
+  %%% HIDDEN NAMES
+
+  \node [above] at (hidden-bias.north) {$z_0$};
+
+  \foreach \l in #1 {
+    \ifthenelse{\equal{\l}{missing}} { } {
+      \node [above] at (hidden-\l.north) {$z_{\l}$};
+    }
+  }
+
+}
+
+%%% OUTPUT NODES
+
+\newcommand{\outputs}[2]{
+  \foreach \m [count=\y] in #1{
+    \ifthenelse{\equal{\m}{missing}} {
+      \node [every neuron/.try, neuron \m/.try ] (output-\m) at (4,-1.25 - \y*1.25) {};
+    } {
+      \node [every neuron/.try, neuron \m/.try ] (output-\m) at (4,-1.25 - \y*1.25) {#2};
+    }
+  }
+
+  %%% OUTPUT VALUES
+
+  \foreach \l in #1 {
+    \ifthenelse{\equal{\l}{missing}} { } {
+      \draw [->] (output-\l) -- ++(1,0)
+        node [above, midway] {$\hat y_{\l}$};
+    }
+  }
+
+}
+
+%%% INPUT-HIDDEN CONNECTIONS
+
+\newcommand{\inputhiddenconnections}[2]{
+
+  \foreach \i in #1
+    \foreach \j in #2
+      \draw [->] (input-\i) -- (hidden-\j);
+
+}
+
+%%% HIDDEN-OUTPUT CONNECTIONS
+
+\newcommand{\hiddenoutputconnections}[2]{
+
+  \foreach \i in #1
+    \foreach \j in #2
+      \draw [->] (hidden-\i) -- (output-\j);
+
+}
+
+%%% INPUT-OUPUT CONNECTIONS
+
+\newcommand{\inputoutputconnections}[2]{
+
+  \foreach \i in #1
+    \foreach \j in #2
+      \draw [->] (input-\i) -- (output-\j);
+
+}
+
+%%% LAYERS
+
+\newcommand{\layers}{
+
+  \foreach \l [count=\x from 0] in {Input, Hidden, Ouput}
+    \node [align=center, above] at (\x*2,0) {\l \\ layer};
+
+}
+
+%%% LAYERS
+
+\newcommand{\layersIO}{
+
+  \foreach \l [count=\x from 0] in {Input, missing, Ouput} {
+    \ifthenelse{\equal{\l}{missing}} { } {
+      \node [align=center, above] at (\x*2,0) {\l \\ layer};
+    }
+  }
+
+}

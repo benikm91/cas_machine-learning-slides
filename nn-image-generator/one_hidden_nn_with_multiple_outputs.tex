@@ -1,0 +1,22 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% one_hidden_nn_with_multiple_outputs.png
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,p}}
+    \hidden{{1,missing,h}}{$\sum \rightarrow \phi$}
+    \outputs{{1,missing,o}}{$\sum \rightarrow \phi$}
+    \layers
+    \inputhiddenconnections{{bias,1,2,p}}{{1,h}}
+    \hiddenoutputconnections{{bias,1,h}}{{1,o}}
+
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

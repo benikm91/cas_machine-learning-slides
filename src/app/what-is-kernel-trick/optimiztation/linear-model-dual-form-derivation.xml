@@ -49,7 +49,7 @@
                             <mi>(i)</mi>
                         </msup>
                         <mo form="prefix" stretchy="false">(</mo>
-                        <msup class="data">
+                        <msup class="feature">
                             <mi>x</mi>
                             <mi>(i)</mi>
                         </msup>

@@ -111,6 +111,9 @@ import {WhatAreHyperParametersComponent} from "./what-are-hyper-parameters/what-
 import {
   DataSciencePitfallsInconsistentPreprocessingComponent
 } from "./data-science-pitfalls/inconsistent-preprocessing/data-science-pitfalls-inconsistent-preprocessing.component";
+import {
+  DataSciencePitfallsDataLeakageComponent
+} from "./data-science-pitfalls/data-leakage/data-science-pitfalls-data-leakage.component";
 
 @NgModule({
   declarations: [
@@ -131,7 +134,7 @@ import {
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
     DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
-    WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent
+    WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent
   ],
   imports: [
     BrowserModule,

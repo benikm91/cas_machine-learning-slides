@@ -1,0 +1,21 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% One Hidden MNIST
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,784}}
+    \hidden{{1,missing,36}}{$\sum \rightarrow \phi$}
+    \outputs{{0,missing,9}}{$\sum \rightarrow \phi$}
+    \layers
+    \inputhiddenconnections{{bias,1,2,784}}{{1,36}}
+    \hiddenoutputconnections{{bias,1,36}}{{0,9}}
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

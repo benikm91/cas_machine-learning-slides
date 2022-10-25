@@ -1,0 +1,14 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Data Science Pitfall - Data Leakage")
+            div.text-start Informationen von #[span.highlight Test-Daten nicht für Training oder Entscheidungen] verwenden. Ansonsten ist Evaluation falsch (biased).
+            hr
+            div.text-start(style={fontSize: "32px"}) Beispiele:
+                ul
+                    li Modelle nur auf den Train Daten fitten (z.B. LinearRegression)
+                    li Data Analysis nicht auf Test-Daten ausführen
+                    li Preprocessing nur auf den Train Daten fitten (z.B. StandardScaler)
+                    li Feature Engineering nur auf den Train Daten fitten (z.B. Durchschnittlicher Quadratmeterpreis nur aus Train Daten berechnen)
+            hr
+            div.text-start [Alternative Quelle]: #[a(href="https://scikit-learn.org/stable/common_pitfalls.html#data-leakage") sklearn User Guide]
+

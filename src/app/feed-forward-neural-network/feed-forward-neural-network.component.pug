@@ -52,8 +52,8 @@ ng-template('#slides'='')
                 .col-6.small-font
                     div([mathjax]="linearRegression")
                 .col-6
-                    img(src="assets/images/neural-network/linear_regression_as_nn.png").img-fluid-both
-            div.mt-4.fragment.text-center.alert.alert-primary Die Berechnung der Linearen Regression als (Neural) Network dargestellt.
+                    img(src="assets/images/neural-network/linear_regression.png").img-fluid-both
+            div.mt-5.fragment.text-center.alert.alert-primary Die Berechnung der Linearen Regression als (Neural) Network dargestellt.
     section
         slide-with-header(header="Hidden Layer(s) hinzufügen")
             .row
@@ -70,8 +70,8 @@ ng-template('#slides'='')
                 .col-6.r-stack
                     img(src="assets/images/neural-network/one_hidden_nn.png").img-fluid-both
                     img.fragment(src="assets/images/neural-network/one_hidden_nn_with_params.png").img-fluid-both
-            div.fragment.text-center.alert.alert-primary
-                div Hidden Layer entspricht mehreren Linearen Regressionen nebeneinander und übereinander!
+            div.mt-5.fragment.text-center.alert.alert-primary
+                div Hidden Layer entspricht mehreren Linearen Regressionen nebeneinander und hintereinander!
     section
         slide-with-header(header="Aktivierungsfunktion hinzufügen")
             .row
@@ -87,7 +87,7 @@ ng-template('#slides'='')
                     div.mt-5([mathjax]="oneHiddenLayerWithActivationOutput")
                 .col-6
                     img(src="assets/images/neural-network/one_hidden_nn_with_phi.png").img-fluid-both
-            div.fragment.text-center.alert.alert-primary
+            div.mt-5.fragment.text-center.alert.alert-primary
                 div
                     span(class="highlight", mathjax="<math><mi>ϕ</mi></math>")
                     span &nbsp;
@@ -105,7 +105,7 @@ ng-template('#slides'='')
                 .col-6.small-font
                     div([mathjax]="logisticRegression")
                 .col-6
-                    img(src="assets/images/neural-network/logistic_regression_as_nn.png").img-fluid-both
+                    img(src="assets/images/neural-network/logistic_regression.png").img-fluid-both
             div.mt-5.fragment.text-center.alert.alert-primary
                 div Hier ist die Aktivierungsfunktion der #[span.highlight Sigmoid].
     section
@@ -138,7 +138,7 @@ ng-template('#slides'='')
                     div ...
                     div([mathjax]="logisticRegressionYo")
                 .col-6
-                    img(src="assets/images/neural-network/logistic_regression_as_nn_with_multiple_output.png").img-fluid-both
+                    img(src="assets/images/neural-network/logistic_regression_with_multiple_outputs.png").img-fluid-both
             div.mt-5.fragment.text-center.alert.alert-primary
                 div Logistische Regression mit mehreren Outputs.
                 div Hier ist die Aktivierungsfunktion #[span.highlight Softmax].
@@ -154,7 +154,7 @@ ng-template('#slides'='')
                     li In einem Layer #[span.highlight weniger Nodes] => #[span.highlight Weniger lernbare Parameter]
                 li.mt-2 Kostenfunktion
                 ul
-                    li Kostenfunktion muss ableitbar sein.
+                    li Kostenfunktion muss #[span.highlight ableitbar] sein.
                     li Kann Problem spezifisch gewählt werden.
                 li.mt-2 Viele weitere Möglichkeiten (Deep Learning)
                 ul
@@ -163,15 +163,15 @@ ng-template('#slides'='')
         slide-with-header(header="Deep Learning - Gelerntes Feature Engineering")
            .row
                .col-12
-                   img(src="assets/images/neural-network/one_hidden_nn_with_phi.png").img-fluid-both
-               .col-12.scale-05
+                   img(src="assets/images/neural-network/one_hidden_nn_with_phi.png", style={height: "350px", marginLeft: "100px"}).img-fluid-both
+               .col-12.mt-5.scale-05
                    model-3-visualization(input-header="Input Space", [with-trigger]="false", feature-header="Feature Space", output-header="Output Space" )
                        div(input).rect-styling
                            div(mathjax="x")
                        div(pre).model-box Feature Engineering
                        div(feature).rect-styling
                            div(mathjax="z")
-                       div(model).model-box Modell
+                       div(model).model-box Lineares Modell
                        div(output).rect-styling
                            div(mathjax="y")
            div.fragment.text-center.alert.alert-primary.small-font
@@ -182,8 +182,8 @@ ng-template('#slides'='')
             div.primary
             .row
                 .col-12
-                    img(src="assets/images/neural-network/one_hidden_nn_with_phi.png").img-fluid-both
-                .col-12.scale-05
+                    img(src="assets/images/neural-network/one_hidden_nn_with_phi.png", style={height: "350px", marginLeft: "100px"}).img-fluid-both
+                .col-12.mt-5.scale-05
                     model-3-visualization("#encMod"="", [with-trigger]="false", output-header="Output Space" )
                         div(inputHeader)
                             div(style={marginTop: "-75px"})
@@ -200,7 +200,7 @@ ng-template('#slides'='')
                         div(feature).fix-height.code
                             | [ -57.2, -3.6, ..., 2.3, -3.4 ]
                         div(model).model-box
-                            div Modell
+                            div Lineares Modell
                         div(output).rect-styling
                             div.code Deer
             div.fragment.text-center.alert.alert-primary.small-font
@@ -250,17 +250,17 @@ ng-template('#slides'='')
             .r-stack.mt-5
                 .row(style={background: "white", width: "100%"}).fragment
                     .col-6
-                        img(src="assets/images/neural-network/a_very_simple_nn.png").img-fluid-both
+                        img(src="assets/images/neural-network/very_simple_nn_with_params.png").img-fluid-both
                     .col-6
                         div([mathjax]="backpropSetting", style={fontSize: "22px"})
                 .row(style={background: "white", width: "100%"}).fragment
                     .col-6
-                        img(src="assets/images/neural-network/a_very_simple_nn_2.png").img-fluid-both
+                        img(src="assets/images/neural-network/very_simple_nn.png").img-fluid-both
                     .col-6
                         div([mathjax]="backpropSetting2", style={fontSize: "22px"})
                 .row(style={background: "white", width: "100%"}).fragment
                     .col-6
-                        img(src="assets/images/neural-network/a_very_simple_nn_2.png").img-fluid-both
+                        img(src="assets/images/neural-network/very_simple_nn.png").img-fluid-both
                     .col-6
                         div([mathjax]="backpropSetting3", style={fontSize: "22px"})
             div.fragment.text-center.alert.alert-warning(style={fontSize: "22px"})

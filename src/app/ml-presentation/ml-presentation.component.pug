@@ -71,27 +71,33 @@ reveal-presentation
     k-nearest-neighbours
     support-vector-machine
     question-slide([questions]="supportVectorMachineQuestions")
-    what-is-kernel-trick
-    cart
     section
         slide-with-header(header="Übungszeit (60 Minuten)")
             div.notebook-name exercise/classification.ipynb
             img(src="assets/images/code.png")
-    tables-of-content-problems([active]="problemLabels.UNSUPERVISED_LEARNING")
-    tables-of-content-problems([active]="problemLabels.DIMENSIONALITY_REDUCTION")
-    what-is-dimensionality-reduction
-    pca
-    question-slide([questions]="pcaQuestions")
-    tables-of-content-problems([active]="problemLabels.CLUSTERING")
-    what-is-clustering
-    k-means
+    what-is-kernel-trick
+    cart
+    question-slide([questions]="cartQuestions")
+    data-science-pitfalls-data-leakage
     section
         slide-with-header(header="Übungszeit (Weitere 60 Minuten)")
             div.notebook-name exercise/classification.ipynb
             img(src="assets/images/code.png")
+    tables-of-content-problems([active]="problemLabels.UNSUPERVISED_LEARNING")
+    tables-of-content-problems([active]="problemLabels.CLUSTERING")
+    what-is-clustering
+    k-means
 
     // DAY 3
     day3-title-slide
+    tables-of-content-problems([active]="problemLabels.DIMENSIONALITY_REDUCTION")
+    what-is-dimensionality-reduction
+    pca
+    question-slide([questions]="pcaQuestions")
+    section
+        slide-with-header(header="Übungszeit (Weitere 60 Minuten)")
+            div.notebook-name exercise/classification.ipynb
+            img(src="assets/images/code.png")
     feed-forward-neural-network
     section
         slide-with-header(header="Übungszeit (60 Minuten)")

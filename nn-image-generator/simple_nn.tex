@@ -1,0 +1,22 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% simple_nn.png
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2}}
+    \hidden{{1,2}}{$\sum \rightarrow \phi$}
+    \outputs{{1}}{$\sum \rightarrow \phi$}
+    \layers
+    \inputhiddenconnections{{bias,1,2}}{{1,2}}
+    \hiddenoutputconnections{{bias,1,2}}{{1}}
+
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

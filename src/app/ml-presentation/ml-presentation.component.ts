@@ -13,7 +13,7 @@ export class MlPresentationComponent {
   methodLabels = ConceptTableOfContentLabel
 
   linearRegressionQuestions = [
-    new Question('Was für Annahmen trifft die Lineare Regression?', '1. Output ist Gewichtete Summe von Features; 2. Mean Squared Error als Cost Function'),
+    new Question('Was für Annahmen trifft die Lineare Regression?', '1. Output ist Gewichtete Summe von Features; 2. Mean Squared Error als Kostenfunktion'),
     new Question('Was sind lernbare Parameter?', 'Die Parameter lernt das Modell (mittels Optimierung) aus den Daten, z.B. die Betas in der Linearen Regression.'),
     new Question('Wie kann ich die Lineare Regression optimieren?', 'Analytisch oder mit Gradient Descent'),
   ]
@@ -51,6 +51,11 @@ export class MlPresentationComponent {
   supportVectorMachineQuestions = [
     new Question('Was ist der Unterschied von der Logistischen Regression zur Support Vector Machine?', 'Hard-Margin vs. Wahrscheinlichkeit / Sigmoid vs. Heavyside Step / ...'),
     new Question('Was ist der Zusammenhang der SVM zur Linearen Regression?', 'Das Modell der SVM nutzt einfach das Vorzeichen des Linearen Modells.')
+  ]
+
+  cartQuestions = [
+    new Question('Was ist ein (binary) Decision Tree?', 'Eine Abfolge von If, Else Statements (Branches) bis zu einem Endknoten (Leaves).'),
+    new Question('Kann ein Decision Tree einfach eine lineare Decision Boundary lernen?', 'Nein. Raum wird senkrecht zu Feature-Achsen aufgeteilt. Eine lineare Decision Boundary muss also mit stufenweise angenähert werden.'),
   ]
 
   pcaQuestions = [

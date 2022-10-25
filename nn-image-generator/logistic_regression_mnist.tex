@@ -1,0 +1,19 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% Logistic Regression - MNIST
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,784}}
+    \outputs{{0,missing,9}}{$\sum \rightarrow \phi$}
+    \layersIO
+    \inputoutputconnections{{bias,1,2,784}}{{0,9}}
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

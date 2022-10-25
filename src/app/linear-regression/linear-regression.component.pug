@@ -149,7 +149,7 @@ ng-template('#slides'='')
                 div([mathjax]="metricCostFunctionMSE")
             div.mt-5.fragment Beispiel (Lineare Regression mit 2 Parameter):
                 div([mathjax]="metricCostFunctionMSE1D")
-            p.fragment.text-center.alert.alert-warning Synonym: #[span.highlight Cost function] = Loss f. = Objective f.
+            p.fragment.text-center.alert.alert-warning Synonym: #[span.highlight Kostenfunktion] = Loss f. = Objective f.
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.COST_FUNCTION")
     section
         slide-with-header(header="Linear Regression - Kostenfunktion")
@@ -194,7 +194,7 @@ ng-template('#slides'='')
             div Folgende Funktion #[span([mathjax]="metricCostFunctionMSE1DCompact")] visualisiert für einen bestimmten Datensatz:
             div.d-flex.justify-center
                 img(src="assets/images/gradient-descent/gradient_descent_cost_function.png").fragment
-            p.fragment.text-center.alert.alert-primary Schüssel nennt man #[span.highlight Convex Cost function]
+            p.fragment.text-center.alert.alert-primary Schüssel nennt man #[span.highlight Convex Kostenfunktion]
     section
         slide-with-header(header="Linear Regression - Optimierung - Analytisch", [repetition]="'Regression'")
             p(style={marginTop: "-20px"}).fragment Idee: Wir lösen folgende Gleichung:
@@ -242,7 +242,7 @@ ng-template('#slides'='')
                         div.align-self-end([mathjax]="gradientDescentUpdate")
                 li.fragment.mt-2
                     div #[span.highlight Wiederhole] 2. bis eine Abbruchbedingung erreicht.
-            p.mt-5.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Cost function] möglich
+            p.mt-5.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Kostenfunktion] möglich
             p.mt-5.fragment.text-center.alert.alert-warning In der Praxis wird die #[span.highlight Analytische Methode für Lineare Regression] eingesetzt (schneller)
             // div.fragment
             //     div.mt-5.d-flex.justify-center.align-end(style={alignItems: "stretch"})

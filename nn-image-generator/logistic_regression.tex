@@ -1,0 +1,18 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% Logistic Regression
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,p}}
+    \outputs{{ }}{$\sum \rightarrow \phi$}
+    \layersIO
+    \inputoutputconnections{{bias,1,2,p}}{{ }}
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

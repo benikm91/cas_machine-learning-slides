@@ -1,0 +1,31 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% very simple_nn.png
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+
+    \inputs{{1,2}}
+    \hidden{{1}}{$\sum \rightarrow \phi$}
+    \outputs{{1}}{$\sum \rightarrow \phi$}
+    \layers
+
+    \draw [->,red] (input-bias) -- (hidden-1) node[pos=0.25,left,above] {$\beta^{(1)}_{1,0}$};
+    \foreach \i in {1,2}
+    \foreach \j in {1}
+    \draw [->,red] (input-\i) -- (hidden-\j) node[pos=0.25,left,above] {$\beta^{(1)}_{\j,\i}$};
+
+    \draw [->,red] (hidden-bias) -- (output-1) node[pos=0.25,left,above] {$\beta^{(2)}_{1,0}$};
+    \foreach \i in {1}
+    \foreach \j in {1}
+    \draw [->,red] (hidden-\i) -- (output-\j) node[pos=0.25,left,above] {$\beta^{(2)}_{\j,\i}$};
+
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

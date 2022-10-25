@@ -1,0 +1,28 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% One Hidden MNIST - with second layer params
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,784}}
+    \hidden{{1,missing,36}}{$\sum \rightarrow \phi$}
+    \outputs{{0,missing,9}}{$\sum \rightarrow \phi$}
+    \layers
+    \inputhiddenconnections{{bias,1,2,784}}{{1,36}}
+
+    \foreach \i in {1,36}
+    \foreach \j in {0}
+    \draw [->,red] (hidden-\i) -- (output-\j) node[pos=0.25,left,above] {$\beta^{(2)}_{\j,\i}$};
+    \foreach \i in {1,36}
+    \foreach \j in {9}
+    \draw [->,opacity=0.1] (hidden-\i) -- (output-\j);
+
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% Logistic Regression - MNIST - with params
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,784}}
+    \outputs{{0,missing,9}}{$\sum \rightarrow \phi$}
+    \layersIO
+
+    \foreach \i in {1,2,784}
+    \foreach \j in {0}
+    \draw [->,red] (input-\i) -- (output-\j) node[pos=0.25,left,above] {$\beta^{(1)}_{\j,\i}$};
+    \foreach \i in {bias,1,2,784}
+    \foreach \j in {9}
+    \draw [->,opacity=0.1] (input-\i) -- (output-\j);
+
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}
