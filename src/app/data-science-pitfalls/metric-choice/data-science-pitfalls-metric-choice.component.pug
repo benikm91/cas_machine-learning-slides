@@ -1,0 +1,16 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Data Science Pitfall - Metrik Wahl")
+            div(style={fontSize: "28px"}).text-start
+                ul
+                    li #[span.highlight Richtige Metrik ist vom Business Case (oder verfügbaren Daten)] motiviert (z.B. prozentualer Fehler (MAPE) anstatt absoluter Fehler (MSE))
+                    li Regression
+                        ul
+                            li Eine robuste Metrik (z.B. MAE) kann Model stabilisieren bei unsicherer Datenqualität.
+                    li Klassifikation
+                        ul
+                            li Bei #[span.highlight inbalanced Klassen] verwende nicht Accuracy sondern eine entsprechende Metrik (z.B. #[span.highlight F1-Score])
+                            li Wenn #[span.highlight False Negative] und #[span.highlight False Positive] unterschiedlich zu bewerten sind, dann #[span.highlight Cost-Sensitive Learning], #[span.highlight Threshold Moving]
+            hr
+            .reference.text-start
+                div [Alternative Quelle]: Section 4.6 in Paper "How to avoid machine learning pitfalls: a guide for academic researchers"

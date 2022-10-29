@@ -114,6 +114,27 @@ import {
 import {
   DataSciencePitfallsDataLeakageComponent
 } from "./data-science-pitfalls/data-leakage/data-science-pitfalls-data-leakage.component";
+import {
+  DataSciencePitfallsGarbageInGarbageOutComponent
+} from "./data-science-pitfalls/garbage-in-garbage-out/data-science-pitfalls-garbage-in-garbage-out.component";
+import {
+  DataSciencePitfallsEnoughDataComponent
+} from "./data-science-pitfalls/enough-data/data-science-pitfalls-enough-data.component";
+import {
+  DataSciencePitfallsMetricChoiceComponent
+} from "./data-science-pitfalls/metric-choice/data-science-pitfalls-metric-choice.component";
+import {
+  DataSciencePitfallsTackleAProblemComponent
+} from "./data-science-pitfalls/tackle-a-problem/data-science-pitfalls-tackle-a-problem.component";
+import {
+  DataSciencePitfallsCorrectResultInterpretationComponent
+} from "./data-science-pitfalls/correct-result-interpretation/data-science-pitfalls-correct-result-interpretation.component";
+import {
+  DataSciencePitfallsModelDevelopmentComponent
+} from "./data-science-pitfalls/model-development/data-science-pitfalls-model-development.component";
+import {
+  DataSciencePitfallsModelChoiceComponent
+} from "./data-science-pitfalls/model-choice/data-science-pitfalls-model-choice.component";
 
 @NgModule({
   declarations: [
@@ -134,7 +155,9 @@ import {
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
     DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
-    WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent
+    WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent, DataSciencePitfallsGarbageInGarbageOutComponent,
+    DataSciencePitfallsEnoughDataComponent, DataSciencePitfallsTackleAProblemComponent, DataSciencePitfallsMetricChoiceComponent, DataSciencePitfallsCorrectResultInterpretationComponent,
+    DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent
   ],
   imports: [
     BrowserModule,

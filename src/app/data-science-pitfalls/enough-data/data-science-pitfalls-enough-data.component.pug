@@ -1,0 +1,38 @@
+ng-template('#slides'='')
+    section(id="enough-data")
+        slide-with-header(header="Data Science Pitfall - Genug Daten")
+            div(style={fontSize: "28px"}).text-start
+                ul
+                    li #[span.highlight Zu Beginn]: Haben wir #[span.highlight genug Daten], um das #[span.highlight gewünschte Problem] zu lösen?
+                    li.text-start Möglichkeiten dies fest zu stellen:
+                        ul
+                            li Erfahrung, Austausch mit anderen Data-Science-Experten
+                            li Wie viel Daten brauchten ähnliche Probleme
+                            li
+                                div Für spezifisches Modell: #[span.highlight Learning Curve] visualisieren (nächste Slide)
+                    li.text-start Was kann man gegen zu wenig Daten tun?
+                        ul
+                            li #[span.highlight Mehr Daten] sammeln (z.B. Tesla Autopilot)
+                            li #[span.highlight Problem vereinfachen] (z.B. nur bestimmte Städte befahren)
+                            li #[span.highlight Projekt abbrechen] oder verschieben
+                            li #[span.highlight Data Augmentation]: Vorhandene Daten künstlich variieren
+                            li #[span.highlight Transfer Learning]: Daten eines ähnlichen Problems ausnutzen
+                            li #[span.highlight Modell vereinfachen], z.B. mehr sinnvolle Annahmen (mit Domänen Experten) treffen, wie Kreatives Feature Engineering oder Feature Encoding (z.B. durchschnittlicher Quadratmeterpreis im Umkreis)
+                hr
+                .reference.text-start
+                    div [Alternative Quelle]: Section 2.3 in Paper "How to avoid machine learning pitfalls: a guide for academic researchers"
+    section
+        slide-with-header(header="Genug Daten - Learning Curve")
+            div(style={fontSize: "28px"}).text-start
+                div Die #[span.highlight Learning Curve] ist für #[span.highlight ein] spezifischen Modell (z.B. eine bestimmte Neural Network Architektur)
+                div Die Learning Curve zeigt uns, wie gut das Modell mit #[span.highlight unterschiedlich vielen Trainings-Daten] ist
+                div Die Learning Curve zeigt uns, wann und #[span.highlight ob das Modell "gesättigt"] ist
+                .row.mt-5
+                    .col-6
+                        div.r-stack
+                            img.fragment(src="assets/images/data-science-pitfalls/learning_curve_covered.png", height="250px")
+                    .col-6
+                        div.fragment.pt-4
+                            div Das spezifische Modell würde (wahrscheinlich) von mehr Daten profitieren.
+                            div Kann Projekt-Entscheid steuern, z.B. Modelentwicklung pausieren und lieber mehr Daten sammeln
+                div.mt-5.fragment.text-center.alert.alert-warning Aber: Eine andere Model-Wahl könnte bereits jetzt besser funktionieren...

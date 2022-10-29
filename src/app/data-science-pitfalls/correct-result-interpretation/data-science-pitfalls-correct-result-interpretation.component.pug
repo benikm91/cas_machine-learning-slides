@@ -1,0 +1,36 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Data Science Pitfall - Resultate interpretieren")
+            div(style={fontSize: "32px"})
+                ul
+                    li Performanz richtig einordnen, #[span.highlight Resultate nicht Generalisieren] auf andere Probleme
+                        ul
+                            li Gegeben der Metrik
+                            li Gegeben dem Problem
+                            li Gegeben den Daten, z.B. dem Selection Bias (Datenquelle(n), Datenfilter)
+                    li Nicht überbewerten, #[span.highlight Grenzen] bewusst sein, Klar kommunizieren
+                    li Kleine Verbesserung für grosse Komplexität im Modell ist meistens unerwünscht
+                        ul
+                            li Einfachere Modelle einfache maintenance
+                            li #[span.highlight Occam's Razor]
+    section
+        slide-with-header(header="Resultate interpretieren - Beispiele")
+            div(style={fontSize: "32px"})
+                ul.text-start
+                    li ML Lab Tag 1: 20% Genauigkeit, was bedeutet das?
+                        ul
+                            li Vorhersage ist #[span.highlight in den Daten] im Durchschnitt +-20% genau
+                            li.fragment Angebotspreis nicht Verkaufspreis wird vorhergesagt
+                            li.fragment #[span.highlight Nur] für Objekte aus dem Inserats-Jahr 2018
+                            li.fragment #[span.highlight Nur] für bestimmte Nutzungen, maximale Grösse
+                            li.fragment #[span.highlight Nur] für Objekte von gecrawlter Internet-Platform
+                div.fragment
+                    hr
+                    ul.text-start
+                        li ML Lab Tag 2: 50% Genauigkeit, was bedeutet das?
+                            ul
+                                li 50% der Bilder wurden #[span.highlight in den Daten] richtig erkannt
+                                li.fragment #[span.highlight Nur] 10 Kategorien können erkennt werden
+                                li.fragment #[span.highlight Nur] 32x32x3 Pixel Bilder
+                                li.fragment #[span.highlight Nur] Bilder, wo Objekt zentral abgebildet
+            div.mt-3.fragment.text-center.alert.alert-warning Resultate nicht über die Daten hinaus generalisieren

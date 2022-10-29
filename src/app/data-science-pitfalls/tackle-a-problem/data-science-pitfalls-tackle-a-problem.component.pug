@@ -1,0 +1,25 @@
+ng-template('#slides'='')
+    section(id="tackle-a-problem")
+        slide-with-header(header="Data Science Tipp - Wie ein Problem angehen?")
+            ul(style={fontSize: "28px"}).text-start
+                li #[span.highlight Verstehe das Problem] (z.B. Regression, Klassifikation, Zeitreihe, Spezialfälle)
+                    ul
+                        li Einlesen in jeweiliges Gebiet: Wir haben #[span.highlight hier nicht alles behandelt]!
+                li #[span.highlight Verstehe das Ziel], wie bestmögliche Genauigkeit (z.B. Noise im Markt nicht vorhersagbar).
+                    ul
+                        li Siehe #[a(href="#/metric-choice") Metrikwahl]
+                li #[span.highlight Verstehe und evaluiere die verfügbaren Daten]
+                    ul
+                        li Siehe #[a(href="#/garbage-in-garbage-out") Garbage-in-Garbage-Out] und #[a(href="#/enough-data") genug Daten]
+                li #[span.highlight Evaluiere die Datenlandschaft] (z.B. crawlbare Daten einer öffentlichen API)
+                li Rede mit #[span.highlight Domänen Experten]
+                    ul
+                        li #[span.highlight Welche Informationen] sind wichtig (für Feature Selection)
+                        li Was sind #[span.highlight bekannte Zusammenhänge] (für Sicherung der Datenqualität und Feature Engineering)
+                li Konsolidiere die Literatur oder #[span.highlight andere Data Science Experten]
+                    ul
+                        li #[span.highlight Welche Modelle] haben bei ähnlichen Problemen gut funktioniert?
+                        li Welche #[span.highlight Feature Engineerings], #[span.highlight Datenquellen] haben geholfen?
+            hr
+            .reference.text-start
+                div TODO

@@ -33,11 +33,13 @@ ng-template('#slides'='')
                         div #[span.highlight Initialisiere] Schwerpunkte mit zufälligen Werten.
                     li.fragment.mt-2
                         div #[span.highlight Weise Datenpunkte] nächstem Schwerpunkt #[span.highlight zu].
+                        div.small-font Minimiert Kostenfunktion betreffend momentaner Cluster Zugehörigkeit
                     li.fragment.mt-2
                         div #[span.highlight Aktualisiere Schwerpunkte] anhand der zugewiesenen Datenpunkte.
+                        div.small-font Minimiert Kostenfunktion betreffend momentanem Cluster Schwerpunkt
                     li.fragment.mt-2
                         div #[span.highlight Wiederhole] 2. und 3., bis keine Veränderung mehr statt findet.
-            div.fragment.mt-5.text-center.alert.alert-warning Findet lokales Minimum! Ganzen Algorithmus mehrmals #[span.highlight wiederholen mit anderen Initialwerten].
+            div.fragment.mt-2.text-center.alert.alert-warning Findet lokales Minimum! Ganzen Algorithmus mehrmals #[span.highlight wiederholen mit anderen Initialwerten].
     section
         slide-with-header(header="K-Means - Optimierung - Intuition")
             img(src="assets/images/k-means/kMeans2.gif")

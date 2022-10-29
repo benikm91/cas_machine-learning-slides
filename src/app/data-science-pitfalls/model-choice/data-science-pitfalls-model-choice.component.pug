@@ -1,0 +1,36 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Data Science Pitfall - Model-Wahl")
+            div(style={fontSize: "16px"}).text-start
+                div "#[a(href="#/tackle-a-problem") Wie ein Problem angehen]" Punkte sind erledigt #[span.highlight vor] Model-Wahl
+                div Für die Model-Wahl spielt folgendes eine Rolle:
+                ul
+                    li #[span.highlight Problem-Komplexität] (z.B. Katze-Hund Bildererkennung vs. Tesla Auto Pilot)
+                    li #[span.highlight Problem-Domäne] (z.B. strukturierte Daten vs. unstrukturierte Daten)
+                    li #[span.highlight Anzahl Datenpunkte] (10 Daten, 100 Daten, 1000 Daten, ... , 1000000 Daten, ...)
+                    li #[span.highlight Anzahl Features] (5 Features, 10 Features, 100 Features, ... , 10000 Features, ...)
+                    li #[span.highlight Modell Interpretierbarkeit]
+                    li (Verfügbare Rechenzeit)
+                    li ...
+                .row.mt-3
+                    .col-6
+                        h5 sklean User Guide
+                        div
+                            img(src="assets/images/data-science-pitfalls/ml_map.png", height="300px")
+                            a(href="https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html", style={fontSize: "10px"}) Source: https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+                    .col-6
+                        h5 Meine persönliches Vorgehen
+                        ul
+                            li Konsultiere Literatur und Best Practices in Problem-Domäne
+                            li
+                                .highlight Unstrukturierte Daten, dann Deep Learning
+                                ul.m-0
+                                    li Bilder, dann Convolutional Neural Network
+                                    li Text, dann RNN oder Transformer
+                                    li Zu wenig Daten? Dann siehe #[a(href="#/enough-data") Genug Daten]
+                            li
+                                .highlight Strukturierte Daten, dann "klassisches" Machine Learning
+                                ul.m-0
+                                    li Wenig Daten (< 500), dann Lineare Modelle mit vielen Annahmen (Feature Selection, kreatives Feature Engineering, Monotonic Constraints)
+                                    li Mehr Daten (> 500), dann Nicht-Lineare Modelle mit weniger Annahmen (kreatives Feature Engineering)
+                                    li Extra Fokus auf Datenqualität, siehe #[a(href="#/garbage-in-garbage-out") Garbage-in-Garbage-Out]

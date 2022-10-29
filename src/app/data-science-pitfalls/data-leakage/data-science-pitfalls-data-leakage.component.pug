@@ -1,14 +1,18 @@
 ng-template('#slides'='')
     section
         slide-with-header(header="Data Science Pitfall - Data Leakage")
-            div.text-start Informationen von #[span.highlight Test-Daten nicht für Training oder Entscheidungen] verwenden. Ansonsten ist Evaluation falsch (biased).
-            hr
-            div.text-start(style={fontSize: "32px"}) Beispiele:
-                ul
-                    li Modelle nur auf den Train Daten fitten (z.B. LinearRegression)
-                    li Data Analysis nicht auf Test-Daten ausführen
-                    li Preprocessing nur auf den Train Daten fitten (z.B. StandardScaler)
-                    li Feature Engineering nur auf den Train Daten fitten (z.B. Durchschnittlicher Quadratmeterpreis nur aus Train Daten berechnen)
-            hr
-            div.text-start [Alternative Quelle]: #[a(href="https://scikit-learn.org/stable/common_pitfalls.html#data-leakage") sklearn User Guide]
+            div(style={fontSize: "32px"})
+                div.text-start Aus Daten Lernen und Entscheidungen dürfen #[span.highlight nicht von ungesehenen Daten (Test-Daten)] beeinflusst werden. Ansonsten ist Evaluation des finalen Modells biased (zu optimistisch).
+                hr
+                div.text-start Beispiele:
+                    ul
+                        li #[span.highlight Modelle] nur auf den #[span.highlight Train-Daten] fitten (z.B. LinearRegression)
+                        li #[span.highlight Preprocessing] nur auf den #[span.highlight Train-Daten] fitten (z.B. StandardScaler)
+                        li #[span.highlight Feature Engineering] nur auf den #[span.highlight Train-Daten] fitten (z.B. durchschnittlicher Quadratmeterpreis)
+                        li #[span.highlight Model-Selection] mit #[span.highlight Validation-Daten] ausführen (z.B Cross-Validation)
+                        li #[span.highlight Data Analysis nicht auf den Test-Daten] ausführen (z.B. Pairplot)
+                hr
+                .reference.text-start
+                    div [Alternative Quelle]: #[a(href="https://scikit-learn.org/stable/common_pitfalls.html#data-leakage") sklearn User Guide]
+                    div [Alternative Quelle]: Section 3.1 in Paper "How to avoid machine learning pitfalls: a guide for academic researchers"
 

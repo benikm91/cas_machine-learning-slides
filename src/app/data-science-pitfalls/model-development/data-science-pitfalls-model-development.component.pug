@@ -1,0 +1,25 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Data Science Pitfall - Model Entwicklung")
+            div(style={fontSize: "28px"}).text-start
+                div Folge folgenden Schritten:
+                ol
+                    li #[span.highlight Schätze] was ist bestenfalls erreichbar gegeben dem Problem (z.B. 5-10%)
+                        ul
+                            li z.B. wie genau kann es eine Fachperson schätzen
+                            li Wenn Modell besseres Ergebnis erziele, könnte ein Bug der Grund sein
+                    li Erstelle eine #[span.highlight Baseline], Upper-Bound (z.B. 50%)
+                    li Erstelle ein erstes #[span.highlight einfaches Modell] (z.B. 40%)
+                    li #[span.highlight Iteratives] verbessern vom Modell mit Daten, Annahmen
+                        ul
+                            li #[span.highlight Systematisches Vorgehen]: Planen, Umsetzen, Evaluieren
+                            li #[span.highlight Ein Schritt nach dem anderen]: Verbesserungs-Grund verstehen
+                                ul
+                                    li z.B. ein neues Feature oder eine neue Modellart oder ein neues Feature Engineering
+                            li #[span.highlight Verkompliziere das Modell nicht] für "nur" minimale Verbesserungen
+                                ul
+                                    li Occam's Razor, "einfachste Theorie allen anderen vorzuziehen"
+                                    li Einfachheit vom Modell ist eine Qualität, betreffend Deployment, Maintenance, Extension
+            hr
+            .reference.text-start
+                div TODO

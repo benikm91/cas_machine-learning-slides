@@ -1,0 +1,27 @@
+ng-template('#slides'='')
+    section(id="garbage-in-garbage-out")
+        slide-with-header(header="Data Science Pitfall - \"Garbage in, Garbage out\"")
+            div(style={fontSize: "28px"})
+                .row
+                    .col-8.text-start
+                        ul
+                            li #[span.highlight Datenqualität] ist wichtig für Machine Learning: Sind #[span.highlight Trainings-Daten schlecht] (Garbage in), wird auch das #[span.highlight Modell schlecht] sein (Garbage out)
+                                ul
+                                    li Manche Metriken sind #[span.highlight anfällig auf Outliers] (z.B. Mean Squared Error), dann kann bereits ein #[span.highlight fehlerhafter Wert] (Fehler bei Eingabe/Crawlen) grossen Einfluss haben.
+                    .col-4
+                        img(src="assets/images/machine-learning/where-highlight.png").img-fluid-both
+                    .col-12.text-start
+                        ul
+                            li #[span.highlight Überprüfe immer zuerst die Datenqualität]:
+                                ul
+                                    li Daten verstehen
+                                    li Daten vereinheitlichen (z.B. Zeitzonen aus Zeit rechnen)
+                                    li Inkonsistenz finden (z.B. Anzahl Räume, Wohnfläche widersprüchlich)
+                                    li Auffällige Werte finden und erklären (oder korrigieren/ausschliessen)
+                                    li Daten visualisieren (Verteilungen, Pairplot) und analysieren
+                                    li Gefundene Muster mit Domänen-Experte gegenchecken
+                                    li Bekannte Zusammenhänge in Daten wiederfinden bzw. gegenprüfen
+                hr
+                .reference.text-start
+                    div [Alternative Quelle]: Section 2.1 in Paper "How to avoid machine learning pitfalls: a guide for academic researchers"
+

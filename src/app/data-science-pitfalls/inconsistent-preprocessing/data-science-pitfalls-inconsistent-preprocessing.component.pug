@@ -1,10 +1,10 @@
 ng-template('#slides'='')
     section
         slide-with-header(header="Data Science Pitfall - Inconsistent preprocessing")
-            div.text-start Alle #[span.highlight Feature Preprocessing Schritte] müssen #[span.highlight identisch] ausgeführt werden für Train-Set, Validation-Set und Test-Set.
-            hr
-            div.notebook-name inconsistent-preprocessing.ipynb
-            img(src="assets/images/code.png")
-            hr
-            div.text-start [Alternative Quelle]: #[a(href="https://scikit-learn.org/stable/common_pitfalls.html#inconsistent-preprocessing") sklearn User Guide]
+            div(style={fontSize: "28px"})
+                div.text-start Alle #[span.highlight Feature Preprocessing Schritte] müssen #[span.highlight identisch] ausgeführt werden #[span.highlight für alle Daten] (Train-Set, Validation-Set, Test-Set, in Produktion).
+                img.mt-3(src="assets/images/data-science-pitfalls/inconsistent_preprocessing.png", height="450px")
+                hr
+                .reference.text-start
+                    div [Alternative Quelle]: #[a(href="https://scikit-learn.org/stable/common_pitfalls.html#inconsistent-preprocessing") sklearn User Guide]
 
