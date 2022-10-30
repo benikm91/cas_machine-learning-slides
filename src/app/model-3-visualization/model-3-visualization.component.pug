@@ -18,4 +18,4 @@
     h5(*ngIf="outputHeader").pos-x-output.pos-y-header.header {{outputHeader}}
     div('#output'='').pos-x-output.pos-y-box.box
         ng-content(select="[output]")
-span(*ngIf="withTrigger").fragment(fragment-trigger, (trigger)="start()", (untrigger)="end()")
+span.fragment(*ngIf="withTrigger", fragment-trigger, (trigger)="start()", (untrigger)="end()")
