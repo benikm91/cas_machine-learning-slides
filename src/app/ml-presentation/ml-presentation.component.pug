@@ -91,13 +91,9 @@ reveal-presentation
     question-slide([questions]="pcaQuestions")
     section
         slide-with-header(header="Übungszeit (Weitere 60 Minuten)")
-            div.notebook-name exercise/classification.ipynb
-            img(src="assets/images/code.png")
-    feed-forward-neural-network
-    section
-        slide-with-header(header="Übungszeit (60 Minuten)")
             div.notebook-name exercise/dimensionality_reduction.ipynb
             img(src="assets/images/code.png")
+    feed-forward-neural-network
     section
         slide-with-header(header="Übungszeit (60 Minuten)", [extra]="true")
             div.notebook-name exercise/neural_network.ipynb
@@ -106,12 +102,12 @@ reveal-presentation
     data-science-pitfalls-enough-data
     data-science-pitfalls-correct-result-interpretation
     data-science-pitfalls-data-leakage
-    section
-        slide-with-header(header="Linear Regression - Wissens Ansicht")
-            div
-                p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
-            div.d-flex.justify-center
-                knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
-            span.fragment(fragment-trigger, (trigger)="knowledgeView.start()", (untrigger)="knowledgeView.end()")
-    section
-        div §: NMF?
+    // section
+    //     slide-with-header(header="Linear Regression - Wissens Ansicht")
+    //         div
+    //             p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
+    //         div.d-flex.justify-center
+    //             knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
+    //         span.fragment(fragment-trigger, (trigger)="knowledgeView.start()", (untrigger)="knowledgeView.end()")
+    // section
+    //     div §: NMF?

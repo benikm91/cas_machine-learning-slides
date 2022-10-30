@@ -45,8 +45,8 @@ export function createProblemTableOfContent(active: ProblemTableOfContentLabel |
             c(ProblemTableOfContentLabel.CLASSIFICATION, active),
         ]),
         c(ProblemTableOfContentLabel.UNSUPERVISED_LEARNING, active, [
+            c(ProblemTableOfContentLabel.CLUSTERING, active),
             c(ProblemTableOfContentLabel.DIMENSIONALITY_REDUCTION, active),
-            c(ProblemTableOfContentLabel.CLUSTERING, active)
         ]),
         c(ProblemTableOfContentLabel.REINFORCEMENT_LEARNING, active),
     ])
