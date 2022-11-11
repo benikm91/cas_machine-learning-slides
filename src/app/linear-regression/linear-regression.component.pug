@@ -26,7 +26,7 @@ ng-template('#slides'='')
                 .col-6
                     .fragment(data-fragment-index="1") Dazu verwenden wir das folgende #[span.highlight Lineare Modell]
                         div([mathjax]="linearRegression1DExample")
-            div.d-flex.justify-content-center.fragment
+            div.mt-5.d-flex.justify-content-center.fragment
                 model-visualization(input-header="Input Space", output-header="Output Space")
                     div(input, class="input").transparent-border-1.code
                         | width: 5cm
