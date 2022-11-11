@@ -22,13 +22,6 @@
                             </mover>
                         </mrow>
                     </mfrac>
-                    <mi>J</mi>
-                    <mo form="prefix" stretchy="false">(</mo>
-                    <mover class="weight">
-                        <mi>β</mi>
-                        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-                    </mover>
-                    <mo form="postfix" stretchy="false">)</mo>
                     <mrow>
                         <mover>
                             <mo>=</mo>
