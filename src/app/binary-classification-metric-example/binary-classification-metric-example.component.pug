@@ -11,15 +11,15 @@ table(style={fontSize: "22pt"})
         td
             input(type="number", placeholder="True Positive (TP)", [(ngModel)]="tp", width="100px").true-positive
         td
-            input(type="number", placeholder="False Positive (FP)", [(ngModel)]="fn").false-positive
+            input(type="number", placeholder="False Negative (FN)", [(ngModel)]="fn").false-negative
     tr
         th Not Spam
         td
-            input(type="number", placeholder="False Negative (FN)", [(ngModel)]="fp").false-negative
+            input(type="number", placeholder="False Positive (FP)", [(ngModel)]="fp").false-positive
         td
             input(type="number", placeholder="True Negative (TN)", [(ngModel)]="tn").true-negative
-div(style={fontSize: "15pt"}, *ngFor="let precision of [round(((tp)/(tp+fn))*100)]")
-    ng-container(*ngFor="let recall of [round(((tp)/(tp+fp))*100)]")
+div(style={fontSize: "15pt"}, *ngFor="let recall of [round(((tp)/(tp+fn+0.00001))*100)]")
+    ng-container(*ngFor="let precision of [round(((tp)/(tp+fp+0.00001))*100)]")
         .mt-5.d-flex.justify-center.align-items-center
             div Accuracy
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
@@ -35,7 +35,7 @@ div(style={fontSize: "15pt"}, *ngFor="let precision of [round(((tp)/(tp+fn))*100
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
             div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+tp+'</mi></mrow><mrow><mi class=\"true-positive\">'+(tp+fp)+'</mi></mrow></mfrac></math>'")
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((tp)/(tp+fp))*100)+'%</mi></mrow></math>'")
+            div([mathjax]="'<math display=\"block\"><mrow><mi>'+precision+'%</mi></mrow></math>'")
         .mt-2.d-flex.justify-center.align-items-center
             div Recall
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
@@ -43,10 +43,10 @@ div(style={fontSize: "15pt"}, *ngFor="let precision of [round(((tp)/(tp+fn))*100
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
             div([mathjax]="'<math display=\"block\"><mfrac><mrow><mi>'+tp+'</mi></mrow><mrow><mi class=\"true-positive\">'+(tp+fn)+'</mi></mrow></mfrac></math>'")
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(((tp)/(tp+fn))*100)+'%</mi></mrow></math>'")
+            div([mathjax]="'<math display=\"block\"><mrow><mi>'+recall+'%</mi></mrow></math>'")
         .mt-2.d-flex.justify-center.align-items-center
             div F1-Score
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
             div([mathjax]="'<math display=\"block\"><mi>2</mi><mo>*</mo><mfrac><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>*</mo><mi class=\"true-negative\">'+recall+'</mi></mrow><mrow><mi class=\"true-positive\">'+precision+'</mi><mo>+</mo><mi class=\"true-negative\">'+recall+'</mi></mrow></mfrac></math>'")
             div([mathjax]="'<math display=\"block\"><mo>=</mo></math>'")
-            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(2 * precision*recall / (precision+recall))+'%</mi></mrow></math>'")
+            div([mathjax]="'<math display=\"block\"><mrow><mi>'+round(2 * precision*recall / (precision+recall+0.0001))+'%</mi></mrow></math>'")
