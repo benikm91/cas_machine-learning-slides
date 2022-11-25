@@ -1,9 +1,44 @@
 ng-template('#slides'='')
     section
-        slide-with-header(header="Was ist Data Science")
-            img(src="assets/images/machine-learning/dataScienceVenn.jpeg", style={height: "400px"}).mt-5.img-fluid
+        title-page
+            h1 Was ist Machine Learning
     section
-        slide-with-header(header="Einsatz-Beispiel")
+        slide-with-header(header="Problemfälle")
+            div.d-flex.justify-content-center
+                example-model-visualization("#ticTacToeExample"="", [positives]="['input', 'model', 'output']")
+                    div(input, class="input").transparent-border-1
+                        img(src="assets/images/machine-learning/ticTacToeStart.png").img-fluid
+                    div(model, class="model").model-box f
+                    div(output, class="output").transparent-border-1
+                        img(src="assets/images/machine-learning/ticTacToeEnd.png").img-fluid
+            ul.mt-5.fragment
+                li #[span.model-styling f] ist eine TicTacToe-AI die #[span.highlight perfekt] spielt
+            p.fragment.text-center.alert.alert-primary Ist das möglich?
+            span.fragment(fragment-trigger, (trigger)="ticTacToeExample.highlightStart()", (untrigger)="ticTacToeExample.highlightEnd()")
+    section
+        slide-with-header(header="Problemfälle")
+            div.d-flex.justify-content-center
+                example-model-visualization("#chessExample"="", [positives]="['input', 'output']")
+                    div(input, class="input").fix-height.transparent-border-1
+                        img(src="assets/images/machine-learning/chessStartboard.png").img-fluid-both
+                    div(model, class="model").model-box f
+                    div(output, class="output").fix-height.transparent-border-1
+                        img(src="assets/images/machine-learning/chessEndboardOptimal.png").img-fluid-both
+            ul.mt-5.fragment
+                li #[span.model-styling f] ist eine Chess-AI die #[span.highlight perfekt] spielt
+            span.fragment(fragment-trigger, (trigger)="chessExample.highlightStart()", (untrigger)="chessExample.highlightEnd()")
+            div.mt-5.d-flex.justify-content-center.fragment
+                example-model-visualization("#chessApproxExample"="", [positives]="['input', 'model', 'output']")
+                    div(input, class="input").fix-height.transparent-border-1
+                        img(src="assets/images/machine-learning/chessStartboard.png").img-fluid-both
+                    div(model, class="model").model-box approx f
+                    div(output, class="output").fix-height.transparent-border-1
+                        img(src="assets/images/machine-learning/chessEndboardSuboptimal.png").img-fluid-both
+            ul.mt-5.fragment
+                li #[span.model-styling approx f] ist eine Chess-AI die #[span.highlight sehr gut] spielt
+            span.fragment(fragment-trigger, (trigger)="chessApproxExample.highlightStart()", (untrigger)="chessApproxExample.highlightEnd()")
+    section
+        slide-with-header(header="Problemfälle")
             div.d-flex.justify-content-center
                 example-model-visualization("#houseExample"="", [positives]="['output']")
                     div(input, class="input").fix-height.transparent-border-1
@@ -90,5 +125,8 @@ ng-template('#slides'='')
                         ul
                             li Während der #[span.highlight Anwendung] wird gelernt
                 p.mt-5.fragment.text-center.alert.alert-primary Im Kurs nutzen wir nur #[span.highlight Offline Learning]!
+    section
+        slide-with-header(header="Machine Learning im CAS")
+            img(src="assets/images/machine-learning/in-cas/data_science_lifecycle_machine_learning_lense.png").img-fluid
 
 

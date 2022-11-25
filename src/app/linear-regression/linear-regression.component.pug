@@ -193,6 +193,65 @@ ng-template('#slides'='')
                         li (#[span.highlight Generalisierung]: Qualität)
     tables-of-content-machine-learning-algorithm([active]="linearRegressionLabels.OPTIMIERUNG")
     section
+        slide-with-header(header="Linear Regression - Kostenfunktion - Visuell")
+            div Folgende Funktion #[span([mathjax]="metricCostFunctionMSE1DCompact")] visualisiert für einen bestimmten Datensatz:
+            div.d-flex.justify-center
+                img(src="assets/images/gradient-descent/gradient_descent_cost_function.png").fragment
+            p.fragment.text-center.alert.alert-primary Schüssel nennt man #[span.highlight Convex Kostenfunktion]
+    section
+        slide-with-header(header="Linear Regression - Optimierung - Analytisch", [repetition]="'Regression'")
+            p(style={marginTop: "-20px"}).fragment Idee: Wir lösen folgende Gleichung:
+            div.d-flex.justify-center(style={marginTop: "-10px"})
+                div([mathjax]="linearRegressionAnalytic").fragment
+            div.fragment.d-flex.justify-center
+                img(src="assets/images/gradient-descent/gradient_descent_solution.png").fragment
+            p.fragment.text-center.alert.alert-warning Nur bei #[span.highlight bestimmten Funktionen] möglich
+    tables-of-content-concepts([active]="conceptLabels.GRADIENT_DESCENT")
+    section
+        slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
+            p Alternative Methode zur Analytischen Methode zum setzen der #[span.highlight lernbaren Parameter]
+                | &nbsp;
+                | (
+                span.equation.equation-colored(mathjax="<math><mi class='weight'>β</mi></math>")
+                | )
+            div.r-stack
+                img(src="assets/images/gradient-descent/gradient_descent_solution.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_0.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_1.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_2.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_3.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_4.png").fragment
+                img(src="assets/images/gradient-descent/gradient_descent_step_5.png").fragment
+    section
+        slide-with-header(header="Linear Regression - Optimierung - Gradient Descent")
+            p Wie finden wir die #[span.highlight Richtung] herunter?
+            p.fragment.highlight Richtung entspricht der Steigung der Kostenfunktion!
+            p.fragment Wie finden wir die #[span.highlight Steigung] einer Funktion?
+            p.fragment Analysis => Die #[span.highlight Ableitung] der Kostenfunktion gibt uns die Steigung/Richtung.
+            div([mathjax]="metricCostFunctionDerivative").fragment
+    section
+        slide-with-header(header="Optimierung - Gradient Descent")
+            tables-of-content-concepts-link([active]="conceptLabels.OPTIMIZATION_ALGORITHMS")
+            div #[span.highlight Gradient Descent]-Algorithmus funktioniert wie folgt:
+            ol
+                li.fragment
+                    div.d-flex.align-end(style={alignItems: "stretch"})
+                        div.align-self-end #[span.highlight Initialisiere]&nbsp;
+                        div.align-self-end([mathjax]="gradientDescentInit")
+                        div.align-self-end mit zufälligen Werten.
+                li.fragment
+                    div.d-flex.align-end(style={alignItems: "stretch"})
+                        div.align-self-end #[span.highlight Aktualisiere]:&nbsp;
+                        div.align-self-end([mathjax]="gradientDescentUpdate")
+                li.fragment.mt-2
+                    div #[span.highlight Wiederhole] 2. bis eine Abbruchbedingung erreicht.
+            p.mt-5.fragment.text-center.alert.alert-primary Auch bei #[span.highlight Non Convex Kostenfunktion] möglich
+            p.mt-5.fragment.text-center.alert.alert-warning In der Praxis wird die #[span.highlight Analytische Methode für Lineare Regression] eingesetzt (schneller)
+            // div.fragment
+            //     div.mt-5.d-flex.justify-center.align-end(style={alignItems: "stretch"})
+            //         div.align-self-end Wiederhole Schritt 2. bis&nbsp;
+            //         div([mathjax]="gradientDescentStop")
+    section
         slide-with-header(header="Linear Regression - Limits", [extra]="true")
             div.row
                 div.col-5.offset-1
@@ -216,3 +275,14 @@ ng-template('#slides'='')
                 div.col-5.p-2
                     img(src="assets/images/polynomial-regression-2d.png").limit-impossible
                 div.col-1
+    tables-of-content-machine-learning-algorithm
+        div.row
+            div.col-12
+                div.d-flex.justify-start.flex-column.scale-05
+                    div([mathjax]="linearRegressionFinal")
+        div.row
+            div.col-6
+                div.d-flex.justify-start.flex-column.scale-05
+                    div([mathjax]="metricMeanSquaredError")
+            div.col-6
+                img(src="assets/images/gradient-descent/gradient_descent_step_5.png").img-fluid
