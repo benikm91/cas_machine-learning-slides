@@ -1,8 +1,6 @@
 doctype html
 reveal-presentation
 
-    // DAY 1
-    day1-title-slide
     about-me
     what-is-machine-learning
     tables-of-content-problems([active]="problemLabels.SUPERVISED_LEARNING")
@@ -10,22 +8,13 @@ reveal-presentation
     tables-of-content-problems([active]="problemLabels.REGRESSION")
     what-is-regression
     linear-regression
-    question-slide([questions]="linearRegressionQuestions")
-    section
-        slide-with-header(header="Übungszeit (30 Minuten)")
-            div.notebook-name exercise/introduction.ipynb
-            img(src="assets/images/code.png")
+    question-slide([questions]="[]")
     tables-of-content-concepts([active]="methodLabels.ENCODING")
     what-is-encoding
-    question-slide([questions]="encodingQuestions")
-    section
-        slide-with-header(header="Linear Regression - Code")
-            div.notebook-name linear_regression_categorical_feature.ipynb
-            img(src="assets/images/code.png")
     tables-of-content-concepts([active]="methodLabels.FEATURE_ENGINEERING_EXPLICIT")
     what-is-feature-engineering
-    question-slide([questions]="featureEngineeringQuestions")
     polynomial-regression
+    question-slide([questions]="[]")
     section
         div.fragment.text-center.alert.alert-danger.strike Ist die Polynomielle Regression immer besser als die Lineare Regression?
         div.fragment.text-center.alert.alert-success
@@ -41,73 +30,21 @@ reveal-presentation
     model-complexity-slide
     question-slide([questions]="modelComplexityQuestions")
     what-is-feature-selection
-    tables-of-content-concepts([active]="methodLabels.REGULARIZATION")
-    what-is-regularization
-    what-is-standardization
-    question-slide([questions]="regularizationAndStandardizationQuestions")
-    what-are-hyper-parameters
-    question-slide([questions]="[]")
-    data-science-pitfalls-tackle-a-problem
-    data-science-pitfalls-garbage-in-garbage-out
     section
-        slide-with-header(header="Übungszeit (60 Minuten)")
-            div.notebook-name exercise/linear_regression.ipynb
+        slide-with-header(header="Übungszeit (30 Minuten)")
+            div.notebook-name exercise/introduction.ipynb
             img(src="assets/images/code.png")
-
-    // DAY 2
-    day2-title-slide
     tables-of-content-problems([active]="problemLabels.CLASSIFICATION")
     what-is-classification
     logistic-regression
     question-slide([questions]="logisticRegressionQuestions")
     k-nearest-neighbours
-    support-vector-machine
-    question-slide([questions]="supportVectorMachineQuestions")
-    section
-        slide-with-header(header="Übungszeit (60 Minuten)")
-            div.notebook-name exercise/classification.ipynb
-            img(src="assets/images/code.png")
-    what-is-kernel-trick
-    cart
-    question-slide([questions]="cartQuestions")
-    data-science-pitfalls-data-leakage
-    section
-        slide-with-header(header="Übungszeit (Weitere 60 Minuten)")
-            div.notebook-name exercise/classification.ipynb
-            img(src="assets/images/code.png")
     tables-of-content-problems([active]="problemLabels.UNSUPERVISED_LEARNING")
     tables-of-content-problems([active]="problemLabels.CLUSTERING")
     what-is-clustering
     k-means
-    data-science-pitfalls-model-development
-    data-science-pitfalls-inconsistent-preprocessing
-    data-science-pitfalls-metric-choice
-
-    // DAY 3
-    day3-title-slide
-    tables-of-content-problems([active]="problemLabels.DIMENSIONALITY_REDUCTION")
-    what-is-dimensionality-reduction
-    pca
-    question-slide([questions]="pcaQuestions")
+    data-science-pitfalls-garbage-in-garbage-out
     section
-        slide-with-header(header="Übungszeit (Weitere 60 Minuten)")
-            div.notebook-name exercise/dimensionality_reduction.ipynb
+        slide-with-header(header="Übungszeit (60 Minuten)")
+            div.notebook-name exercise/linear_regression.ipynb
             img(src="assets/images/code.png")
-    feed-forward-neural-network
-    section
-        slide-with-header(header="Übungszeit (60 Minuten)", [extra]="true")
-            div.notebook-name exercise/neural_network.ipynb
-            img(src="assets/images/code.png")
-    data-science-pitfalls-model-choice
-    data-science-pitfalls-enough-data
-    data-science-pitfalls-correct-result-interpretation
-    data-science-pitfalls-data-leakage
-    // section
-    //     slide-with-header(header="Linear Regression - Wissens Ansicht")
-    //         div
-    //             p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
-    //         div.d-flex.justify-center
-    //             knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
-    //         span.fragment(fragment-trigger, (trigger)="knowledgeView.start()", (untrigger)="knowledgeView.end()")
-    // section
-    //     div §: NMF?
