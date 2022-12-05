@@ -89,6 +89,23 @@ export function createPCATableOfContent(active: PCATableOfContentLabel | null): 
     ])
 }
 
+export class NMFTableOfContentLabel extends TableOfContentLabel {
+    public static readonly NMF = new NMFTableOfContentLabel("Non-negative Matrix Factorization", "NMF");
+    public static readonly DATA_SPECIFICATION = new NMFTableOfContentLabel("Data Specification", "NMF/Data Specification");
+    public static readonly MODEL = new NMFTableOfContentLabel("Model" , "NMF/Model" );
+    public static readonly COST_FUNCTION = new NMFTableOfContentLabel("Kostenfunktion", "NMF/Kostenfunktion");
+    public static readonly OPTIMIERUNG = new NMFTableOfContentLabel("Optimierung" , "NMF/Optimierung" );
+}
+
+export function createNMFTableOfContent(active: NMFTableOfContentLabel | null): TableOfContentEntry<NMFTableOfContentLabel> {
+    return c(NMFTableOfContentLabel.NMF, active, [
+        c(NMFTableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(NMFTableOfContentLabel.MODEL, active, []),
+        c(NMFTableOfContentLabel.COST_FUNCTION, active, []),
+        c(NMFTableOfContentLabel.OPTIMIERUNG, active, []),
+    ])
+}
+
 
 export class KNNTableOfContentLabel extends TableOfContentLabel {
     public static readonly KNN = new KNNTableOfContentLabel("K-Nearest Neighbors", "KNN");

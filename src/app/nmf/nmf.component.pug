@@ -1,0 +1,81 @@
+ng-template('#slides'='')
+    tables-of-content-nmf
+    tables-of-content-nmf([active]="nmfLabel.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="NMF - Data Specification")
+            ol
+                li.fragment Welche #[span.highlight Features] haben wir, z.B. #[span.code-font pixel]
+                li.fragment Features müssen #[span.highlight positive Werte] (grösser gleich 0) haben
+                li.fragment Features müssen #[span.highlight einheitliche Grösse] haben
+    tables-of-content-nmf([active]="nmfLabel.MODEL")
+    section
+        slide-with-header(header="NMF - Model")
+            div([mathjax]="model")
+            div.mt-5.fragment
+                img(src="assets/images/nmf/NMF_factorization.png")
+            div.mt-5.fragment([mathjax]="modelWithDimensions")
+    section
+        slide-with-header(header="NMF - Intuition", [extra]="true")
+            div.mt-5.fragment
+                div.d-flex.justify-content-center
+                    model-3-visualization([with-trigger]="false").mt-5
+                        div(inputHeader)
+                            div(style={marginTop: "-75px"})
+                                h5(mathjax="<math class='equation-colored'><mi class='feature'>X</mi></math>")
+                                h6(margin="0") 4 Features
+                        div(featureHeader)
+                            div(style={marginTop: "-75px"})
+                                h5(mathjax="<math class='equation-colored'><mi class='latent'>A</mi></math>")
+                                h6(margin="0") 2 Features
+                        div(outputHeader)
+                            div(style={marginTop: "-75px"})
+                                h5(mathjax="<math class='equation-colored'><mi class='latent'>A</mi><mi class='weight'>B</mi></math>")
+                                h6(margin="0") 4 Features
+                        div(input).rect-styling
+                            img(src="assets/images/nmf/NMF_factorization_X.png")
+                        div(pre, style={borderColor: "#C0C0C0", backgroundColor: "lightgray"}).model-box.code
+                            div Encoder
+                        div(feature).fix-height.code
+                            img(src="assets/images/nmf/NMF_factorization_A.png")
+                        div(model).model-box.code
+                            div Decoder
+                            div(mathjax="<math class='equation-colored'><mi class='weight'>B</mi></math>")
+                        div(output).rect-styling
+                            img(src="assets/images/nmf/NMF_factorization_X.png")
+            div.mt-5.fragment.text-center.alert.alert-primary Kein Encoder => Nicht für Preprocessing für Supervised Learning Task geeignet.
+    section
+        slide-with-header(header="NMF - Motivation")
+            div.row
+                div.col-12
+                    | Motivation: Addition von #[span.highlight non-negative Konzepten] (hidden Features) macht #[span.highlight Konzepte verständlicher].
+            div.row.mt-5
+                div.col-6
+                    h5 PCA
+                    img(src="assets/images/nmf/PCA_latent_features.png")
+                div.col-6
+                    h5 NMF
+                    img(src="assets/images/nmf/NMF_latent_features.png")
+    tables-of-content-nmf([active]="nmfLabel.COST_FUNCTION")
+    section
+        slide-with-header(header="NMF - Kostenfunktion")
+            div([mathjax]="costFunction")
+            div.mt-5.fragment.text-center.alert.alert-success Gleiche Kostenfunktion wie bei PCA (nur unter anderem Model).
+    tables-of-content-nmf([active]="nmfLabel.OPTIMIERUNG")
+    section
+        slide-with-header(header="NMF - Optimierung")
+            div Der Algorithmus funktioniert wie folgt:
+                ol
+                    li.fragment.mt-2
+                        div #[span.highlight Initialisiere] A, B mit zufälligen Werten.
+                    li.fragment.mt-2
+                        div #[span.highlight Optimiere A] nach Kostenfunktion, B bleibt fix
+                        div.small-font Optimiere Repräsentation gegeben Decoder B
+                    li.fragment.mt-2
+                        div #[span.highlight Optimiere B] nach Kostenfunktion, A bleibt fix
+                        div.small-font Optimiere Decoder gegeben Repräsentation A
+                    li.fragment.mt-2
+                        div #[span.highlight Wiederhole] 2. und 3., bis nur noch wenig Veränderung statt findet.
+            div.fragment.mt-5.text-center.alert.alert-warning Findet lokales Minimum! Ganzen Algorithmus mehrmals #[span.highlight wiederholen mit anderen Initialwerten].
+    // section
+    //     slide-with-header(header="NMF - Optimierung")
+    //         div([mathjax]="coordinateDescent")

@@ -1,0 +1,36 @@
+<math display="block">
+    <mtable displaystyle="true" columnalign="right" class="equation equation-colored tml-jot tml-align-star">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mtext>Ziel</mtext>
+            </mtd>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mi class="feature">X</mi>
+                    <mo>≈</mo>
+                    <mi class="latent">A</mi>
+                    <msup class="weight">
+                        <mi>B</mi>
+                        <mi></mi>
+                    </msup>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mtext>Bedingung </mtext>
+            </mtd>
+            <mtd style="text-align:-webkit-right;" title="Alle Werte in A und B sind positive.">
+                <mrow>
+                    <mi class="latent">A</mi>
+                    <mo>≥</mo>
+                    <mn>0</mn>
+                    <mo separator="true">,</mo>
+                    <mi class="weight">B</mi>
+                    <mo>≥</mo>
+                    <mn>0</mn>
+                </mrow>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

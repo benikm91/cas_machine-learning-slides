@@ -61,6 +61,7 @@ export class MlPresentationComponent {
   pcaQuestions = [
     new Question('Was ist Dimensions Reduktion?', 'Lernen der Struktur eines Datensatzes um die Anzahl der Features zu reduzieren meist mit neuen Features.'),
     new Question('Was ist PCA?', 'Eine lineare Dimensionsreduktion. Es werden die wichtigsten Hauptkomponenten selektiert.'),
+    new Question('Was ist der Unterschied von NMF und PCA?', 'NMF hat Idee von nicht negativen Features im Latent Space. NMF sollte nicht für Feature Preprocessing bei einem Supervised Learning Task verwendet werden.'),
   ]
 
 }

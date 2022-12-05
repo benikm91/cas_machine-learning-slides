@@ -11,7 +11,7 @@
                         <mrow>
                             <mi>∂</mi>
                             <msubsup>
-                                <mi>θ</mi>
+                                <mi>β</mi>
                                 <mn>1,0</mn>
                                 <mrow>
                                     <mo form="prefix" stretchy="false">(</mo>
@@ -46,7 +46,7 @@
                         <mrow>
                             <mi>∂</mi>
                             <msubsup>
-                                <mi>θ</mi>
+                                <mi>β</mi>
                                 <mn>1,0</mn>
                                 <mrow>
                                     <mo form="prefix" stretchy="false">(</mo>
@@ -70,7 +70,7 @@
                         <mrow>
                             <mi>∂</mi>
                             <msubsup>
-                                <mi>θ</mi>
+                                <mi>β</mi>
                                 <mn>1,1</mn>
                                 <mrow>
                                     <mo form="prefix" stretchy="false">(</mo>
@@ -105,7 +105,7 @@
                         <mrow>
                             <mi>∂</mi>
                             <msubsup>
-                                <mi>θ</mi>
+                                <mi>β</mi>
                                 <mn>1,1</mn>
                                 <mrow>
                                     <mo form="prefix" stretchy="false">(</mo>
@@ -129,7 +129,7 @@
                         <mrow>
                             <mi>∂</mi>
                             <msubsup>
-                                <mi>θ</mi>
+                                <mi>β</mi>
                                 <mn>1,2</mn>
                                 <mrow>
                                     <mo form="prefix" stretchy="false">(</mo>
@@ -164,7 +164,7 @@
                         <mrow>
                             <mi>∂</mi>
                             <msubsup>
-                                <mi>θ</mi>
+                                <mi>β</mi>
                                 <mn>1,2</mn>
                                 <mrow>
                                     <mo form="prefix" stretchy="false">(</mo>

@@ -135,6 +135,10 @@ import {
 import {
   DataSciencePitfallsModelChoiceComponent
 } from "./data-science-pitfalls/model-choice/data-science-pitfalls-model-choice.component";
+import {NonNegativeMatrixFactorizationComponent} from "./nmf/nmf.component";
+import {
+  TablesOfContentNMFComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-nmf.component";
 
 @NgModule({
   declarations: [
@@ -157,7 +161,7 @@ import {
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
     WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent, DataSciencePitfallsGarbageInGarbageOutComponent,
     DataSciencePitfallsEnoughDataComponent, DataSciencePitfallsTackleAProblemComponent, DataSciencePitfallsMetricChoiceComponent, DataSciencePitfallsCorrectResultInterpretationComponent,
-    DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent
+    DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent, NonNegativeMatrixFactorizationComponent, TablesOfContentNMFComponent
   ],
   imports: [
     BrowserModule,

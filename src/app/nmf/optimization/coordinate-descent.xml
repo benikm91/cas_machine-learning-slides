@@ -1,0 +1,114 @@
+<math display="block">
+    <mtable displaystyle="true" class="tml-jot tml-align equation equation-colored">
+        <mtr>
+            <mtd style="text-align: left;">
+                <msup class="latent">
+                    <mi>A</mi>
+                    <mrow>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi>i</mi>
+                        <mo>+</mo>
+                        <mn>1</mn>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                </msup>
+            </mtd>
+            <mtd style="text-align: left;">
+                <mo stretchy="false">←</mo>
+            </mtd>
+            <mtd style="text-align: left;">
+                <mrow>
+                    <munder>
+                        <mrow>
+                            <mi>arg</mi>
+                            <mspace width="0.167em"></mspace>
+                            <mi>min</mi>
+                            <mspace width="0.167em"></mspace>
+                        </mrow>
+                        <mrow>
+                            <mi class="latent">A</mi>
+                            <mo>≥</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </munder>
+                </mrow>
+                <mtext>
+                </mtext>
+                <mi>J</mi>
+                <mo form="prefix" stretchy="false">(</mo>
+                <msup class="latent">
+                    <mi>A</mi>
+                    <mrow>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi>i</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                </msup>
+                <mo separator="true">,</mo>
+                <msup class="weight">
+                    <mi>B</mi>
+                    <mi>i</mi>
+                </msup>
+                <mo form="postfix" stretchy="false">)</mo>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd style="text-align: left;">
+                <msup class="weight">
+                    <mi>B</mi>
+                    <mrow>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi>i</mi>
+                        <mo>+</mo>
+                        <mi>i</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                </msup>
+            </mtd>
+            <mtd style="text-align: left;">
+                <mo stretchy="false">←</mo>
+            </mtd>
+            <mtd style="text-align: left;">
+                <mrow>
+                    <munder>
+                        <mrow>
+                            <mi>arg</mi>
+                            <mspace width="0.167em"></mspace>
+                            <mi>min</mi>
+                            <mspace width="0.167em"></mspace>
+                        </mrow>
+                        <mrow>
+                            <mi class="weight">B</mi>
+                            <mo>≥</mo>
+                            <mn>0</mn>
+                        </mrow>
+                    </munder>
+                </mrow>
+                <mtext>
+                </mtext>
+                <mi>J</mi>
+                <mo form="prefix" stretchy="false">(</mo>
+                <msup class="latent">
+                    <mi>A</mi>
+                    <mrow>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi>i</mi>
+                        <mo>+</mo>
+                        <mn>1</mn>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                </msup>
+                <mo separator="true">,</mo>
+                <msup class="weight">
+                    <mi>B</mi>
+                    <mrow>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi>i</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                </msup>
+                <mo form="postfix" stretchy="false">)</mo>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

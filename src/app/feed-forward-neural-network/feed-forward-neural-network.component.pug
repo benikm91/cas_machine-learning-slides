@@ -206,9 +206,14 @@ ng-template('#slides'='')
             div.fragment.text-center.alert.alert-primary.small-font
                 | Die Hidden Layers können als #[span.highlight lernbare Dimensionality Reduction] betrachtet werden.
                 | Dabei lernt das Modell, welche Informationen für #[span.highlight das spezifische Ziel] weggeworfen werden können.
+    section
+        slide-with-header(header="GoogLeNet - Gelernte Features, Gelernte Dimensionality Reduction")
+            div.mt-5
+                a(href="https://ai.googleblog.com/2017/11/feature-visualization.html") GoogLeNet
+            img.mt-5(src="assets/images/neural-network/googleLeNet.png")
     tables-of-content-fnn([active]="fnnLabels.COST_FUNCTION")
     section
-        slide-with-header(header="Problemspezifische Kosten Funktion", [extra]="true")
+        slide-with-header(header="Problemspezifische Kostenfunktion", [extra]="true")
             ul
                 li Bei Regression: MSE / MAE
                 li Bei Klassifikation: Maximum Liklihood
@@ -263,7 +268,7 @@ ng-template('#slides'='')
                         img(src="assets/images/neural-network/very_simple_nn.png").img-fluid-both
                     .col-6
                         div([mathjax]="backpropSetting3", style={fontSize: "22px"})
-            div.fragment.text-center.alert.alert-warning(style={fontSize: "22px"})
+            div.mt-5.fragment.text-center.alert.alert-warning(style={fontSize: "22px"})
                 div Optimierungsalgorithmus von Neuralen Netzen ist (Batch) Gradient Descent.
                 div #[span.highlight Backpropagation] hilft "nur" beim #[span.highlight effizienten Berechnen der Gradienten].
     section

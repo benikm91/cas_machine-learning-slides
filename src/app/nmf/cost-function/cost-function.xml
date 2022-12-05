@@ -1,0 +1,50 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi class="latent">A</mi>
+                    <mo separator="true">,</mo>
+                    <mi class="weight">B</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <msub>
+                    <mrow>
+                        <mo fence="true" form="prefix">‖</mo>
+                        <mi class="feature">X</mi>
+                        <mo>−</mo>
+                        <mover class="feature">
+                            <mi>X</mi>
+                            <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+                        </mover>
+                        <mo fence="true" form="postfix">‖</mo>
+                    </mrow>
+                    <mn>2</mn>
+                </msub>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow></mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <msub>
+                    <mrow>
+                        <mo fence="true" form="prefix">‖</mo>
+                        <mi class="feature">X</mi>
+                        <mo>−</mo>
+                        <mi class="feature">A</mi>
+                        <mi class="weight">B</mi>
+                        <mo fence="true" form="postfix">‖</mo>
+                    </mrow>
+                    <mn>2</mn>
+                </msub>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>
