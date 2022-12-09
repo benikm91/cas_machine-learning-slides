@@ -38,7 +38,7 @@
                         <mo fence="true" form="prefix">‖</mo>
                         <mi class="feature">X</mi>
                         <mo>−</mo>
-                        <mi class="feature">A</mi>
+                        <mi class="latent">A</mi>
                         <mi class="weight">B</mi>
                         <mo fence="true" form="postfix">‖</mo>
                     </mrow>
