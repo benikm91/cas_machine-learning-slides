@@ -64,4 +64,9 @@ export class MlPresentationComponent {
     new Question('Was ist der Unterschied von NMF und PCA?', 'NMF hat Idee von nicht negativen Features im Latent Space. NMF sollte nicht für Feature Preprocessing bei einem Supervised Learning Task verwendet werden.'),
   ]
 
+  nnQuestions = [
+    new Question('Was ist ein Hidden Layer?', 'Ein Hidden Layer fügt dem Neural Network Zwischenergebnisse ein, Abstraktionen der Inputs, die das Model lernen kann.'),
+    new Question('Was ist eine Aktivierungsfunktion?', 'Die Akitivierungsfunktion ist eine Funktion am Ende jedes Neuron. Üblicherweise ist es nicht-linear, damit das Neural Network nicht lineare Zusammenhänge lernen kann.'),
+  ]
+
 }
