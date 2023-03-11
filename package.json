@@ -13,8 +13,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-contrib/common": "0.0.7",
-    "@angular-contrib/core": "0.0.7",
     "@angular/animations": "~13.0.0",
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
