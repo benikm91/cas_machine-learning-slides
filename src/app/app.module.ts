@@ -73,7 +73,6 @@ import {OverfittingUnderfittingExampleComponent} from "./overfitting-underfittin
 import {
   WhatIsOverfittingUnderfittingComponent
 } from "./what-is-overfitting-underfitting/what-is-overfitting-underfitting.component";
-import {WhatIsTrainTestSplitComponent} from "./what-is-train-test-split/what-is-train-test-split.component";
 import {WhatIsCrossValidationComponent} from "./what-is-cross-validation/what-is-cross-validation.component";
 import {WhatIsRegularizationComponent} from "./what-is-regularization/what-is-regularization.component";
 import {CartComponent} from "./cart/cart.component";
@@ -139,10 +138,11 @@ import {NonNegativeMatrixFactorizationComponent} from "./nmf/nmf.component";
 import {
   TablesOfContentNMFComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-nmf.component";
+import {Day4TitleSlideComponent} from "./day-title-slide/day4-title-slide.component";
 
 @NgModule({
   declarations: [
-    Day1TitleSlideComponent, Day2TitleSlideComponent, Day3TitleSlideComponent,
+    Day1TitleSlideComponent, Day2TitleSlideComponent, Day3TitleSlideComponent, Day4TitleSlideComponent,
     WhatIsMachineLearningComponent, RevealPresentationComponent, MlPresentationComponent, KnowledgeViewComponent,
     TablesOfContentConceptsComponent, TablesOfContentProblemsComponent, TableOfContentNode,
     QuestionSlideComponent, RemoveWrapperDirective,
@@ -155,7 +155,7 @@ import {
     WhatIsFeatureEngineeringComponent, ModelComplexitySlideComponent, ModelComplexityComponent, LogisticRegressionComponent, TablesOfContentLogisticRegressionComponent,
     PcaComponent, SupportVectorMachineComponent, TablesOfContentSupportVectorMachineComponent, KNearestNeighboursComponent, TablesOfContentPCAComponent,
     WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
-    OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsTrainTestSplitComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
+    OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
     DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,

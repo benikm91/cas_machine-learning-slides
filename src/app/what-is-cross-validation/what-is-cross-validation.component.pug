@@ -1,6 +1,52 @@
 ng-template('#slides'='')
     section
+        slide-with-header(header="Hold-out Cross Validation")
+            div.mt-5.d-flex.justify-center
+                img(src="assets/images/overfitting/train_set_test_set.png").img-
+            div.fragment.mt-5.text-center.alert.alert-primary
+                | z.B. Unterricht (Training) und #[br] Prüfungsfragen (Validation)
+    section
+        slide-with-header(header="Gefahren bei Hold-out Cross Validation")
+            div.mt-5
+                ul
+                    li Falsches Modell wird gewählt
+                        ul.smaller-font
+                            li Ein Modell ist #[span.highlight nur durch Zufall] das beste auf einem (zu) kleinen Validation-Set.
+                            li Je grösser das Validation-Set desto unwahrscheinlicher
+                    li Evaluation auf finalem Modell ist zu optimistisch
+                        ul.smaller-font
+                            li Weil das Validation-Set die Model-Selection beeinflusste, ist das Modell auf Validation-Set (allenfalls) zu optimistisch (#[span.highlight "peeking"]).
+                            li Je grössere das Validation-Set desto weniger "zu optimistisch"
+            div.fragment.mt-5.text-center.alert.alert-warning.smaller-font
+                | Gedankenexperiment: Wir trainieren 1'000'000 verschiedene Modelle und wählen anhand von einem kleinen Validation-Sets (100 samples)
+    section
+        slide-with-header(header="Lösungen bei Hold-out Cross Validation")
+            div.mt-5
+                ul
+                    li "zu optimistisch" feststellen #[br]=> #[a(href="#/train-val-test-split") Extra Hold-out Data-Set (Train/Val/Test-Split)]
+                    li Grösseres Validation-Set "herbeizaubern" #[br]=> #[a(href="#/k-fold-cross-validation") k-Fold Cross Validation]
+    section(id="train-val-test-split")
+        slide-with-header(header="Hold-out Cross Validation mit Test-Set")
+            div.mt-5
+                div.d-flex.justify-center
+                    img(src="assets/images/overfitting/train_set_val_set_test_set.png").img-fluid
+            div.fragment.mt-5.text-center.alert.alert-danger
+                | Test-Set darf keinen Einfluss haben (no peeking)!
+            div.fragment.mt-5.text-center.alert.alert-primary
+                | z.B. Unterricht (Training), Beispiel-Prüfungsfragen (Validation) und echte Prüfungsfragen (Test)
+    section(id="k-fold-cross-validation")
+        slide-with-header(header="k-Fold Cross Validation")
+            ul
+                li Ein Verfahren um #[span.highlight alle Daten als Validation-Set] zu verwenden, das Validation-Set wird grösser!
+                li Benötigt #[span.highlight mehr Rechenzeit] (bei wenig Daten oft kein Problem)
+                li In der Praxis #[span.highlight sehr oft verwendet]
+                li Üblicherweise wird #[span.highlight 5-fold] oder #[span.highlight 10-fold] cross validation gemacht
+    section
         slide-with-header(header="k-Fold Cross Validation")
             div.d-flex.justify-center
                 img(src="assets/images/overfitting/k-fold-cross-validation.png").img-fluid
             div.mt-3.text-center.alert.alert-primary Hier 5-Fold Cross Validation
+    section
+        slide-with-header(header="Cross Validation")
+            div.notebook-name cross_validation.ipynb
+            img(src="assets/images/code.png")

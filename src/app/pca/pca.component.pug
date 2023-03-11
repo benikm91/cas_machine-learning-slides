@@ -53,7 +53,7 @@ ng-template('#slides'='')
         slide-with-header(header="PC Selection vs. Feature Selection - Intuition", [extra]="true")
             div.fragment
                 h6 Original Image (100%)
-                img(src="assets/images/pca/example-img.png").img-fluid.limit-possible
+                img(src="assets/images/pca/example-fhnw_logo.png").img-fluid.limit-possible
             .row.mt-5
                 .col-6.fragment
                     h6 Feature Selection: Pixels of 200 Features (9.3%)
@@ -98,7 +98,7 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) Input Space
                             h6(margin="0") 3072 Features
                     div(input).rect-styling
-                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
+                        img(src="assets/images/pca/example-fhnw_logo.png", style={height: "150px"})
                     div(model, class="model").model-box.code
                         div Encoder
                         div #[span.code.small PCA.transform]
@@ -124,7 +124,7 @@ ng-template('#slides'='')
                                 h5(style={marginBottom: "0"}) Reconstructed Input Space
                                 h6(margin="0") 3072 Features
                         div(input).rect-styling
-                            img(src="assets/images/pca/example-img.png")
+                            img(src="assets/images/pca/example-fhnw_logo.png")
                         div(pre).model-box.code
                             div Encoder
                             div.small PCA.transform
@@ -149,7 +149,7 @@ ng-template('#slides'='')
                             h5(style={marginBottom: "0"}) Latent Space
                             h6(margin="0") 200 Features
                     div(input).rect-styling
-                        img(src="assets/images/pca/example-img.png")
+                        img(src="assets/images/pca/example-fhnw_logo.png")
                     div(pre).model-box
                         div Encoder
                         div.small PCA.transform
@@ -178,7 +178,7 @@ ng-template('#slides'='')
                                 h5(style={marginBottom: "0"}) Reconstructed Input Space
                                 h6(margin="0") 3072 Features
                         div(input).rect-styling
-                            img(src="assets/images/pca/example-img.png")
+                            img(src="assets/images/pca/example-fhnw_logo.png")
                         div(pre).model-box.code
                             div([mathjax]="encoder")
                             div.small PCA.transform
@@ -214,7 +214,7 @@ ng-template('#slides'='')
                                     | &nbsp;
                                     | Features
                         div(input).rect-styling
-                            img(src="assets/images/pca/example-img.png")
+                            img(src="assets/images/pca/example-fhnw_logo.png")
                         div(pre).model-box.code
                             div([mathjax]="encoderWithDim")
                             div.small PCA.transform

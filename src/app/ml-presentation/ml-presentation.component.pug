@@ -1,6 +1,8 @@
 doctype html
 reveal-presentation
 
+    // tables-of-content-concepts([depth]=99)
+    // tables-of-content-problems([depth]=99)
     // DAY 1
     day1-title-slide
     about-me
@@ -30,12 +32,12 @@ reveal-presentation
         div.fragment.text-center.alert.alert-danger.strike Ist die Polynomielle Regression immer besser als die Lineare Regression?
         div.fragment.text-center.alert.alert-success
             div Ja auf den #[span.highlight Trainings-Daten], aber Nein (nicht immer) #[span.highlight auf neuen, ungesehenen Daten]!
-            div.fragment.highlight Und Performanz auf neuen, ungesehenen Daten ist das Entscheidende!
+        div.fragment.text-center.alert.alert-warning
+            div Und Performanz auf #[span.highlight neuen, ungesehenen] Daten ist das Entscheidende!
     tables-of-content-concepts([active]="methodLabels.MODEL_COMPLEXITY")
     overfitting-underfitting-example
     tables-of-content-concepts([active]="methodLabels.OVERFITTING_UNDERFITTING")
     what-is-overfitting-underfitting
-    what-is-train-test-split
     tables-of-content-concepts([active]="methodLabels.CROSS_VALIDATION")
     what-is-cross-validation
     model-complexity-slide
@@ -111,6 +113,10 @@ reveal-presentation
         slide-with-header(header="Übungszeit (60 Minuten)", [extra]="true")
             div.notebook-name exercise/neural_network.ipynb
             img(src="assets/images/code.png")
+
+
+    // DAY 4
+    day4-title-slide
     section
         title-page
             h1 Prüfungsfragen

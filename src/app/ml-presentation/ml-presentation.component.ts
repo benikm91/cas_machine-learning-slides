@@ -33,6 +33,9 @@ export class MlPresentationComponent {
     new Question('Was ist Underfitting?', 'Wir treffen zu starke Annahmen. Verschenktes Potenzial mit den verfügbaren Daten. Beim Lernen wird zu wenig auf die Daten "gefittet"'),
     new Question('Was ist Overfitting?', 'Wir treffen zu wenig Annahmen. Beim Lernen wird zu stark auf die Daten "gefittet"'),
     new Question('Wie können wir Overfitting feststellen?', 'Evaluation auf Train-Data und ungesehenen Daten (e.g. Validation-Data) vergleichen. Bei Grossem Unterschied besteht allenfalls Overfitting.'),
+    new Question('Was ist hold-out Cross Validation?', ''),
+    new Question('Was ist k-fold Cross Validation?', ''),
+    new Question('Was ist die Modell-Kompexität?', ''),
   ]
 
   regularizationAndStandardizationQuestions = [

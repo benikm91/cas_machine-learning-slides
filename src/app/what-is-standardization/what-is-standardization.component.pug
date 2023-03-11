@@ -1,11 +1,19 @@
 ng-template('#slides'='')
     tables-of-content-concepts([active]="conceptLabel.STANDARDIZE")
     section
-        slide-with-header(header="Standard Scaler - Intuition")
+        slide-with-header(header="Standard Scaler")
+            ul
+                li "Nur" ein #[span.highlight notwendiger Preprocessing Schritt], damit manche Modelle "richtig" funktionieren.
+                li Entfernt Einheit (z.B. cm) der Messung und schiebt Verteilung zum Nullpunkt.
+                li Wird separat pro Feature angewandt, z.B. wird #[span.highlight width (cm)] transformiert zu #[span.highlight width (std)]
+                li Es gibt auch #[span.highlight andere Skalierungen] (Scalers), meistens wird aber der StandardScaler verwendet.
+    section
+        slide-with-header(header="Standard Scaler - Preprocessing")
             h4 Berechnung pro Feature
             ol
                 li Minus den Durchschnitt
                 li Durch die Standardabweichung
+            hr.mt-5
             h4.mt-5 Intuition
             ol
                 li Um Nullpunkt verschieben
