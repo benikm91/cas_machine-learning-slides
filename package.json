@@ -13,8 +13,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-contrib/common": "0.0.7",
-    "@angular-contrib/core": "0.0.7",
     "@angular/animations": "~13.0.0",
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
@@ -34,8 +32,9 @@
     "highlight.js": "~11.6.0",
     "marked": "^4.0.19",
     "mathjax": "^3.2.2",
-    "mathjax-angular": "^1.4.2",
+    "mathjax-angular": "^2.1.1",
     "reveal.js": "~4.3.1",
+    "reveal.js-chalkboard": "^1.0.0",
     "treeflex": "^2.0.1",
     "tslib": "^2.3.0",
     "two.js": "^0.8.10",
@@ -43,8 +42,6 @@
     "zone.js": "^0.11.8"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^13.0.0",
-    "@angular-devkit/build-angular": "^14.2.4",
     "@angular/cli": "~13.0.1",
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",

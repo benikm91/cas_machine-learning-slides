@@ -1,5 +1,7 @@
 import {AfterContentInit, Component} from '@angular/core';
 import Reveal from "./reveal";
+import RevealChalkboard from "./reveal-chalkboard";
+import RevealCustomControls from "./reveal-customcontrols";
 
 @Component({
   selector: 'reveal-presentation',
@@ -13,6 +15,7 @@ export class RevealPresentationComponent implements AfterContentInit {
       hash: true,
       // showNotes: 'separate-page',
       pdfSeparateFragments: false,
+      plugins: [ RevealChalkboard, RevealCustomControls ],
     });
   }
 }
