@@ -14,9 +14,6 @@ module.exports = {
       './reveal': 'reveal.js/dist/reveal.js',
       './reveal-notes': 'reveal.js/plugin/notes/notes.js',
       './reveal-math': 'reveal.js/plugin/math/math.js',
-      './reveal-chalkboard': 'reveal.js-chalkboard/chalkboard.js',
-      './reveal-customcontrols': 'reveal.js/plugin/customcontrols/plugin.js',
-
     }
   },
   module: {

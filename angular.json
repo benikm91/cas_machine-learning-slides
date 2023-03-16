@@ -114,5 +114,7 @@
       }
     }
   },
-  "defaultProject": "cas-ml-slides"
+  "cli": {
+    "analytics": "2cef2f31-ffb8-4ffc-b713-66cec81f3aee"
+  }
 }
