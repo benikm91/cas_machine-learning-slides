@@ -1,5 +1,6 @@
 import {AfterContentInit, Component} from '@angular/core';
 import Reveal from "./reveal";
+import RevealSearch from "./reveal-search";
 
 @Component({
   selector: 'reveal-presentation',
@@ -13,6 +14,7 @@ export class RevealPresentationComponent implements AfterContentInit {
       hash: true,
       // showNotes: 'separate-page',
       pdfSeparateFragments: false,
+      plugins: [ RevealSearch ]
     });
   }
 }
