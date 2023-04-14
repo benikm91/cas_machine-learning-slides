@@ -15,22 +15,7 @@ export class RevealPresentationComponent implements AfterContentInit {
       hash: true,
       // showNotes: 'separate-page',
       pdfSeparateFragments: false,
-      plugins: [ RevealSearch, RevealMenu() ],
-      menu: {
-        titleSelector: 'title-page h1',
-        hideMissingTitles: true,
-        markers: false,
-        custom: [
-          {
-            title: 'Slides',
-            icon: '<i class="fa fa-picture-o">',
-            content: `
-            <p>Hallo Welt</p>
-            `,
-            loadIcons: false
-          }
-        ]
-      }
+      plugins: [ RevealSearch ],
     });
   }
 }
