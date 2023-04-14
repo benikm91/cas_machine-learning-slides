@@ -139,6 +139,7 @@ import {
   TablesOfContentNMFComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-nmf.component";
 import {Day4TitleSlideComponent} from "./day-title-slide/day4-title-slide.component";
+import {ClusteringAdditionalComponent} from "./clustering-additional/clustering-additional.component";
 
 @NgModule({
   declarations: [
@@ -161,7 +162,7 @@ import {Day4TitleSlideComponent} from "./day-title-slide/day4-title-slide.compon
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
     WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent, DataSciencePitfallsGarbageInGarbageOutComponent,
     DataSciencePitfallsEnoughDataComponent, DataSciencePitfallsTackleAProblemComponent, DataSciencePitfallsMetricChoiceComponent, DataSciencePitfallsCorrectResultInterpretationComponent,
-    DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent, NonNegativeMatrixFactorizationComponent, TablesOfContentNMFComponent
+    DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent, NonNegativeMatrixFactorizationComponent, TablesOfContentNMFComponent, ClusteringAdditionalComponent
   ],
   imports: [
     BrowserModule,

@@ -73,20 +73,22 @@ reveal-presentation
     cart
     question-slide([questions]="cartQuestions")
     data-science-pitfalls-data-leakage
+    data-science-pitfalls-model-development
+    data-science-pitfalls-inconsistent-preprocessing
+    data-science-pitfalls-metric-choice
     section
         slide-with-header(header="Übungszeit (Weitere 60 Minuten)")
             div.notebook-name exercise/classification.ipynb
             img(src="assets/images/code.png")
+
+    // DAY 3
+    day3-title-slide
     tables-of-content-problems([active]="problemLabels.UNSUPERVISED_LEARNING")
     tables-of-content-problems([active]="problemLabels.CLUSTERING")
     what-is-clustering
     k-means
-    data-science-pitfalls-model-development
-    data-science-pitfalls-inconsistent-preprocessing
-    data-science-pitfalls-metric-choice
+    clustering-additional
 
-    // DAY 3
-    day3-title-slide
     tables-of-content-problems([active]="problemLabels.DIMENSIONALITY_REDUCTION")
     what-is-dimensionality-reduction
     pca
@@ -96,27 +98,26 @@ reveal-presentation
             img(src="assets/images/code.png")
     nmf
     question-slide([questions]="pcaQuestions")
+    data-science-pitfalls-model-choice
+    data-science-pitfalls-enough-data
+    data-science-pitfalls-correct-result-interpretation
     section
         slide-with-header(header="Übungszeit (Weitere 60 Minuten)")
             div.notebook-name exercise/dimensionality_reduction.ipynb
             img(src="assets/images/code.png")
+
+    // DAY 4
+    day4-title-slide
     feed-forward-neural-network
     section
         slide-with-header(header="Feedforward Neural Network - Code")
             div.notebook-name neural_network.ipynb
             img(src="assets/images/code.png")
     question-slide([questions]="nnQuestions")
-    data-science-pitfalls-model-choice
-    data-science-pitfalls-enough-data
-    data-science-pitfalls-correct-result-interpretation
     section
         slide-with-header(header="Übungszeit (60 Minuten)", [extra]="true")
             div.notebook-name exercise/neural_network.ipynb
             img(src="assets/images/code.png")
-
-
-    // DAY 4
-    day4-title-slide
     section
         title-page
             h1 Prüfungsfragen

@@ -36,7 +36,9 @@
               "reveal.js/dist/theme/white.css",
               "treeflex/dist/css/treeflex.css",
               "bootstrap/dist/css/bootstrap.css",
-              "src/reveal-theme.scss"
+              "src/reveal-theme.scss",
+              "font-awesome/css/font-awesome.css",
+              "reveal.js-menu/menu.css"
             ],
             "scripts": []
           },
@@ -106,7 +108,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "reveal.js-menu/menu/menu.css"
             ],
             "scripts": []
           }

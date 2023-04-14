@@ -1,0 +1,36 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Clustering - Real world examples", [extra]="true")
+            div.row
+                div.col-6
+                    h5 Gruppieren von News Stories
+                    img(src="assets/images/clustering/clustering-example-google-news.png", height="200px")
+                div.col-6
+                    h5 Gruppieren von Suchergebnissen
+                    img(src="assets/images/clustering/clustering-example-google-search.png", height="200px")
+            div.row.mt-5
+                div.col-12
+                    h5 Gruppieren von Gesichtern
+                    img(src="assets/images/clustering/clustering-example-faces.png", height="200px")
+                    div.smaller-font
+                        | Source:&nbsp;
+                        a(href="https://www.hindawi.com/journals/cin/2019/6065056/") Effective and Generalizable Graph-Based Clustering for Faces in the Wild
+
+    section
+        slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
+            ul
+                li
+                    div [Alternative] K-Means
+                        ul
+                            li
+                                a(href="https://scikit-learn.org/stable/modules/clustering.html#k-means") sklearn User Guide
+                            li
+                                a(href="https://github.com/ageron/handson-ml3/blob/main/09_unsupervised_learning.ipynb") "Praxiseinstieg Machine Learning" - Kapitel 9
+                    hr
+                    div [Additional] Clustering
+                        ul
+                            li
+                                a(href="https://link.springer.com/article/10.1007/s40745-015-0040-1") Survey Paper: A Comprehensive Survey of Clustering Algorithms
+                            li
+                                a(href="https://www.researchgate.net/publication/334521579_A_Short_Review_on_Different_Clustering_Techniques_and_Their_Applications") Survey Paper: A Short Review on Different Clustering Techniques and Their Applications
+

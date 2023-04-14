@@ -30,6 +30,7 @@
     "animejs": "^3.2.1",
     "bootstrap": "^5.2.2",
     "d3": "^7.6.1",
+    "font-awesome": "^4.7.0",
     "headjs": "~1.0.3",
     "highlight.js": "~11.6.0",
     "marked": "^4.0.19",
@@ -37,10 +38,12 @@
     "mathjax-angular": "^2.1.1",
     "reveal.js": "~4.3.1",
     "reveal.js-chalkboard": "^1.0.0",
+    "reveal.js-menu": "^2.1.0",
     "treeflex": "^2.0.1",
     "tslib": "^2.3.0",
     "two.js": "^0.8.10",
     "underscore": "^1.13.6",
+    "url": "^0.11.0",
     "zone.js": "^0.11.8"
   },
   "devDependencies": {

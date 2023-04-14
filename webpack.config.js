@@ -15,6 +15,10 @@ module.exports = {
       './reveal-notes': 'reveal.js/plugin/notes/notes.js',
       './reveal-math': 'reveal.js/plugin/math/math.js',
       './reveal-search': 'reveal.js/plugin/search/search.js',
+      "./reveal-menu": 'src/app/reveal-presentation/reveal-menu.js',
+    },
+    fallback: {
+      "url": require.resolve("url/")
     }
   },
   module: {
