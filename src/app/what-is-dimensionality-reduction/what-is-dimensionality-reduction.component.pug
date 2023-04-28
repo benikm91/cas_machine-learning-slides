@@ -1,12 +1,19 @@
 ng-template('#slides'='')
     section
         slide-with-header(header="Dimensionality Reduction - Manifold")
-            h6 3 Features
-            div.d-flex.justify-center
-                img(src="assets/images/pca/manifold.png").img-fluid
-            h6.mt-5 Aber eigentlich 2 Features
-            div.d-flex.justify-center.fragment
-                img(src="assets/images/pca/maniunfolding.png").img-fluid
+            div.row
+                .col-6
+                    h6 3 Features
+                    div.d-flex.justify-center
+                        img(src="assets/images/pca/manifold.png").img-fluid
+                .col-6.fragment
+                    h6 Aber eigentlich 2 Features
+                    div.d-flex.justify-center
+                        img(src="assets/images/pca/maniunfolding.png").img-fluid
+            div.mt-5
+                ul
+                    li.fragment 2D-Manifold im 3D-Input-Space
+                    li.fragment Manifold-Annahme: Hochdimensionale Daten liegen auf #[span.highlight einem tiefer-dimensionalen Manifold]
     section
         slide-with-header(header="Dimensionality Reduction - Manifold - Beispiel")
             .manifold-example
@@ -35,7 +42,7 @@ ng-template('#slides'='')
                             img(src="assets/images/pca/img-space-random-2.png")
                             img(src="assets/images/pca/img-space-random-3.png")
                         div 32 Pixel * 32 Pixel * 3 Channels = #[span.highlight 3072 Features]
-                div.fragment.mt-5 #[span.highlight CIFAR-Space] ist ein Sub-Space vom #[span.highlight Image-Space]
+                div.fragment.mt-5.smaller-font Annahme: #[span.highlight CIFAR-Space] ist ein Manifold im #[span.highlight Image-Space]
                 p.fragment.text-center.alert.alert-primary
                     | #[span.highlight Dimensionsreduktion]: Finde neue Features (z.B. #[span.highlight 200]), die die Daten #[span.highlight präziser] beschreiben können.
     section
@@ -50,7 +57,7 @@ ng-template('#slides'='')
                         img(src="assets/images/pca/example-img.png", style={height: "150px"})
                     div(model, class="model").model-box.code
                         div Encoder
-                        div #[span.code.small z.B. TODO]
+                        div #[span.code.small z.B. Neural Network Backbone, PCA Encoder]
                     div(output, class="output").fix-height.code [ 167, 235, 207, 76, 97, 119, 50, 8, 239, 168, 215, ... ]
                     div(outputHeader)
                         div(style={marginTop: "-50px"})
@@ -66,7 +73,7 @@ ng-template('#slides'='')
                     div(input).rect-styling.code
                         | [0, ..., 0, 1, 0,  ..., 0]
                     div(model, class="model").model-box.code
-                        div Encoder
+                        div Encoder / Embedder
                         div #[span.code.small z.B. Word2Vec]
                     div(output, class="output").fix-height.code [ -1.7, 0.97, 1.9, 0.73, ... -0.53 ]
                     div(outputHeader)
@@ -79,14 +86,14 @@ ng-template('#slides'='')
         slide-with-header(header="Dimensionality Reduction - Learning")
             ul
                 li Eine Dimensionality Reduction wird gelernt indem ein #[span.highlight ganzer Datensatz] (z.B. 40'000 Bilder) auf Gemeinsamkeiten analysiert wird.
-                li Es wird die #[span.highlight zugrundeliegende Struktur] des Datensatzes gelernt.
+                li Es wird die #[span.highlight zugrundeliegende Struktur] (z.B. Manifold) des Datensatzes gelernt.
                 li Die gelernte Reduktion kann dann auf #[span.highlight neue Daten] (neue Bilder) angewandt werden.
                 li Die gelernte Reduktion kann auch auf #[span.highlight die Daten selbst] angewandt werden.
     section
         slide-with-header(header="Dimensionality Reduction - Einsatzgebiet")
             ul
-                li.highlight Feature Preprocessing
-                li Interpretation der Daten
+                li Feature Preprocessing
+                li (Interpretation der Daten)
                     ul
                         li Visualisierung
                         li Faktor-Analyse
@@ -162,7 +169,7 @@ ng-template('#slides'='')
                         div.code Deer
             div.fragment.mt-4.text-center.alert.alert-success Präzisere Features => Bessere Lern-Ausgangslage
     section
-        slide-with-header(header="Dimensionality Reduction - Feature Selection")
+        slide-with-header(header="Feature Selection ist Dimensionality Reduction?")
             ul
                 li Idee: Wir reduzieren die Anzahl der Features (Dimensionen) indem wir Features #[span.highlight weglassen].
             div.mt-5.d-flex.justify-center
@@ -172,3 +179,14 @@ ng-template('#slides'='')
                     img.fragment(src="assets/images/pca/feature-selection-data-only.png")
                     img.fragment(src="assets/images/pca/feature-selection-2.png")
             div.fragment.mt-4.text-center.alert.alert-warning Problem: Grosser Informationsverlust
+    section
+        slide-with-header(header="Bessere Dimensionality Reduction?")
+            ul
+                li Idee: Wir reduzieren die Anzahl der Features indem wir #[span.highlight weniger neue Features erstellen].
+            div.mt-3.d-flex.justify-center
+                div.r-stack
+                    img.fragment(src="assets/images/pca/projection-1.png")
+                    img.fragment(src="assets/images/pca/projection-2.png")
+                    img.fragment(src="assets/images/pca/projection-3.png")
+                    img.fragment(src="assets/images/pca/projection-4.png")
+            div.fragment.mt-3.text-center.alert.alert-primary.smaller-font Weniger Informationsverlust

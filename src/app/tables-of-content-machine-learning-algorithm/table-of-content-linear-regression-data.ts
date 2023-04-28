@@ -82,8 +82,8 @@ export class PCATableOfContentLabel extends TableOfContentLabel {
 
 export function createPCATableOfContent(active: PCATableOfContentLabel | null): TableOfContentEntry<PCATableOfContentLabel> {
     return c(PCATableOfContentLabel.PCA, active, [
-        c(PCATableOfContentLabel.MODEL, active, []),
         c(PCATableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(PCATableOfContentLabel.MODEL, active, []),
         c(PCATableOfContentLabel.COST_FUNCTION, active, []),
         c(PCATableOfContentLabel.OPTIMIERUNG, active, []),
     ])

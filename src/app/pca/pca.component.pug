@@ -1,19 +1,17 @@
 ng-template('#slides'='')
     tables-of-content-pca
+    tables-of-content-pca([active]="pcaLabel.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="PCA - Data Specification")
+            ol
+                li.fragment Welche #[span.highlight Features] haben wir, z.B. #[span.code-font pixel]
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    data-specification-element-numerical-feature-standardize
     tables-of-content-pca([active]="pcaLabel.MODEL")
     section
-        slide-with-header(header="Dimensionality Reduction - PCA")
-            ul
-                li Können wir #[span.highlight bessere Features] selektieren?
-            div.mt-5.d-flex.justify-center
-                div.r-stack
-                    img.fragment(src="assets/images/pca/feature-selection-data-only.png")
-                    img.fragment(src="assets/images/pca/pca-1.png")
-            div.fragment.text-center.alert.alert-success
-                | PCA #[span.highlight fasst] Features zu einem #[span.highlight neuen Feature zusammen].
-                | Dadurch gehen #[span.highlight weniger Informationen (Daten Varianz) verloren].
-    section
-        slide-with-header(header="PCA - Modell")
+        slide-with-header(header="PCA - Intuition")
             ul
                 li Wir suchen die #[span.highlight Principal Components] (Hauptkomponenten) des Datensatzes
                 li Die Hauptkomponenten werden #[span.highlight zu unserem neuen Koordinatensystem] (neuen Features)
@@ -31,7 +29,7 @@ ng-template('#slides'='')
                         img(src="assets/images/pca/pca_2d.gif")
     section
         slide-with-header(header="PCA - PC Selection")
-            div Im PC-Space machen wir dann "Feature Selection", sprich wir #[span.highlight werfen die weniger wichtigen Hauptkomponenten (neuen "Features") weg].
+            div Im PC-Space machen wir dann "Feature Selection", sprich wir #[span.highlight behalten nur die wichtigsten Hauptkomponenten] (neuen "Features").
             .row.mt-5
                 .col-6.fragment
                     div.d-flex.justify-center
@@ -41,26 +39,29 @@ ng-template('#slides'='')
                         img(src="assets/images/pca/pca-1.png")
             div.fragment.mt-4.text-center.alert.alert-warning Weniger Informationsverlust, aber es gehen weiterhin Informationen verloren!
     section
-        slide-with-header(header="PC Selection vs. Feature Selection - Intuition", [extra]="true")
-            ul
-                li Die #[span.highlight Principal Components (PC)] Selection #[span.highlight verliert weniger Information] als die Feature Selection.
-                li.fragment Hoffnung: Wir können dann damit besser ein Modell lernen (z.B. #[span.code-font weight] eines Fisches).
-            div.fragment
-                img(src="assets/images/pca/pca-example.png")
-                // div.text-center.alert.alert-success Bereits 2 Dimensional zu 1 Dimensional sichtbar
-            div.fragment.text-center.alert.alert-warning In Praxis nur für viel mehr Features #[span.highlight notwendig]!
-    section
-        slide-with-header(header="PC Selection vs. Feature Selection - Intuition", [extra]="true")
-            div.fragment
-                h6 Original Image (100%)
-                img(src="assets/images/pca/example-img.png").img-fluid.limit-possible
-            .row.mt-5
-                .col-6.fragment
-                    h6 Feature Selection: Pixels of 200 Features (9.3%)
-                    img(src="assets/images/pca/example-img-pixel-selection.png").img-fluid.limit-impossible
-                .col-6.fragment
-                    h6 PC-Selection: Reconstruction 200 Features (PCA) (94.4%)
-                    img(src="assets/images/pca/example-img-reconstruction.png").img-fluid.limit-possible
+        slide-with-header(header="PCA - Modell")
+            div
+                div([mathjax]="encoder")
+            div.mt-5.fragment
+                div.d-flex.justify-content-center
+                    model-visualization([with-trigger]="false").mt-5
+                        div(inputHeader)
+                            div(style={marginTop: "-100px"})
+                                h5(style={marginBottom: "0"}) Input Space
+                                h6(margin="0") 3072 Features
+                        div(outputHeader)
+                            div(style={marginTop: "-50px"})
+                                h5(style={marginBottom: "0"}) Latent Space
+                                h6(margin="0") 200 Features
+                        div(input).rect-styling
+                            img(src="assets/images/pca/example-img.png")
+                        div(model).model-box.code
+                            div([mathjax]="encoder")
+                            div.small PCA.transform
+                        div(output).fix-height.code
+                            div [ -57.2, -3.6, ..., 2.3, -3.4 ]
+            div.mt-2 &nbsp;
+            div.mt-5.fragment.alert.alert-primary Das Modell ist eine Lineare Abbildung
     section
         slide-with-header(header="PCA - Mehrere Features", [extra]="true")
             side-by-side-3
@@ -90,78 +91,7 @@ ng-template('#slides'='')
                             img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
                             img.fragment(src="assets/images/pca/pca_3d.gif").img-fluid
     section
-        slide-with-header(header="Dimensionsreduktion - PCA")
-            div.d-flex.justify-content-center.fragment
-                model-visualization([with-trigger]="false").mt-5
-                    div(inputHeader)
-                        div(style={marginTop: "-75px"})
-                            h5(style={marginBottom: "0"}) Input Space
-                            h6(margin="0") 3072 Features
-                    div(input).rect-styling
-                        img(src="assets/images/pca/example-img.png", style={height: "150px"})
-                    div(model, class="model").model-box.code
-                        div Encoder
-                        div #[span.code.small PCA.transform]
-                    div(output, class="output").fix-height.code [ -57.2, -3.6, ..., 2.3, -3.4 ]
-                    div(outputHeader)
-                        div(style={marginTop: "-75px"})
-                            h5(style={marginBottom: "0"}) Latent Space
-                            h6(margin="0") 200 Features
-            div.fragment
-                h5.mt-5 PCA kommt mit einem Decoder
-                div.d-flex.justify-content-center
-                    model-3-visualization([with-trigger]="false").mt-5
-                        div(inputHeader)
-                            div(style={marginTop: "-75px"})
-                                h5(style={marginBottom: "0"}) Input Space
-                                h6(margin="0") 3072 Features
-                        div(featureHeader)
-                            div(style={marginTop: "-50px"})
-                                h5(style={marginBottom: "0"}) Latent Space
-                                h6(margin="0") 200 Features
-                        div(outputHeader)
-                            div(style={marginTop: "-100px"})
-                                h5(style={marginBottom: "0"}) Reconstructed Input Space
-                                h6(margin="0") 3072 Features
-                        div(input).rect-styling
-                            img(src="assets/images/pca/example-img.png")
-                        div(pre).model-box.code
-                            div Encoder
-                            div.small PCA.transform
-                        div(feature).fix-height.code
-                            div [ -57.2, -3.6, ..., 2.3, -3.4 ]
-                        div(model).model-box.code
-                            div Decoder
-                            div.small PCA.inverse_transform
-                        div(output).rect-styling
-                            img(src="assets/images/pca/example-img-reconstruction.png")
-            div.fragment.mt-5.text-center.alert.alert-success Decoder kann visualisieren, was #[span.highlight verloren] geht.
-    section
-        slide-with-header(header="Dimensionsreduktion - PCA als Preprocessing")
-            div.mt-5.d-flex.justify-content-center.fragment
-                model-3-visualization("#pcaWithModel"="", [with-trigger]="false", output-header="Output Space" )
-                    div(inputHeader)
-                        div(style={marginTop: "-75px"})
-                            h5(style={marginBottom: "0"}) Input Space
-                            h6(margin="0") 3072 Features
-                    div(featureHeader)
-                        div(style={marginTop: "-50px"})
-                            h5(style={marginBottom: "0"}) Latent Space
-                            h6(margin="0") 200 Features
-                    div(input).rect-styling
-                        img(src="assets/images/pca/example-img.png")
-                    div(pre).model-box
-                        div Encoder
-                        div.small PCA.transform
-                    div(feature).fix-height.code
-                        | [ -57.2, -3.6, ..., 2.3, -3.4 ]
-                    div(model).model-box
-                        div Modell
-                        div #[span.code.small z.B. SVC]
-                    div(output).rect-styling
-                        div.code Deer
-    section
-        slide-with-header(header="PCA - Modell")
+        slide-with-header(header="PCA - Kommt \"gratis\" mit einem Decoder")
             div.fragment
                 div.d-flex.justify-content-center
                     model-3-visualization([with-trigger]="false").mt-5
@@ -227,19 +157,35 @@ ng-template('#slides'='')
                             img(src="assets/images/pca/example-img-reconstruction.png")
             div.fragment.mt-5.text-center.alert.alert-primary
                 div([mathjax]="encoderWithDecoder")
+    section
+        slide-with-header(header="Wie wählen wir die Anzahl Dimensionen")
+            div
+                img(src="assets/images/pca/pca-cifar10-cumsum-variance.png")
+    section
+        slide-with-header(header="Wie wählen wir die Anzahl Dimensionen", [extra]="true")
+            .row
+                .col-4
+                    h6 Example Image
+                    img(src="assets/images/pca/pca-cifar10-cumsum-variance-visualized-example.png")
+                .col-8.fragment
+                    h6 Reconstruction mit 1 Feature, 2 Feature, ..., 200 Feature
+                    img(src="assets/images/pca/pca-cifar10-cumsum-variance-visualized.png", height="500px" )
+    section
+        slide-with-header(header="PC Selection vs. Feature Selection - Intuition", [extra]="true")
+            div.fragment
+                h6 Original Image (100%)
+                img(src="assets/images/pca/example-img.png").img-fluid.limit-possible
+            .row.mt-5
+                .col-6.fragment
+                    h6 Feature Selection: Pixels of 200 Features (9.3%)
+                    img(src="assets/images/pca/example-img-pixel-selection.png").img-fluid.limit-impossible
+                .col-6.fragment
+                    h6 PC-Selection: Reconstruction 200 Features (PCA) (94.4%)
+                    img(src="assets/images/pca/example-img-reconstruction.png").img-fluid.limit-possible
     // section
     //     slide-with-header(header="PCA - Code")
     //         div.notebook-name pca.ipynb
     //         img(src="assets/images/code.png")
-    tables-of-content-pca([active]="pcaLabel.DATA_SPECIFICATION")
-    section
-        slide-with-header(header="PCA - Data Specification")
-            ol
-                li.fragment Welche #[span.highlight Features] haben wir, z.B. #[span.code-font pixel]
-                li.fragment
-                    data-specification-element-categorical-feature-encoded
-                li.fragment
-                    data-specification-element-numerical-feature-standardize
     tables-of-content-pca([active]="pcaLabel.COST_FUNCTION")
     section
         slide-with-header(header="PCA - Kostenfunktion")
@@ -299,14 +245,37 @@ ng-template('#slides'='')
                 .row
                     .col-12 PCA hat #[span.highlight die starke Annahme], dass das gesuchtes Manifold im Feature-Space #[span.highlight linear] ist!
     section
-        slide-with-header(header="PCA - Wann")
+        slide-with-header(header="PCA als Preprocessing")
+            div.mt-5.d-flex.justify-content-center
+                model-3-visualization("#pcaWithModel"="", [with-trigger]="false", output-header="Output Space" )
+                    div(inputHeader)
+                        div(style={marginTop: "-75px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 3072 Features
+                    div(featureHeader)
+                        div(style={marginTop: "-50px"})
+                            h5(style={marginBottom: "0"}) Latent Space
+                            h6(margin="0") 200 Features
+                    div(input).rect-styling
+                        img(src="assets/images/pca/example-img.png")
+                    div(pre).model-box
+                        div Encoder
+                        div.small PCA.transform
+                    div(feature).fix-height.code
+                        | [ -57.2, -3.6, ..., 2.3, -3.4 ]
+                    div(model).model-box
+                        div Modell
+                        div #[span.code.small z.B. SVC]
+                    div(output).rect-styling
+                        div.code Deer
             div.mt-5
-                ul
-                    li.fragment Performanz Optimierung:
-                        ul
-                            li Speed-up (CPU)
-                            li Less memory (RAM/disk)
-                    li.fragment PCA (sollte man) #[span.highlight nicht verwenden für Overfitting]. Bei Overfitting ist #[a.highlight(href="#/{{conceptLabel.REGULARIZATION.href}}") Regularisierung] meistens die bessere Wahl.
+                .row.text-start
+                    .col-6.fragment
+                        h6 Wann?
+                        div PCA sollte für Performanz Optimierung eingesetz werden (Speed-up (CPU), Less memory (RAM/disk))
+                    .col-6.fragment.left
+                        h6 Wann nicht?
+                        div PCA (sollte man) #[span.highlight nicht verwenden für Overfitting]. Bei Overfitting ist #[a.highlight(href="#/{{conceptLabel.REGULARIZATION.href}}") Regularisierung] meistens die bessere Wahl.
     section
         slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
             ul
