@@ -1,0 +1,64 @@
+ng-template('#slides'='')
+    tables-of-content-auto-encoder([active]="autoEncoderLabel.AUTO_ENCODER")
+        div.fragment.alert.alert-primary.mt-5 Auto Encoder ist eine&nbsp;
+            a(href="#/{{dimensionalityReductionLabel.href}}").highlight Dimensionality Reduction.
+    section
+        slide-with-header(header="Auto Encoder - Motivation")
+            ul
+                li #[span.highlight Nicht-lineare Dimensionality Reduction] anhand von Daten lernen.
+                li.fragment Dazu verwenden wir ein Neural Network mit #[span.highlight Bottleneck] und #[span.highlight Reconstruction Error].
+    tables-of-content-auto-encoder([active]="autoEncoderLabel.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="Auto Encoder - Data Specification")
+            ol
+                li.fragment Welche #[span.highlight Features] haben wir, z.B. #[span.code-font pixel]
+                li.fragment
+                    data-specification-element-categorical-feature-encoded
+                li.fragment
+                    data-specification-element-numerical-feature-standardize
+    tables-of-content-auto-encoder([active]="autoEncoderLabel.MODEL")
+    section
+        slide-with-header(header="Auto Encoder - Model")
+            div.text-center
+                img(src="assets/images/auto-encoder/auto-encoder-motivation.png", height="300px" alt="Auto Encoder")
+            div.mt-3 &nbsp;
+            div.mt-5.fragment
+                model-3-visualization().mt-5
+                    div(inputHeader)
+                        div(style={marginTop: "-75px"})
+                            h5(style={marginBottom: "0"}) Input Space
+                            h6(margin="0") 3072 Features
+                    div(featureHeader)
+                        div(style={marginTop: "-50px"})
+                            h5(style={marginBottom: "0"}) Latent Space
+                            h6(margin="0") 200 Features
+                    div(outputHeader)
+                        div(style={marginTop: "-100px"})
+                            h5(style={marginBottom: "0"}) Reconstructed Input Space
+                            h6(margin="0") 3072 Features
+                    div(input).rect-styling
+                        img(src="assets/images/pca/example-img.png")
+                    div(pre).model-box.code
+                        div Encoder
+                    div(feature).fix-height.code
+                        div [ -57.2, -3.6, ..., 2.3, -3.4 ]
+                    div(model).model-box.code
+                        div Decoder
+                    div(output).rect-styling
+                        img(src="assets/images/pca/example-img-reconstruction.png")
+    section
+        slide-with-header(header="Auto Encoder - Model - Beispielsweise für CIFAR")
+            div.text-center
+                img(src="assets/images/auto-encoder/auto_encoder_cifar10.png", height="350px", alt="Auto Encoder")
+            div.fragment.mt-5.alert.alert-primary Hier Reduktion von #[span.highlight 3072] auf #[span.highlight 200] Dimensionen.
+            div.fragment.mt-3.alert.alert-warning Genaue Architektur ist "Hyper Parameter"
+    tables-of-content-auto-encoder([active]="autoEncoderLabel.COST_FUNCTION")
+    section
+        slide-with-header(header="Auto Encoder - Kostenfunktion")
+            div([mathjax]="costFunction")
+            div.fragment.mt-5.alert.alert-primary Ander Kostenfunktionen möglich, z.B. #[span.highlight L1] Distanz.
+    tables-of-content-auto-encoder([active]="autoEncoderLabel.OPTIMIERUNG")
+        div.mt-5.fragment.text-center.alert.alert-primary Batch Gradient Descent
+    section
+        slide-with-header(header="Auto Encoder vs. PCA")
+            div Wenn Encoder und Decoder #[span.highlight linear] sind (z.B. lineare Aktivierungsfunktion), dann lernt der Auto Encoder den #[span.highlight gleichen Latent Space wie PCA].

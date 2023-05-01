@@ -1,0 +1,74 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Deep Learning")
+            img(src="assets/images/machine-learning/machine-learning-as-subfield-of-ai.png", style={height: "400px"}).mt-5.img-fluid
+            div.mt-3.fragment.text-center.alert.alert-primary Deep Learning = Machine Learning mit Neuralen Netzen als Modell
+    section
+        slide-with-header(header="Deep Learning - Motivation - 2023")
+            img(src="assets/images/neural-network/recent-use-cases.png")
+            div.small-font.mt-1
+                a(href="https://huggingface.co/spaces/stabilityai/stable-diffusion") Stable Diffusion |&nbsp;
+                a(href="https://chat.openai.com/") ChatGPT |&nbsp;
+                a(href="https://segment-anything.com/demo") SAM &nbsp;
+    section
+        slide-with-header(header="Die Welt vor der Deep Learning Revolution")
+                ul
+                    li Klassische Machine Learning Algorithmen trainiert auf #[span.highlight manuellen] Repräsentation
+                        div.smaller-font Repräsentation = Feature Engineering oder Dimensionality Reduction
+                    li Viele Annahmen, viel Wissen ausprogrammiert
+                    li Beispiele für manuelle Repräsentation
+                    ul.smaller-font
+                        li Bilder:&nbsp;
+                            a(href="https://en.wikipedia.org/wiki/Haar_wavelet") HAAR Wavelets,&nbsp;
+                            a(href="https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients") HOG
+                        li Text2Speech&nbsp;
+                            a(href="https://en.wikipedia.org/wiki/Concatenative_synthesis") Concatenative synthesis,&nbsp;
+                            a(href="https://en.wikipedia.org/wiki/Speech_synthesis#Formant_synthesis") Formant synthesis
+                        li Schach:&nbsp;
+                            a(href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjg-ZaZ0Mz-AhUBhv0HHQt3B2YQFnoECA0QAw&url=https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0004370201001291%2Fpdf&usg=AOvVaw1x7ipm2-W_JjRt7TvaNZY5") Ausprogrammierte Value Function
+                    div.mt-5.fragment.text-center.alert.alert-warning
+                        | Manuelle Repräsentation bei unstrukturierten Daten wie Bildern und Text schwierig
+    section
+        slide-with-header(header="Deep Learning - Motivation der damaligen Forschung")
+            div
+                ul
+                    li Limit der #[span.highlight lokalen Methoden] z.B. Decision Tree, rbf-Kernel
+                        ul.smaller-font
+                            li Interpolation vs. Extrapolation
+                    li.fragment Repräsentation #[span.highlight automatisch] aus Daten lernen
+                        ul.smaller-font
+                            li Lernen von Symbolischen Regeln&nbsp;
+                                a(href="https://www.cs.toronto.edu/~hinton/coursera/lecture4/lec4.pdf") (relational learning task)
+                                a(href="")
+                    li.fragment Hierarchisch Repräsentationen (layer-by-layer)
+    section
+        slide-with-header(header="Deep Learning - Weniger Annahmen, viele Daten")
+            div
+                div(style={fontSize: "14pt"}) Weniger Annahmen, viele Daten
+                div.d-flex.d-center
+                    knowledge-view("#tradeOff"="", [showHeader]="false", [tradeoff]="0.1")
+            span.fragment(
+                fragment-trigger,
+                (trigger)="tradeOff.start()",
+                (untrigger)="tradeOff.end()"
+            )
+            div.mt-5.fragment.text-center.alert.alert-danger
+                | Benötigt viele Daten, um ein Modell komplett zu trainieren.
+    section
+        slide-with-header(header="Deep Learning - Übersicht")
+            ul
+                li Machine Learning Modell ist ein #[span.highlight Neural Network]
+                li Kann Supervised Learning
+                li Kann Unsupervised Learning
+                li Benötigt #[span.highlight viele Daten]
+                li Benötigt #[span.highlight viel Rechenzeit (GPU)]
+                li Meistens beste Wahl bei #[span.highlight unstrukturierten Daten] (Sequenzen, Text, Bilder, ...)
+                li Bei strukturierte Daten (z.B. ML Lab Tag 1) meistens nicht beste Wahl.
+    section
+        slide-with-header(header="Deep Learning - Grundidee - Was ist ein Neurales Netz?")
+            ul
+                li Inspiriert vom biologischen Gehirn
+                li Neuronen die mit einander verbunden sind (Knoten in einem Graph).
+                li Neuronen haben eingehende und ausgehende Verbindungen (Kanten).
+                li Neuronen feuern (geben einen Wert weiter), wenn eingehende Neuronen #[span.highlight genug stark] feuern.
+

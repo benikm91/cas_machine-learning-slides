@@ -1,0 +1,21 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% AutoEncoder CIFAR10
+
+\begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,3072}}
+    \hidden{{1,missing,200}}{$\sum \rightarrow \phi$}
+    \outputs{{0,missing,3072}}{$\sum \rightarrow \phi$}
+    \layers
+    \inputhiddenconnections{{bias,1,2,3072}}{{1,200}}
+    \hiddenoutputconnections{{bias,1,200}}{{0,3072}}
+    \end{tikzpicture}
+\end{preview}
+
+\end{document}

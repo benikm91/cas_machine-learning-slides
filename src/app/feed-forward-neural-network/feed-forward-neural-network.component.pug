@@ -1,34 +1,10 @@
 ng-template('#slides'='')
-    section
-        slide-with-header(header="Deep Learning")
-            img(src="assets/images/machine-learning/machine-learning-as-subfield-of-ai.png", style={height: "400px"}).mt-5.img-fluid
-            div.mt-3.fragment.text-center.alert.alert-primary Deep Learning = Machine Learning mit Neuralen Netzen als Modell
-    section
-        slide-with-header(header="Deep Learning - Übersicht")
-            ul
-                li Machine Learning Modell ist ein #[span.highlight Neural Network]
-                li Kann Supervised Learning
-                li Kann Unsupervised Learning
-                li Benötigt #[span.highlight viele Daten]
-                li Benötigt #[span.highlight viel Rechenzeit (GPU)]
-                li Meistens beste Wahl bei #[span.highlight unstrukturierten Daten] (Sequenzen, Text, Bilder, ...)
-                li Bei strukturierte Daten (z.B. ML Lab Tag 1) meistens nicht beste Wahl.
-    section
-        slide-with-header(header="Deep Learning - Grundidee")
-            ul
-                li Inspiriert vom biologischen Gehirn
-                li Neuronen die mit einander verbunden sind (Knoten in einem Graph).
-                li Neuronen haben eingehende und ausgehende Verbindungen (Kanten).
-                li Neuronen feuern (geben einen Wert weiter), wenn eingehende Neuronen #[span.highlight genug stark] feuern.
     tables-of-content-fnn
         div.fragment.text-center.alert.alert-warning
-            | Feedforward Neural Network =
-            br
+            | Synonym:
             | Fully Connected Neural Network =
             br
-            | Multi Layer Perceptron (MLP) =
-            br
-            | Neural Network (NN)
+            | Multi Layer Perceptron (MLP) = Neural Network (NN)
     tables-of-content-fnn([active]="fnnLabels.DATA_SPECIFICATION")
     section
         slide-with-header(header="Neural Network - Specification")
@@ -174,7 +150,7 @@ ng-template('#slides'='')
                        div(model).model-box Lineares Modell
                        div(output).rect-styling
                            div(mathjax="y")
-           div.fragment.text-center.alert.alert-primary.small-font
+           div(style="margin-top: -30px").fragment.text-center.alert.alert-primary.small-font
                | Die Hidden Layers können als #[span.highlight lernbares Feature Engineering] betrachtet werden.
                | Die gelernten Features haben gewisse #[span.highlight praktische Einschränkungen].
     section
@@ -203,7 +179,7 @@ ng-template('#slides'='')
                             div Lineares Modell
                         div(output).rect-styling
                             div.code Deer
-            div.fragment.text-center.alert.alert-primary.small-font
+            div(style="margin-top: -30px").fragment.text-center.alert.alert-primary.small-font
                 | Die Hidden Layers können als #[span.highlight lernbare Dimensionality Reduction] betrachtet werden.
                 | Dabei lernt das Modell, welche Informationen für #[span.highlight das spezifische Ziel] weggeworfen werden können.
     section
@@ -236,17 +212,20 @@ ng-template('#slides'='')
     section
         slide-with-header(header="Stochastic und Batch Gradient Descent")
             ul
-                li Wie funktionierte Gradient Descent? (Tafel)
+                li Wie funktionierte (Batch) Gradient Descent? (Tafel)
                 li.fragment #[span.highlight Stochastic Gradient Descent] berechnet die Richtung zum Minimum mit nur einem Sample.
                     ul.fragment
                         li Update viel schneller zu berechnen.
                         li Update sehr noisy (oft in falsche Richtung)
-                li.fragment #[span.highlight Batch Gradient Descent] berechnet die Richtung zum Minimum mit z.B. 128 Sample (Batch Size).
+                li.fragment #[span.highlight Mini Batch Gradient Descent] berechnet die Richtung zum Minimum mit z.B. 128 Sample.
                     ul.fragment
                         li Update schneller zu berechnen.
                         li Update noisy (ab und zu in falsche Richtung)
             div.mt-4.fragment.text-center.alert.alert-warning(style={fontSize: "26px"})
-                | In Literatur heisst #[span.highlight Batch Gradient Descent] oft auch #[span.highlight Stochastic Gradient Descent].
+                | In Literatur heisst #[span.highlight Mini Batch Gradient Descent] oft auch #[span.highlight Stochastic Gradient Descent].
+    section
+        slide-with-header(header="Batch vs. Stochastic vs. Mini Batch Gradient Descent")
+            img(src="assets/images/gradient-descent/gd-vs-sgd.png").img-fluid-both
     section
         slide-with-header(header="Backpropagation", [extra]="true")
             ul(style={fontSize: "22px"})

@@ -140,6 +140,15 @@ import {
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-nmf.component";
 import {Day4TitleSlideComponent} from "./day-title-slide/day4-title-slide.component";
 import {ClusteringAdditionalComponent} from "./clustering-additional/clustering-additional.component";
+import {WhatIsDeepLearningComponent} from "./what-is-deep-learning/what-is-deep-learning.component";
+import {AutoEncoderComponent} from "./auto-encoder/auto-encoder.component";
+import {
+  TablesOfContentAutoEncoderComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-auto-encoder.component";
+import {
+  NeuralNetworkArchitectureExamplesComponent
+} from "./neural-network-architecture-examples/neural-network-architecture-examples.component";
+import {Word2VecComponent} from "./word-2-vec/word-2-vec.component";
 
 @NgModule({
   declarations: [
@@ -162,7 +171,8 @@ import {ClusteringAdditionalComponent} from "./clustering-additional/clustering-
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
     WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent, DataSciencePitfallsGarbageInGarbageOutComponent,
     DataSciencePitfallsEnoughDataComponent, DataSciencePitfallsTackleAProblemComponent, DataSciencePitfallsMetricChoiceComponent, DataSciencePitfallsCorrectResultInterpretationComponent,
-    DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent, NonNegativeMatrixFactorizationComponent, TablesOfContentNMFComponent, ClusteringAdditionalComponent
+    DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent, NonNegativeMatrixFactorizationComponent, TablesOfContentNMFComponent, ClusteringAdditionalComponent,
+    WhatIsDeepLearningComponent, AutoEncoderComponent, TablesOfContentAutoEncoderComponent, NeuralNetworkArchitectureExamplesComponent, Word2VecComponent
   ],
   imports: [
     BrowserModule,

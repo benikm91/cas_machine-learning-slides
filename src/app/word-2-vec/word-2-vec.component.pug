@@ -1,0 +1,65 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="Neural Network - Word2Vec (2013) - CBOW", [extra]="true")
+            div(style={wordSpacing: "10px"}) Task:
+                span(style={marginLeft: "30px"}).code a  cat  ?  a  mouse
+            img.mt-5(src="assets/images/word-2-vec/word-2-vec-model.png", height="400px")
+            div.mt-5.smaller-font Paper: Efficient Estimation of Word Representations in Vector Space
+    section
+        slide-with-header(header="Neural Network - Word2Vec (2013)", [extra]="true")
+            ul
+                li #[span.highlight 1,6 Milliarden Wörter] im Train Set (Google News)
+                li #[span.highlight 1 Million] häufigste Wörter (1 Million Dimensionen)
+                li Ziel: Lernen von Word-Embeddings
+                    ul
+                        li Reduktion auf&nbsp;
+                            span.highlight(mathjax="<math><mi>l</mi></math>")
+                            | &nbsp;Dimensionen
+    section
+        slide-with-header(header="Neural Network - Word2Vec - What is learned?", [extra]="true")
+            ul
+                li.fragment Synonyme werden ähnlich encoded
+                li.fragment Bedeutung der Wörter wurde gelernt:
+                    pre.p-2
+                        div.text-start.code Germany    - Berlin   + Paris   ~ France
+                        div.text-start.code Germany    - Berlin   + London  ~ England
+                        div.text-start.code easiest    - easy     + lucky   ~ luckiest
+                        div.text-start.code mice       - mouse    + dollar  ~ dollars
+                        div.text-start.code King       - Queen    + Woman   ~ Man
+                        div.text-start.code impossibly - possibly + ethical ~ unethical
+            div.fragment.mt-5.alert.alert-primary Latent-Space beinhalten #[span.highlight Bedeutung von Wörtern] (wie Wissen, Mehrzahl, Zusammenhänge).
+            div.mt-5.d-flex.justify-center.fragment
+    section
+        slide-with-header(header="Word2Vec als Feature Preprocessing", [extra]="true")
+            .mt-5
+                model-3-visualization([with-trigger]="false")
+                    div(inputHeader)
+                        h5(style={marginBottom: "0"}) Input Space
+                    div(featureHeader)
+                        div(style={marginTop: "-25px"})
+                            h5(style={marginBottom: "0"}) Latent Space
+                            h6(margin="0") 300 Features
+                    div(outputHeader)
+                        h5(style={marginBottom: "0"}) Output Space
+                    div(input).rect-styling.small-font
+                        | "Guten Tag Herr Meyer, ..."
+                    div(pre).model-box
+                        div Word2Vec
+                        div.small Wörter-Vektoren werden aufsummiert
+                    div(feature).fix-height.code
+                        div [ -57.2, -3.6, ..., 2.3, -3.4 ]
+                    div(model).model-box
+                        div Model
+                    div(output).rect-styling.code
+                        | Spam
+            div.fragment.mt-5.alert.alert-primary
+                | Der Latent Space beschreiben präziser den Text.
+                br
+                | Model hat dadurch ein leichteres Spiel.
+            div.fragment.mt-5.alert.alert-primary
+                | Word2Vec kann hier als #[span.highlight sinnvolles Encoding] verstanden werden (anstatt One Hot Encoding).
+
+
+
+
+

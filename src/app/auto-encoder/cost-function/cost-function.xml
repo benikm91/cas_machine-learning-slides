@@ -1,0 +1,30 @@
+<math display="block">
+    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+        <mtr>
+            <mtd style="text-align:-webkit-right;">
+                <mrow>
+                    <mi>J</mi>
+                    <mo form="prefix" stretchy="false">(</mo>
+                    <mi class="weight">β</mi>
+                    <mo form="postfix" stretchy="false">)</mo>
+                    <mo>=</mo>
+                </mrow>
+            </mtd>
+            <mtd style="text-align:-webkit-left;">
+                <msub>
+                    <mrow>
+                        <mo fence="true" form="prefix">‖</mo>
+                        <mi class="feature">X</mi>
+                        <mo>−</mo>
+                        <mover class="feature">
+                            <mi>X</mi>
+                            <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+                        </mover>
+                        <mo fence="true" form="postfix">‖</mo>
+                    </mrow>
+                    <mn>2</mn>
+                </msub>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>

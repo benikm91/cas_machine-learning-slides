@@ -122,7 +122,7 @@ export function createKNNTableOfContent(active: KNNTableOfContentLabel | null): 
 
 
 export class FNNTableOfContentLabel extends TableOfContentLabel {
-    public static readonly FNN = new FNNTableOfContentLabel("Feedforward Neural Network", "NN");
+    public static readonly FNN = new FNNTableOfContentLabel("Fully Connected Neural Network", "NN");
     public static readonly DATA_SPECIFICATION = new FNNTableOfContentLabel("Specification", "NN/Specification");
     public static readonly MODEL = new FNNTableOfContentLabel("Model" , "NN/Model" );
     public static readonly COST_FUNCTION = new FNNTableOfContentLabel("Kostenfunktion" , "NN/Kostenfunktion" );
@@ -152,5 +152,24 @@ export function createKMeansTableOfContent(active: KMeansTableOfContentLabel | n
         c(KMeansTableOfContentLabel.MODEL, active, []),
         c(KMeansTableOfContentLabel.COST_FUNCTION, active, []),
         c(KMeansTableOfContentLabel.OPTIMIERUNG, active, []),
+    ])
+}
+
+
+
+export class AutoEncoderTableOfContentLabel extends TableOfContentLabel {
+    public static readonly AUTO_ENCODER = new AutoEncoderTableOfContentLabel("Auto Encoder", "Auto Encoder");
+    public static readonly DATA_SPECIFICATION = new AutoEncoderTableOfContentLabel("Data Specification", "Auto Encoder/Data Specification");
+    public static readonly MODEL = new AutoEncoderTableOfContentLabel("Model" , "Auto Encoder/Model" );
+    public static readonly COST_FUNCTION = new AutoEncoderTableOfContentLabel("Kostenfunktion", "Auto Encoder/Kostenfunktion");
+    public static readonly OPTIMIERUNG = new AutoEncoderTableOfContentLabel("Optimierung" , "Auto Encoder/Optimierung" );
+}
+
+export function createAutoEncoderTableOfContent(active: AutoEncoderTableOfContentLabel | null): TableOfContentEntry<AutoEncoderTableOfContentLabel> {
+    return c(AutoEncoderTableOfContentLabel.AUTO_ENCODER, active, [
+        c(AutoEncoderTableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(AutoEncoderTableOfContentLabel.MODEL, active, []),
+        c(AutoEncoderTableOfContentLabel.COST_FUNCTION, active, []),
+        c(AutoEncoderTableOfContentLabel.OPTIMIERUNG, active, []),
     ])
 }

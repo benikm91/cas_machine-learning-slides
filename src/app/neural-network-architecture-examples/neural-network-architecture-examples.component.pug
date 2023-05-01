@@ -1,0 +1,62 @@
+ng-template('#slides'='')
+    section
+        .slide-header
+            h1 Deep Learning ist ein #[strike Spielplatz] Framework!
+        .slide-body
+            img.fragment(src="assets/images/neural-network/nn-meme-stack-more-layers.png", height="400px")
+            div.fragment.mt-5.alert.alert-success Aufzeigen, wie #[span.highlight unterschiedlich] und #[span.highlight problemspezifisch] Architekturen in der Praxis sind.
+    section
+        slide-with-header(header="Neural Network - LeNet (1998)", [extra]="true")
+            img(src="assets/images/neural-network-architectures/lenet.png", height="400px")
+            div.smaller-font Paper: gradient-based learning applied to document recognition
+            a(href="https://tensorspace.org/html/playground/lenet.html").mt-5.smaller-font 3D visualization
+    section
+        slide-with-header(header="Neural Network - LeNet (1998)", [extra]="true")
+            ul.text-start
+                li #[span.highlight 7 Layers]
+                li #[span.highlight 60'000 lernbare Parameter]
+                li #[span.highlight Sigmoid] statt ReLU (ReLU noch nicht entdeckt)
+                li Dataset: #[span.highlight MNIST]
+                    ul
+                        li 60'000 train data
+                        li 10' '000 test data
+    section
+        slide-with-header(header="Neural Network - Siamese (2015)", [extra]="true")
+            img.mt-5(src="assets/images/neural-network-architectures/siamese.png")
+            div.smaller-font Paper: Siamese Neural Networks for One-shot Image Recognition
+    section
+        slide-with-header(header="Neural Network - Siamese (2015)", [extra]="true")
+            ul
+                li Lerne #[span.highlight Ähnlichkeit] von Inputs (z.B. Bilder)
+                li Erlaube #[span.highlight Generalisierung auf neue Klassen] (one-shot learning)
+                li Wird oft für #[span.highlight Face Detection] verwendet (z.B. Facenet)
+    section
+        slide-with-header(header="Neural Network - ResNet (2015)", [extra]="true")
+            img.mt-5(src="assets/images/neural-network-architectures/resnet-34.png")
+            div.smaller-font Paper: Deep Residual Learning for Image Recognition
+            a(href="https://tensorspace.org/html/playground/resnet50.html").mt-5.smaller-font 3D visualization (50 layers)
+    section
+        slide-with-header(header="Neural Network - ResNet (2015)", [extra]="true")
+            ul
+                li #[span.highlight Skip-Connections] machen tiefe Netzwerke trainierbar
+                li Netzwerk mit #[span.highlight 1202 Layers] trainiert
+    section
+        slide-with-header(header="Neural Network - U-Net (2015)", [extra]="true")
+            img.mt-5(src="assets/images/neural-network-architectures/unet.png")
+    section
+        slide-with-header(header="Neural Network - U-Net (2015)", [extra]="true")
+            ul
+                li Löst #[span.highlight Verluste von räumlichen Informationen] (nötig für z.B. Bildsegmentierung)
+                li #[span.highlight Encoder], #[span.highlight Decoder] mit #[span.highlight Skip-Connections]
+                li Skip Connections helfen, räumliche Informationen zu erhalten
+                li #[span.highlight Bildsegmentierung] revolutioniert
+    section
+        slide-with-header(header="Neural Network - Clip (2021)", [extra]="true")
+            img.mt-5(src="assets/images/neural-network-architectures/clip.png", height="400px")
+    section
+        slide-with-header(header="Neural Network - Clip (2021)", [extra]="true")
+            ul
+                li Trainiert auf #[span.highlight 400 Millionen Bildern und Texten]
+                li Auf #[span.highlight 256 GPUs für 2 Wochen] trainiert
+                li #[span.highlight Text-Encoder] und #[span.highlight Bild-Encoder] (Transformer Architektur)
+                li #[span.highlight Gemeinsamer Latent-Space] für Bilder und Texte, erlaubt zero-shot learning
