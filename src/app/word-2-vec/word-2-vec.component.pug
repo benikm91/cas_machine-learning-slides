@@ -19,16 +19,20 @@ ng-template('#slides'='')
         slide-with-header(header="Neural Network - Word2Vec - What is learned?", [extra]="true")
             ul
                 li.fragment Synonyme werden ähnlich encoded
-                li.fragment Bedeutung der Wörter wurde gelernt:
-                    pre.p-2
-                        div.text-start.code Germany    - Berlin   + Paris   ~ France
-                        div.text-start.code Germany    - Berlin   + London  ~ England
-                        div.text-start.code easiest    - easy     + lucky   ~ luckiest
-                        div.text-start.code mice       - mouse    + dollar  ~ dollars
-                        div.text-start.code King       - Queen    + Woman   ~ Man
-                        div.text-start.code impossibly - possibly + ethical ~ unethical
-            div.fragment.mt-5.alert.alert-primary Latent-Space beinhalten #[span.highlight Bedeutung von Wörtern] (wie Wissen, Mehrzahl, Zusammenhänge).
-            div.mt-5.d-flex.justify-center.fragment
+                li.fragment Bedeutung der Wörter:
+                    .row
+                        .col-7
+                            pre.w-100.p-2.overflow-visible
+                                div.text-start.code King       - Queen    + Woman   ~ Man
+                        .col-5.m-0
+                            img.fragment(src="assets/images/word-2-vec/word2vec.gif")
+                    pre.w-100.p-2.fragment
+                        div.fragment
+                            div.text-start.code Germany    - Berlin   + Paris   ~ France
+                            div.text-start.code Germany    - Berlin   + London  ~ England
+                            div.text-start.code easiest    - easy     + lucky   ~ luckiest
+                            div.text-start.code mice       - mouse    + dollar  ~ dollars
+                            div.text-start.code impossibly - possibly + ethical ~ unethical
     section
         slide-with-header(header="Word2Vec als Feature Preprocessing", [extra]="true")
             .mt-5

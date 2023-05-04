@@ -118,14 +118,41 @@ reveal-presentation
         slide-with-header(header="Feedforward Neural Network - Code")
             div.notebook-name neural_network.ipynb
             img(src="assets/images/code.png")
+    section
+        slide-with-header(header="Übungszeit (60 Minuten)")
+            div.notebook-name exercise/neural_network.ipynb
+            img(src="assets/images/code.png")
     question-slide([questions]="nnQuestions")
     auto-encoder
     neural-network-architecture-examples
     word-2-vec
+    data-science-pitfalls-bias-in-machine-learning
     section
-        slide-with-header(header="Übungszeit (60 Minuten)", [extra]="true")
+        slide-with-header(header="Data Science - Zukunft")
+            h6 Heute
+            ul.w-100
+                li Modelle auf Train-Set trainieren etc.
+                hr
+            h6.fragment Zukunft / Heute
+            ul.fragment.w-100
+                li #[span.highlight Foundation models] (BERT, GPT-4, SAM) mit few/zero-shot-learning oder Teil eines #[span.highlight eigenen Modells]
+                li #[span.highlight AutoML]: "Entwickler mit geringem ML-Fachwissen qualitativ hochwertige Modelle trainieren"
+            .mt-5.fragment.alert.alert-warning Zukunft ungewiss
+    section
+        slide-with-header(header="Übungszeit (60 Minuten)")
             div.notebook-name exercise/neural_network.ipynb
             img(src="assets/images/code.png")
+    section
+        slide-with-header(header="Tipps fürs lernen")
+            ul
+                li CTRL+SHIFT+F für durchsuchen der Folien
+                li Hyperlinks in Folien
+                hr
+                li Videos auf YouTube (Testlauf)
+                li Andere Quellen beziehen
+                    ul.smaller-font
+                        li sklearn User Guide
+                        li Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow
     section
         title-page
             h1 Prüfungsfragen

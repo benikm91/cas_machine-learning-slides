@@ -149,6 +149,9 @@ import {
   NeuralNetworkArchitectureExamplesComponent
 } from "./neural-network-architecture-examples/neural-network-architecture-examples.component";
 import {Word2VecComponent} from "./word-2-vec/word-2-vec.component";
+import {
+  DataSciencePitfallsBiasInMachineLearningComponent
+} from "./data-science-pitfalls/bias-in-machine-learning/data-science-pitfalls-bias-in-machine-learning.component";
 
 @NgModule({
   declarations: [
@@ -172,7 +175,7 @@ import {Word2VecComponent} from "./word-2-vec/word-2-vec.component";
     WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent, DataSciencePitfallsGarbageInGarbageOutComponent,
     DataSciencePitfallsEnoughDataComponent, DataSciencePitfallsTackleAProblemComponent, DataSciencePitfallsMetricChoiceComponent, DataSciencePitfallsCorrectResultInterpretationComponent,
     DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent, NonNegativeMatrixFactorizationComponent, TablesOfContentNMFComponent, ClusteringAdditionalComponent,
-    WhatIsDeepLearningComponent, AutoEncoderComponent, TablesOfContentAutoEncoderComponent, NeuralNetworkArchitectureExamplesComponent, Word2VecComponent
+    WhatIsDeepLearningComponent, AutoEncoderComponent, TablesOfContentAutoEncoderComponent, NeuralNetworkArchitectureExamplesComponent, Word2VecComponent, DataSciencePitfallsBiasInMachineLearningComponent
   ],
   imports: [
     BrowserModule,
