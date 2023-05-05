@@ -1,5 +1,5 @@
 ng-template('#slides'='')
-    tables-of-content-fnn
+    tables-of-content-fnn([active]="fnnLabels.FNN")
         div.fragment.text-center.alert.alert-warning
             | Synonym:
             | Fully Connected Neural Network =
@@ -118,7 +118,6 @@ ng-template('#slides'='')
             div.mt-5.fragment.text-center.alert.alert-primary
                 div Logistische Regression mit mehreren Outputs.
                 div Hier ist die Aktivierungsfunktion #[span.highlight Softmax].
-
     section
         slide-with-header(header="Deep Learning - Framework für Modelle")
             ul(style={fontSize: "32px"})
@@ -135,6 +134,8 @@ ng-template('#slides'='')
                 li.mt-2 Viele weitere Möglichkeiten (Deep Learning)
                 ul
                     li Wir können die Architektur (Verbindungen) vom Netzwerk anders gestalten, entsprechend dem zugrunde liegenden Problem (z.B. CNN und RNN).
+            .mt-1.alert.alert-primary.smaller-font
+                a(href="https://playground.tensorflow.org/") https://playground.tensorflow.org
     section
         slide-with-header(header="Deep Learning - Gelerntes Feature Engineering")
            .row

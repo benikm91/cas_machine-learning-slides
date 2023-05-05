@@ -32,15 +32,15 @@ ng-template('#slides'='')
         slide-with-header(header="Deep Learning - Motivation der damaligen Forschung")
             div
                 ul
-                    li Limit der #[span.highlight lokalen Methoden] z.B. Decision Tree, rbf-Kernel
-                        ul.smaller-font
-                            li Interpolation vs. Extrapolation
-                    li.fragment Repräsentation #[span.highlight automatisch] aus Daten lernen
+                    li Repräsentation #[span.highlight automatisch] aus Daten lernen
                         ul.smaller-font
                             li Lernen von Symbolischen Regeln&nbsp;
                                 a(href="https://www.cs.toronto.edu/~hinton/coursera/lecture4/lec4.pdf") (relational learning task)
                                 a(href="")
                     li.fragment Hierarchisch Repräsentationen (layer-by-layer)
+                    li.fragment Limit der #[span.highlight lokalen Methoden] z.B. Decision Tree, rbf-Kernel
+                        ul.smaller-font
+                            li Interpolation vs. Extrapolation
     section
         slide-with-header(header="Deep Learning - Weniger Annahmen, viele Daten")
             div
@@ -63,7 +63,7 @@ ng-template('#slides'='')
                 li Benötigt #[span.highlight viele Daten]
                 li Benötigt #[span.highlight viel Rechenzeit (GPU)]
                 li Meistens beste Wahl bei #[span.highlight unstrukturierten Daten] (Sequenzen, Text, Bilder, ...)
-                li Bei strukturierte Daten (z.B. ML Lab Tag 1) meistens nicht beste Wahl.
+                li Bei strukturierte Daten (z.B. ML Lab Tag 1) meistens #[span.highlight nicht] beste Wahl.
     section
         slide-with-header(header="Deep Learning - Grundidee - Was ist ein Neurales Netz?")
             ul

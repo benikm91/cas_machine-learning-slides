@@ -27,7 +27,7 @@ ng-template('#slides'='')
                         .col-5.m-0
                             img.fragment(src="assets/images/word-2-vec/word2vec.gif")
                     pre.w-100.p-2.fragment
-                        div.fragment
+                        div
                             div.text-start.code Germany    - Berlin   + Paris   ~ France
                             div.text-start.code Germany    - Berlin   + London  ~ England
                             div.text-start.code easiest    - easy     + lucky   ~ luckiest
@@ -56,13 +56,14 @@ ng-template('#slides'='')
                         div Model
                     div(output).rect-styling.code
                         | Spam
-            div.fragment.mt-5.alert.alert-primary
-                | Der Latent Space beschreiben präziser den Text.
+            div.fragment.mt-3.alert.alert-primary
+                | Der Latent Space beschreiben #[span.highlight präziser] den Text.
                 br
-                | Model hat dadurch ein leichteres Spiel.
-            div.fragment.mt-5.alert.alert-primary
-                | Word2Vec kann hier als #[span.highlight sinnvolles Encoding] verstanden werden (anstatt One Hot Encoding).
-
+                | Model hat dadurch ein #[span.highlight leichteres] Spiel.
+            div.fragment.mt-3.alert.alert-primary
+                | Word2Vec kann hier als #[span.highlight sinnvolles Text-Encoding] verstanden werden (anstatt One Hot Encoding).
+            div.fragment.mt-3.alert.alert-warning.smaller-font
+                | Word2Vec ist veraltet (2013), bessere Encodings existieren (z.B. BERT).
 
 
 
