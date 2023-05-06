@@ -13,6 +13,7 @@ import {
 export class TablesOfContentProblemsComponent extends Slide implements OnInit {
   methodRootNode: TableOfContentEntry<ProblemTableOfContentLabel> | null = null;
 
+  @Input() title: string = 'Table(s) of Content';
   @Input() active: ProblemTableOfContentLabel | null = null;
   @Input("depth") depth: number | null = null
   @Input("depth-after-active") depthAfterActive: number = 0

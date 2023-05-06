@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Slide} from "../slide/slide";
+import {ConceptTableOfContentLabel} from "../tables-of-content/table-of-content-data";
 
 @Component({
   selector: 'word-2-vec',
@@ -7,5 +8,7 @@ import {Slide} from "../slide/slide";
   templateUrl: './word-2-vec.component.pug',
 })
 export class Word2VecComponent extends Slide {
+
+  encodingLabel = ConceptTableOfContentLabel.ENCODING
 
 }

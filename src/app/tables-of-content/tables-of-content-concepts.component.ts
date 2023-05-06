@@ -14,6 +14,7 @@ import {
 export class TablesOfContentConceptsComponent extends Slide implements OnInit {
   methodRootNode: TableOfContentEntry<ConceptTableOfContentLabel> | null = null;
 
+  @Input() title: string = 'Table(s) of Content';
   @Input() active: ConceptTableOfContentLabel | null = null;
   @Input("depth") depth: number = 0
   @Input("depth-after-active") depthAfterActive: number = 0

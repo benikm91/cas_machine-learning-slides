@@ -23,7 +23,7 @@ ng-template('#slides'='')
                     .row
                         .col-7
                             pre.w-100.p-2.overflow-visible
-                                div.text-start.code King       - Queen    + Woman   ~ Man
+                                div.text-start.code King       - Man    + Woman   ~ Queen
                         .col-5.m-0
                             img.fragment(src="assets/images/word-2-vec/word2vec.gif")
                     pre.w-100.p-2.fragment
@@ -56,15 +56,16 @@ ng-template('#slides'='')
                         div Model
                     div(output).rect-styling.code
                         | Spam
-            div.fragment.mt-3.alert.alert-primary
+            div.fragment.mt-3.alert.alert-primary.smaller-font
                 | Der Latent Space beschreiben #[span.highlight präziser] den Text.
                 br
                 | Model hat dadurch ein #[span.highlight leichteres] Spiel.
-            div.fragment.mt-3.alert.alert-primary
-                | Word2Vec kann hier als #[span.highlight sinnvolles Text-Encoding] verstanden werden (anstatt One Hot Encoding).
+            div.fragment.mt-3.alert.alert-primary.smaller-font
+                | Word2Vec kann hier als #[span.highlight sinnvolles Text-#[a.highlight(href="#/{{encodingLabel.href}}") Encoding]] verstanden werden
+                br
+                | Anstatt z.B. One Hot Encoding, wo alle Wörter gleich weit entfernt sind.
+            div.fragment.mt-3.alert.alert-primary.smaller-font
+                | #[span.highlight Transfer Learning]: Vortrainiertes Wissen von #[span.highlight anderem] Task wiederverwenden
             div.fragment.mt-3.alert.alert-warning.smaller-font
                 | Word2Vec ist veraltet (2013), bessere Encodings existieren (z.B. BERT).
-
-
-
 
