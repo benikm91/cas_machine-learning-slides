@@ -17,7 +17,7 @@ ng-template('#slides'='')
             div.fragment
                 h6.mt-5 Kernel-Trick macht #[span.highlight implizites Feature Engineering] (mit anderem Rechenaufwand)
                 div.d-flex.justify-center
-                    model-3-visualization("#kernelTrick"="", input-header="Input Space", feature-header="Feature Space", output-header="Output Space" )
+                    model-3-visualization("#kernelTrick"="", input-header="Input Space", feature-header="Feature Space", output-header="Output Space", [with-trigger]="false")
                         div(input).rect-styling
                             div([mathjax]="inputs")
                         div(pre, style={borderColor: "#C0C0C0", backgroundColor: "lightgray"}).model-box Feature Engineering
@@ -26,7 +26,6 @@ ng-template('#slides'='')
                         div(model).model-box SVM
                         div(output).rect-styling
                             div([mathjax]="outputs")
-                    span.fragment(fragment-trigger, (trigger)="kernelTrick.end()")
             div.mt-5.fragment.text-center.alert.alert-primary
                 div (Meistens) #[span.highlight gleicher Effekt], #[span.highlight anderes Verfahren]
     section

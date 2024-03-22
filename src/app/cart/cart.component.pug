@@ -78,12 +78,12 @@ ng-template('#slides'='')
         slide-with-header(header="Decision Tree - Optimierung")
             ul
                 li.fragment
-                    div #[span.highlight Theoretisch existiert ein optimaler Tree], der die Kostenfunktion #[span.highlight perfekt] minimiert
-                    div.fragment => NP-Hard (braucht zu viel Rechenzeit)
+                    div #[span.highlight Theorie:] Es existiert ein #[span.highlight optimaler Tree], der (gegeben einer Abbruchbedingung) die Kostenfunktion #[span.highlight perfekt] minimiert
+                    div.fragment => NP-Hard (braucht #[span.highlight zu] viel Rechenzeit)
                 li.fragment
-                    div #[span.highlight Praxis eine guten Tree] mit einem #[span.highlight Greedy-Algorithmus] finden, der Kostenfunktion #[span.highlight gut] minimiert
-                    div.fragment => P-Hard (braucht wenig Rechenzeit)
-                div.mt-5.fragment.text-center.alert.alert-primary #[span.highlight Allenfalls nicht mal schlimm]: Optimaler Tree ist "optimal" nur für Train-Set nicht neue Daten!
+                    div #[span.highlight Praxis: Guten Tree] mit einem #[span.highlight Greedy-Algorithmus] finden, der (gegeben einer Abbruchbedingung) die Kostenfunktion #[span.highlight gut] minimiert
+                    div.fragment => P-Hard (braucht #[span.highlight wenig] Rechenzeit)
+                div.mt-3.fragment.text-center.alert.alert-primary #[span.highlight Allenfalls nicht mal schlimm]: Optimaler Tree ist "optimal" nur für Train-Set nicht neue Daten!
     section
         slide-with-header(header="Decision Tree - Optimierung")
             div

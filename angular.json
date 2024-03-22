@@ -71,6 +71,11 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "local": {
+              "customWebpackConfig": {
+                "path": "./webpack.local.config.js"
+              }
             }
           },
           "defaultConfiguration": "production"
