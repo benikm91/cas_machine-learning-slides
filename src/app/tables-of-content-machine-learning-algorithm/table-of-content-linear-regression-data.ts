@@ -73,7 +73,7 @@ export function createCartTableOfContent(active: CartTableOfContentLabel | null)
 }
 
 export class PCATableOfContentLabel extends TableOfContentLabel {
-    public static readonly PCA = new PCATableOfContentLabel("PCA", "PCA");
+    public static readonly PCA = new PCATableOfContentLabel("PCA", "Principal Component Analysis");
     public static readonly DATA_SPECIFICATION = new PCATableOfContentLabel("Data Specification", "PCA/Data Specification");
     public static readonly MODEL = new PCATableOfContentLabel("Model" , "PCA/Model" );
     public static readonly COST_FUNCTION = new PCATableOfContentLabel("Kostenfunktion", "PCA/Kostenfunktion");
@@ -108,7 +108,7 @@ export function createNMFTableOfContent(active: NMFTableOfContentLabel | null): 
 
 
 export class KNNTableOfContentLabel extends TableOfContentLabel {
-    public static readonly KNN = new KNNTableOfContentLabel("K-Nearest Neighbors", "KNN");
+    public static readonly KNN = new KNNTableOfContentLabel("K-Nearest Neighbors", "K-Nearest Neighbors");
     public static readonly DATA_SPECIFICATION = new KNNTableOfContentLabel("Data Specification", "KNN/Data Specification");
     public static readonly MODEL = new KNNTableOfContentLabel("Model" , "KNN/Model" );
 }
