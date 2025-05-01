@@ -90,7 +90,7 @@ reveal-presentation
     tables-of-content-problems([active]="problemLabels.UNSUPERVISED_LEARNING")
     tables-of-content-problems([active]="problemLabels.CLUSTERING")
     what-is-clustering
-    k-means
+    // k-means
     clustering-additional
 
     tables-of-content-problems([active]="problemLabels.DIMENSIONALITY_REDUCTION")
@@ -102,46 +102,70 @@ reveal-presentation
             img(src="assets/images/code.png")
     nmf
     question-slide([questions]="pcaQuestions")
+    section
+        slide-with-header(header="Übungszeit (60 Minuten)")
+            div.notebook-name exercise/dimensionality_reduction.ipynb
+            img(src="assets/images/code.png")
+    what-is-deep-learning
+    feed-forward-neural-network
+    question-slide([questions]="nnQuestions")
     data-science-pitfalls-model-choice
     data-science-pitfalls-enough-data
     data-science-pitfalls-correct-result-interpretation
     section
-        slide-with-header(header="Übungszeit (120 Minuten)")
-            div.notebook-name exercise/dimensionality_reduction.ipynb
+        slide-with-header(header="Übungszeit (60 Minuten)")
+            div.notebook-name exercise/neural_network.ipynb
             img(src="assets/images/code.png")
 
     // DAY 4
     day4-title-slide
-    what-is-deep-learning
-    feed-forward-neural-network
-    section
-        slide-with-header(header="Feedforward Neural Network - Code")
-            div.notebook-name neural_network.ipynb
-            img(src="assets/images/code.png")
-    question-slide([questions]="nnQuestions")
+    neural-network-architecture-examples
     section
         slide-with-header(header="Übungszeit (60 Minuten)")
             div.notebook-name exercise/neural_network.ipynb
             img(src="assets/images/code.png")
-    auto-encoder
-    neural-network-architecture-examples
-    word-2-vec
+    tables-of-content-problems([active]="problemLabels.IN_CONTEXT_LEARNING")
+        div.fragment.text-center.alert.alert-warning
+            | Auch: Prompting, Meta Learning
+    gpt-3
+    question-slide([questions]="[]")
+    section
+        slide-with-header(header="Genereller Überblick")
+            div(style={fontSize: "24px"})
+                div.row
+                    div.col-md-3.text-start #[span.highlight Machine Learning:]
+                    div.col-md-9.text-start
+                        ul
+                            li Klare Aufgabe (Regression, Klassifikation, ...)
+                            li Lernprozess auf #[span.highlight internen Daten]
+                            li Algorithmus lernt Muster auf #[span.highlight strukturierten Daten] (z.B. Häuserinformationen) für das Lösen der Aufgabe
+                            li Manuelles Domänen-spezifisches #[span.highlight feature engineering] essentiell
+                hr
+                div.row
+                    div.col-md-3.text-start #[span.highlight Deep Learning:]
+                    div.col-md-9.text-start
+                        ul
+                            li Klare Aufgabe (Regression, Klassifikation, Segmenetierung, ...)
+                            li Lernprozess intern oder oft #[span.highlight mehrschichtig] (Transfer Learning)
+                            li Algorithmus lernt #[span.highlight Repräsentation] auf unstrukturierte Daten (z.B. Pixelbild) für das Lösen der Aufgabe
+                            li Architektur von #[span.highlight zusammengesetzen Komponenten] mit generellen Annahmen (z.B. Grid-Nachbarschaft in CNN)
+                hr
+                div.row
+                    div.col-md-3.text-start #[span.highlight In-Context Learning:]
+                    div.col-md-9.text-start
+                        ul
+                            li Klare oder #[span.highlight offene Aufgaben] (z.B. Chatbot)
+                            li #[span.highlight Kein internes Training] (in-context learning, prompting)
+                            li Riesiges vortrainiertes Neurales Netz lernt #[span.highlight generelle Fähigkeiten] durch konstruierter Task wie next-token prediction
+            div.fragment.text-center.alert.alert-warning.p-2.m-3(style={fontSize: "14pt"})
+                | Unterschied nicht immer Strikt. Kombinationen möglich: Deep Learning mit ICL z.B. RAG
+    question-slide([questions]="[]")
     data-science-pitfalls-bias-in-machine-learning
     section
-        slide-with-header(header="Data Science - Zukunft")
-            h6 Heute
-            ul.w-100
-                li Modelle auf Train-Set trainieren etc.
-                hr
-            h6.fragment Zukunft / Heute
-            ul.fragment.w-100
-                li #[span.highlight Foundation models] (BERT, GPT-4, SAM) mit few/zero-shot-learning oder Teil eines #[span.highlight eigenen Modells] mittels Transfer Learning
-                li #[span.highlight AutoML]: "Entwickler mit geringem ML-Fachwissen qualitativ hochwertige Modelle trainieren"
-            .mt-5.fragment.alert.alert-warning Zukunft ungewiss
-    section
         slide-with-header(header="Übungszeit (60 Minuten)")
             div.notebook-name exercise/neural_network.ipynb
             img(src="assets/images/code.png")
+    // SLIDES INFO
     section
         slide-with-header(header="Prüfungsfragen - Beispiele")
             div.notebook-name example-exam-questions.ipynb
@@ -152,9 +176,10 @@ reveal-presentation
                 li CTRL+SHIFT+F für durchsuchen der Folien
                 li Hyperlinks in Folien
                 hr
-                li Videos auf YouTube
-                    span &nbsp;
-                    a(href="https://www.youtube.com/watch?v=oSJCmEkrWGg&list=PLqjhOTGpIk7whJpmf4u808Vi44xFDY0mq", target="_blank") (Testlauf)
+                li 
+                   a(href="https://www.youtube.com/watch?v=oSJCmEkrWGg&list=PLqjhOTGpIk7whJpmf4u808Vi44xFDY0mq", target="_blank") Videos zu Folien
+                   span , aber out of date und Testlauf
+                    
                 li Andere Quellen beziehen
                     ul.smaller-font
                         li sklearn User Guide
@@ -164,12 +189,3 @@ reveal-presentation
     section
         title-page
             h1 Evaluation
-    // section
-    //     slide-with-header(header="Linear Regression - Wissens Ansicht")
-    //         div
-    //             p.fragment Wissen kann von #[span.highlight Experten] oder aus #[span.highlight Daten] kommen
-    //         div.d-flex.justify-center
-    //             knowledge-view("#knowledgeView"="", human-label="Lineares Modell, MSE", [tradeoff]="0.9" ).fragment
-    //         span.fragment(fragment-trigger, (trigger)="knowledgeView.start()", (untrigger)="knowledgeView.end()")
-    // section
-    //     div §: NMF?

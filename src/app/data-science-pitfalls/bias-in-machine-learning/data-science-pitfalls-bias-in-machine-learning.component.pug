@@ -30,25 +30,6 @@ ng-template('#slides'='')
                 .fragment.mt-5.alert.alert-primary
                     | Amazon hat das Projekt eingestampft
     section
-        slide-with-header(header="Emergent: Twitter cropping Algorithm")
-            div Goal: "crop an image to an easily-viewable size"
-            hr
-            .fragment
-                .mt-3
-                    img(src="assets/images/data-science-pitfalls/bias-in-machine-learning/twitter-cropping-algorithm.png", height="450px")
-                .mt-3.fragment
-                    a(href="https://blog.twitter.com/engineering/en_us/topics/insights/2021/sharing-learnings-about-our-image-cropping-algorithm")
-                        | Sharing learnings about our image cropping algorithm
-    section
-        slide-with-header(header="Feedback-Loop: Social Media")
-            div.smaller-font Idee: Benutzer klicken, was sie mögen, also zeige Inhalte die Benutzer klickt!
-            hr
-            .fragment
-                ul
-                    li Gelernt: Benutzer klicken auf #[span.highlight extreme Inhalte] und #[span.highlight Inhalte, denen der Benutzer zustimmt].
-                    li.fragment Anpassung der Publishers: Inhalte werden extremer, Clickbaits werden standard
-                    li.fragment Anpassung der User: Einseitige Berichterstattung führt zu #[span.highlight Bubbles], andere Seite wird negative gesehen (#[span.highlight Spaltung der Gesellschaft])
-    section
         slide-with-header(header="Pre-Existing: Bias in Word2Vec")
             h6.fragment Was wurde #[span.highlight auch] gelernt?
             ul.fragment
@@ -61,6 +42,15 @@ ng-template('#slides'='')
                 li.fragment "John" ist näher an "Programmierer" als "Mary"
             .fragment.mt-5.alert.alert-danger Word Embeddings lernen Pre-Existing Bias in Daten
             .fragment.mt-5 Paper: Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
+    section
+        slide-with-header(header="Feedback-Loop: Social Media")
+            div.smaller-font Idee: Benutzer klicken, was sie mögen, also zeige Inhalte die Benutzer klickt!
+            hr
+            .fragment
+                ul
+                    li Gelernt: Benutzer klicken auf #[span.highlight extreme Inhalte] und #[span.highlight Inhalte, denen der Benutzer zustimmt].
+                    li.fragment Anpassung der Publishers: Inhalte werden extremer, Clickbaits werden standard
+                    li.fragment Anpassung der User: Einseitige Berichterstattung führt zu #[span.highlight Bubbles], andere Seite wird negative gesehen (#[span.highlight Spaltung der Gesellschaft])
     section
         slide-with-header(header="Was tun gegen Bias in Machine Learning")
             ul

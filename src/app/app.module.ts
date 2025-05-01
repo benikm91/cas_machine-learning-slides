@@ -149,6 +149,7 @@ import {
   NeuralNetworkArchitectureExamplesComponent
 } from "./neural-network-architecture-examples/neural-network-architecture-examples.component";
 import {Word2VecComponent} from "./word-2-vec/word-2-vec.component";
+import {Gpt3Component} from  "./gpt-3/gpt-3.component";
 import {
   DataSciencePitfallsBiasInMachineLearningComponent
 } from "./data-science-pitfalls/bias-in-machine-learning/data-science-pitfalls-bias-in-machine-learning.component";
@@ -175,7 +176,7 @@ import {
     WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent, DataSciencePitfallsGarbageInGarbageOutComponent,
     DataSciencePitfallsEnoughDataComponent, DataSciencePitfallsTackleAProblemComponent, DataSciencePitfallsMetricChoiceComponent, DataSciencePitfallsCorrectResultInterpretationComponent,
     DataSciencePitfallsModelDevelopmentComponent, DataSciencePitfallsModelChoiceComponent, NonNegativeMatrixFactorizationComponent, TablesOfContentNMFComponent, ClusteringAdditionalComponent,
-    WhatIsDeepLearningComponent, AutoEncoderComponent, TablesOfContentAutoEncoderComponent, NeuralNetworkArchitectureExamplesComponent, Word2VecComponent, DataSciencePitfallsBiasInMachineLearningComponent
+    WhatIsDeepLearningComponent, AutoEncoderComponent, TablesOfContentAutoEncoderComponent, NeuralNetworkArchitectureExamplesComponent, Word2VecComponent, Gpt3Component, DataSciencePitfallsBiasInMachineLearningComponent
   ],
   imports: [
     BrowserModule,

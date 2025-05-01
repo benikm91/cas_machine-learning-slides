@@ -3,13 +3,30 @@ ng-template('#slides'='')
         .slide-header
             h1 Deep Learning ist ein #[strike Spielplatz] Framework!
         .slide-body
-            img.fragment(src="assets/images/neural-network/nn-meme-stack-more-layers.png", height="400px")
+            .row
+                .col-6.fragment
+                    ul.smaller-font
+                        li #[span.highlight Komponenten] für verschiedene Umstände: z.B. CNN für Bilder, Transformer für Text, spezifische Kostenfunktion, ... 
+                        li Netzwerk #[span.highlight Architektur]: Zusammenstecken von Komponenten für spezifischen Problemfall
+                        li  #[span.highlight Empirisch] evaluaieren
+                        li Black-box vs. komplexe Probleme lösbar
+                .col-6
+                    img(src="assets/images/neural-network/nn-meme-stack-more-layers.png", height="400px")
             div.fragment.mt-5.alert.alert-success Aufzeigen, wie #[span.highlight unterschiedlich] und #[span.highlight problemspezifisch] Architekturen in der Praxis sind.
+    section
+        title-page
+            h1 Convolution Neural Network 
+            h2 am Beispiel von LeNet
     section
         slide-with-header(header="Neural Network - LeNet (1998)", [extra]="true")
             img(src="assets/images/neural-network-architectures/lenet.png", height="400px")
             div.smaller-font Paper: gradient-based learning applied to document recognition
             a(href="https://tensorspace.org/html/playground/lenet.html").mt-5.smaller-font 3D visualization
+    section
+        slide-with-header(header="Convolution Neural Network (CNN) - Convolution", [extra]="true")
+            div
+                img(src="assets/images/neural-network-architectures/CNN.png", height="400px")
+            div.mt-5 Source: #[a(href="https://udlbook.github.io/udlbook/") Understanding Deep Learning] (chapter 10)
     section
         slide-with-header(header="Neural Network - LeNet (1998)", [extra]="true")
             ul.text-start
@@ -19,45 +36,106 @@ ng-template('#slides'='')
                 li Dataset: #[span.highlight MNIST]
                     ul
                         li 60'000 train data
-                        li 10' '000 test data
+                        li 10'000 test data
     section
-        slide-with-header(header="Neural Network - Siamese (2015)", [extra]="true")
-            img.mt-5(src="assets/images/neural-network-architectures/siamese.png")
-            div.smaller-font Paper: Siamese Neural Networks for One-shot Image Recognition
+        slide-with-header(header="Convolution Neural Network - Übersicht", [extra]="true")
+            ul.text-start
+                li Beispiel einer #[span.highlight kreativen Vernetzung von Neuronen]
+                li Filter: #[span.highlight Nachbarschaften] von Inputs z.B. Pixels mittels gewichterer Summe
+                li Convolution Layer ist #[span.highlight shift-equivariant]
+                li Einsatzgebiete (teils nicht mehr state-of-the-art)
+                    ul
+                        li 1D-Grid: Audiosignale (WaveNet), Gen-Sequenzen (DeepBind), Text (#[a(href="https://arxiv.org/pdf/1408.5882") classification])
+                        li 2D-Grid: Bilder Klassifikation (AlexNet), Bilder Segmentierung (U-Net), Go (AlphaGo) 
+                        li 3D-Grid: CT-Scan Segmentierung (TotalSegmentator)
+    question-slide([questions]="[]")
     section
-        slide-with-header(header="Neural Network - Siamese (2015)", [extra]="true")
+        title-page
+            h1 Reconstruction-Based methods
+            h2 am Beispiel von Auto Encoders
+    auto-encoder
+    word-2-vec
+    section 
+        slide-with-header(header="Reconstruction-based methods", [extra]="true")
+            .row
+                .col-8.smaller-font 
+                    ul 
+                        li Kreativer training task: #[span.highlight Rekonstruiere den Input], Input kann #[span.highlight corrupted] sein
+                        li Unsupervised Learning, spezifisch Self-Supervised Learning, ohne Labels lernen
+                        li Reconstruct Error: #[span.highlight Kostenfunktion in Input Space] z.B. auf Pixeln definiert
+                        li Beispiele: Auto Encoder, MAE, BERT (cloze task), GPT-3 (next token prediction)
+                .col-4
+                    img.mt-5(src="assets/images/neural-network-architectures/image_masking.png", height="400px")
+                    div.smaller-font(style={fontSize: "9pt"}) Paper: #[a(href="https://arxiv.org/abs/2111.06377") Masked Autoencoders Are Scalable Vision Learners]
+    question-slide([questions]="[]")
+    section
+        title-page
+            h1 Contrastive Learning
+            h2 Learn semantic representations
+    section
+        slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
+            .row
+                .col-6
+                    img(src="assets/images/neural-network-architectures/facenet.png")
+                .col-6.fragment
+                    br
+                    img.ps-5(src="assets/images/neural-network-architectures/facenet_inference.png")
+            div.mt-5(style={fontSize: "9pt"}) Paper: FaceNet: A Unified Embedding for Face Recognition and Clustering
+    section
+        slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
             ul
-                li Lerne #[span.highlight Ähnlichkeit] von Inputs (z.B. Bilder)
-                li Erlaube #[span.highlight Generalisierung auf neue Klassen] (one-shot learning)
-                li Wird oft für #[span.highlight Face Detection] verwendet (z.B. Facenet)
+                li Beispiel einer #[span.highlight kreativen Kostenfunktion]
+                li Lernt eine #[span.highlight semantische Repäsentation] von Gesichtern 
+                li Lernt konstante Gesichtsmerkmale zu erkennen
+                li Lernt variable Merkmale wie Hintergrund, Frisur, Brille zu ignorieren
+                li One-Shot-Learning: Erlaube #[span.highlight Vorhersage auf neue Klassen] (Personen) mit nur einem Beispiel.
     section
-        slide-with-header(header="Neural Network - ResNet (2015)", [extra]="true")
+        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
+            img.mt-5(src="assets/images/neural-network-architectures/clip.png", height="400px")
+            div.mt-5(style={fontSize: "9pt"}) Paper: Learning Transferable Visual Models From Natural Language Supervision
+    section
+        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
+            ul
+                li Kreativen Kostenfunktion, #[span.highlight Nutzung der Datenlandschaft], Umfang der grossen Netzwerke
+                li #[span.highlight Gemeinsamer Latent Space] (Repräsentation) für Bilder und Text lernen, erlaubt #[span.highlight zero-shot learning]
+                li Gegeben #[span.highlight 32'768 Bild], #[span.highlight 32'768 Texten] welcher Text gehört zu welchem Bild.
+                li Trainiert auf #[span.highlight 400 Millionen Bildern und Texten]
+                li Auf #[span.highlight 256 GPUs für 2 Wochen] trainiert
+                li Netzwerk hat #[span.highlight 86 Millionen parameter] (
+                    span([mathjax]="'<math><mi>β</mi></math>'")
+                    span )
+                li #[span.highlight Text-Encoder] und #[span.highlight Bild-Encoder] sind basierend auf Transformer Architektur
+    question-slide([questions]="[]")
+    section
+        title-page
+            h1 Skip Connections
+            h2 ResNet und U-Net
+    section
+        slide-with-header(header="Skip Connection - ResNet (2015)", [extra]="true")
             img.mt-5(src="assets/images/neural-network-architectures/resnet-34.png")
             div.smaller-font Paper: Deep Residual Learning for Image Recognition
             a(href="https://tensorspace.org/html/playground/resnet50.html").mt-5.smaller-font 3D visualization (50 layers)
     section
-        slide-with-header(header="Neural Network - ResNet (2015)", [extra]="true")
+        slide-with-header(header="Skip Connection - ResNet (2015)", [extra]="true")
             ul
+                li Beispiel kreativer Netzwerk-Vernetzung
                 li #[span.highlight Skip-Connections] machen tiefe Netzwerke trainierbar
                 li Netzwerk mit #[span.highlight 1202 Layers] trainiert
     section
-        slide-with-header(header="Neural Network - U-Net (2015)", [extra]="true")
+        slide-with-header(header="Skip Connection - U-Net (2015)", [extra]="true")
             img.mt-5(src="assets/images/neural-network-architectures/unet.png")
     section
-        slide-with-header(header="Neural Network - U-Net (2015)", [extra]="true")
+        slide-with-header(header="Skip Connection - U-Net (2015)", [extra]="true")
             ul
                 li Löst #[span.highlight Verluste von räumlichen Informationen] (nötig für z.B. Bildsegmentierung)
                 li #[span.highlight Encoder], #[span.highlight Decoder] mit #[span.highlight Skip-Connections]
                 li Skip Connections helfen, räumliche Informationen zu erhalten
                 li #[span.highlight Bildsegmentierung] revolutioniert
     section
-        slide-with-header(header="Neural Network - CLIP (2021)", [extra]="true")
-            img.mt-5(src="assets/images/neural-network-architectures/clip.png", height="400px")
-    section
-        slide-with-header(header="Neural Network - CLIP (2021)", [extra]="true")
+        slide-with-header(header="Skip Connection - Überblick", [extra]="true")
             ul
-                li Gegeben #[span.highlight 32'768 Bild], #[span.highlight 32'768 Texten] welcher Text gehört zu welchem Bild.
-                li Trainiert auf #[span.highlight 400 Millionen Bildern und Texten]
-                li Auf #[span.highlight 256 GPUs für 2 Wochen] trainiert
-                li #[span.highlight Text-Encoder] und #[span.highlight Bild-Encoder] (Transformer Architektur)
-                li #[span.highlight Gemeinsamer Latent-Space] für Bilder und Texte, erlaubt zero-shot learning
+                li Cleveres #[span.highlight Verbinden der Neuronen] ermöglicht / beschleunigt das Lernen von tiefen Netzwerken.
+                li Verhindert / hilft gegen #[span.highlight exploding gradients] und #[span.highlight vanishing gradients].
+                li Tiefe ResNets verhalten sich als #[span.highlight Ensemble] von flacheren Netzen
+                li Wir #[span.highlight sehr oft angewendet]. In allen modernen CNNs. In der Transformer Architektur.
+    question-slide([questions]="[]")

@@ -36,6 +36,7 @@ export class ProblemTableOfContentLabel extends TableOfContentLabel {
     public static readonly CLUSTERING = new ProblemTableOfContentLabel("Clustering", "Clustering");
     public static readonly DIMENSIONALITY_REDUCTION = new ProblemTableOfContentLabel("Dimensionality Reduction", "Unsupervised Learning/Dimensionality Reduction");
     public static readonly REINFORCEMENT_LEARNING = new ProblemTableOfContentLabel("Reinforcement Learning", "Reinforcement Learning");
+    public static readonly IN_CONTEXT_LEARNING = new ProblemTableOfContentLabel("In-Context Learning", "In-Context Learning");
 }
 
 export function createProblemTableOfContent(active: ProblemTableOfContentLabel | null): TableOfContentEntry<ProblemTableOfContentLabel> {
@@ -49,6 +50,7 @@ export function createProblemTableOfContent(active: ProblemTableOfContentLabel |
             c(ProblemTableOfContentLabel.DIMENSIONALITY_REDUCTION, active),
         ]),
         c(ProblemTableOfContentLabel.REINFORCEMENT_LEARNING, active),
+        c(ProblemTableOfContentLabel.IN_CONTEXT_LEARNING, active),
     ])
 }
 

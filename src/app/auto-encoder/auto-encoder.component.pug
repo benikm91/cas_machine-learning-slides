@@ -1,12 +1,14 @@
 ng-template('#slides'='')
     tables-of-content-auto-encoder([active]="autoEncoderLabel.AUTO_ENCODER")
-        div.fragment.alert.alert-primary.mt-5 Auto Encoder ist eine&nbsp;
+        div.fragment.alert.alert-primary.mt-5 Auto Encoder lernt eine&nbsp;
             a(href="#/{{dimensionalityReductionLabel.href}}").highlight Dimensionality Reduction.
     section
         slide-with-header(header="Auto Encoder - Motivation")
             ul
                 li #[span.highlight Nicht-lineare Dimensionality Reduction] anhand von Daten lernen.
-                li.fragment Dazu verwenden wir ein Neural Network mit #[span.highlight Bottleneck] und #[span.highlight Reconstruction Error].
+                li.fragment Wir verwenden ein Neural Network und den #[span.highlight Reconstruction Error] als Kostenfunktion.
+                li.fragment #[span.highlight Undercomplete Autoencoder]: #[span.highlight Bottleneck] in der Architektur vom Netzwerk
+                li.fragment (Overcomplete Autoencoder: Kein Bottleneck aber Regularization)
     tables-of-content-auto-encoder([active]="autoEncoderLabel.DATA_SPECIFICATION")
     section
         slide-with-header(header="Auto Encoder - Data Specification")
@@ -59,6 +61,52 @@ ng-template('#slides'='')
             div.fragment.mt-5.alert.alert-primary Ander Kostenfunktionen möglich, z.B. #[span.highlight L1] Distanz.
     tables-of-content-auto-encoder([active]="autoEncoderLabel.OPTIMIERUNG")
         div.mt-5.fragment.text-center.alert.alert-primary Gradient Descent
+    section
+        slide-with-header(header="Auto Encoder - Limits", [extra]="true")
+            div.row
+                div.col-5.offset-1
+                    h6 Possible
+                div.col-5
+                    h6 Impossible (in Feature Space)
+                div.col-1
+            div.row
+                div.col-1.m-auto
+                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap', marginBottom: "-300px"}) 2 Features zu 1
+                div.col-5.p-2
+                    img(src="assets/images/pca/example-data-with-model-2d-possible.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/pca/example-data-with-model-2d-limit.png").limit-possible
+                div.col-1
+            div.row
+                div.col-1.m-auto
+                    h6(style={
+                        transform: "rotate(-90deg)",
+                        whiteSpace: 'nowrap',
+                        marginBottom: "-300px"
+                    }) 3 Features zu 2
+                div.col-5.p-2
+                    img(src="assets/images/pca/pca-limit-3d.png").limit-possible
+                div.col-5.p-2
+                    img(src="assets/images/pca/pca-limit-3d-isomap.png").limit-possible
+                div.col-1
+            div.mt-2.text-center.alert.alert-primary
+                .row
+                    .col-12 Auto Encoder lernt #[span.highlight nicht-lineares] Manifold im Feature-Space
+    section
+        slide-with-header(header="Auto Encoder - Limits", [extra]="true")
+            .row 
+                .col-12
+                    ul
+                        li #[span.highlight Reconstruction Error] nicht optimal für z.B. Bilder.
+                        li Gelernte Repräsentation beinhaltet viel #[span.highlight pixel-perfekte] Information anstatt semantische Informationen.
+                .col-8
+                    ul.small
+                        li "Reconstruction-based methods applied on images are misaligned, ill-conditioned, and ill-posed" 
+                                br
+                                a(href="https://arxiv.org/abs/2402.11337", style={fontSize: "9pt", marginTop: "-25px"}) Source: Learning by Reconstruction Produces Uninformative Features For Perception"
+                .col-4 
+                    img(src="assets/images/auto-encoder/tree.gif")
+
     section
         slide-with-header(header="Auto Encoder vs. PCA")
             div Wenn Encoder und Decoder #[span.highlight linear] sind (z.B. lineare Aktivierungsfunktion), dann lernt der Auto Encoder den #[span.highlight gleichen Latent Space wie PCA].

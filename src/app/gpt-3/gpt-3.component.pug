@@ -1,0 +1,42 @@
+ng-template('#slides'='')
+    section
+        slide-with-header(header="GPT-3 (2020)")
+            div(style={fontSize: "32px"})
+                ul
+                    li #[span.highlight Landmark paper] "Language Models are Few-Shot Learners" in 2020: GPT-3, #[span.highlight In-Context Learning]
+                    li GPT-3 ist ein #[span.highlight LLM (large language model)] und das erste Basis-Modell hinter ChatGPT (in 2022), ChatGPT ist GPT-3 angepasst als Chat-Bot
+                    li GPT-3 ist reconstruction-based method, spezifisch, #[span.highlight next-token prediction]; ein Token ist ein Teil-Wort, Ziffer, Satzzeichen, etc.
+                    li Trainieren auf next-token prediction führt zu #[span.highlight überrachenden Fähigkeiten] wie Text-Stimmungs-Neuron, Code-Generierung, Übersetzungsfähigkeiten, ...
+                    li Fähigkeiten erlauben #[span.highlight zero-shot learning und few-shot learning mittels In-Context Learning].
+    section
+        slide-with-header(header="Was ist In-Context Learning (ICL)")
+            img(src="assets/images/gpt-3/in-context-learning.png")
+    section
+        slide-with-header(header="Was ist In-Context Learning")
+            ul 
+                li #[span.highlight Kein Training] (fit) bzw. keine Anpassung der Parameter
+                li Modell lernt selbst #[span.highlight während der Vorhersage] vom nächsten Token
+                li #[span.highlight Prompt engineering]: Prompt dem Modell anpassen damit es besser funktioniert. 
+    question-slide([questions]="[]")
+    section
+        slide-with-header(header="ICL - RAG Beispiel - Was ist RAG?")
+            img(src="assets/images/gpt-3/RAG-use-case.png")
+    section
+        slide-with-header(header="ICL - RAG Beispiel - Was macht RAG?")
+            img(src="assets/images/gpt-3/in-context-learning-RAG.png")
+    section
+        slide-with-header(header="ICL - ACU Beispiel - Was ist ACU?")
+            img(src="assets/images/gpt-3/ACU-use-case.png")
+    section
+        slide-with-header(header="ICL - ACU Beispiel - Was macht ACU?")
+            img(src="assets/images/gpt-3/in-context-learning-ACU.png")
+    section
+        slide-with-header(header="ICL / LLM - Limits")
+            ul 
+                li #[span.highlight Hallucination:] Faktisch falsche Informationen, oft klingen sie plausibel
+                li #[span.highlight Knowledge Cutoff:] Wissenstand veraltet (Training)
+                li #[span.highlight Prompt Sensitivity:] Formulierung und Struktur des Prompts überraschend wichtig
+                li #[span.highlight Fehlendes Weltverständnis/Logik:] Kein echtes Verständnis, keine Kausalität oder robustem logischem Schlussfolgern
+                li #[span.highlight Hohe Kosten: ] Rechenressourcen und Energie
+                li #[span.highlight Verbesserung schwierig:] Oft schneller Prototyp, aber Weg zum Produkt nicht immer einfach.
+
