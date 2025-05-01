@@ -22,10 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
@@ -35,12 +35,25 @@ jobs:
       - name: Build
         run: npm run build-github-pages
 
+      # --- Add the ls -R debugging step RIGHT HERE ---
+      - name: Verify Build Output
+        run: |
+          echo "Attempting to list contents of ./dist/cas-ml-slides/"
+          # This command lists the contents of the expected output directory
+          # Adjust the path './dist/cas-ml-slides/' if your Angular project name is different
+          # or if you suspect the output goes elsewhere.
+          ls -R ./dist/cas-ml-slides/ || echo "Directory ./dist/cas-ml-slides/ not found or is empty."
+          # You might also want to list the parent 'dist' directory for context:
+          # echo "Listing contents of ./dist/"
+          # ls -R ./dist/ || echo "Directory ./dist/ not found or is empty."
+      # --- End of the debugging step ---
+
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist/cas-ml-slides'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
