@@ -156,14 +156,14 @@ reveal-presentation
                         ul
                             li Klare oder #[span.highlight offene Aufgaben] (z.B. Chatbot)
                             li #[span.highlight Kein internes Training] (in-context learning, prompting)
-                            li Riesiges vortrainiertes Neurales Netz lernt #[span.highlight generelle Fähigkeiten] durch konstruierter Task wie next-token prediction
+                            li Riesiges vortrainiertes Neurales Netz lernt #[span.highlight generelle Fähigkeiten] durch künstliche Trainings-Aufgabe wie next-token prediction
             div.fragment.text-center.alert.alert-warning.p-2.m-3(style={fontSize: "14pt"})
                 | Unterschied nicht immer Strikt. Kombinationen möglich: Deep Learning mit ICL z.B. RAG
     question-slide([questions]="[]")
     data-science-pitfalls-bias-in-machine-learning
     section
         slide-with-header(header="Übungszeit (60 Minuten)")
-            div.notebook-name exercise/neural_network.ipynb
+            div.notebook-name exercise/in_context_learning.ipynb
             img(src="assets/images/code.png")
     // SLIDES INFO
     section

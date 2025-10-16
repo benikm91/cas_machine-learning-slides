@@ -3,7 +3,7 @@ ng-template('#slides'='')
         title-page
             h1 Was ist Machine Learning
     section
-        slide-with-header(header="Problemfälle")
+        slide-with-header(header="Problemfall: Tic-tac-toe AI")
             div.d-flex.justify-content-center
                 example-model-visualization("#ticTacToeExample"="", [positives]="['input', 'model', 'output']")
                     div(input, class="input").transparent-border-1
@@ -15,8 +15,9 @@ ng-template('#slides'='')
                 li #[span.model-styling f] ist eine TicTacToe-AI die #[span.highlight perfekt] spielt
             p.fragment.text-center.alert.alert-primary Ist das möglich?
             span.fragment(fragment-trigger, (trigger)="ticTacToeExample.highlightStart()", (untrigger)="ticTacToeExample.highlightEnd()")
+            p.fragment.text-center.alert.alert-success Ja! Wir können alle Fälle durchsimulieren, kein "Machine Learning" nötig.
     section
-        slide-with-header(header="Problemfälle")
+        slide-with-header(header="Problemfall: Schach AI")
             div.d-flex.justify-content-center
                 example-model-visualization("#chessExample"="", [positives]="['input', 'output']")
                     div(input, class="input").fix-height.transparent-border-1
@@ -27,18 +28,19 @@ ng-template('#slides'='')
             ul.mt-5.fragment
                 li #[span.model-styling f] ist eine Chess-AI die #[span.highlight perfekt] spielt
             span.fragment(fragment-trigger, (trigger)="chessExample.highlightStart()", (untrigger)="chessExample.highlightEnd()")
-            div.mt-5.d-flex.justify-content-center.fragment
+            div.mt-3.d-flex.justify-content-center.fragment
                 example-model-visualization("#chessApproxExample"="", [positives]="['input', 'model', 'output']")
                     div(input, class="input").fix-height.transparent-border-1
                         img(src="assets/images/machine-learning/chessStartboard.png").img-fluid-both
                     div(model, class="model").model-box approx f
                     div(output, class="output").fix-height.transparent-border-1
                         img(src="assets/images/machine-learning/chessEndboardSuboptimal.png").img-fluid-both
-            ul.mt-5.fragment
+            ul.mt-3.fragment
                 li #[span.model-styling approx f] ist eine Chess-AI die #[span.highlight sehr gut] spielt
             span.fragment(fragment-trigger, (trigger)="chessApproxExample.highlightStart()", (untrigger)="chessApproxExample.highlightEnd()")
+            p.mt-4.fragment.text-center.alert.alert-primary Pragmatische Lösung (ohne Perfektionsanspruch)
     section
-        slide-with-header(header="Problemfälle")
+        slide-with-header(header="Problemfall: ImmoPredict")
             div.d-flex.justify-content-center
                 example-model-visualization("#houseExample"="", [positives]="['output']")
                     div(input, class="input").fix-height.transparent-border-1
@@ -46,7 +48,7 @@ ng-template('#slides'='')
                     div(model, class="model").model-box f
                     div(output, class="output").fix-height.transparent-border-1
                         img(src="assets/images/machine-learning/dollar.png").img-fluid-both
-            ul.mt-5.fragment
+            ul.mt-4.fragment
                 li #[span.model-styling f] ist eine AI die Häuserpreise #[span.highlight perfekt] vorhersagt
             span.fragment(fragment-trigger, (trigger)="houseExample.highlightStart()", (untrigger)="houseExample.highlightEnd()")
             div.mt-5.d-flex.justify-content-center.fragment
@@ -57,9 +59,10 @@ ng-template('#slides'='')
                     div(model, class="model").model-box approx f
                     div(output, class="output").fix-height.transparent-border-1.code
                         p 100'000$
-            ul.mt-5.fragment
+            ul.mt-4.fragment
                 li #[span.model-styling approx f] ist eine AI die Häuserpreise #[span.highlight gut] vorhersagt
             span.fragment(fragment-trigger, (trigger)="houseApproxExample.highlightStart()", (untrigger)="houseApproxExample.highlightEnd()")
+            p.mt-4.fragment.text-center.alert.alert-warning Digitale Repräsentation (Informationsverlust!)
     section
         slide-with-header(header="Was ist Machine Learning")
             p.fragment #[span.model-styling approx f] nennen wir ein #[span.highlight Modell]
