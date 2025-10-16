@@ -126,7 +126,7 @@ ng-template('#slides'='')
                         li Sind Fehler Absolut oder Prozentual zu bestrafen?
                 li.fragment Die Wahl der #[span.highlight Metrik] gibt vor wie Fehler zu gewichten sind.
             p.mt-5.fragment.text-center.alert.alert-primary Welche Metrik geeignet ist, ist #[span.highlight Problemabhängig]!
-    section
+    section(id="MAE_MSE")
         slide-with-header(header="{{problemLabels.REGRESSION.label}} - Metrik - Beispiele")
             ul
                 li.fragment #[span.highlight MAE]: #[span.highlight M]ean #[span.highlight A]bsolute #[span.highlight E]rror
@@ -136,7 +136,7 @@ ng-template('#slides'='')
                         div.fragment([mathjax]="metricMeanAbsoluteErrorA")
                         div.fragment([mathjax]="metricMeanAbsoluteErrorM")
                         div.fragment([mathjax]="metricMeanAbsoluteError")
-                li.fragment
+                li.mt-3.fragment
                     div #[span.highlight MSE]: #[span.highlight M]ean #[span.highlight S]quared #[span.highlight E]rror
                     div.r-stack
                         div.fragment([mathjax]="metricMeanSquaredError")
@@ -144,7 +144,7 @@ ng-template('#slides'='')
                         div.fragment([mathjax]="metricMeanSquaredErrorS")
                         div.fragment([mathjax]="metricMeanSquaredErrorM")
                         div.fragment([mathjax]="metricMeanSquaredError")
-            p.fragment.text-center.alert.alert-primary MSE bestraft im Vergleich zu MAE Fehler grösser 1 stärker und Fehler kleiner 1 schwächer.
+            p.mt-5.fragment.text-center.alert.alert-primary MSE bestraft im Vergleich zu MAE Fehler grösser 1 stärker und Fehler kleiner 1 schwächer.
     tables-of-content-concepts([active]="conceptLabels.COST_FUNCTION")
     section
         slide-with-header([header]="'Kostenfunktion'")

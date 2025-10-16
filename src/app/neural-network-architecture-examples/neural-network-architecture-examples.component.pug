@@ -23,11 +23,6 @@ ng-template('#slides'='')
             div.smaller-font Paper: gradient-based learning applied to document recognition
             a(href="https://tensorspace.org/html/playground/lenet.html").mt-5.smaller-font 3D visualization
     section
-        slide-with-header(header="Convolution Neural Network (CNN) - Convolution", [extra]="true")
-            div
-                img(src="assets/images/neural-network-architectures/CNN.png", height="400px")
-            div.mt-5 Source: #[a(href="https://udlbook.github.io/udlbook/") Understanding Deep Learning] (chapter 10)
-    section
         slide-with-header(header="Neural Network - LeNet (1998)", [extra]="true")
             ul.text-start
                 li #[span.highlight 7 Layers]
@@ -37,6 +32,12 @@ ng-template('#slides'='')
                     ul
                         li 60'000 train data
                         li 10'000 test data
+                li Ist ein Convolution Neural Network (CNN), was ist eine Convolution? Siehe nächste Slide
+    section
+        slide-with-header(header="Convolution Neural Network (CNN) - Convolution", [extra]="true")
+            div
+                img(src="assets/images/neural-network-architectures/CNN.png", height="400px")
+            div.mt-5(style={fontSize: "9pt"}) Source: #[a(href="https://udlbook.github.io/udlbook/") Understanding Deep Learning] (chapter 10)
     section
         slide-with-header(header="Convolution Neural Network - Übersicht", [extra]="true")
             ul.text-start
@@ -60,7 +61,7 @@ ng-template('#slides'='')
             .row
                 .col-8.smaller-font 
                     ul 
-                        li Kreativer training task: #[span.highlight Rekonstruiere den Input], Input kann #[span.highlight corrupted] sein
+                        li Kreativer training task: #[span.highlight Rekonstruiere den Input], Input kann #[span.highlight corrupted] sein, für das Lernen von nützlichen Repräsentationen (für andere Aufgaben mittels Transfer Learning)
                         li Unsupervised Learning, spezifisch Self-Supervised Learning, ohne Labels lernen
                         li Reconstruct Error: #[span.highlight Kostenfunktion in Input Space] z.B. auf Pixeln definiert
                         li Beispiele: Auto Encoder, MAE, BERT (cloze task), GPT-3 (next token prediction)
