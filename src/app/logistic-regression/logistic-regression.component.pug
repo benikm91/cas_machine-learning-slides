@@ -155,15 +155,15 @@ ng-template('#slides'='')
                 .col-3.highlight Precision
                 .col-3 Binär:
                 .col-5([mathjax]="metricRecallBinary")
-            .mt-2.row.fragment
+            .mt-5.row.fragment
                 .col-3.highlight Recall
                 .col-3 Binär:
                 .col-5([mathjax]="metricPrecisionBinary")
-            .mt-2.row.fragment
+            .mt-5.row.fragment
                 .col-3.highlight F1-Score
                 .col-3 Binär:
                 .col-5([mathjax]="metricF1Binary")
-            .fragment.text-center.alert.alert-primary
+            .mt-5.fragment.text-center.alert.alert-primary
                 div F1 ist #[span.highlight geeignet] bei #[span.highlight inbalanced] Klassen, wenn Anzahl neagative Beispiele >> Anzahl positive Beispiele
     section
         slide-with-header(header="Classification - Metrik - Beispiele")
@@ -223,7 +223,7 @@ ng-template('#slides'='')
                     | ) gibt uns für den #[span.highlight Beweis einer Klasse], die #[span.highlight Wahrscheinlichkeit] für diese Klasse.
                 li.fragment
                     div #[span.highlight Softmax] gibt uns für #[span.highlight Beweise] für #[span.highlight mehrere Klassen], die #[span.highlight Wahrscheinlichkeiten] der Klassen.
-                div.fragment([mathjax]="softmax")
+                div.fragment.mt-3([mathjax]="softmax")
                 div.fragment.mt-5
                     softmax-3-example([i1]="-2", [i2]="5", [i3]="1")
     section
