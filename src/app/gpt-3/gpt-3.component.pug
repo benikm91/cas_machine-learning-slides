@@ -3,12 +3,12 @@ ng-template('#slides'='')
         slide-with-header(header="\"Language Models are Few-Shot Learners\" (2020)")
             div(style={fontSize: "32px"})
                 ul
-                    li #[span.highlight Landmark paper] in 2020: GPT-3, #[span.highlight In-Context Learning]
+                    li #[a.highlight(href="https://arxiv.org/abs/2005.14165") Landmark paper] in 2020: GPT-3, #[span.highlight In-Context Learning]
                     li GPT-3 ist ein #[span.highlight LLM (large language model)] oder auch foundation model und das Modell hinter ChatGPT (in 2022), ChatGPT ist GPT-3 angepasst um sich als #[span.highlight Chatbot] zu verhalten
-                    li GPT-3 ist reconstruction-based method, spezifisch, #[span.highlight next-token prediction]; ein Token ist ein Teil-Wort, Ziffer, Satzzeichen, etc.
-                    li Trainieren auf next-token prediction führt zu #[span.highlight überrachenden Fähigkeiten] wie Text-Stimmungs-Neuron, Code-Generierung, Übersetzungsfähigkeiten, ...
-                    li Fähigkeiten erlauben #[span.highlight zero-shot learning und few-shot learning mittels In-Context Learning].
-                    li Grösse: Das kleinere, open-weights #[span.highlight Llama 2] mit #[span.highlight 70 Milliarden Parametern] ist umgerechnet für #[span.highlight 200 Jahre] auf einer A100-80GB GPU trainiert worden auf #[span.highlight Hunderten Milliarden Tokens]
+                    li.fragment GPT-3 ist reconstruction-based method, spezifisch, #[span.highlight next-token prediction]; ein Token ist ein Teil-Wort, Ziffer, Satzzeichen, etc.
+                    li.fragment Trainieren auf next-token prediction führt zu #[span.highlight überrachenden Fähigkeiten] wie Text-Stimmungs-Neuron, Code-Generierung, Übersetzungsfähigkeiten, ..., (vgl. #[a(href="/#/word2vec-what-it-learned/0") Word2Vec])
+                    li.fragment Fähigkeiten erlauben #[span.highlight zero-shot learning und few-shot learning mittels In-Context Learning].
+                    li.fragment Grösse: Das kleinere, open-weights #[span.highlight Llama 2] mit #[span.highlight 70 Milliarden Parametern] ist umgerechnet für #[span.highlight 200 Jahre] auf einer A100-80GB GPU trainiert worden auf #[span.highlight Hunderten Milliarden Tokens]
     section
         slide-with-header(header="Was ist In-Context Learning (ICL)")
             img(src="assets/images/gpt-3/in-context-learning.png")
@@ -31,13 +31,15 @@ ng-template('#slides'='')
     section
         slide-with-header(header="ICL - ACU Beispiel - Was macht ACU?", [extra]="true")
             img(src="assets/images/gpt-3/in-context-learning-ACU.png")
+            div.fragment.mt-5.alert.alert-warning ACU sind ein aktives Forschungsgebiete
     section
         slide-with-header(header="ICL / LLM - Limits")
             ul 
                 li #[span.highlight Hallucination:] Faktisch falsche Informationen, oft klingen sie plausibel
                 li #[span.highlight Knowledge Cutoff:] Wissenstand veraltet (Training)
                 li #[span.highlight Prompt Sensitivity:] Formulierung und Struktur des Prompts überraschend wichtig
-                li #[span.highlight Fehlendes Weltverständnis/Logik:] Kein echtes Verständnis, keine Kausalität oder robustem logischem Schlussfolgern
+                li #[span.highlight Fehlendes Weltverständnis/Logik:] Kein echtes Verständnis, keine Kausalität oder robustes logisches Schlussfolgern
                 li #[span.highlight Hohe Kosten: ] Rechenressourcen und Energie
-                li #[span.highlight Verbesserung schwierig:] Oft schneller Prototyp, aber Weg zum Produkt nicht immer einfach.
+            div.fragment.text-center.alert.alert-warning.p-2.m-3(style={fontSize: "22pt"})
+                | #[span.highlight Verbesserung sind schwierig:] Oft ist ein Prototyp/Demo einfach, #[br] aber der Weg zu einem Produkt ist schwierig oder gar unmöglich!
 

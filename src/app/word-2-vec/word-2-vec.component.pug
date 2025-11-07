@@ -1,5 +1,5 @@
 ng-template('#slides'='')
-    section
+    section(id="word2vec")
         slide-with-header(header="Neural Network - Word2Vec (2013) - CBOW", [extra]="true")
             div(style={wordSpacing: "10px"}) Task:
                 span(style={marginLeft: "30px"}).code a  cat  ?  a  mouse
@@ -15,7 +15,7 @@ ng-template('#slides'='')
                         li Reduktion auf&nbsp;
                             span.highlight(mathjax="<math><mi>l</mi></math>")
                             | &nbsp;Dimensionen
-    section
+    section(id="word2vec-what-it-learned")
         slide-with-header(header="Neural Network - Word2Vec - What is learned?", [extra]="true")
             ul
                 li.fragment Synonyme werden ähnlich encoded
