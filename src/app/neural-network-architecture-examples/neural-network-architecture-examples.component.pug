@@ -47,13 +47,13 @@ ng-template('#slides'='')
                 li Einsatzgebiete (teils nicht mehr state-of-the-art)
                     ul
                         li 1D-Grid: Audiosignale (WaveNet), Gen-Sequenzen (DeepBind), Text (#[a(href="https://arxiv.org/pdf/1408.5882") classification])
-                        li 2D-Grid: Bilder Klassifikation (AlexNet), Bilder Segmentierung (U-Net), Go (AlphaGo) 
+                        li 2D-Grid: Bilder Klassifikation (AlexNet), Bilder Segmentierung (U-Net), Go (AlphaGo)
                         li 3D-Grid: CT-Scan Segmentierung (TotalSegmentator)
     question-slide([questions]="[]")
     section
         title-page
             h1 Reconstruction-Based methods
-            h2 am Beispiel von Auto Encoders
+            // h2 am Beispiel von Auto Encoders
     auto-encoder
     word-2-vec
     section 
@@ -72,7 +72,7 @@ ng-template('#slides'='')
     section
         title-page
             h1 Contrastive Learning
-            h2 Learn semantic representations
+            // h2 Learn semantic representations
     section
         slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
             .row
@@ -90,6 +90,7 @@ ng-template('#slides'='')
                 li Lernt konstante Gesichtsmerkmale zu erkennen
                 li Lernt variable Merkmale wie Hintergrund, Frisur, Brille zu ignorieren
                 li One-Shot-Learning: Erlaube #[span.highlight Vorhersage auf neue Klassen] (Personen) mit nur einem Beispiel.
+    question-slide([questions]="[]")
     section
         slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
             img.mt-5(src="assets/images/neural-network-architectures/clip.png", height="400px")

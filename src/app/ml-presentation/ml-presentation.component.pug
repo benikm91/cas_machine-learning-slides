@@ -98,7 +98,7 @@ reveal-presentation
     pca
     section
         slide-with-header(header="PCA - Code")
-            div.notebook-name pca.ipynb
+            div.notebook-name pca/pca.ipynb
             img(src="assets/images/code.png")
     nmf
     question-slide([questions]="pcaQuestions")
@@ -114,7 +114,7 @@ reveal-presentation
     data-science-pitfalls-correct-result-interpretation
     section
         slide-with-header(header="Übungszeit (60 Minuten)")
-            div.notebook-name exercise/neural_network.ipynb
+            div.notebook-name exercise/dimensionality_reduction.ipynb
             img(src="assets/images/code.png")
 
     // DAY 4
@@ -126,7 +126,7 @@ reveal-presentation
             img(src="assets/images/code.png")
     tables-of-content-problems([active]="problemLabels.IN_CONTEXT_LEARNING")
         div.fragment.text-center.alert.alert-warning
-            | Auch: Prompting, Meta Learning
+            | Synonym: Prompting, Meta Learning
     gpt-3
     question-slide([questions]="[]")
     section
@@ -154,8 +154,8 @@ reveal-presentation
                     div.col-md-3.text-start #[span.highlight In-Context Learning:]
                     div.col-md-9.text-start
                         ul
-                            li Klare oder #[span.highlight offene Aufgaben] (z.B. Chatbot)
-                            li #[span.highlight Kein internes Training] (in-context learning, prompting)
+                            li Klare (z.B. Klassifikation) oder #[span.highlight offene Aufgaben] (z.B. RAG)
+                            li #[span.highlight Kein internes Training] (in-context learning / prompting)
                             li Riesiges vortrainiertes Neurales Netz lernt #[span.highlight generelle Fähigkeiten] durch künstliche Trainings-Aufgabe wie next-token prediction
             div.fragment.text-center.alert.alert-warning.p-2.m-3(style={fontSize: "14pt"})
                 | Unterschied nicht immer Strikt. Kombinationen möglich: Deep Learning mit ICL z.B. RAG
@@ -163,7 +163,7 @@ reveal-presentation
     data-science-pitfalls-bias-in-machine-learning
     section
         slide-with-header(header="Übungszeit (60 Minuten)")
-            div.notebook-name exercise/in_context_learning.ipynb
+            div.notebook-name exercise/neural_network.ipynb
             img(src="assets/images/code.png")
     // SLIDES INFO
     section

@@ -16,6 +16,7 @@ export class RevealPresentationComponent implements AfterContentInit {
       // showNotes: 'separate-page',
       pdfSeparateFragments: false,
       plugins: [ RevealSearch ],
+      history: true,
     });
   }
 }

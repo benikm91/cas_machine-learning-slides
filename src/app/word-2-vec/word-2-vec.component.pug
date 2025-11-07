@@ -4,7 +4,7 @@ ng-template('#slides'='')
             div(style={wordSpacing: "10px"}) Task:
                 span(style={marginLeft: "30px"}).code a  cat  ?  a  mouse
             img.mt-5(src="assets/images/word-2-vec/word-2-vec-model.png", height="400px")
-            div.mt-5.smaller-font Paper: Efficient Estimation of Word Representations in Vector Space
+            div.mt-5.smaller-font Paper: #[a(href="https://arxiv.org/abs/1301.3781") Efficient Estimation of Word Representations in Vector Space]
     section
         slide-with-header(header="Neural Network - Word2Vec (2013)", [extra]="true")
             ul
@@ -61,7 +61,7 @@ ng-template('#slides'='')
                 br
                 | Model hat dadurch ein #[span.highlight leichteres] Spiel.
             div.fragment.mt-3.alert.alert-primary.smaller-font
-                | Word2Vec kann hier als #[span.highlight sinnvolles Text-#[a.highlight(href="#/{{encodingLabel.href}}") Encoding]] verstanden werden
+                | Word2Vec kann hier als #[span.highlight semantisches Text-#[a.highlight(href="#/{{encodingLabel.href}}") Encoding]] verstanden werden
                 br
                 | Anstatt z.B. One Hot Encoding, wo alle Wörter gleich weit entfernt sind.
             div.fragment.mt-3.alert.alert-primary.smaller-font
@@ -69,3 +69,4 @@ ng-template('#slides'='')
             div.fragment.mt-3.alert.alert-warning.smaller-font
                 | Word2Vec ist veraltet (2013), bessere Encodings existieren (z.B. BERT).
 
+    question-slide([questions]="[]")

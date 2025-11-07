@@ -48,7 +48,7 @@ ng-template('#slides'='')
                     img.fragment(src="assets/images/neural-network/one_hidden_nn_with_params.png").img-fluid-both
             div.mt-5.fragment.text-center.alert.alert-primary
                 div Hidden Layer entspricht mehreren Linearen Regressionen nebeneinander und hintereinander!
-    section
+    section(id="activation-function")
         slide-with-header(header="Aktivierungsfunktion hinzufügen")
             .row
                 .col-6
@@ -201,8 +201,8 @@ ng-template('#slides'='')
         slide-with-header(header="Gradient Descent")
             .row
                 .col-6
-                    h5 Reminder: Convex Problem (Tag 1)
-                    div.small-font Bei Linearen Modellen
+                    h5 Reminder: #[a(href="#/gradient-descent-convex") Convex Problem] (Tag 1)
+                    div.small-font Bei Linearen Modellen (und z.B. #[a(href="#/MAE_MSE") MSE] Kostenfunktion)
                     img.mt-5(src="assets/images/gradient-descent/gradient_descent_step_5.png")
                 .col-6
                     h5 Non-Convex Problem
@@ -251,6 +251,12 @@ ng-template('#slides'='')
             div.mt-5.fragment.text-center.alert.alert-warning(style={fontSize: "22px"})
                 div Optimierungsalgorithmus von Neuralen Netzen ist (Batch) Gradient Descent.
                 div #[span.highlight Backpropagation] hilft "nur" beim #[span.highlight effizienten Berechnen der Gradienten].
+    section
+        slide-with-header(header="Neural Network - Code")
+            div.notebook-name neural_network/neural_network.ipynb
+            img(src="assets/images/code.png")
+            div.mt-5.alert.alert-primary
+                | Code-Beispiel in #[a(href="https://www.tensorflow.org/") Tensorflow]
     section
         slide-with-header(header="[Additional Resources]", [extra]="true")
             ul

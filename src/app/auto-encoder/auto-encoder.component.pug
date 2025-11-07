@@ -62,6 +62,13 @@ ng-template('#slides'='')
     tables-of-content-auto-encoder([active]="autoEncoderLabel.OPTIMIERUNG")
         div.mt-5.fragment.text-center.alert.alert-primary Gradient Descent
     section
+        slide-with-header(header="Auto Encoder - Einsatzgebiete", [extra]="true")
+            ul
+                li Als #[span.highlight Dimensionsreduktion] für Klassifikation
+                li Als #[span.highlight Dimensionsreduktion] für Clustering
+                li.fragment Rekonstruktionsfehler verwenden für Anomalieerkennung (#[a(href="https://digitalcollection.zhaw.ch/server/api/core/bitstreams/79be6810-ec57-46e4-8cfd-39a421e31483/content") Paper])
+                li.fragment Rekonstruktion für Domain Adaptation (#[a(href="https://digitalcollection.zhaw.ch/server/api/core/bitstreams/e918e723-d2d1-4ef4-96c7-0226ce624734/content") Paper])
+    section
         slide-with-header(header="Auto Encoder - Limits", [extra]="true")
             div.row
                 div.col-5.offset-1
@@ -109,4 +116,6 @@ ng-template('#slides'='')
 
     section
         slide-with-header(header="Auto Encoder vs. PCA")
-            div Wenn Encoder und Decoder #[span.highlight linear] sind (z.B. lineare Aktivierungsfunktion), dann lernt der Auto Encoder den #[span.highlight gleichen Latent Space wie PCA].
+            div Wenn Encoder und Decoder #[span.highlight linear] sind (z.B. lineare #[a(href="#/activation-function") Aktivierungsfunktion]), dann lernt der Auto Encoder den #[span.highlight gleichen Latent Space wie #[a.highlight(href="#/Principal Component Analysis") PCA]].
+
+    question-slide([questions]="[]")
