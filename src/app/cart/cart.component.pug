@@ -193,15 +193,22 @@ ng-template('#slides'='')
                 div.col-5
                     h6 Impossible (in Feature Space)
                 div.col-1
-            div.row.fragment
-                div.col-1.m-auto
-                    h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) Global Pattern
-                div.col-5.p-2
-                    img(src="assets/images/regression/cart/cart-extrapolation-limit.png").limit-possible
-                div.col-5.p-2
-                    img(src="assets/images/regression/cart/cart-extrapolation-nolimit.png").limit-impossible
+            div.row
+                div.col-1.d-flex.align-items-center.justify-content-center
+                        h6(style={transform: "rotate(-90deg)", whiteSpace: 'nowrap'}) 1 Feature (Regression)
+                div.col-10
+                    div.row.fragment
+                        div.col-6.p-2
+                            img(src="assets/images/regression/cart/cart-extrapolation-limit.png", width="60%").limit-possible
+                        div.col-6.p-2
+                            img(src="assets/images/regression/cart/cart-extrapolation-nolimit.png", width="60%").limit-impossible
+                    div.row.fragment
+                        div.col-6.p-2
+                            img(src="assets/images/regression/cart/cart-extrapolation-linear-limit.png", width="60%").limit-possible
+                        div.col-6.p-2
+                            img(src="assets/images/regression/cart/cart-extrapolation-linear-no-limit.png", width="60%").limit-impossible
                 div.col-1
-            div.mt-5.fragment.text-center.alert.alert-primary Decision Trees (und deren Ensemble) lernen "nur" #[span.highlight interpolation] zwischen den Datenpunkten.
+            div.mt-1.fragment.text-center.alert.alert-primary.smaller-font Decision Trees (und deren Ensemble) lernen "nur" #[span.highlight interpolation] zwischen den Datenpunkten. Keine sinnvolle Extrapolation und #[span.highlight keine "Globalen Muster"].
     section
         slide-with-header(header="Alternative & Additional Resources", [extra]="true").smaller-font
             ul

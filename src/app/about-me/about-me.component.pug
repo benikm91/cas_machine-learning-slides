@@ -3,18 +3,69 @@ ng-template('#slides'='')
         title-page
             h1 Intro
     section
-        slide-with-header(header="Über mich")
-            ul
-                li Benjamin Meyer (Beni)
-                li Bachelor in Computer Science an der FHNW
-                li 1 Jahr Wissenschaftlicher Assistent an der FHNW
-                li Master mit Vertiefung Machine Learning an der Universität Basel
-                li
-                    div Arbeitete bei keeValue AG als Data Scientist:
-                    div Machine Learning mit kleinen und mittel grossen Datensätzen
-                li
-                    div PhD Candidate bei ZHAW (Center for AI)
-                    div Forschungsprojekte im Bereich Deep Learning
+        slide-with-header(header="Über mich").smaller-font
+            .row.g-3
+                .col-6
+                    .row.g-3
+                        .col-12
+                            .card.h-100.shadow-sm.border-secondary
+                                .card-body
+                                    h5.text-secondary.mb-3
+                                        i.bi.bi-mortarboard-fill.me-2
+                                        | Ausbildung
+                                    ul.small
+                                        li.mb-2
+                                            .row
+                                                .col-9 #[b Informatiklehre] (mit BM) Applikationsentwickler
+                                                .col-3
+                                                    img(src="assets/images/about-me/roche.png", width="100%")
+                                        li.mb-2
+                                            .row
+                                                .col-9 #[b Bachelor in Computer Science]
+                                                .col-3
+                                                    img(src="assets/images/about-me/fhnw.jpg", width="100%")
+                                        li.mb-2
+                                            .row
+                                                .col-9 #[b Master in Computer Science] Vertiefung ML
+                                                .col-3
+                                                    img(src="assets/images/about-me/unibas.png", width="100%")
+
+                        //- Bottom Left: Experience
+                        .col-12
+                            .card.h-100.shadow-sm.border-secondary
+                                .card-body
+                                    h5.text-secondary.mb-3
+                                        i.bi.bi-briefcase-fill.me-2
+                                        | Berufserfahrung
+                                    ul.list-unstyled.small
+                                        li.mb-2
+                                            .row
+                                                .col-9 #[b Data Scientist] bei keeValue, strukturierte Datensätzen
+                                                .col-3
+                                                    img(src="assets/images/about-me/keevalue.jpg", width="100%")
+                                        li.mb-2
+                                            .row
+                                                .col-9 #[b Wissenschaftlicher Assistent] bei FHNW und ZHAW
+                                                .col-3
+                                                    img(src="assets/images/about-me/zhaw.jpg", width="100%")
+                .col-6
+                    .card.h-100.shadow-lg.bg-light
+                        .card-body
+                            h5.text-dark.mb-3
+                                i.bi.bi-search.me-2
+                                | Aktuelle Forschung
+                            ul.list-unstyled.small
+                                li.mb-2
+                                    div #[b PhD Candidate] an der UZH und an der ZHAW im CAI (Center for AI)
+                                    div Fokus auf Applied Science, grosse Datensätze, Deep Learning, Strukturen
+                                    img(src="assets/images/about-me/document-recognition-as-transcription.png", width="100%")
+                                    .row
+                                        .col-6
+                                            img(src="assets/images/about-me/domain-injection.png", width="100%")
+                                        .col-6
+                                            img(src="assets/images/about-me/echo.png", width="100%")
+                                li.mb-2
+                                    div #[b Side-Quest] DimWit und DeepWit für Verständnis durch Code (Scala)
     section
         slide-with-header(header="4 Tage Machine Learning")
             .row.mt-3
@@ -28,11 +79,11 @@ ng-template('#slides'='')
             .row.mt-3.border-top.pt-3
                 .col-4.text-start
                     b Tag 3
-                .col-8.text-start Clustering, Dimensionality Reduction
+                .col-8.text-start Dimensionality Reduction, Neural Network
             .row.mt-3.border-top.pt-3
                 .col-4.text-start
                     b Tag 4
-                .col-8.text-start Review, Neural Network, ICL
+                .col-8.text-start Deep Learning, In-Context Learning
     section
         slide-with-header(header="Programmieren! Programmieren! Programmieren!")
             img(src="assets/images/code.png")

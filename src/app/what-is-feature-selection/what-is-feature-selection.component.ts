@@ -17,13 +17,16 @@ export class WhatIsFeatureSelectionComponent extends Slide {
 
   override ngOnInit() {
     super.ngOnInit()
-    this.inputs = '<math display="block">'
-    let i
+    this.inputs = '<math display="block"><mtable><mtr><mtd>'
+    let i;
     for (i = 1; i < 9; i++) {
-      this.inputs += '<mrow><msub class="label"><mi>x</mi><mn>'+i+'</mn></msub><mo>,</mo></mrow>'
+      this.inputs += `<msub class="label"><mi>x</mi><mn>${i}</mn></msub><mo>,</mo>`
+      if (i === 5) {
+        this.inputs += '</mtd></mtr><mtr><mtd>'
+      }
     }
-    this.inputs += '<msub class="label"><mi>x</mi><mn>'+i+'</mn></msub>'
-    this.inputs += '</math>'
+    this.inputs += `<msub class="label"><mi>x</mi><mn>${i}</mn></msub>`
+    this.inputs += '</mtd></mtr></mtable></math>'
   }
 
 }
