@@ -4,11 +4,11 @@ ng-template('#slides'='')
             h1 Intro
     section
         slide-with-header(header="Über mich").smaller-font
-            .row.g-3
+            .row
                 .col-6
-                    .row.g-3
+                    .row
                         .col-12
-                            .card.h-100.shadow-sm.border-secondary
+                            .card.border-secondary
                                 .card-body
                                     h5.text-secondary.mb-3
                                         i.bi.bi-mortarboard-fill.me-2
@@ -31,13 +31,13 @@ ng-template('#slides'='')
                                                     img(src="assets/images/about-me/unibas.png", width="100%")
 
                         //- Bottom Left: Experience
-                        .col-12
-                            .card.h-100.shadow-sm.border-secondary
+                        .col-12.mt-4
+                            .card.border-secondary
                                 .card-body
                                     h5.text-secondary.mb-3
-                                        i.bi.bi-briefcase-fill.me-2
+                                        i
                                         | Berufserfahrung
-                                    ul.list-unstyled.small
+                                    ul.small
                                         li.mb-2
                                             .row
                                                 .col-9 #[b Data Scientist] bei keeValue, strukturierte Datensätzen
@@ -48,13 +48,13 @@ ng-template('#slides'='')
                                                 .col-9 #[b Wissenschaftlicher Assistent] bei FHNW und ZHAW
                                                 .col-3
                                                     img(src="assets/images/about-me/zhaw.jpg", width="100%")
-                .col-6
-                    .card.h-100.shadow-lg.bg-light
+                .col-6.mt-2
+                    .card.border-secondary
                         .card-body
-                            h5.text-dark.mb-3
-                                i.bi.bi-search.me-2
+                            h5.text-secondary.mb-3
+                                i
                                 | Aktuelle Forschung
-                            ul.list-unstyled.small
+                            ul.small
                                 li.mb-2
                                     div #[b PhD Candidate] an der UZH und an der ZHAW im CAI (Center for AI)
                                     div Fokus auf Applied Science, grosse Datensätze, Deep Learning, Strukturen
@@ -101,21 +101,19 @@ ng-template('#slides'='')
                 .col-8.text-start Gelerntes an #[span.highlight echtem Problemfall] selbst anwenden
     section
         slide-with-header(header="Programmieren! Programmieren! Programmieren!")
-            img(src="assets/images/code-used-frameworks.png")
+            img(src="assets/images/code-used-frameworks.png", height="90%")
     section
         slide-with-header(header="Über die Slides")
             .row.mt-3.border-top.pt-3
                 .col-4.text-start
-                    .d-flex.justify-center.align-center.h-100.w-100
-                        img(src="assets/images/layout/extra-stamp.png").img-fluid
+                    img(src="assets/images/layout/extra-stamp.png").img-fluid
                 .col-8.text-start Slide behandelt fortgeschrittenes Thema. Sollte (!) nicht an der Prüfung kommen.
             .row.mt-3.border-top.pt-3
                 .col-4.text-start
-                    .d-flex.justify-center.align-center.h-100.w-100
-                        img(src="assets/images/code.png").img-fluid
+                    img(src="assets/images/code.png").img-fluid
                 .col-8.text-start Slide verweist auf Code-Beispiel
             .row.mt-3.border-top.pt-3
                 .col-4.text-start
-                    .d-flex.justify-center.align-center.h-100.w-100
+                    .d-flex.justify-center.align-center
                         img(src="assets/images/github.png").img-fluid
                 .col-8.text-start https://github.com/benikm91/cas_machine-learning-slides
