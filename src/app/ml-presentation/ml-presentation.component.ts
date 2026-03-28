@@ -58,7 +58,7 @@ export class MlPresentationComponent {
 
   cartQuestions = [
     new Question('Was ist ein (binary) Decision Tree?', 'Eine Abfolge von If, Else Statements (Branches) bis zu einem Endknoten (Leaves).'),
-    new Question('Kann ein Decision Tree einfach eine lineare Decision Boundary lernen?', 'Nein. Raum wird senkrecht zu Feature-Achsen aufgeteilt. Eine lineare Decision Boundary muss also mit stufenweise angenähert werden.'),
+    new Question('Wie konstruieren Decision Trees eine diagonale Decision Boundary?', 'Durch eine Treppenstruktur aus vielen achsenparallelen Splits.'),
   ]
 
   pcaQuestions = [

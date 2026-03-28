@@ -28,7 +28,7 @@ ng-template('#slides'='')
                 li Input(s): #[span.code-font length (cm), width (cm)]
                 li Output: #[span.code-font "Setosa" oder "Other" ]
             div.fragment.fade-up.pt-5.d-flex.justify-content-center
-                model-visualization("#classificationExample"='', output-header="Output Space")
+                model-visualization("#classificationExample"='', output-header="Output Space", [with-trigger]="false")
                     div(inputHeader)
                         div(style={marginTop: "-50px"})
                             h5(style={marginBottom: "0"}) Input Space
@@ -40,8 +40,12 @@ ng-template('#slides'='')
                         div Modell
                     div(output, class="output").fix-height.code
                         | #[span.highlight-seaborn-1 Setosa]
-                span.fragment(fragment-trigger, (trigger)="classificationExample.end();")
-            div.mt-5.r-stack
-                img.fragment(src="assets/images/classification/example-data-only.png", style={height: "200px"}).img-fluid
-                img.fragment(src="assets/images/classification/example-data-with-model.png", style={height: "200px"}).img-fluid
-
+            .row.mt-5
+                .col-4
+                    div.r-stack
+                        img.fragment(src="assets/images/classification/example-data-only.png", style={height: "200px"}).img-fluid
+                        img.fragment(src="assets/images/classification/example-data-with-model.png", style={height: "200px"}).img-fluid
+                .col-8.mt-3
+                    ul.smaller-font
+                        li.fragment Wir unterteilen den Input Space in #[span.highlight Teilräume]: "Setosa"- und "Other"-Teilraum.
+                        li.fragment Die Grenze(n) dieser Unterteilung heisst die #[span.highlight Decision Boundary]
