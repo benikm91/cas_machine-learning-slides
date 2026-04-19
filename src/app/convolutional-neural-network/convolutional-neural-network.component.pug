@@ -62,8 +62,8 @@ ng-template('#slides'='')
                         img(src="assets/images/convolutional-neural-network/cnn_locality_1.png", width="800px")
                         img(src="assets/images/convolutional-neural-network/cnn_locality_2.png", width="800px").fragment
                         img(src="assets/images/convolutional-neural-network/cnn_locality_3.png", width="800px").fragment
-            div.fragment.text-center.alert.alert-warning.mt-4
-                | Auf gesamten Bild (Ausschnitt nur zur Visualisierung)
+            div.fragment.text-center.alert.alert-warning.mt-5.smaller-font
+                | Angepasste Darstellung (Zoom), nur zur Visualisierung
     section
         slide-with-header(header="Convolution - Weight-Sharing")
             .row.mt-3
@@ -171,9 +171,11 @@ ng-template('#slides'='')
                             button.btn.btn-sm.btn-light((click)="selectedStride = 3", [class.active]="selectedStride === 3") 3
                 .col-8.d-flex.justify-content-center
                     img([src]="currentGifPath", width="400px")
-            .row.mt-5
-                .col-12.small-font.only-in-pdf
-                    a(href="https://benikm91.github.io/cas_machine-learning-slides/#/cnn-stride-and-padding") Link zur online Slide
+            div.fragment.text-center.alert.alert-warning.mt-3.smaller-font
+                | Angepasste Darstellung (Zoom), nur zur Visualisierung
+                span.small-font
+                    | &nbsp;
+                    a(href="https://benikm91.github.io/cas_machine-learning-slides/#/cnn-stride-and-padding") (Link zur online Slide)
 
     section
         slide-with-header(header="Convolution Neural Network - Shift Equivariance", [extra]="true")
