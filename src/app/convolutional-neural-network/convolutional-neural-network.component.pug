@@ -1,0 +1,203 @@
+ng-template('#slides'='')
+    tables-of-content-cnn([active]="cnnLabels.CNN")
+        div.fragment.text-center.alert.alert-primary.mt-5
+            | #[span.highlight C]onvolutional #[span.highlight N]eural #[span.highlight N]etworks werden meist als #[span.highlight CNN] abgekürzt
+    tables-of-content-cnn([active]="cnnLabels.DATA_SPECIFICATION")
+    section
+        slide-with-header(header="Convolution Neural Network - Specification")
+            ul
+                li Was ist das #[span.highlight Ziel]
+                li Was ist die #[span.highlight Kostenfunktion]
+                li Welche #[span.highlight Features] wählen wir
+                    ul.smaller-font
+                        li Müssen in einer #[span.highlight Raster-Struktur] vorliegen, z.B. #[span.highlight Pixelwerte] eines Bilds
+                li
+                    data-specification-element-categorical-feature-encoded
+                li
+                    data-specification-element-numerical-feature-standardize
+    tables-of-content-cnn([active]="cnnLabels.MODEL")
+    section
+        slide-with-header(header="Beispiel - LeNet (1998)", [extra]="true")
+            img(src="assets/images/neural-network-architectures/lenet.png", height="400px")
+            div.smaller-font
+                div
+                    | Paper: Gradient-based learning applied to document recognition &nbsp;
+                    a(href="https://tensorspace.org/html/playground/lenet.html").mt-5.smaller-font (visualization)
+    section
+        slide-with-header(header="Intuition: Ein Bild ist eine Pixelgrafik")
+            .row
+                .col-4
+                    .r-stack
+                        img(src="assets/images/convolutional-neural-network/example_img.png", width="280px")
+                        img(src="assets/images/convolutional-neural-network/example_img_rect.png", width="280px").fragment
+                .col-8
+                    .r-stack
+                        img(src="assets/images/convolutional-neural-network/zoomed_2_pixels_highlighted.png", width="400px").fragment
+                        img(src="assets/images/convolutional-neural-network/zoomed_2_pixels_highlighted_numbers.png", width="400px").fragment
+            div.fragment.text-center.alert.alert-primary.mt-5
+                | Die Pixel im Bild sind unsere #[span.highlight Features]
+    section
+        slide-with-header(header="Intuition: Problem von FCNN auf Bilder")
+            .row
+                ul
+                    li Fully Connected Neural Network (FCNN): Alle Pixel sind mit alle Neuronen im nächsten Layer verbunden
+                    li.fragment Problem: #[span.highlight Raster-Struktur der Daten wird nicht berücksichtigt]
+                    li.fragment Idee: Baue Annahmen der Raster-Struktur in die Architektur (Vernetzung der Neuronen) ein.
+                    li.fragment Für den #[span.highlight Convolution Layer] machen wir zwei Anpassungen:
+                        ol
+                            li #[span.highlight Lokale Vernetzung] motiviert durch Raster-Struktur
+                            li #[span.highlight Weight-Sharing] für Shift-Equivariance
+                    div.fragment.text-center.alert.alert-primary.mt-2.smaller-font
+                        | Mehr (sinnvolle) Annahmen, weniger Daten nötig
+    section
+        slide-with-header(header="Convolution - Lokale Vernetzung")
+            .row.mt-3
+                .col-12
+                    ul
+                        li Neuronen in Raster anordnen.
+                        li Neuron nach #[span.highlight Nachbarschaft] verbinden (z.B. 3x3)
+            .row
+                .col-12
+                    .r-stack
+                        img(src="assets/images/convolutional-neural-network/cnn_locality_1.png", width="800px")
+                        img(src="assets/images/convolutional-neural-network/cnn_locality_2.png", width="800px").fragment
+                        img(src="assets/images/convolutional-neural-network/cnn_locality_3.png", width="800px").fragment
+            div.fragment.text-center.alert.alert-warning.mt-4
+                | Auf gesamten Bild (Ausschnitt nur zur Visualisierung)
+    section
+        slide-with-header(header="Convolution - Weight-Sharing")
+            .row.mt-3
+                .col-12
+                    ul
+                        li #[span.highlight Weight Sharing]: Geteilte Parameter #[span(mathjax="<math><mi>β</mi></math>")]
+                        li #[span.highlight Geteilte Parameter] über alle Positionen
+            .row
+                .col-12
+                    .r-stack
+                        img(src="assets/images/convolutional-neural-network/cnn_locality_1.png", width="800px")
+                        img(src="assets/images/convolutional-neural-network/cnn_weight_sharing_1.png", width="800px").fragment
+                        img(src="assets/images/convolutional-neural-network/cnn_weight_sharing_2.png", width="800px").fragment
+    section
+        slide-with-header(header="Convolution - Nomenklatur")
+            .row.mt-3
+                .col-12
+                    ul
+                        li #[span.highlight Feature Map]: Neuronen im Hidden Layer
+                        li #[span.highlight Kernel oder Filter]: Geteilten Parameter
+            .row
+                .col-12
+                    .r-stack
+                        img(src="assets/images/convolutional-neural-network/cnn_weight_sharing_1.png", width="800px")
+                        img(src="assets/images/convolutional-neural-network/cnn_nomenklatur_1.png", width="800px").fragment
+                        img(src="assets/images/convolutional-neural-network/cnn_nomenklatur_2.png", width="800px").fragment
+                        img(src="assets/images/convolutional-neural-network/cnn_nomenklatur_3.png", width="800px").fragment
+    section
+        slide-with-header(header="Convolution Layer")
+            ul.smaller-font
+                li Ein Filter lernt ein bestimmtes Muster (z.B. Kante, Kreis, etc.) im gesamten Bild zu erkennen
+                li.fragment Ein Convolution Layer hat #[span.highlight mehrere Filter] (z.B. 256) und produziert gleichviel Feature Maps
+                    ul.smaller-font
+                        li Der selbe Filter auf alle Positionen des Bildes (Weight Sharing)
+                        li Aber mehrere Filter pro Layer (unterschiedliche Parameter)
+                li.fragment Für jeden Pixel in jeder Feature Map wenden wir eine #[span.highlight Aktivierungsfunktion] (z.B. ReLU) an.
+                li.fragment Für Bilder mit mehreren Kanälen (z.B. RGB) haben Filter mehrere Kanäle (z.B. 3x3x3 Filter). Die Filter lernen Muster über alle Kanäle hinweg.
+                li.fragment #[span.highlight Layer-by-Layer]: Feature Maps formen "Feature-Bild". Die Anzahl Feature Maps entspricht der Anzahl Kanälen. Möglicher Input für den nächsten Convolution Layer.
+    section
+        slide-with-header(header="Beispiel - LeNet (1998)", [extra]="true")
+            img(src="assets/images/neural-network-architectures/lenet.png", height="400px")
+            div.smaller-font
+                div
+                    | Paper: Gradient-based learning applied to document recognition &nbsp;
+                    a(href="https://tensorspace.org/html/playground/lenet.html").mt-5.smaller-font (visualization)
+    section
+            slide-with-header(header="Pooling Layer")
+                ul
+                    li Räumliche Auflösung der Feature Maps reduzieren
+                        ul.smaller-font
+                            li Robuster gegenüber kleinen Verschiebungen
+                            li Memory-Rechenaufwand-Reduktion
+                            li Vergrösserung Receptive Field
+                    li Meistens wird Max-Pooling verwendet
+                    .row
+                        .col-12
+                            .r-stack
+                                img(src="assets/images/convolutional-neural-network/cnn_max_pooling_1.png", width="800px")
+                                img(src="assets/images/convolutional-neural-network/cnn_max_pooling_2.png", width="800px").fragment
+                                img(src="assets/images/convolutional-neural-network/cnn_max_pooling_3.png", width="800px").fragment
+    section
+        slide-with-header(header="Beispiel - LeNet (1998)", [extra]="true")
+            img(src="assets/images/neural-network-architectures/lenet.png", height="400px")
+            div.smaller-font
+                div
+                    | Paper: Gradient-based learning applied to document recognition &nbsp;
+                    a(href="https://tensorspace.org/html/playground/lenet.html").mt-5.smaller-font (visualization)
+                div.fragment.text-center.alert.alert-primary.mt-4.smaller-font
+                    | "Convolutions" ist Convolution Layer. "Subsampling” ist Max-Pooling Layer. "Full connection" ist Fully Connected Layer.
+                    | "Gaussian connections" ist Le-Net Eigenart und wäre heute ein Fully Connected Layer mit Softmax.
+    tables-of-content-cnn([active]="cnnLabels.COST_FUNCTION")
+        div.fragment.text-center.alert.alert-primary.mt-4
+            | Problemspezifische Kostenfunktion
+    tables-of-content-cnn([active]="cnnLabels.OPTIMIERUNG")
+        div.fragment.text-center.alert.alert-primary.mt-4
+            | (Batch) Gradient Descent
+    section
+        slide-with-header(header="Neural Network - Code")
+            div.notebook-name neural_network/cnn.ipynb
+            img(src="assets/images/code.png")
+    section(id="stride_and_padding")
+        slide-with-header(header="Convolution Neural Network - Stride und Padding")
+            ul.smaller-font
+                li #[span.highlight Padding]: Auffüllen des Bildes (z.B. mit Nullen) um die Ränder
+                li #[span.highlight Kernel Size]: Grösse des Filters (z.B. 3x3, 5x5, 7x7)
+                li #[span.highlight Stride]: Schrittweite des Filters über das Bild
+            .row.mt-4.smaller-font.fragment
+                .col-4
+                    .param-group
+                        strong Padding
+                        .button-row
+                            button.btn.btn-sm.btn-light((click)="selectedPadding = 'valid'", [class.active]="selectedPadding === 'valid'") Valid
+                            button.btn.btn-sm.btn-light((click)="selectedPadding = 'same'", [class.active]="selectedPadding === 'same'") Same
+                    .param-group.mt-3
+                        strong Kernel Size
+                        .button-row
+                            button.btn.btn-sm.btn-light((click)="selectedKernel = 3", [class.active]="selectedKernel === 3") 3x3
+                            button.btn.btn-sm.btn-light((click)="selectedKernel = 5", [class.active]="selectedKernel === 5") 5x5
+                            button.btn.btn-sm.btn-light((click)="selectedKernel = 7", [class.active]="selectedKernel === 7") 7x7
+                    .param-group.mt-3
+                        strong Stride
+                        .button-row
+                            button.btn.btn-sm.btn-light((click)="selectedStride = 1", [class.active]="selectedStride === 1") 1
+                            button.btn.btn-sm.btn-light((click)="selectedStride = 2", [class.active]="selectedStride === 2") 2
+                            button.btn.btn-sm.btn-light((click)="selectedStride = 3", [class.active]="selectedStride === 3") 3
+                .col-8.d-flex.justify-content-center
+                    img([src]="currentGifPath", width="400px")
+    section
+        slide-with-header(header="Convolution Neural Network - Shift Equivariance", [extra]="true")
+            ul.smaller-font
+                li #[span.highlight Shift Equivariance]: Verschiebung im Input führt zu Verschiebung im Output
+                li Convolution Layer ist (im Kern) Shift-Equivariant (durch #[span.highlight Weight-Sharing])
+                    ul.fragment
+                        li Exakt nur ohne Randeffekte (z. B. bei unendlich großen Bildern)
+                        li Padding (z. B. Zero-Padding) bricht die Exaktheit an den Bildrändern
+                        li Stride grösser 1 ist nicht (exakt) Shift-Equivariant
+                li.fragment Gesamtes CNN ist daher in der Praxis nur #[span.highlight approximativ Shift-Equivariant]
+            img(src="assets/images/convolutional-neural-network/shift-equivariance.png", width="600px").mt-4
+    section
+        slide-with-header(header="Convolution Neural Network - Übersicht", [extra]="true")
+            ul.text-start
+                li Vernetzung von Neuronen basierend auf der existierenden #[span.highlight Raster-Struktur in den Daten]
+                li Für Bilder (und Video) bekannt, aber generell erfolgreich in Bereichen mit Raster-Strukturen:
+                    ul
+                        li 1D-Raster: Audiosignale (WaveNet), Gen-Sequenzen (DeepBind), Text (#[a(href="https://arxiv.org/pdf/1408.5882") classification])
+                        li 2D-Raster: Bilder Klassifikation (AlexNet), Bilder Segmentierung (U-Net), Go (AlphaGo)
+                        li 3D-Raster: CT-Scan Segmentierung (TotalSegmentator)
+    tables-of-content-cnn
+        div.row
+            div.col-6
+                img(src="assets/images/convolutional-neural-network/cnn_weight_sharing_1.png", width="400px")
+            div.col-6
+                img(src="assets/images/convolutional-neural-network/cnn_max_pooling_1.png", width="400px")
+        div.row.mt-3
+            div.col-12
+                img(src="assets/images/neural-network-architectures/lenet.png", width="800px")
+    question-slide([questions]="[]")

@@ -15,43 +15,6 @@ ng-template('#slides'='')
             div.fragment.mt-5.alert.alert-success Aufzeigen, wie #[span.highlight unterschiedlich] und #[span.highlight problemspezifisch] Architekturen in der Praxis sind.
     section
         title-page
-            h1 Convolution Neural Network 
-            h2 am Beispiel von LeNet
-    section
-        slide-with-header(header="Neural Network - LeNet (1998)", [extra]="true")
-            img(src="assets/images/neural-network-architectures/lenet.png", height="400px")
-            div.smaller-font Paper: gradient-based learning applied to document recognition
-            a(href="https://tensorspace.org/html/playground/lenet.html").mt-5.smaller-font 3D visualization
-    section
-        slide-with-header(header="Neural Network - LeNet (1998)", [extra]="true")
-            ul.text-start
-                li #[span.highlight 7 Layers]
-                li #[span.highlight 60'000 lernbare Parameter]
-                li #[span.highlight Sigmoid] statt ReLU (ReLU noch nicht entdeckt)
-                li Dataset: #[span.highlight MNIST]
-                    ul
-                        li 60'000 train data
-                        li 10'000 test data
-                li Ist ein Convolution Neural Network (CNN), was ist eine Convolution? Siehe nächste Slide
-    section
-        slide-with-header(header="Convolution Neural Network (CNN) - Convolution", [extra]="true")
-            div
-                img(src="assets/images/neural-network-architectures/CNN.png", height="400px")
-            div.mt-5(style={fontSize: "9pt"}) Source: #[a(href="https://udlbook.github.io/udlbook/") Understanding Deep Learning] (chapter 10)
-    section
-        slide-with-header(header="Convolution Neural Network - Übersicht", [extra]="true")
-            ul.text-start
-                li Beispiel einer #[span.highlight kreativen Vernetzung von Neuronen]
-                li Filter: #[span.highlight Nachbarschaften] von Inputs z.B. Pixels mittels gewichterer Summe
-                li Convolution Layer ist #[span.highlight shift-equivariant]
-                li Einsatzgebiete (teils nicht mehr state-of-the-art)
-                    ul
-                        li 1D-Grid: Audiosignale (WaveNet), Gen-Sequenzen (DeepBind), Text (#[a(href="https://arxiv.org/pdf/1408.5882") classification])
-                        li 2D-Grid: Bilder Klassifikation (AlexNet), Bilder Segmentierung (U-Net), Go (AlphaGo)
-                        li 3D-Grid: CT-Scan Segmentierung (TotalSegmentator)
-    question-slide([questions]="[]")
-    section
-        title-page
             h1 Reconstruction-Based methods
             // h2 am Beispiel von Auto Encoders
     auto-encoder

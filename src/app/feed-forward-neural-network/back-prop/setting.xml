@@ -1,153 +1,127 @@
 <math display="block">
-    <mtable displaystyle="true" rowspacing="0.25em" columnalign="right left right left right" columnspacing="0em 1em 0em 1em" class="tml-array tml-gather">
-        <mtr>
-            <mtd style="text-align:-webkit-right;">
-                <mrow>
-                    <mfrac>
-                        <mrow>
-                            <mi>∂</mi>
-                            <mi>J</mi>
-                        </mrow>
-                        <mrow>
-                            <mi>∂</mi>
-                            <msubsup>
-                                <mi>β</mi>
-                                <mn>1,0</mn>
-                                <mrow>
-                                    <mo form="prefix" stretchy="false">(</mo>
-                                    <mn>2</mn>
-                                    <mo form="postfix" stretchy="false">)</mo>
-                                </mrow>
-                            </msubsup>
-                        </mrow>
-                    </mfrac>
-                    <mo>=</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                </mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-left;">
-                <mrow></mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-right;">
-                <mrow>
-                    <mfrac>
-                        <mrow>
-                            <mi>∂</mi>
-                            <mi>J</mi>
-                        </mrow>
-                        <mrow>
-                            <mi>∂</mi>
-                            <msubsup>
-                                <mi>β</mi>
-                                <mn>1,1</mn>
-                                <mrow>
-                                    <mo form="prefix" stretchy="false">(</mo>
-                                    <mn>2</mn>
-                                    <mo form="postfix" stretchy="false">)</mo>
-                                </mrow>
-                            </msubsup>
-                        </mrow>
-                    </mfrac>
-                    <mo>=</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                </mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-left;">
-                <mrow></mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-right;">
-                <mrow>
-                    <mfrac>
-                        <mrow>
-                            <mi>∂</mi>
-                            <mi>J</mi>
-                        </mrow>
-                        <mrow>
-                            <mi>∂</mi>
-                            <msubsup>
-                                <mi>β</mi>
-                                <mn>1,0</mn>
-                                <mrow>
-                                    <mo form="prefix" stretchy="false">(</mo>
-                                    <mn>1</mn>
-                                    <mo form="postfix" stretchy="false">)</mo>
-                                </mrow>
-                            </msubsup>
-                        </mrow>
-                    </mfrac>
-                    <mo>=</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                </mrow>
-            </mtd>
-        </mtr>
-        <mtr>
-            <mtd style="text-align:-webkit-right;">
-                <mrow>
-                    <mfrac>
-                        <mrow>
-                            <mi>∂</mi>
-                            <mi>J</mi>
-                        </mrow>
-                        <mrow>
-                            <mi>∂</mi>
-                            <msubsup>
-                                <mi>β</mi>
-                                <mn>1,1</mn>
-                                <mrow>
-                                    <mo form="prefix" stretchy="false">(</mo>
-                                    <mn>1</mn>
-                                    <mo form="postfix" stretchy="false">)</mo>
-                                </mrow>
-                            </msubsup>
-                        </mrow>
-                    </mfrac>
-                    <mo>=</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                </mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-left;">
-                <mrow></mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-right;">
-                <mrow>
-                    <mfrac>
-                        <mrow>
-                            <mi>∂</mi>
-                            <mi>J</mi>
-                        </mrow>
-                        <mrow>
-                            <mi>∂</mi>
-                            <msubsup>
-                                <mi>β</mi>
-                                <mn>1,2</mn>
-                                <mrow>
-                                    <mo form="prefix" stretchy="false">(</mo>
-                                    <mn>1</mn>
-                                    <mo form="postfix" stretchy="false">)</mo>
-                                </mrow>
-                            </msubsup>
-                        </mrow>
-                    </mfrac>
-                    <mo>=</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                    <mo form="postfix" stretchy="false">?</mo>
-                </mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-left;">
-                <mrow></mrow>
-            </mtd>
-            <mtd style="text-align:-webkit-right;">
-                <mrow></mrow>
-            </mtd>
-        </mtr>
-    </mtable>
+<mtable displaystyle="true" rowspacing="0.16em" columnspacing="0em" class="tml-array tml-gather equation equation-colored">
+    <mtr>
+        <mtd>
+            <mrow>
+                <mi>∇</mi>
+                <mi>J</mi>
+                <mo form="prefix" stretchy="false">(</mo>
+                <mi class="weight">β</mi>
+                <mo form="postfix" stretchy="false">)</mo>
+                <mo>=</mo>
+                <mo fence="false" symmetric="true" minsize="1.8em">(</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>∂</mi>
+                        <mi>J</mi>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="weight">β</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mrow>
+                        <mi>∂</mi>
+                        <msubsup class="weight">
+                            <mi>β</mi>
+                            <mn>1,0</mn>
+                            <mrow>
+                                <mo form="prefix" stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo form="postfix" stretchy="false">)</mo>
+                            </mrow>
+                        </msubsup>
+                    </mrow>
+                </mfrac>
+                <mo separator="true">,</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>∂</mi>
+                        <mi>J</mi>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="weight">β</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mrow>
+                        <mi>∂</mi>
+                        <msubsup class="weight">
+                            <mi>β</mi>
+                            <mn>1,1</mn>
+                            <mrow>
+                                <mo form="prefix" stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo form="postfix" stretchy="false">)</mo>
+                            </mrow>
+                        </msubsup>
+                    </mrow>
+                </mfrac>
+                <mo separator="true">,</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>∂</mi>
+                        <mi>J</mi>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="weight">β</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mrow>
+                        <mi>∂</mi>
+                        <msubsup class="weight">
+                            <mi>β</mi>
+                            <mn>1,2</mn>
+                            <mrow>
+                                <mo form="prefix" stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo form="postfix" stretchy="false">)</mo>
+                            </mrow>
+                        </msubsup>
+                    </mrow>
+                </mfrac>
+                <mo separator="true">,</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>∂</mi>
+                        <mi>J</mi>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="weight">β</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mrow>
+                        <mi>∂</mi>
+                        <msubsup class="weight">
+                            <mi>β</mi>
+                            <mn>1,0</mn>
+                            <mrow>
+                                <mo form="prefix" stretchy="false">(</mo>
+                                <mn>2</mn>
+                                <mo form="postfix" stretchy="false">)</mo>
+                            </mrow>
+                        </msubsup>
+                    </mrow>
+                </mfrac>
+                <mo separator="true">,</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>∂</mi>
+                        <mi>J</mi>
+                        <mo form="prefix" stretchy="false">(</mo>
+                        <mi class="weight">β</mi>
+                        <mo form="postfix" stretchy="false">)</mo>
+                    </mrow>
+                    <mrow>
+                        <mi>∂</mi>
+                        <msubsup class="weight">
+                            <mi>β</mi>
+                            <mn>1,1</mn>
+                            <mrow>
+                                <mo form="prefix" stretchy="false">(</mo>
+                                <mn>2</mn>
+                                <mo form="postfix" stretchy="false">)</mo>
+                            </mrow>
+                        </msubsup>
+                    </mrow>
+                </mfrac>
+                <mo fence="false" symmetric="true" minsize="1.8em">)</mo>
+            </mrow>
+        </mtd>
+    </mtr>
+</mtable>
 </math>

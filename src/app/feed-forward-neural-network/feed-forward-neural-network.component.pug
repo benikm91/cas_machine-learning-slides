@@ -231,23 +231,15 @@ ng-template('#slides'='')
         slide-with-header(header="Backpropagation", [extra]="true")
             ul(style={fontSize: "22px"})
                 li Algorithmus für das #[span.highlight effiziente Berechnen der Gradienten] der Kostenfunktion #[span.highlight in einem Neural Network]
-                li Nutzt die Chain-Rule von der Analysis um Zwischenergebnisse zu cachen.
-            .r-stack.mt-5
-                .row(style={background: "white", width: "100%"}).fragment
-                    .col-6
-                        img(src="assets/images/neural-network/very_simple_nn_with_params.png").img-fluid-both
-                    .col-6
-                        div([mathjax]="backpropSetting", style={fontSize: "22px"})
-                .row(style={background: "white", width: "100%"}).fragment
-                    .col-6
-                        img(src="assets/images/neural-network/very_simple_nn.png").img-fluid-both
-                    .col-6
-                        div([mathjax]="backpropSetting2", style={fontSize: "22px"})
-                .row(style={background: "white", width: "100%"}).fragment
-                    .col-6
-                        img(src="assets/images/neural-network/very_simple_nn.png").img-fluid-both
-                    .col-6
-                        div([mathjax]="backpropSetting3", style={fontSize: "22px"})
+                li Effizienz durch #[span.highlight Kettenregel] der Analysis: Identifikation gemeinsamer Terme, um redundante Berechnungen zu vermeiden
+            .row(style={background: "white", width: "100%"}).mt-4.fragment
+                .col-6
+                    img(src="assets/images/neural-network/very_simple_nn_with_params.png").mt-5.img-fluid-both
+                .col-6
+                    div([mathjax]="backpropSetting", style={fontSize: "22px"})
+                    .r-stack.mt-4
+                        div([mathjax]="backpropSetting2", style={fontSize: "22px"}).fragment
+                        div([mathjax]="backpropSetting3", style={fontSize: "22px"}).fragment
             div.mt-5.fragment.text-center.alert.alert-warning(style={fontSize: "22px"})
                 div Optimierungsalgorithmus von Neuralen Netzen ist (Batch) Gradient Descent.
                 div #[span.highlight Backpropagation] hilft "nur" beim #[span.highlight effizienten Berechnen der Gradienten].
@@ -258,14 +250,16 @@ ng-template('#slides'='')
             div.mt-5.alert.alert-primary
                 | Code-Beispiel in #[a(href="https://www.tensorflow.org/") Tensorflow]
     section
-        slide-with-header(header="[Additional Resources]", [extra]="true")
+        slide-with-header(header="Additional Resources", [extra]="true")
             ul
-                li Neuronen anders vernetzen
+                li Andere #[span.highlight Vernetzung der Neuronen]
                     ul
-                        li ResNet (skip connection)
+                        li Skip Connections (ResNet, U-Net)
                         li Convolutional Neural Network (CNN)
                         li Recurrent Neural Network (RNN)
                         li Transformer (behandelt im NLP)
-                li Learning und Regularization: Momentum, Adam, Learning Rate Decay, Dropout, Batch Normalization
-            div.fragment.text-center.alert.alert-primary.mt-2
-                 | Grundidee immer: #[span.highlight Annahmen treffen], um das Lernen zu vereinfachen ohne es (stark) einzuschränken.
+                li #[span.highlight Learning und Regularization]
+                    ul
+                        li Erweiterungen von Gradient Descent: Momentum, Adam, AdamW, Lion
+                        li Learning: Layer Normalization, Skip Connections, Gradient Clipping
+                        li Regularization: Dropout, Weight Sharing

@@ -87,9 +87,13 @@ import {Softmax3ExampleComponent} from "./softmax-3-example/softmax-3-example.co
 import {PolynomialRegressionComponent} from "./polynomial-regression/polynomial-regression.component";
 import {DataSciencePitfallsComponent} from "./data-science-pitfalls/data-science-pitfalls.component";
 import {FeedForwardNeuralNetworkComponent} from "./feed-forward-neural-network/feed-forward-neural-network.component";
+import {ConvolutionalNeuralNetworkComponent} from "./convolutional-neural-network/convolutional-neural-network.component"
 import {
   TablesOfContentFNNComponent
 } from "./tables-of-content-machine-learning-algorithm/tables-of-content-fnn.component";
+import {
+  TablesOfContentCNNComponent
+} from "./tables-of-content-machine-learning-algorithm/tables-of-content-cnn.component";
 import {WhatIsClusteringComponent} from "./what-is-clustering/what-is-clustering.component";
 import {KMeansComponent} from "./k-means/k-means.component";
 import {
@@ -171,7 +175,7 @@ import {
     WhatIsKernelTrickComponent, TablesOfContentLinkComponent, WhatIsStandardizationComponent, WhatIsDimensionalityReductionComponent, BinaryClassificationMetricExampleComponent,
     OverfittingUnderfittingExampleComponent, WhatIsOverfittingUnderfittingComponent, WhatIsCrossValidationComponent, WhatIsRegularizationComponent,
     CartComponent, TablesOfContentCartComponent, TablesOfContentKNNComponent, AboutMeComponent, Softmax3ExampleComponent, PolynomialRegressionComponent,
-    DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
+    DataSciencePitfallsComponent, FeedForwardNeuralNetworkComponent, TablesOfContentFNNComponent, ConvolutionalNeuralNetworkComponent, TablesOfContentCNNComponent, WhatIsClusteringComponent, TablesOfContentKMeansComponent, KMeansComponent,
     DataSpecificationElementNumericalFeatureStandardizeComponent, DataSpecificationElementCategoricalFeatureEncodedComponent, WhatIsFeatureSelectionComponent,
     WhatAreHyperParametersComponent, DataSciencePitfallsInconsistentPreprocessingComponent, DataSciencePitfallsDataLeakageComponent, DataSciencePitfallsGarbageInGarbageOutComponent,
     DataSciencePitfallsEnoughDataComponent, DataSciencePitfallsTackleAProblemComponent, DataSciencePitfallsMetricChoiceComponent, DataSciencePitfallsCorrectResultInterpretationComponent,

@@ -1,0 +1,25 @@
+\documentclass[preview]{standalone}
+\usetikzlibrary{positioning}
+
+\input{neural_network_commands.tex}
+
+\begin{document}
+
+%%% Logistic Regression - MNIST - with params
+
+    \begin{preview}
+    \begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+    \inputs{{1,2,missing,9}}
+    \outputsZ{{0}}{$\sum$}
+    \layersIO
+
+    \foreach \i in {bias,1,2,9} {
+        \foreach \j in {0} {
+            % Evaluate \j // 3 (integer division) and \j % 3 (modulo)
+            \draw [->,red] (input-\i) -- (output-\j)
+            node[pos=0.25,left,above] {$\beta_{\i}$};
+        }
+    }\end{tikzpicture}
+    \end{preview}
+
+\end{document}

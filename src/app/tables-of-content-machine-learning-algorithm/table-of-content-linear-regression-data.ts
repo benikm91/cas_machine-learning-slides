@@ -120,7 +120,6 @@ export function createKNNTableOfContent(active: KNNTableOfContentLabel | null): 
     ])
 }
 
-
 export class FNNTableOfContentLabel extends TableOfContentLabel {
     public static readonly FNN = new FNNTableOfContentLabel("Fully Connected Neural Network", "NN");
     public static readonly DATA_SPECIFICATION = new FNNTableOfContentLabel("Specification", "NN/Specification");
@@ -135,6 +134,23 @@ export function createFNNTableOfContent(active: FNNTableOfContentLabel | null): 
         c(FNNTableOfContentLabel.MODEL, active, []),
         c(FNNTableOfContentLabel.COST_FUNCTION, active, []),
         c(FNNTableOfContentLabel.OPTIMIERUNG, active, []),
+    ])
+}
+
+export class CNNTableOfContentLabel extends TableOfContentLabel {
+    public static readonly CNN = new FNNTableOfContentLabel("Convolutional Neural Network", "CNN");
+    public static readonly DATA_SPECIFICATION = new FNNTableOfContentLabel("Specification", "CNN/Specification");
+    public static readonly MODEL = new FNNTableOfContentLabel("Model" , "CNN/Model" );
+    public static readonly COST_FUNCTION = new FNNTableOfContentLabel("Kostenfunktion" , "CNN/Kostenfunktion" );
+    public static readonly OPTIMIERUNG = new FNNTableOfContentLabel("Optimierung" , "CNN/Optimierung" );
+}
+
+export function createCNNTableOfContent(active: CNNTableOfContentLabel | null): TableOfContentEntry<CNNTableOfContentLabel> {
+    return c(CNNTableOfContentLabel.CNN, active, [
+        c(CNNTableOfContentLabel.DATA_SPECIFICATION, active, []),
+        c(CNNTableOfContentLabel.MODEL, active, []),
+        c(CNNTableOfContentLabel.COST_FUNCTION, active, []),
+        c(CNNTableOfContentLabel.OPTIMIERUNG, active, []),
     ])
 }
 
