@@ -62,7 +62,7 @@ ng-template('#slides'='')
                             div [ -57.2, -3.6, ..., 2.3, -3.4 ]
             div.mt-2 &nbsp;
             div.mt-5.fragment.alert.alert-primary Das Modell ist eine Lineare Abbildung
-    section
+    section(id="pca-multiple-features")
         slide-with-header(header="PCA - Mehrere Features", [extra]="true")
             side-by-side-3
                 div(first).d-flex.flex-column
@@ -90,6 +90,8 @@ ng-template('#slides'='')
                             img.fragment(src="assets/images/pca/pca-3d-3.gif").img-fluid
                             img.fragment(src="assets/images/pca/pca-3d-anim-3.png").img-fluid
                             img.fragment(src="assets/images/pca/pca_3d.gif").img-fluid
+                    div.small-font.mt-5.only-in-pdf
+                      a(href="https://benikm91.github.io/cas_machine-learning-slides/#/cnn-stride-and-padding") Link zur online Slide
     section
         slide-with-header(header="PCA - Kommt \"gratis\" mit einem Decoder")
             div.fragment

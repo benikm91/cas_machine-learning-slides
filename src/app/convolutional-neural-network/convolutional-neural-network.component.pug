@@ -144,7 +144,7 @@ ng-template('#slides'='')
         slide-with-header(header="Neural Network - Code")
             div.notebook-name neural_network/cnn.ipynb
             img(src="assets/images/code.png")
-    section(id="stride_and_padding")
+    section(id="cnn-stride-and-padding")
         slide-with-header(header="Convolution Neural Network - Stride und Padding")
             ul.smaller-font
                 li #[span.highlight Padding]: Auffüllen des Bildes (z.B. mit Nullen) um die Ränder
@@ -171,6 +171,10 @@ ng-template('#slides'='')
                             button.btn.btn-sm.btn-light((click)="selectedStride = 3", [class.active]="selectedStride === 3") 3
                 .col-8.d-flex.justify-content-center
                     img([src]="currentGifPath", width="400px")
+            .row.mt-5
+                .col-12.small-font.only-in-pdf
+                    a(href="https://benikm91.github.io/cas_machine-learning-slides/#/cnn-stride-and-padding") Link zur online Slide
+
     section
         slide-with-header(header="Convolution Neural Network - Shift Equivariance", [extra]="true")
             ul.smaller-font

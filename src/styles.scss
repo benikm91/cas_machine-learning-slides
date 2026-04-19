@@ -1,3 +1,13 @@
+.only-in-pdf {
+  display: none;
+}
+
+@media print {
+  .only-in-pdf {
+    display: block;
+  }
+}
+
 .notebook-name, .code, .code-font {
   font-family: "Lucida Console", "Courier New", monospace;
 }

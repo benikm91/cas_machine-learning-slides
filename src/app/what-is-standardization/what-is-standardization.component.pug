@@ -18,9 +18,11 @@ ng-template('#slides'='')
             ol
                 li Um Nullpunkt verschieben
                 li Einheit der Messung entfernen
-    section
+    section(id="standard-scaler-video")
         slide-with-header(header="Standard Scaler - Intuition")
             video(src="assets/videos/preprocessing/standardization/standard_scaler.mp4", controls="true")
+            .small-font.only-in-pdf
+                a(href="https://benikm91.github.io/cas_machine-learning-slides/#/standard-scaler-video") Link zur online Slide
     section
         slide-with-header(header="Wann?")
             ol

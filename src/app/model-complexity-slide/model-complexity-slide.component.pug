@@ -1,11 +1,15 @@
 ng-template('#slides'='')
     section
-        slide-with-header(header="Model-Komplexität und Performanz - Bild")
+        slide-with-header(header="Modell-Komplexität und Performanz - Bild")
             div.d-flex.justify-center
                 img(src="assets/images/model-complexity/model-complexity.png", style={height: "300px"}).img-fluid
             div.mt-5.fragment.text-center.alert.alert-warning Vereinfachung der Realität! Nur Grundidee.
-    section
-        slide-with-header(header="Model-Komplexität und Performanz - Tool")
+    section(id="model-complexity-interactive")
+        slide-with-header(header="Modell-Komplexität und Performanz - Interaktiv")
             model-complexity
             div.fragment.text-center.alert.alert-warning.p-2.m-3
-                div.small-font Vereinfachung der Realität! Nur Grundidee.
+                div.small-font
+                    | Vereinfachung der Realität! Nur Grundidee.
+                    span.only-in-pdf
+                        | &nbsp;
+                        a(href="https://benikm91.github.io/cas_machine-learning-slides/#/model-complexity-interactive") Link zur online Slide
