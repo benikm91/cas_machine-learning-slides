@@ -99,7 +99,7 @@ ng-template('#slides'='')
                     ul.smaller-font
                         li Der selbe Filter auf alle Positionen des Bildes (Weight Sharing)
                         li Aber mehrere Filter pro Layer (unterschiedliche Parameter)
-                li.fragment Für jeden Pixel in jeder Feature Map wenden wir eine #[span.highlight Aktivierungsfunktion] (z.B. ReLU) an.
+                li.fragment Für jeden Pixel in jeder Feature Map (bzw. jedes Neuron) wenden wir eine #[span.highlight Aktivierungsfunktion] (z.B. ReLU) an.
                 li.fragment Für Bilder mit mehreren Kanälen (z.B. RGB) haben Filter mehrere Kanäle (z.B. 3x3x3 Filter). Die Filter lernen Muster über alle Kanäle hinweg.
                 li.fragment #[span.highlight Layer-by-Layer]: Feature Maps formen "Feature-Bild". Die Anzahl Feature Maps entspricht der Anzahl Kanälen. Möglicher Input für den nächsten Convolution Layer.
     section

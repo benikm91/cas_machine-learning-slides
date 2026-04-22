@@ -70,6 +70,12 @@ ng-template('#slides'='')
                     span([mathjax]="'<math><mi>β</mi></math>'")
                     span )
                 li #[span.highlight Text-Encoder] und #[span.highlight Bild-Encoder] sind basierend auf Transformer Architektur
+    section
+        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
+            img.mt-5(src="assets/images/neural-network-architectures/clip-zero-shot.png", height="425px")
+            div.mt-5(style={fontSize: "11pt"})
+                | #[span.highlight Zero-shot setup]: (1) Encode ein Text pro Klasse mit Text Encoder zu einer Repräsentation. (2) Encode Bild mit Bild Encoder zu einer Repräsentation. (3) Berechne Ähnlichkeit der Repräsentationen. (4) Wähle Text mit höchster Ähnlichkeit zum Bild. (5) Klasse von Text ist Vorhersage für Bild.
+                | #[br] Zero-shot, weil wir brauchen kein einziges (zero) Training-Beispiel.
     question-slide([questions]="[]")
     section
         title-page
