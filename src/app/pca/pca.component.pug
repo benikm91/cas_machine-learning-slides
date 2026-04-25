@@ -193,9 +193,7 @@ ng-template('#slides'='')
         slide-with-header(header="PCA - Kostenfunktion")
             div([mathjax]="costFunction")
             div.fragment.mt-5.text-center.alert.alert-primary
-                | #[span.highlight L2-Distanz] der Rekonstruktion.
-            div.fragment.mt-5.text-center.alert.alert-primary
-                | Encoder und Decoder sind einfach eine Matrix, beziehungsweise sind #[span.highlight linear].
+                | #[span.highlight Rekonstruktionsfehler]: Summe der #[span.highlight quadratischen] Abweichungen pro Feature über alle #[span(mathjax="<math><mi>N</mi></math>")] Datenpunkte
     tables-of-content-pca([active]="pcaLabel.OPTIMIERUNG")
     section
         slide-with-header(header="PCA - Optimierung", [extra]="true")
