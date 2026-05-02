@@ -197,7 +197,7 @@ ng-template('#slides'='')
                 li Bei Unsupervised: Reconstruction Error
                 li ...
     tables-of-content-fnn([active]="fnnLabels.OPTIMIERUNG")
-    section
+    section(id="mini-batch-gradient-descent")
         slide-with-header(header="Gradient Descent")
             .row
                 .col-6
@@ -208,10 +208,10 @@ ng-template('#slides'='')
                     h5 Non-Convex Problem
                     div.small-font Bei NN mit Hidden Layer(s)
                     img.mt-5(src="assets/images/neural-network/gd_nn.png").img-fluid-both
-            div.mt-4.fragment.text-center.alert.alert-primary
+            div.mt-5.fragment.text-center.alert.alert-primary.smaller-font
                 | Gleicher Algorithmus. Aber bei non-convex Kostenfunktionen, können wir in einem #[span.highlight lokalen Minimum] landen.
     section
-        slide-with-header(header="Stochastic und Batch Gradient Descent")
+        slide-with-header(header="Stochastic und Mini Batch Gradient Descent")
             ul
                 li Wie funktionierte (Batch) Gradient Descent? (Tafel)
                 li.fragment #[span.highlight Stochastic Gradient Descent] berechnet die Richtung zum Minimum mit nur einem Sample.
@@ -241,7 +241,7 @@ ng-template('#slides'='')
                         div([mathjax]="backpropSetting2", style={fontSize: "22px"}).fragment
                         div([mathjax]="backpropSetting3", style={fontSize: "22px"}).fragment
             div.mt-5.fragment.text-center.alert.alert-warning(style={fontSize: "22px"})
-                div Optimierungsalgorithmus von Neuralen Netzen ist (Batch) Gradient Descent.
+                div Optimierungsalgorithmus von Neuralen Netzen ist (Mini-Batch) Gradient Descent.
                 div #[span.highlight Backpropagation] hilft "nur" beim #[span.highlight effizienten Berechnen der Gradienten].
     section
         slide-with-header(header="Neural Network - Code")

@@ -14,10 +14,12 @@ ng-template('#slides'='')
             img(src="assets/images/gpt-3/in-context-learning.png")
     section
         slide-with-header(header="Was ist In-Context Learning")
-            ul 
-                li #[span.highlight Kein Training] (fit) bzw. keine Anpassung der Parameter
-                li Modell "lernt" selbst #[span.highlight während der Vorhersage] vom nächsten Token
-                li #[span.highlight Prompt engineering]: Prompt dem Modell anpassen damit es besser funktioniert. 
+            ul
+                li Paradigmenwechsel
+                ul
+                    li #[span.highlight Kein Training] (fit) bzw. keine Anpassung der Parameter
+                    li Modell "lernt" selbst #[span.highlight während der Vorhersage] vom nächsten Token
+                    li #[span.highlight Prompt engineering]: Prompt dem Modell anpassen damit es besser funktioniert.
     question-slide([questions]="[]")
     section
         slide-with-header(header="ICL - RAG Beispiel - Was ist RAG?", [extra]="true")
@@ -26,20 +28,38 @@ ng-template('#slides'='')
         slide-with-header(header="ICL - RAG Beispiel - Was macht RAG?", [extra]="true")
             img(src="assets/images/gpt-3/in-context-learning-RAG.png")
     section
-        slide-with-header(header="ICL - ACU Beispiel - Was ist ACU?", [extra]="true")
-            img(src="assets/images/gpt-3/ACU-use-case.png")
+        slide-with-header(header="ICL - RAG - Summary", [extra]="true")
+            ul
+                li RAG = Retrieval Augmented Generation
+                li #[span.highlight Ziel faktenbasierte Antworten]: Wissen aus Dokumenten nicht (nur) Modell-Parameter. Weniger Halluzination.
+                li Was ist RAG: Gezieltes Auffinden relevanter Informationen (#[span.highlight "Needle in the Haystack"]) zur Beantwortung spezifischer Fragen
+                li Was ist RAG nicht: Erkennt #[span.highlight keine Trends oder übergeordneter Muster] über den gesamten Datensatz. Informationskette herleiten über mehrere Dokumente um Query zu beantworten.
     section
-        slide-with-header(header="ICL - ACU Beispiel - Was macht ACU?", [extra]="true")
+        slide-with-header(header="ICL - Agentic Systems", [extra]="true")
+            .row
+                .col-6
+                    img(src="assets/images/gpt-3/agentic-system.png", width="400px")
+                .col-6
+                    ul.smaller-font
+                        li #[span.highlight Agent:] Vortrainiertes, gepromptes foundation models (LLM, VLM, ...) mit ICL-Fähigkeiten, mit Zugriff auf Tools (und andere Agenten), z.B. um eine Query zu beantworten.
+                        li #[span.highlight Ziel:] Erledigung von komplexen Aufgaben. Tools auch für autonome Aktionen.
+            div.fragment.mt-5.alert.alert-warning Agentic Systems sind ein aktives Forschungsgebiete
+    section
+        slide-with-header(header="ICL - Agentic Systems - ACU Beispiel", [extra]="true")
+            img(src="assets/images/gpt-3/ACU-use-case.png", width="600px")
+            div.mt-3.alert.alert-warning ACU sind ein aktives Forschungsgebiete
+    section
+        slide-with-header(header="ICL - Agentic Systems - ACU Beispiel", [extra]="true")
             img(src="assets/images/gpt-3/in-context-learning-ACU.png")
-            div.fragment.mt-5.alert.alert-warning ACU sind ein aktives Forschungsgebiete
+            div.mt-5.fragment.alert.alert-warning Prompting ist (Stand heute) Bastelei
     section
         slide-with-header(header="ICL / LLM - Limits")
-            ul 
+            ul
                 li #[span.highlight Hallucination:] Faktisch falsche Informationen, oft klingen sie plausibel
                 li #[span.highlight Knowledge Cutoff:] Wissenstand veraltet (Training)
-                li #[span.highlight Prompt Sensitivity:] Formulierung und Struktur des Prompts überraschend wichtig
+                li #[span.highlight Prompt Sensitivity:] Formulierung und Struktur des Prompts ist überraschend wichtig
                 li #[span.highlight Fehlendes Weltverständnis/Logik:] Kein echtes Verständnis, keine Kausalität oder robustes logisches Schlussfolgern
-                li #[span.highlight Hohe Kosten: ] Rechenressourcen und Energie
+                li #[span.highlight Hohe Kosten: ] Cloud-Service vs. Self-Hosting
             div.fragment.text-center.alert.alert-warning.p-2.m-3(style={fontSize: "22pt"})
                 | #[span.highlight Verbesserung sind schwierig:] Oft ist ein Prototyp/Demo einfach, #[br] aber der Weg zu einem Produkt ist schwierig oder gar unmöglich!
 

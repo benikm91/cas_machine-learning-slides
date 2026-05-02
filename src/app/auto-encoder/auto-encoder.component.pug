@@ -1,9 +1,9 @@
 ng-template('#slides'='')
     tables-of-content-auto-encoder([active]="autoEncoderLabel.AUTO_ENCODER")
-        div.fragment.alert.alert-primary.mt-5 Auto Encoder lernt eine&nbsp;
+        div.fragment.alert.alert-primary.mt-5 Autoencoder lernt eine&nbsp;
             a(href="#/{{dimensionalityReductionLabel.href}}").highlight Dimensionality Reduction.
     section
-        slide-with-header(header="Auto Encoder - Motivation")
+        slide-with-header(header="Autoencoder - Motivation")
             ul
                 li #[span.highlight Nicht-lineare Dimensionality Reduction] anhand von Daten lernen.
                 li.fragment Wir verwenden ein Neural Network und den #[span.highlight Reconstruction Error] als Kostenfunktion.
@@ -11,7 +11,7 @@ ng-template('#slides'='')
                 li.fragment (Overcomplete Autoencoder: Kein Bottleneck aber Regularization)
     tables-of-content-auto-encoder([active]="autoEncoderLabel.DATA_SPECIFICATION")
     section
-        slide-with-header(header="Auto Encoder - Data Specification")
+        slide-with-header(header="Autoencoder - Data Specification")
             ol
                 li.fragment Welche #[span.highlight Features] haben wir, z.B. #[span.code-font pixel]
                 li.fragment
@@ -20,9 +20,9 @@ ng-template('#slides'='')
                     data-specification-element-numerical-feature-standardize
     tables-of-content-auto-encoder([active]="autoEncoderLabel.MODEL")
     section
-        slide-with-header(header="Auto Encoder - Model")
+        slide-with-header(header="Autoencoder - Model")
             div.text-center
-                img(src="assets/images/auto-encoder/auto-encoder-motivation.png", height="300px" alt="Auto Encoder")
+                img(src="assets/images/auto-encoder/auto-encoder-motivation.png", height="300px" alt="Autoencoder")
             div.mt-3 &nbsp;
             div.mt-5.fragment
                 model-3-visualization().mt-5
@@ -49,27 +49,28 @@ ng-template('#slides'='')
                     div(output).rect-styling
                         img(src="assets/images/pca/example-img-reconstruction.png")
     section
-        slide-with-header(header="Auto Encoder - Model - Beispielsweise für CIFAR")
+        slide-with-header(header="Autoencoder - Model - Beispielsweise für CIFAR")
             div.text-center
-                img(src="assets/images/auto-encoder/auto_encoder_cifar10.png", height="350px", alt="Auto Encoder")
+                img(src="assets/images/auto-encoder/auto_encoder_cifar10.png", height="350px", alt="Autoencoder")
             div.fragment.mt-5.alert.alert-primary Hier Reduktion von #[span.highlight 3072] auf #[span.highlight 200] Dimensionen.
             div.fragment.mt-3.alert.alert-warning Genaue Architektur ist "Hyper Parameter"
     tables-of-content-auto-encoder([active]="autoEncoderLabel.COST_FUNCTION")
     section
-        slide-with-header(header="Auto Encoder - Kostenfunktion")
+        slide-with-header(header="Autoencoder - Kostenfunktion")
             div([mathjax]="costFunction")
-            div.fragment.mt-5.alert.alert-primary Ander Kostenfunktionen möglich, z.B. #[span.highlight L1] Distanz.
+            div.fragment.mt-5.alert.alert-primary #[span.highlight Rekonstruktionsfehler]. Andere Distanzen als L2 möglich, z.B. L1 Distanz.
     tables-of-content-auto-encoder([active]="autoEncoderLabel.OPTIMIERUNG")
-        div.mt-5.fragment.text-center.alert.alert-primary Gradient Descent
+        div.mt-5.fragment.text-center.alert.alert-primary
+            a(href="#/mini-batch-gradient-descent") (Mini Batch) Gradient Descent
     section
-        slide-with-header(header="Auto Encoder - Einsatzgebiete", [extra]="true")
+        slide-with-header(header="Autoencoder - Einsatzgebiete", [extra]="true")
             ul
                 li Als #[span.highlight Dimensionsreduktion] für Klassifikation
                 li Als #[span.highlight Dimensionsreduktion] für Clustering
                 li.fragment Rekonstruktionsfehler verwenden für Anomalieerkennung (#[a(href="https://digitalcollection.zhaw.ch/server/api/core/bitstreams/79be6810-ec57-46e4-8cfd-39a421e31483/content") Paper])
                 li.fragment Rekonstruktion für Domain Adaptation (#[a(href="https://digitalcollection.zhaw.ch/server/api/core/bitstreams/e918e723-d2d1-4ef4-96c7-0226ce624734/content") Paper])
     section
-        slide-with-header(header="Auto Encoder - Limits", [extra]="true")
+        slide-with-header(header="Autoencoder - Limits", [extra]="true")
             div.row
                 div.col-5.offset-1
                     h6 Possible
@@ -98,9 +99,9 @@ ng-template('#slides'='')
                 div.col-1
             div.mt-2.text-center.alert.alert-primary
                 .row
-                    .col-12 Auto Encoder lernt #[span.highlight nicht-lineares] Manifold im Feature-Space
+                    .col-12 Autoencoder lernt #[span.highlight nicht-lineares] Manifold im Feature-Space
     section
-        slide-with-header(header="Auto Encoder - Limits", [extra]="true")
+        slide-with-header(header="Autoencoder - Limits", [extra]="true")
             .row 
                 .col-12
                     ul
@@ -115,7 +116,7 @@ ng-template('#slides'='')
                     img(src="assets/images/auto-encoder/tree.gif")
 
     section
-        slide-with-header(header="Auto Encoder vs. PCA")
-            div Wenn Encoder und Decoder #[span.highlight linear] sind (z.B. lineare #[a(href="#/activation-function") Aktivierungsfunktion]), dann lernt der Auto Encoder den #[span.highlight gleichen Latent Space wie #[a.highlight(href="#/Principal Component Analysis") PCA]].
+        slide-with-header(header="Autoencoder und PCA")
+            div Wenn Encoder und Decoder #[span.highlight linear] sind (z.B. lineare #[a(href="#/activation-function") Aktivierungsfunktion]), dann lernt der Autoencoder den #[span.highlight gleichen Latent Space wie #[a.highlight(href="#/Principal Component Analysis") PCA]].
 
     question-slide([questions]="[]")

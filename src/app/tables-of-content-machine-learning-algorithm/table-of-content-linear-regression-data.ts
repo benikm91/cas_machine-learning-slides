@@ -174,11 +174,11 @@ export function createKMeansTableOfContent(active: KMeansTableOfContentLabel | n
 
 
 export class AutoEncoderTableOfContentLabel extends TableOfContentLabel {
-    public static readonly AUTO_ENCODER = new AutoEncoderTableOfContentLabel("Auto Encoder", "Auto Encoder");
-    public static readonly DATA_SPECIFICATION = new AutoEncoderTableOfContentLabel("Data Specification", "Auto Encoder/Data Specification");
-    public static readonly MODEL = new AutoEncoderTableOfContentLabel("Model" , "Auto Encoder/Model" );
-    public static readonly COST_FUNCTION = new AutoEncoderTableOfContentLabel("Kostenfunktion", "Auto Encoder/Kostenfunktion");
-    public static readonly OPTIMIERUNG = new AutoEncoderTableOfContentLabel("Optimierung" , "Auto Encoder/Optimierung" );
+    public static readonly AUTO_ENCODER = new AutoEncoderTableOfContentLabel("Autoencoder", "Autoencoder");
+    public static readonly DATA_SPECIFICATION = new AutoEncoderTableOfContentLabel("Data Specification", "Autoencoder/Data Specification");
+    public static readonly MODEL = new AutoEncoderTableOfContentLabel("Model" , "Autoencoder/Model" );
+    public static readonly COST_FUNCTION = new AutoEncoderTableOfContentLabel("Kostenfunktion", "Autoencoder/Kostenfunktion");
+    public static readonly OPTIMIERUNG = new AutoEncoderTableOfContentLabel("Optimierung" , "Autoencoder/Optimierung" );
 }
 
 export function createAutoEncoderTableOfContent(active: AutoEncoderTableOfContentLabel | null): TableOfContentEntry<AutoEncoderTableOfContentLabel> {

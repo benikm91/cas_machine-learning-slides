@@ -8,75 +8,11 @@ ng-template('#slides'='')
                     ul.smaller-font
                         li #[span.highlight Komponenten] für verschiedene Umstände: z.B. CNN für Bilder, Transformer für Text, spezifische Kostenfunktion, ... 
                         li Netzwerk #[span.highlight Architektur]: Zusammenstecken von Komponenten für spezifischen Problemfall
-                        li  #[span.highlight Empirisch] evaluaieren
-                        li Black-box vs. komplexe Probleme lösbar
+                        li  #[span.highlight Empirisch] evaluaieren (#[a(href="#/train-val-test-split") holdout cross validation])
+                        li Black-box zum Lösen von komplexen Problemen
                 .col-6
                     img(src="assets/images/neural-network/nn-meme-stack-more-layers.png", height="400px")
-            div.fragment.mt-5.alert.alert-success Aufzeigen, wie #[span.highlight unterschiedlich] und #[span.highlight problemspezifisch] Architekturen in der Praxis sind.
-    section
-        title-page
-            h1 Reconstruction-Based methods
-            // h2 am Beispiel von Auto Encoders
-    auto-encoder
-    word-2-vec
-    section 
-        slide-with-header(header="Reconstruction-based methods", [extra]="true")
-            .row
-                .col-8.smaller-font 
-                    ul 
-                        li Kreativer training task: #[span.highlight Rekonstruiere den Input], Input kann #[span.highlight corrupted] sein, für das Lernen von nützlichen Repräsentationen (für andere Aufgaben mittels Transfer Learning)
-                        li Unsupervised Learning, spezifisch Self-Supervised Learning, ohne Labels lernen
-                        li Reconstruct Error: #[span.highlight Kostenfunktion in Input Space] z.B. auf Pixeln definiert
-                        li Beispiele: Auto Encoder, MAE, BERT (cloze task), GPT-3 (next token prediction)
-                .col-4
-                    img.mt-5(src="assets/images/neural-network-architectures/image_masking.png", height="400px")
-                    div.smaller-font(style={fontSize: "9pt"}) Paper: #[a(href="https://arxiv.org/abs/2111.06377") Masked Autoencoders Are Scalable Vision Learners]
-    question-slide([questions]="[]")
-    section
-        title-page
-            h1 Contrastive Learning
-            // h2 Learn semantic representations
-    section
-        slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
-            .row
-                .col-6
-                    img(src="assets/images/neural-network-architectures/facenet.png")
-                .col-6.fragment
-                    br
-                    img.ps-5(src="assets/images/neural-network-architectures/facenet_inference.png")
-            div.mt-5(style={fontSize: "9pt"}) Paper: FaceNet: A Unified Embedding for Face Recognition and Clustering
-    section
-        slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
-            ul
-                li Beispiel einer #[span.highlight kreativen Kostenfunktion]
-                li Lernt eine #[span.highlight semantische Repäsentation] von Gesichtern 
-                li Lernt konstante Gesichtsmerkmale zu erkennen
-                li Lernt variable Merkmale wie Hintergrund, Frisur, Brille zu ignorieren
-                li One-Shot-Learning: Erlaube #[span.highlight Vorhersage auf neue Klassen] (Personen) mit nur einem Beispiel.
-    question-slide([questions]="[]")
-    section
-        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
-            img.mt-5(src="assets/images/neural-network-architectures/clip.png", height="400px")
-            div.mt-5(style={fontSize: "9pt"}) Paper: Learning Transferable Visual Models From Natural Language Supervision
-    section
-        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
-            ul
-                li Kreativen Kostenfunktion, #[span.highlight Nutzung der Datenlandschaft], Umfang der grossen Netzwerke
-                li #[span.highlight Gemeinsamer Latent Space] (Repräsentation) für Bilder und Text lernen, erlaubt #[span.highlight zero-shot learning]
-                li Gegeben #[span.highlight 32'768 Bild], #[span.highlight 32'768 Texten] welcher Text gehört zu welchem Bild.
-                li Trainiert auf #[span.highlight 400 Millionen Bildern und Texten]
-                li Auf #[span.highlight 256 GPUs für 2 Wochen] trainiert
-                li Netzwerk hat #[span.highlight 86 Millionen parameter] (
-                    span([mathjax]="'<math><mi>β</mi></math>'")
-                    span )
-                li #[span.highlight Text-Encoder] und #[span.highlight Bild-Encoder] sind basierend auf Transformer Architektur
-    section
-        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
-            img.mt-5(src="assets/images/neural-network-architectures/clip-zero-shot.png", height="425px")
-            div.mt-5(style={fontSize: "11pt"})
-                | #[span.highlight Zero-shot setup]: (1) Encode ein Text pro Klasse mit Text Encoder zu einer Repräsentation. (2) Encode Bild mit Bild Encoder zu einer Repräsentation. (3) Berechne Ähnlichkeit der Repräsentationen. (4) Wähle Text mit höchster Ähnlichkeit zum Bild. (5) Klasse von Text ist Vorhersage für Bild.
-                | #[br] Zero-shot, weil wir brauchen kein einziges (zero) Training-Beispiel.
-    question-slide([questions]="[]")
+            div.fragment.mt-3.alert.alert-success Aufzeigen, wie #[span.highlight unterschiedlich] und #[span.highlight problemspezifisch] Architekturen in der Praxis sind.
     section
         title-page
             h1 Skip Connections
@@ -106,7 +42,127 @@ ng-template('#slides'='')
         slide-with-header(header="Skip Connection - Überblick", [extra]="true")
             ul
                 li Cleveres #[span.highlight Verbinden der Neuronen] ermöglicht / beschleunigt das Lernen von tiefen Netzwerken.
-                li Verhindert / hilft gegen #[span.highlight exploding gradients] und #[span.highlight vanishing gradients].
-                li Tiefe ResNets verhalten sich als #[span.highlight Ensemble] von flacheren Netzen
-                li Wir #[span.highlight sehr oft angewendet]. In allen modernen CNNs. In der Transformer Architektur.
+                li Reduziert die Anfälligkeit für #[span.highlight exploding gradients] und #[span.highlight vanishing gradients].
+                li Skip connections sind #[span.highlight weitverbreitet]: #[a(href="https://arxiv.org/abs/2201.03545") modernen CNNs], #[a(href="https://arxiv.org/abs/1706.03762") Transformer Architektur].
+                li Skip connections verhalten sich als ein #[span.highlight Ensemble von flachen Netzen]
     question-slide([questions]="[]")
+    section
+        title-page
+            h1 Reconstruction-Based methods
+            h2 Semi-Supervised Learning
+    auto-encoder
+    word-2-vec
+    section 
+        slide-with-header(header="Reconstruction-based methods", [extra]="true")
+            .row
+                .col-8.smaller-font 
+                    ul 
+                        li Kreativer training task: #[span.highlight Rekonstruiere den Input], Input kann #[span.highlight corrupted] sein, für das Lernen von nützlichen Repräsentationen (für andere Aufgaben mittels Transfer Learning)
+                        li Unsupervised Learning, spezifisch Self-Supervised Learning, ohne Labels lernen
+                        li Reconstruct Error: #[span.highlight Kostenfunktion in Input Space] z.B. auf Pixeln definiert
+                        li Beispiele: Autoencoder, MAE, BERT (cloze task), GPT-2/GPT-3 (next token prediction)
+                .col-4
+                    img.mt-5(src="assets/images/neural-network-architectures/image_masking.png", height="400px")
+                    div.smaller-font(style={fontSize: "9pt"}) Paper: #[a(href="https://arxiv.org/abs/2111.06377") Masked Autoencoders Are Scalable Vision Learners]
+    question-slide([questions]="[]")
+    section
+        title-page
+            h1 Contrastive Learning
+            // h2 Learn semantic representations
+    section
+        slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
+            .row
+                .col-6
+                    br
+                    img(src="assets/images/neural-network-architectures/facenet.png")
+                .col-6
+                    ul.smaller-font
+                        li #[span.highlight Dimensionsreduktion:] Encode drei Bilder (Anker, Positiv, Negativ) zu reduzierten Repräsentationen. Für alle Bilder wird das selbe Modell verwendet, damit die Repräsentationen vergleichbar sind.
+                        li #[span.highlight Triplet Loss] die Ähnlichkeit von Anker - Positiv maximieren (lerne Ähnlichkeit) und Anker - Negativ minimieren (lerne Unähnlichkeit). Ähnlichkeitsmass ist z.B. Cosine Similarity.
+    section
+        slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
+            .row
+                .col-6
+                    ul.smaller-font
+                        li #[span.highlight Subject Templates:] Encode ein Bild pro Person. Ort im Repräsentationsraum als Repräsentation der Person.
+                        li #[span.highlight Inference:] Berechne Ähnlichkeit der Repräsentation eines neuen Bildes mit den Repräsentationen alle Personen. Wähle #[span.highlight Person mit höchster Ähnlichkeit als Vorhersage]. Zu grosse Distanz als "unbekannt" klassifizieren.
+                .col-6
+                    br
+                    img(src="assets/images/neural-network-architectures/facenet_inference.png")
+    section
+        slide-with-header(header="Contrastive Learning - FaceNet (2015)", [extra]="true")
+            ul
+                li #[span.highlight Kreative Kostenfunktion] Triplet-Loss zum lernen einer #[span.highlight semantischen Dimensionsreduktion]
+                li.fragment Facenet lernt #[span.highlight Gesichtserkennung]
+                    ul
+                        li Lernt konstante, identitätsstiftende Gesichtsmerkmale zu extrahieren
+                        li Lernt variable Faktoren (Hintergrund, Frisur, Brille) zu ignorieren
+                li.fragment #[span.highlight One-Shot-Learning]: Ermöglicht die #[span.highlight Vorhersage auf neue Klassen] (Personen) mit nur einem Beispiel.
+            div.mt-5(style={fontSize: "11pt"}) Paper: FaceNet: A Unified Embedding for Face Recognition and Clustering
+    question-slide([questions]="[]")
+    section
+        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
+            img(src="assets/images/neural-network-architectures/clip.png", height="400px")
+            div.mt-5(style={fontSize: "9pt"}) Paper: Learning Transferable Visual Models From Natural Language Supervision
+    section
+        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
+            .row
+                .col-8
+                    img(src="assets/images/neural-network-architectures/clip-zero-shot.png", height="400px")
+                .col-4.small-font
+                    div.text-start
+                        | #[span.highlight Zero-shot learning]: Vorhersage auf neue Klassen (z.B. "Hund", "Katze") ohne ein einziges Beispiel. Setup:
+                    div
+                        ol
+                            li Encode ein Text pro Klasse mit Text Encoder zu einer Repräsentation.
+                            li Encode Bild mit Bild Encoder zu einer Repräsentation.
+                            li Berechne Ähnlichkeit der Repräsentationen.
+                            li Wähle Text mit höchster Ähnlichkeit zum Bild.
+                            li Klasse von Text ist Vorhersage für Bild.
+            div.fragment.alert.alert-primary.mt-5.smaller-font Beispielhaftes Einsatzgebiet. Text und Image Encoder können auf weitere Aufgaben angewendet werden, z.B. Bild-Text Retrieval.
+    section
+        slide-with-header(header="Contrastive Learning - CLIP (2021)", [extra]="true")
+            ul
+                li Kreativen Kostenfunktion, #[span.highlight Nutzung der Datenlandschaft], Umfang der grossen Netzwerke
+                li #[span.highlight Gemeinsamer Latent Space] (Repräsentation) für Bilder und Text lernen, erlaubt #[span.highlight zero-shot learning]
+                li Gegeben #[span.highlight 32'768 Bild], #[span.highlight 32'768 Texten] welcher Text gehört zu welchem Bild.
+                li Trainiert auf #[span.highlight 400 Millionen Bildern und Texten]
+                li Auf #[span.highlight 256 GPUs für 2 Wochen] trainiert
+                li #[span.highlight Text-Encoder] ist Transformer und #[span.highlight Bild-Encoder] ist CNN oder Vision-Transformer.
+                li Netzwerk hat #[a(href="https://en.wikipedia.org/wiki/Contrastive_Language-Image_Pre-training") 102 bis 623 Millionen Parameter] (
+                    span([mathjax]="'<math><mi>β</mi></math>'")
+                    span )
+    question-slide([questions]="[]")
+    section
+        .slide-header
+            h1 Deep Learning in der Praxis
+        .slide-body
+            .row
+                .col-6.fragment
+                    ul.smaller-font
+                        li #[span.highlight Transfer Learning:] Vortrainierte Dimensionsreduktion, z.B. Image oder Text Encoder als Bauteile unserer Architektur verwenden.
+                        li #[a(href="https://huggingface.co/") huggingface.co] als Quelle für vortrainierte Modelle
+                        li.fragment #[span.highlight Grundsatzentscheidungen] wichtig: Fully-Connected, Convolution (shift-equivariant), Transformer (permutation-equivariant), skip connections, Transfer Learning
+                        li.fragment #[span.highlight Architekturdetails] unwichtiger: 6 oder 7 Hidden-Layer, 512 oder 1024 Hidden-Neuronen, etc.
+                .col-6.fragment
+                    img(src="assets/images/neural-network-architectures/echorapp-net.png")
+                    div(style="fontSize: 9pt") EchoRapp-Net: Ein multi-task Deep Learning Modell für Segmentierung, Klassifizierung und Regressionsaufgaben auf Echocardiogramme von 64 Frames.
+    section
+        .slide-header
+            h1 Deep Learning Limits
+        .slide-body
+            .row
+                .col-12
+                    ul.smaller-font
+                        li #[span.highlight Datenhunger:] Riesige Mengen an #[span.highlight hochqualitativen], oft manuell gelabelten Daten, um gut zu generalisieren.
+                        li #[span.highlight ML-Ops Herausforderungen:] Effizientes Prozessieren grosser Datenmengen benötigt Infrastuktur und #[span.highlight technisches Know-How]
+                        li #[span.highlight Black-Box-Problem:] Neurale Netze sind extrem schwer zu interpretieren (grosse Anzahl Parametern in komplexen Interaktionen).
+                        li #[span.highlight Fehlende Robustheit:] Gelernte Repräsentationen sind In-Distribution sehr zuverlässig, können Out-of-Distribution jedoch unerwartet versagen
+                        li #[span.highlight Bias und Fairness:] Neurale Netze lernen Muster in den Trainingsdaten und haben kein verständnis Was sie lernen.
+    // section
+            slide-with-header(header="Deep Learning Limits", [extra]="true")
+                .row
+                    .col-12
+                        img(src="assets/images/neural-network-architectures/deep-learning-limits.png", width="800px")
+                        div.mt-3(style="fontSize: 9pt") Paper: Questioning Representational Optimism in Deep Learning: The Fractured Entangled Representation Hypothesis
+
