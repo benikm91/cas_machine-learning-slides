@@ -17,7 +17,7 @@ jobs:
     # Deploy to the github-pages environment
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
 
     runs-on: ubuntu-latest
     steps:
@@ -54,6 +54,19 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist/cas-ml-slides'
+      # The artifact listing can lag behind the upload when both run in the same job, and
+      # deploy-pages then fails with 'No artifacts named "github-pages" were found'
+      # (https://github.com/actions/deploy-pages/issues/451). So wait, and retry once.
+      - name: Wait for artifact listing
+        run: sleep 20
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+      - name: Wait before retrying the deployment
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 60
+      - name: Retry deploy to GitHub Pages
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
