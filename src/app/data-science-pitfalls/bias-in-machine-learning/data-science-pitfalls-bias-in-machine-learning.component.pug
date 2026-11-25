@@ -31,15 +31,70 @@ ng-template('#slides'='')
                 li.fragment "John" ist näher an "Programmierer" als "Marry"
             .fragment.mt-5.alert.alert-danger Word Embeddings lernen Pre-Existing Bias in Daten
             .fragment.mt-5 Paper: Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
-    section
-        slide-with-header(header="Feedback-Loop: Social Media")
-            div.smaller-font Idee: Benutzer klicken, was sie mögen, also zeige Inhalte die Benutzer klickt!
-            hr
-            .fragment
-                ul
-                    li Gelernt: Benutzer klicken auf #[span.highlight extreme Inhalte] und #[span.highlight Inhalte, denen der Benutzer zustimmt].
-                    li.fragment Anpassung der Publishers: Inhalte werden extremer, Clickbaits werden standard
-                    li.fragment Anpassung der User: Einseitige Berichterstattung führt zu #[span.highlight Bubbles], andere Seite wird negative gesehen (#[span.highlight Spaltung der Gesellschaft])
+    section(id="bias-feedback-loop")
+        slide-with-header(header="Feedback-Loop: Predictive Policing")
+            div.smaller-font Idee: Schicke die Polizei dorthin, wo das Modell am meisten Kriminalität vorhersagt!
+            div.loop.mt-3
+                svg.loop-svg(viewBox="0 0 820 400")
+                    defs
+                        marker#loop-arrowhead(markerWidth="7", markerHeight="6", refX="5.5", refY="3", orient="auto")
+                            path(d="M0,0 L7,3 L0,6 Z", fill="#dc3545")
+                    path.loop-arc.fragment(data-fragment-index="0", d="M 553.4 85.3 A 250 140 0 0 1 644.9 152.1", marker-end="url(#loop-arrowhead)")
+                    path.loop-arc.fragment(data-fragment-index="1", d="M 644.9 247.9 A 250 140 0 0 1 553.4 314.7", marker-end="url(#loop-arrowhead)")
+                    path.loop-arc.fragment(data-fragment-index="2", d="M 266.6 314.7 A 250 140 0 0 1 175.1 247.9", marker-end="url(#loop-arrowhead)")
+                    path.loop-arc.fragment(data-fragment-index="3", d="M 175.1 152.1 A 250 140 0 0 1 266.6 85.3", marker-end="url(#loop-arrowhead)")
+                div.loop-node.loop-top
+                    span.loop-badge 1
+                    | Modell sagt voraus: Am meisten Kriminalität in Quartier A
+                div.loop-node.loop-right.fragment(data-fragment-index="0")
+                    span.loop-badge 2
+                    | Mehr Polizei patrouilliert in Quartier A
+                div.loop-node.loop-bottom.fragment(data-fragment-index="1")
+                    span.loop-badge 3
+                    | Mehr Polizei #[span.highlight entdeckt mehr Delikte]: mehr Einträge in den Daten
+                div.loop-node.loop-left.fragment(data-fragment-index="2")
+                    span.loop-badge 4
+                    | Modell lernt: Quartier A ist #[span.highlight noch gefährlicher]
+                div.loop-center.fragment(data-fragment-index="3") Feedback-Loop
+            div.fragment.text-center.alert.alert-warning.p-2.mt-3(data-fragment-index="4", style={fontSize: "20pt"})
+                | Die Daten messen nicht die Kriminalität, sondern #[span.highlight wo die Polizei hinschaut]
+            div.reference
+                | Paper:
+                a.ms-1(href="https://doi.org/10.1111/j.1740-9713.2016.00960.x") To predict and serve? (2016)
+                | ,
+                a.ms-1(href="https://arxiv.org/abs/1706.09847") Runaway Feedback Loops in Predictive Policing (2018)
+    section(id="bias-feedback-loop-cv")
+        slide-with-header(header="Feedback-Loop: Lebensläufe mit weissem Text")
+            div.smaller-font Idee: Ein Modell sortiert die Bewerbungen vor, Menschen lesen nur noch die besten!
+            div.loop.mt-3
+                svg.loop-svg(viewBox="0 0 820 400")
+                    defs
+                        marker#loop-arrowhead-cv(markerWidth="7", markerHeight="6", refX="5.5", refY="3", orient="auto")
+                            path(d="M0,0 L7,3 L0,6 Z", fill="#dc3545")
+                    path.loop-arc.fragment(data-fragment-index="0", d="M 553.4 85.3 A 250 140 0 0 1 644.9 152.1", marker-end="url(#loop-arrowhead-cv)")
+                    path.loop-arc.fragment(data-fragment-index="1", d="M 644.9 247.9 A 250 140 0 0 1 553.4 314.7", marker-end="url(#loop-arrowhead-cv)")
+                    path.loop-arc.fragment(data-fragment-index="2", d="M 266.6 314.7 A 250 140 0 0 1 175.1 247.9", marker-end="url(#loop-arrowhead-cv)")
+                    path.loop-arc.fragment(data-fragment-index="3", d="M 175.1 152.1 A 250 140 0 0 1 266.6 85.3", marker-end="url(#loop-arrowhead-cv)")
+                div.loop-node.loop-top
+                    span.loop-badge 1
+                    | Modell bevorzugt Lebensläufe, die zum Stelleninserat passen
+                div.loop-node.loop-right.fragment(data-fragment-index="0")
+                    span.loop-badge 2
+                    | Bewerber merken, worauf das Modell achtet
+                div.loop-node.loop-bottom.fragment(data-fragment-index="1")
+                    span.loop-badge 3
+                    | Sie kopieren das Inserat in #[span.highlight weisser Schrift] in den Lebenslauf
+                div.loop-node.loop-left.fragment(data-fragment-index="2")
+                    span.loop-badge 4
+                    | Firmen passen das Modell an und suchen versteckten Text
+                div.loop-center.fragment(data-fragment-index="3") Wettrüsten
+            div.fragment.text-center.alert.alert-warning.p-2.mt-3(data-fragment-index="4", style={fontSize: "20pt"})
+                | Die Welt passt sich dem Modell an: Was das Modell belohnt, #[span.highlight verliert seine Aussagekraft]
+            div.reference
+                | In ca. 1% von 197'000 untersuchten Lebensläufen steckt versteckter Text für das Modell
+                a.ms-1(href="https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-mohan") (Zhang et al., 2026)
+                | . Siehe auch
+                a.ms-1(href="https://www.schneier.com/blog/archives/2023/08/hacking-ai-resume-screening-with-text-in-a-white-font.html") Schneier (2023)
     section
         slide-with-header(header="Was tun gegen Bias in Machine Learning")
             ul
