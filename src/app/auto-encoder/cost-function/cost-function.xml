@@ -5,25 +5,61 @@
                 <mrow>
                     <mi>J</mi>
                     <mo form="prefix" stretchy="false">(</mo>
-                    <mi class="weight">β</mi>
+                    <mi class="weight">W</mi>
                     <mo form="postfix" stretchy="false">)</mo>
-                    <mo>=</mo>
                 </mrow>
             </mtd>
+            <mtd><mrow><mo>=</mo></mrow></mtd>
             <mtd style="text-align:-webkit-left;">
-                <msub>
+                <mrow>
+                    <mo fence="true" form="prefix" stretchy="false">‖</mo>
+                    <mi class="feature">X</mi>
+                    <mo>−</mo>
+                    <mover class="feature">
+                        <mi>X</mi>
+                        <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
+                    </mover>
+                    <msubsup>
+                        <mo fence="true" form="postfix" stretchy="false">‖</mo>
+                        <mn>2</mn>
+                        <mn>2</mn>
+                    </msubsup>
+                </mrow>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd></mtd>
+            <mtd><mrow><mo>=</mo></mrow></mtd>
+            <mtd style="text-align:-webkit-left;">
+                <munderover>
+                    <mo>∑</mo>
                     <mrow>
-                        <mo fence="true" form="prefix">‖</mo>
-                        <mi class="feature">X</mi>
-                        <mo>−</mo>
+                        <mi>i</mi>
+                        <mo>=</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mi>N</mi>
+                </munderover>
+                <mrow>
+                    <mo fence="true" form="prefix" stretchy="false">‖</mo>
+                    <msub>
+                        <mi class="feature">x</mi>
+                        <mi>i</mi>
+                    </msub>
+                    <mo>−</mo>
+                    <msub>
                         <mover class="feature">
-                            <mi>X</mi>
+                            <mi>x</mi>
                             <mo stretchy="false" style="math-style:normal;math-depth:0;">^</mo>
                         </mover>
-                        <mo fence="true" form="postfix">‖</mo>
-                    </mrow>
-                    <mn>2</mn>
-                </msub>
+                        <mi>i</mi>
+                    </msub>
+                    <msubsup>
+                        <mo fence="true" form="postfix" stretchy="false">‖</mo>
+                        <mn>2</mn>
+                        <mn>2</mn>
+                    </msubsup>
+                </mrow>
             </mtd>
         </mtr>
     </mtable>
