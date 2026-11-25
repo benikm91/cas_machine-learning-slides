@@ -1,0 +1,283 @@
+.llm-prediction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20pt;
+}
+
+.llm-input {
+  padding: 15px;
+  border: 1px solid #adb5bd;
+  background: #f8f9fa;
+  white-space: nowrap;
+}
+
+.llm-model {
+  width: 220px;
+  height: 110px;
+}
+
+.llm-arrow {
+  font-size: 28pt;
+}
+
+.llm-output {
+  text-align: left;
+  font-size: 16pt;
+  min-width: 260px;
+}
+
+.llm-prob {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.llm-bar {
+  display: inline-block;
+  height: 18px;
+  background: #dc3545;
+}
+
+.next-token-examples {
+  font-size: 18pt;
+  text-align: left;
+
+  .row {
+    padding: 6px 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+}
+
+.llm-size-table {
+  width: 100%;
+  font-size: 18pt;
+  text-align: left;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 6px 12px;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  th {
+    border-bottom: 2px solid #adb5bd;
+  }
+}
+
+
+
+
+.llm-timeline {
+  font-size: 18pt;
+  text-align: left;
+
+  .row {
+    padding: 8px 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+}
+
+.floorplan-header {
+  font-size: 13pt;
+  text-align: center;
+}
+
+
+
+
+
+.rag-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 14pt;
+}
+
+.rag-box {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #adb5bd;
+  background: #f8f9fa;
+}
+
+.rag-question {
+  width: auto;
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.rag-title {
+  font-size: 12pt;
+  margin-bottom: 6px;
+}
+
+.rag-arrow {
+  font-size: 14pt;
+  line-height: 1.2;
+}
+
+.rag-chunks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.rag-chunk {
+  width: 52px;
+  padding: 4px 0;
+  font-size: 11pt;
+  border: 1px solid #adb5bd;
+  background: white;
+}
+
+// a hit stays visible as a normal chunk and turns green when its fragment is shown
+.rag-chunk.fragment.rag-hit {
+  opacity: 1 !important;
+  visibility: inherit !important;
+}
+
+.rag-chunk.fragment.rag-hit.visible {
+  color: white;
+  background: #198754;
+  border-color: #198754;
+}
+
+.rag-chip {
+  padding: 4px 10px;
+  font-size: 12pt;
+  color: white;
+}
+
+.rag-chip-task {
+  background: #6f42c1;
+}
+
+.rag-chip-example {
+  background: #198754;
+}
+
+.rag-chip-input {
+  background: #0d6efd;
+}
+
+.rag-llm {
+  width: 160px;
+  height: 50px;
+  padding: 5px;
+}
+
+.tool-diagram {
+  gap: 8px;
+}
+
+.tool-io {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  > * {
+    width: 44%;
+  }
+}
+
+.tool-box {
+  padding: 8px 12px;
+  border: 2px solid #adb5bd;
+  border-radius: 10px;
+  background: white;
+}
+
+.tool-box-question {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.tool-box-answer {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.tool-box-program {
+  width: 60%;
+}
+
+.tool-step {
+  font-size: 14pt;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.step-badge {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin: 0 4px;
+  line-height: 26px;
+  font-size: 12pt;
+  font-weight: bold;
+  color: white;
+  background: #dc3545;
+  border-radius: 50%;
+}
+
+.step-badge-green {
+  background: #198754;
+}
+
+// the unlabelled frame: everything the user experiences as "the model"
+.tool-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 16px 12px;
+  border: 2px solid #adb5bd;
+  border-radius: 16px;
+  background: #f8f9fa;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.tool-llm {
+  width: 60%;
+  padding: 10px;
+  font-size: 16pt;
+  color: white;
+  background: #ffc046;
+  border: 2px solid #ff8f00;
+  border-radius: 10px;
+}
+
+.tool-tools {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.tool-chip {
+  padding: 6px 18px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 12pt;
+  border: 2px solid #adb5bd;
+  border-radius: 10px;
+  background: white;
+}
+
+// the called tool stays visible and turns green when its fragment is shown
+.tool-chip.fragment.tool-chip-hit {
+  opacity: 1 !important;
+  visibility: inherit !important;
+}
+
+.tool-chip.fragment.tool-chip-hit.visible {
+  color: white;
+  background: #198754;
+  border-color: #198754;
+}

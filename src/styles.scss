@@ -205,3 +205,45 @@
 .reveal a.highlight {
   text-decoration: underline;
 }
+// prompt examples (LLM / ICL slides)
+.prompt-box {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 15pt;
+  line-height: 1.5;
+  text-align: left;
+  padding: 15px 20px;
+  border: 1px solid #adb5bd;
+  background: #f8f9fa;
+
+  .indent-1 {
+    padding-left: 40px;
+  }
+
+  .indent-2 {
+    padding-left: 80px;
+  }
+}
+
+.llm-text {
+  color: #dc3545;
+}
+
+.program-text {
+  color: #198754;
+}
+
+.task-text {
+  color: #6f42c1;
+}
+
+.example-text {
+  color: #198754;
+}
+
+.input-text {
+  color: #0d6efd;
+}
+
+.rag-prompt {
+  font-size: 13pt;
+}
