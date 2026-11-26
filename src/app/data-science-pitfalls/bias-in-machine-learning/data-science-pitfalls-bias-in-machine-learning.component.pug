@@ -18,19 +18,49 @@ ng-template('#slides'='')
                     ul.smaller-font
                         li #[span.highlight Unpredictable correlations] z.B. Muster in den Daten lässt auf Demographie zurückführen (indirekter Pre-existing bias)
                         li #[span.highlight Feedback loops:] Algorithmus beeinflusst Welt, Welt beeinflusst Algorithmus
-    section
+    section(id="bias-word2vec")
         slide-with-header(header="Pre-Existing: Bias in Word2Vec")
-            h6.fragment Was wurde #[span.highlight auch] gelernt?
-            ul.fragment
-                li
-                    pre.p-2.w-100
-                        div.text-start.code Computer Programmer - Man + Woman ~ Homemaker
-                        div.text-start.code surgeon - he + she ~ nurse
-                        div.text-start.code football - he + she ~ volleyball
-                        div.text-start.code burly - he + she ~ blond
-                li.fragment "John" ist näher an "Programmierer" als "Marry"
-            .fragment.mt-5.alert.alert-danger Word Embeddings lernen Pre-Existing Bias in Daten
-            .fragment.mt-5 Paper: Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
+            div.smaller-font.text-start Was wurde #[span.highlight auch] gelernt?
+            div.analogies.mt-4
+                div.analogy-row.fragment(data-fragment-index="0")
+                    div.analogy-term surgeon
+                    div.analogy-op &minus;
+                    div.analogy-word he
+                    div.analogy-op +
+                    div.analogy-word she
+                    div.analogy-op &asymp;
+                    div.analogy-result #[span.fragment(data-fragment-index="1") nurse]
+                div.analogy-row.fragment(data-fragment-index="2")
+                    div.analogy-term Computer Programmer
+                    div.analogy-op &minus;
+                    div.analogy-word Man
+                    div.analogy-op +
+                    div.analogy-word Woman
+                    div.analogy-op &asymp;
+                    div.analogy-result #[span.fragment(data-fragment-index="3") Homemaker]
+                div.analogy-row.fragment(data-fragment-index="4")
+                    div.analogy-term football
+                    div.analogy-op &minus;
+                    div.analogy-word he
+                    div.analogy-op +
+                    div.analogy-word she
+                    div.analogy-op &asymp;
+                    div.analogy-result #[span.fragment(data-fragment-index="5") volleyball]
+                div.analogy-row.fragment(data-fragment-index="6")
+                    div.analogy-term burly
+                    div.analogy-op &minus;
+                    div.analogy-word he
+                    div.analogy-op +
+                    div.analogy-word she
+                    div.analogy-op &asymp;
+                    div.analogy-result #[span.fragment(data-fragment-index="7") blond]
+            div.fragment.smaller-font.text-start.mt-4(data-fragment-index="8") Auch bei Namen: "John" ist näher an "Programmierer" als "Mary"
+            div.fragment.text-center.alert.alert-warning.p-2.mt-4(data-fragment-index="9", style={fontSize: "20pt"})
+                | Word Embeddings lernen den #[span.highlight Pre-Existing Bias] in den Daten
+            div.reference.fragment(data-fragment-index="9")
+                | Paper:
+                |
+                a(href="https://arxiv.org/abs/1607.06520", target="_blank") Bolukbasi et al. (2016): Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
     section(id="bias-feedback-loop")
         slide-with-header(header="Feedback-Loop: Predictive Policing")
             div.smaller-font Idee: Schicke die Polizei dorthin, wo das Modell am meisten Kriminalität vorhersagt!

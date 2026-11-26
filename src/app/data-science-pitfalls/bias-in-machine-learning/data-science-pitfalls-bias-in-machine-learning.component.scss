@@ -62,3 +62,47 @@
   background: #dc3545;
   border-radius: 50%;
 }
+
+// word2vec analogies as an aligned equation table
+.analogies {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  justify-content: center;
+  row-gap: 10px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 18pt;
+}
+
+.analogy-row {
+  display: contents;
+
+  > div {
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border-top: 1px solid #adb5bd;
+    border-bottom: 1px solid #adb5bd;
+  }
+
+  > div:first-child {
+    border-left: 1px solid #adb5bd;
+    border-radius: 10px 0 0 10px;
+  }
+
+  > div:last-child {
+    border-right: 1px solid #adb5bd;
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.analogy-term {
+  text-align: right;
+}
+
+.analogy-op {
+  color: #6c757d;
+}
+
+.analogy-result {
+  text-align: left;
+  color: #dc3545;
+}
