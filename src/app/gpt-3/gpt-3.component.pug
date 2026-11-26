@@ -24,13 +24,9 @@ ng-template('#slides'='')
                         span ...
             ul.smaller-font.mt-4
                 li Aufgabe: #[span.highlight Nächstes Wort vorhersagen] (next-word prediction)
-                li.fragment Das ist #[span.highlight Klassifikation]: Jedes mögliche Wort ist eine Klasse (Softmax wie bei #[a(href="#/{{logisticRegressionHref}}") Logistischer Regression])
-                li.fragment #[span.highlight Autoregressiv:] Vorhergesagtes Wort anhängen und wieder vorhersagen &rarr; so entsteht Wort für Wort ein Text
-            div.fragment.text-center.alert.alert-warning.p-2.mt-3(style={fontSize: "20pt"})
-                | Genauer: Vorhergesagt werden #[span.highlight Tokens] (Teil-Wörter, Ziffern, Satzzeichen, ...), z.B.
-                span.code.ms-2 Dimension|s|reduktion
-                br
-                | Darum: #[span.highlight next-token prediction] mit ca. 100'000 Klassen
+                li.fragment Das ist #[span.highlight Klassifikation]: Jedes mögliche Wort ist eine Klasse (Softmax)
+                li.fragment #[span.highlight Autoregressiv:] Nächstes Wort für nächstes Wort einen Text generieren.
+            div.fragment.text-center.alert.alert-warning.p-2.mt-3(style={fontSize: "20pt"}) Extra: Vorhergesagt werden #[span.highlight Tokens] nicht Wörter (#[span.highlight next-token prediction]). Tokens sind Teil-Wörter, Ziffern, Satzzeichen, usw. Fixe Anzahl an Tokens, z.B. 50'000.
     section
         slide-with-header(header="Warum next-token prediction?")
             div.smaller-font.text-start Um das nächste Token gut vorherzusagen, braucht es ganz unterschiedliche #[span.highlight Fähigkeiten]:
@@ -117,7 +113,7 @@ ng-template('#slides'='')
                 | ICL: #[span.highlight Schnell] zu einer brauchbaren Lösung. Verbesserung möglich.
             div.fragment.text-center.alert.alert-warning.p-2.mt-2(style={fontSize: "18pt"})
                 | Aber #[span.highlight externe Abhängigkeit] (bei Claude) und #[span.highlight Inferenz-Kosten].
-    question-slide([questions]="[]")
+    question-slide([questions]="iclQuestions")
     section(id="rag")
         slide-with-header(header="ICL - RAG - Grundidee", [extra]="true")
             .row
@@ -219,6 +215,80 @@ ng-template('#slides'='')
                         li Was kommt als #[span.highlight Resultat] zurück in den Kontext?
                 .col-2
                     img(src="assets/images/gpt-3/claude.png", width="120px")
+    section(id="agentic-workflow")
+        slide-with-header(header="ICL - Agentic Workflow - Grundidee", [extra]="true")
+            div.small-font.text-start.mb-2 Idee: Das LLM ruft Tools #[span.highlight in einer Schleife] auf, bis die Aufgabe gelöst ist. Jedes Resultat bestimmt den nächsten Schritt.
+            div.agent-diagram
+                svg.agent-svg(viewBox="0 0 940 320")
+                    defs
+                        marker#agent-arrow-red(markerWidth="7", markerHeight="6", refX="5.5", refY="3", orient="auto")
+                            path(d="M0,0 L7,3 L0,6 Z", fill="#dc3545")
+                        marker#agent-arrow-grey(markerWidth="7", markerHeight="6", refX="5.5", refY="3", orient="auto")
+                            path(d="M0,0 L7,3 L0,6 Z", fill="#6c757d")
+                    path.agent-line(d="M 95 104 L 172 128", marker-end="url(#agent-arrow-grey)")
+                    path.agent-line(d="M 172 192 L 100 214", marker-end="url(#agent-arrow-grey)")
+                    path.agent-arc(d="M 240 122 Q 342 40 470 118", marker-end="url(#agent-arrow-red)")
+                    path.agent-arc(d="M 470 202 Q 342 282 242 196", marker-end="url(#agent-arrow-red)")
+                    path.agent-line(d="M 592 150 L 626 55", marker-end="url(#agent-arrow-grey)")
+                    path.agent-line(d="M 592 157 L 626 122", marker-end="url(#agent-arrow-grey)")
+                    path.agent-line(d="M 592 164 L 626 190", marker-end="url(#agent-arrow-grey)")
+                    path.agent-line.fragment(data-fragment-index="1", d="M 592 172 L 626 256", marker-end="url(#agent-arrow-grey)")
+                    path.agent-line.fragment(data-fragment-index="1", d="M 752 260 L 780 260", marker-end="url(#agent-arrow-grey)")
+                div.agent-node.tool-box-question(style={left: "60px", top: "80px", width: "120px"}) Aufgabe
+                div.agent-node.tool-box-answer(style={left: "60px", top: "240px", width: "120px"}) Antwort
+                div.agent-node.agent-llm(style={left: "215px", top: "160px", width: "120px"}) LLM
+                div.agent-label(style={left: "350px", top: "56px"}) Tool-Aufruf
+                div.agent-label.agent-loop-label(style={left: "342px", top: "160px"}) Schleife
+                div.agent-label(style={left: "350px", top: "266px"}) Resultat
+                div.agent-node(style={left: "500px", top: "160px", width: "180px"})
+                    div Harness
+                    div.agent-sub führt Tools aus
+                div.agent-node.agent-tool(style={left: "690px", top: "50px"}) python
+                div.agent-node.agent-tool(style={left: "690px", top: "120px"}) bash
+                div.agent-node.agent-tool(style={left: "690px", top: "190px"}) websuche
+                div.agent-node.agent-tool.agent-tool-sub.fragment(data-fragment-index="1", style={left: "690px", top: "260px"}) subagent
+                div.agent-subframe.fragment(data-fragment-index="1")
+                    div.agent-sub eigener Kontext
+                    div.agent-mini.agent-llm LLM
+                    div.agent-mini-loop &darr; Schleife &uarr;
+                    div.agent-mini Harness + Tools
+            div.fragment.text-center.alert.alert-primary.p-2.mt-2(data-fragment-index="0", style={fontSize: "17pt"})
+                | Agent = #[span.highlight LLM + Tools + Schleife]. Das LLM entscheidet selbst, wann es fertig ist.
+            div.fragment.text-center.alert.alert-primary.p-2.mt-2(data-fragment-index="1", style={fontSize: "17pt"})
+                | Subagent: Ein Tool, das einen #[span.highlight neuen Agenten mit eigenem Kontext] startet.
+    section(id="agentic-workflow-example")
+        slide-with-header(header="ICL - Agentic Workflow - Beispiel: Coding-Agent", [extra]="true")
+            .row
+                .col-8
+                    div.prompt-box.agent-trace
+                        div.task-text Du hast folgendes Tool:
+                        div.task-text python(code): Führt Python-Code aus
+                        div.mt-1.input-text Aufgabe: Sage die Miete vorher (wohnungen.csv). Wie gut?
+                        div.fragment(data-fragment-index="0")
+                            div.mt-1.llm-text TOOL: python
+                            div.indent-1.llm-text df = pd.read_csv("wohnungen.csv"); print(df.head(1))
+                            div.program-text RESULTAT: flaeche zimmer ort miete
+                            div.indent-1.program-text 82 3.5 Brugg 1850
+                        div.fragment(data-fragment-index="1")
+                            div.mt-1.llm-text TOOL: python
+                            div.indent-1.llm-text X, y = df.drop(columns="miete"), df["miete"]
+                            div.indent-1.llm-text LinearRegression().fit(X, y)
+                            div.program-text RESULTAT: ValueError: could not convert string to float: 'Brugg'
+                        div.fragment(data-fragment-index="2")
+                            div.mt-1.llm-text TOOL: python
+                            div.indent-1.llm-text X = pd.get_dummies(X); model = LinearRegression()
+                            div.indent-1.llm-text print(cross_val_score(model, X, y, cv=5).mean())
+                            div.program-text RESULTAT: 0.81
+                        div.fragment.mt-1.llm-text(data-fragment-index="3") Antwort: Lineare Regression mit One-Hot-Encoding für den Ort erreicht ein R² von 0.81 (5-fache Cross-Validation).
+                    div.reference.mt-2
+                        | #[span.task-text Tool-Beschreibung], #[span.input-text Aufgabe], #[span.llm-text LLM], #[span.program-text Resultat vom Harness]
+                .col-4
+                    div.agent-steps
+                        div.agent-step.fragment(data-fragment-index="0") #[span.step-badge 1] Daten ansehen
+                        div.agent-step.fragment(data-fragment-index="1") #[span.step-badge 2] Modell trainieren: #[span.highlight Fehler]
+                        div.agent-step.fragment(data-fragment-index="2") #[span.step-badge 3] Fehler lesen, korrigieren, evaluieren
+                        div.agent-step.fragment(data-fragment-index="3") #[span.step-badge.step-badge-green 4] Fertig: Antwort
+    question-slide([questions]="agentQuestions")
     section
         slide-with-header(header="Wie gross ist ein LLM?", [extra]="true")
             table.llm-size-table
@@ -309,6 +379,10 @@ ng-template('#slides'='')
                     div.col-2.highlight 2024
                     div.col-3 Reasoning
                     div.col-7 Zusätzlich trainiert, vor der Antwort Zwischenschritte zu schreiben ("nachdenken").
+                div.row.fragment
+                    div.col-2.highlight 2025
+                    div.col-3 Agenten
+                    div.col-7 Zusätzlich trainiert auf lange Aufgaben mit vielen Tool-Aufrufen (z.B. Coding-Agenten, Computer Use).
             div.fragment.text-center.alert.alert-primary.p-2.mt-3(style={fontSize: "20pt"})
                 | Muster: Was mit Prompting funktioniert, wird danach #[span.highlight ins Modell trainiert]
             div.fragment.text-center.alert.alert-warning.p-2.mt-2(style={fontSize: "20pt"})

@@ -71,11 +71,11 @@
 
 
 .llm-timeline {
-  font-size: 18pt;
+  font-size: 16pt;
   text-align: left;
 
   .row {
-    padding: 8px 0;
+    padding: 5px 0;
     border-bottom: 1px solid #dee2e6;
   }
 }
@@ -280,4 +280,147 @@
   color: white;
   background: #198754;
   border-color: #198754;
+}
+
+// agentic workflow: loop between LLM and harness, drawn like the bias feedback loop
+.agent-diagram {
+  position: relative;
+  width: 940px;
+  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14pt;
+}
+
+.agent-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 940px;
+  height: 320px;
+}
+
+.agent-arc {
+  fill: none;
+  stroke: #dc3545;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.agent-line {
+  fill: none;
+  stroke: #6c757d;
+  stroke-width: 2.5;
+}
+
+.agent-node {
+  position: absolute;
+  padding: 10px 12px;
+  transform: translate(-50%, -50%);
+  line-height: 1.3;
+  background: white;
+  border: 2px solid #adb5bd;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.agent-llm {
+  font-size: 16pt;
+  color: white;
+  background: #ffc046;
+  border-color: #ff8f00;
+}
+
+.agent-sub {
+  font-size: 11pt;
+  color: #6c757d;
+}
+
+.agent-tool {
+  width: 120px;
+  padding: 6px 10px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 12pt;
+}
+
+.agent-tool-sub {
+  color: white;
+  background: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.agent-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.agent-loop-label {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.agent-subframe {
+  position: absolute;
+  left: 785px;
+  top: 170px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px;
+  border: 2px solid #6f42c1;
+  border-radius: 12px;
+  background: #f8f9fa;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.agent-mini {
+  width: 100%;
+  padding: 3px;
+  font-size: 11pt;
+  border: 2px solid #adb5bd;
+  border-radius: 8px;
+  background: white;
+}
+
+.agent-mini.agent-llm {
+  background: #ffc046;
+  border-color: #ff8f00;
+}
+
+.agent-mini-loop {
+  font-size: 11pt;
+  color: #dc3545;
+}
+
+.agent-trace {
+  font-size: 11.5pt;
+  line-height: 1.4;
+  padding: 10px 16px;
+}
+
+.agent-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15pt;
+  text-align: left;
+}
+
+.agent-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 2px solid #adb5bd;
+  border-radius: 10px;
+  background: white;
+
+  .step-badge {
+    flex-shrink: 0;
+    text-align: center;
+  }
 }
